@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hokkaidornis.github.io/hokkaidornis/sitemap.xml
