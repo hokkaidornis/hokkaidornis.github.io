@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="What I’ve Learned from Users原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;users.html September 2022  I recently told applicants to Y Combinator that the best advice I could give for getting in, per word, was Explain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从用户那里我学到了什么">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/07/28/what-i-have-learned-from-users/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="What I’ve Learned from Users原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;users.html September 2022  I recently told applicants to Y Combinator that the best advice I could give for getting in, per word, was Explain">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-28T01:41:36.000Z">
+<meta property="article:modified_time" content="2025-07-28T02:09:07.162Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>从用户那里我学到了什么 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hokkaidornis</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="从用户那里我学到了什么"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-28 09:41" pubdate>
+          2025年7月28日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">从用户那里我学到了什么</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="What-I’ve-Learned-from-Users"><a href="#What-I’ve-Learned-from-Users" class="headerlink" title="What I’ve Learned from Users"></a>What I’ve Learned from Users</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/users.html">https://paulgraham.com/users.html</a></p>
+<p>September 2022 </p>
+<p>I recently told applicants to Y Combinator that the best advice I could give for getting in, per word, was Explain </p>
+<p>最近，我对 Y Combinator（简称 YC）的申请者说，若论 “每字价值”，能给出的最佳申请建议是：</p>
+<blockquote>
+<p>what you’ve learned from users. </p>
+</blockquote>
+<blockquote>
+<p><strong>解释你从用户身上学到了什么。</strong></p>
+</blockquote>
+<p>That tests a lot of things: whether you’re paying attention to users, how well you understand them, and even how much they need what you’re making. </p>
+<p>这句话能考验很多东西：你是否关注用户、对用户的理解有多深，甚至用户对你所做产品的需求有多迫切。</p>
+<p>Afterward I asked myself the same question. What have I learned from YC’s users, the startups we’ve funded? </p>
+<p>之后，我问了自己同样的问题：我从 YC 的用户 —— 也就是我们投资的初创公司身上，学到了什么？</p>
+<p>The first thing that came to mind was that most startups have the same problems. No two have exactly the same problems, but it’s surprising how much the problems remain the same, regardless of what they’re making. Once you’ve advised 100 startups all doing different things, you rarely encounter problems you haven’t seen before. </p>
+<p>首先想到的是，大多数初创公司面临的问题是相似的。没有两家公司的问题完全相同，但无论它们做什么业务，问题的共性之高都令人惊讶。当你为 100 家业务各异的初创公司提供过建议后，几乎不会遇到从未见过的新问题。</p>
+<p>This fact is one of the things that makes YC work. But I didn’t know it when we started YC. I only had a few data points: our own startup, and those started by friends. It was a surprise to me how often the same problems recur in different forms. Many later stage investors might never realize this, because later stage investors might not advise 100 startups in their whole career, but a YC partner will get this much experience in the first year or two. </p>
+<p>这一事实正是 YC 能够有效运作的原因之一。但在创办 YC 时，我并不知道这一点。当时我只有几个案例：我们自己的初创公司，以及朋友创办的公司。后来发现，同样的问题会以不同形式反复出现，这让我很意外。许多后期投资者可能永远不会意识到这一点，因为他们整个职业生涯中或许都不会为 100 家初创公司提供建议，但 YC 的合伙人在入职头一两年就能积累这样的经验。</p>
+<p>That’s one advantage of funding large numbers of early stage companies rather than smaller numbers of later-stage ones. You get a lot of data. Not just because you’re looking at more companies, but also because more goes wrong. </p>
+<p>这正是投资大量早期公司而非少量后期公司的优势之一：能获得大量数据。不仅因为关注的公司更多，还因为早期公司出的问题更多。</p>
+<p>But knowing (nearly) all the problems startups can encounter doesn’t mean that advising them can be automated, or reduced to a formula. There’s no substitute for individual office hours with a YC partner. Each startup is unique, which means they have to be advised by specific partners who know them well. [1] </p>
+<p>但即便（几乎）了解初创公司可能遇到的所有问题，也不意味着可以将咨询流程自动化或简化成公式。与 YC 合伙人的一对一办公时间是无可替代的。每家初创公司都是独特的，这意味着需要由熟悉它们的特定合伙人提供针对性建议。[1]</p>
+<p>We learned that the hard way, in the notorious “batch that broke YC” in the summer of 2012. Up till that point we treated the partners as a pool. When a startup requested office hours, they got the next available slot posted by any partner. That meant every partner had to know every startup. This worked fine up to 60 startups, but when the batch grew to 80, everything broke. The founders probably didn’t realize anything was wrong, but the partners were confused and unhappy because halfway through the batch they still didn’t know all the companies yet. [2] </p>
+<p>我们是从惨痛经历中明白这一点的 ——2012 年夏天那个 “搞垮了 YC” 的批次。在此之前，我们把合伙人当作一个 “资源池”：当某家初创公司申请办公时间时，会分配给任何合伙人的下一个空闲时段。这意味着每个合伙人都必须了解所有初创公司。这种模式在 60 家公司时还行得通，但当批次规模扩大到 80 家，一切就乱了。创始人可能没意识到有问题，但合伙人却感到困惑和不满，因为批次进行到一半时，他们仍没了解所有公司。[2]</p>
+<p>At first I was puzzled. How could things be fine at 60 startups and broken at 80? It was only a third more. Then I realized what had happened. We were using an O(n2) algorithm. So of course it blew up. </p>
+<p>起初我很困惑：为什么 60 家公司时一切顺利，80 家就出问题了？不过才多了三分之一而已。后来我意识到，我们用的是 “O (n²)” 算法（复杂度随数量平方增长），所以必然会崩溃。</p>
+<p>The solution we adopted was the classic one in these situations. We sharded the batch into smaller groups of startups, each overseen by a dedicated group of partners. That fixed the problem, and has worked fine ever since. But the batch that broke YC was a powerful demonstration of how individualized the process of advising startups has to be. </p>
+<p>我们采取的解决办法很经典：将批次拆分成更小的初创公司组，每组由专门的合伙人团队负责。问题就此解决，且沿用至今。但 “搞垮 YC 的批次” 有力地证明了：为初创公司提供咨询必须个性化。</p>
+<p>Another related surprise is how bad founders can be at realizing what their problems are. Founders will sometimes come in to talk about some problem, and we’ll discover another much bigger one in the course of the conversation. For example (and this case is all too common), founders will come in to talk about the difficulties they’re having raising money, and after digging into their situation, it turns out the reason is that the company is doing badly, and investors can tell. Or founders will come in worried that they still haven’t cracked the problem of user acquisition, and the reason turns out to be that their product isn’t good enough. There have been times when I’ve asked “Would you use this yourself, if you hadn’t built it?” and the founders, on thinking about it, said “No.” Well, there’s the reason you’re having trouble getting users. </p>
+<p>另一个相关的意外发现是：创始人往往看不清自己的问题所在。有时他们来讨论某个问题，我们却在交谈中发现了一个严重得多的问题。比如（这种情况太常见了），创始人来谈融资困难，深入了解后却发现，原因是公司业务表现不佳，而投资者一眼就能看穿。又或者，他们担心用户获取难题，实则是产品不够好。有好几次，我问：“如果这不是你自己做的，你会用吗？” 创始人想了想回答 “不会”—— 这就是用户获取难的原因。</p>
+<p>Often founders know what their problems are, but not their relative importance. [3] </p>
+<p>通常，创始人知道自己有哪些问题，但分不清它们的重要性。[3] </p>
+<p>They’ll come in to talk about three problems they’re worrying about. One is of moderate importance, one doesn’t matter at all, and one will kill the company if it isn’t addressed immediately. It’s like watching one of those horror movies where the heroine is deeply upset that her boyfriend cheated on her, and only mildly curious about the door that’s mysteriously ajar. You want to say: never mind about your boyfriend, think about that door! Fortunately in office hours you can. So while startups still die with some regularity, it’s rarely because they wandered into a room containing a murderer. The YC partners can warn them where the murderers are. </p>
+<p>他们可能带着三个担忧来咨询：一个中等重要，一个完全无关紧要，还有一个若不立即解决就会置公司于死地。这就像恐怖电影里的场景：女主角为男友出轨而崩溃，却对神秘敞开的门只略感好奇。你真想对她说：别管男友了，看看那扇门！好在办公时间里，我们可以直接点出来。因此，尽管初创公司仍会倒闭，但很少是因为 “误入有凶手的房间”——YC 合伙人会提醒他们哪里有 “凶手”。</p>
+<p>Not that founders listen. That was another big surprise: how often founders don’t listen to us. A couple weeks ago I talked to a partner who had been working for YC for a couple batches and was starting to see the pattern. “They come back a year later,” she said, “and say ‘We wish we’d listened to you.’” </p>
+<p>但问题是，创始人未必会听。这是另一个令人惊讶的发现：他们常常不听我们的建议。几周前，一位共事了几个批次的合伙人跟我说，她发现了一个规律：“一年后，他们会回来对我说‘真该听你的’。”</p>
+<p>It took me a long time to figure out why founders don’t listen. At first I thought it was mere stubbornness. That’s part of the reason, but another and probably more important reason is that so much about startups is counterintuitive. And when you tell someone something counterintuitive, what it sounds to them is wrong. So the reason founders don’t listen to us is that they don’t believe us. At least not till experience teaches them otherwise. [4] </p>
+<p>我花了很久才弄明白创始人不听建议的原因。起初以为是固执，这确实是部分原因，但更重要的是，初创公司的很多事都违背直觉。当你告诉别人一件反直觉的事，在他们听来就是错的。所以，创始人不听建议，是因为不相信 —— 至少在亲身经历证明我们是对的之前不相信。[4]</p>
+<p>The reason startups are so counterintuitive is that they’re so different from most people’s other experiences. No one knows what it’s like except those who’ve done it. Which is why YC partners should usually have been founders themselves. But strangely enough, the counterintuitiveness of startups turns out to be another of the things that make YC work. If it weren’t counterintuitive, founders wouldn’t need our advice about how to do it. </p>
+<p>初创公司之所以反直觉，是因为它们与大多数人的其他经历截然不同。只有亲身经历过的人才懂。这也是为什么 YC 合伙人通常自己也做过创始人。但奇妙的是，这种反直觉恰恰是 YC 能发挥作用的另一个原因：如果一切都符合直觉，创始人就不需要我们的建议了。</p>
+<p>Focus is doubly important for early stage startups, because not only do they have a hundred different problems, they don’t have anyone to work on them except the founders. If the founders focus on things that don’t matter, there’s no one focusing on the things that do. So the essence of what happens at YC is to figure out which problems matter most, then cook up ideas for solving them — ideally at a resolution of a week or less — and then try those ideas and measure how well they worked. The focus is on action, with measurable, near-term results. </p>
+<p>专注对早期初创公司尤为重要，因为它们不仅有上百个问题，还没人能分担 —— 只能靠创始人自己。如果创始人专注于无关紧要的事，就没人去管真正重要的事了。因此，YC 的核心工作是：找出最关键的问题，想出解决办法（最好能在一周内见效），然后尝试并衡量效果。重点是行动，以及可衡量的短期结果。</p>
+<p>This doesn’t imply that founders should rush forward regardless of the consequences. If you correct course at a high enough frequency, you can be simultaneously decisive at a micro scale and tentative at a macro scale. The result is a somewhat winding path, but executed very rapidly, like the path a running back takes downfield. And in practice there’s less backtracking than you might expect. Founders usually guess right about which direction to run in, especially if they have someone experienced like a YC partner to bounce their hypotheses off. And when they guess wrong, they notice fast, because they’ll talk about the results at office hours the next week. [5] </p>
+<p>这并不意味着创始人应该不顾后果地贸然行动。如果能高频调整方向，就能在微观层面果断决策，同时在宏观层面保持试探。结果可能是一条曲折的路，但推进速度极快，就像橄榄球跑卫带球冲阵的路线。实际上，回头路比想象中少：创始人通常能猜对方向，尤其是在有 YC 合伙人这样的过来人帮他们验证假设的情况下。即便猜错了，也能很快发现 —— 因为下周的办公时间他们就要汇报结果了。[5]</p>
+<p>A small improvement in navigational ability can make you a lot faster, because it has a double effect: the path is shorter, and you can travel faster along it when you’re more certain it’s the right one. That’s where a lot of YC’s value lies, in helping founders get an extra increment of focus that lets them move faster. And since moving fast is the essence of a startup, YC in effect makes startups more startup-like. </p>
+<p>导航能力的微小提升能大幅加快速度，原因有二：路径更短，且在确定方向正确时能跑得更快。这正是 YC 的核心价值之一：帮助创始人多一分专注，从而加速前进。而既然速度是初创公司的核心，YC 实际上是让初创公司更 “初创”。</p>
+<p>Speed defines startups. Focus enables speed. YC improves focus. </p>
+<p>速度定义初创公司，专注成就速度，YC 提升专注。</p>
+<p>Why are founders uncertain about what to do? Partly because startups almost by definition are doing something new, which means no one knows how to do it yet, or in most cases even what “it” is. Partly because startups are so counterintuitive generally. And partly because many founders, especially young and ambitious ones, have been trained to win the wrong way. That took me years to figure out. The educational system in most countries trains you to win by hacking the test instead of actually doing whatever it’s supposed to measure. But that stops working when you start a startup. So part of what YC does is to retrain founders to stop trying to hack the test. (It takes a surprisingly long time. A year in, you still see them reverting to their old habits.) </p>
+<p>创始人为何不确定该做什么？部分原因是，初创公司本质上在做新事，没人知道该怎么做，甚至多数时候连 “要做的事到底是什么” 都不清楚。另一部分原因是，初创公司本身就充满反直觉的事。还有一部分原因是，许多创始人 —— 尤其是年轻且有野心的 —— 被训练成了 “为考试而投机” 而非 “为目标而行动”。我花了好几年才意识到这一点。多数国家的教育体系训练人通过 “钻考试空子” 获胜，而非真正做好考试本应衡量的事。但在初创公司里，这一套行不通了。因此，YC 的部分工作是重新训练创始人：别再试图 “钻空子”（这需要的时间长得惊人，一年后仍能看到他们重拾旧习）。</p>
+<p>YC is not simply more experienced founders passing on their knowledge. It’s more like specialization than apprenticeship. The knowledge of the YC partners and the founders have different shapes: It wouldn’t be worthwhile for a founder to acquire the encyclopedic knowledge of startup problems that a YC partner has, just as it wouldn’t be worthwhile for a YC partner to acquire the depth of domain knowledge that a founder has. That’s why it can still be valuable for an experienced founder to do YC, just as it can still be valuable for an experienced athlete to have a coach. </p>
+<p>YC 不只是有经验的创始人传授知识，更像是 “专业化分工” 而非 “学徒制”。YC 合伙人与创始人的知识结构不同：创始人没必要像 YC 合伙人那样掌握关于初创公司问题的百科全书式知识，就像 YC 合伙人也没必要拥有创始人那样深厚的领域知识。这也是为什么即使是有经验的创始人，参加 YC 也仍有价值 —— 就像有经验的运动员也需要教练。</p>
+<p>The other big thing YC gives founders is colleagues, and this may be even more important than the advice of partners. If you look at history, great work clusters around certain places and institutions: Florence in the late 15th century, the University of Göttingen in the late 19th, The New Yorker under Ross, Bell Labs, Xerox PARC. However good you are, good colleagues make you better. Indeed, very ambitious people probably need colleagues more than anyone else, because they’re so starved for them in everyday life. </p>
+<p>YC 给创始人的另一大财富是同伴，这可能比合伙人的建议更重要。纵观历史，伟大的成就往往扎堆出现在特定地点和机构：15 世纪末的佛罗伦萨、19 世纪末的哥廷根大学、罗斯执掌的《纽约客》、贝尔实验室、施乐 PARC。无论你多优秀，优秀的同伴都能让你更出色。事实上，有远大抱负的人或许最需要同伴，因为日常生活中很难找到同类。</p>
+<p>Whether or not YC manages one day to be listed alongside those famous clusters, it won’t be for lack of trying. We were very aware of this historical phenomenon and deliberately designed YC to be one. By this point it’s not bragging to say that it’s the biggest cluster of great startup founders. Even people trying to attack YC concede that. </p>
+<p>无论 YC 未来能否跻身这些著名 “集群” 之列，我们都在努力。我们深知这种历史现象，因此在设计 YC 时就刻意朝这个方向努力。如今可以毫不夸张地说，这里聚集了最多优秀的初创公司创始人 —— 就连批评 YC 的人也不得不承认这一点。</p>
+<p>Colleagues and startup founders are two of the most powerful forces in the world, so you’d expect it to have a big effect to combine them. Before YC, to the extent people thought about the question at all, most assumed they couldn’t be combined — that loneliness was the price of independence. That was how it felt to us when we started our own startup in Boston in the 1990s. We had a handful of older people we could go to for advice (of varying quality), but no peers. There was no one we could commiserate with about the misbehavior of investors, or speculate with about the future of technology. I often tell founders to make something they themselves want, and YC is certainly that: it was designed to be exactly what we wanted when we were starting a startup. </p>
+<p>在 YC 之前，人们即便想到这个问题，也大多认为 “同伴” 与 “初创公司” 不可兼得 —— 孤独是独立创业的代价。20 世纪 90 年代，我们在波士顿创办自己的初创公司时就是这种感受：能咨询的前辈寥寥无几（且建议质量参差不齐），却没有同行。没人能一起吐槽投资者的奇葩行为，也没人能一起畅想技术未来。我常对创始人说 “做自己想要的产品”，YC 本身就是如此 —— 它正是我们创业时渴望拥有的东西。</p>
+<p>One thing we wanted was to be able to get seed funding without having to make the rounds of random rich people. That has become a commodity now, at least in the US. But great colleagues can never become a commodity, because the fact that they cluster in some places means they’re proportionally absent from the rest. </p>
+<p>我们当时想要的，包括不必挨个找随机的富人就能拿到种子轮融资。如今，这在美国已不算难事。但优秀的同伴永远无法 “批量复制”—— 正因为他们聚集在某些地方，其他地方才会稀缺。</p>
+<p>Something magical happens where they do cluster though. The energy in the room at a YC dinner is like nothing else I’ve experienced. We would have been happy just to have one or two other startups to talk to. When you have a whole roomful it’s another thing entirely. </p>
+<p>而当同伴真正聚集时，奇迹就会发生。YC 晚宴上的那种活力，是我在别处从未见过的。我们当初能有一两家同行交流就很满足了，而一屋子同行的感觉完全不同。</p>
+<p>YC founders aren’t just inspired by one another. They also help one another. That’s the happiest thing I’ve learned about startup founders: how generous they can be in helping one another. We noticed this in the first batch and consciously designed YC to magnify it. The result is something far more intense than, say, a university. Between the partners, the alumni, and their batchmates, founders are surrounded by people who want to help them, and can.      </p>
+<p>YC 的创始人不仅相互启发，还彼此帮助。这是我从初创公司创始人身上学到的最令人欣慰的事：他们在帮助同行时能如此慷慨。我们在第一个批次就发现了这一点，并刻意设计 YC 来放大这种精神。结果是，这里的氛围比大学等场所浓烈得多。在合伙人、校友和同批次伙伴的围绕下，创始人身边全是愿意且有能力帮助他们的人。</p>
+<p>Notes </p>
+<p>[1] This is why I’ve never liked it when people refer to YC as a “bootcamp.” It’s intense like a bootcamp, but the opposite in structure. Instead of everyone doing the same thing, they’re each talking to YC partners to figure out what their specific startup needs. </p>
+<p>[1] 这也是我不喜欢人们把 YC 称为 “训练营” 的原因。它和训练营一样高强度，但结构完全相反：不是所有人都做同样的事，而是各自与 YC 合伙人沟通，找到自己公司的特定需求。</p>
+<p>[2] When I say the summer 2012 batch was broken, I mean it felt to the partners that something was wrong. Things weren’t yet so broken that the startups had a worse experience. In fact that batch did unusually well. </p>
+<p>[2] 我说 2012 年夏天的批次 “垮了”，是指合伙人觉得有问题。当时还没到影响初创公司体验的地步，事实上那个批次的表现异常好。</p>
+<p>[3] This situation reminds me of the research showing that people are much better at answering questions than they are at judging how accurate their answers are. The two phenomena feel very similar. </p>
+<p>[3] 这种情况让我想到一项研究：人们回答问题的能力，远好于判断自己答案准确性的能力。这两种现象很相似。</p>
+<p>[4] The Airbnbs were particularly good at listening — partly because they were flexible and disciplined, but also because they’d had such a rough time during the preceding year. They were ready to listen. </p>
+<p>[4] Airbnb 的创始人尤其善于倾听 —— 部分因为他们灵活且自律，也因为前一年经历了太多困境，他们已经做好了倾听的准备。</p>
+<p>[5] The optimal unit of decisiveness depends on how long it takes to get results, and that depends on the type of problem you’re solving. When you’re negotiating with investors, it could be a couple days, whereas if you’re building hardware it could be months.  Thanks to Trevor Blackwell, Jessica Livingston, Harj Taggar, and Garry Tan for reading drafts of this.</p>
+<p>[5] 决策的最佳周期取决于获得结果的时间，而这又取决于问题类型。与投资者谈判可能需要几天，而硬件研发可能需要几个月。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>从用户那里我学到了什么</div>
+      <div>https://hokkaidornis.github.io/2025/07/28/what-i-have-learned-from-users/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月28日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/26/the-bus-ticket-theory-of-genius/" title="天才的集邮理论">
+                        <span class="hidden-mobile">天才的集邮理论</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
