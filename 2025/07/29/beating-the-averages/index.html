@@ -1,0 +1,859 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Beating the Averages原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;avg.html April 2001, rev. April 2003  (This article is derived from a talk given at the 2001 Franz Developer Symposium.) In the summer of 1995, my frie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超越平均数">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/07/29/beating-the-averages/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Beating the Averages原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;avg.html April 2001, rev. April 2003  (This article is derived from a talk given at the 2001 Franz Developer Symposium.) In the summer of 1995, my frie">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-29T07:12:29.000Z">
+<meta property="article:modified_time" content="2025-07-29T07:53:43.920Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>超越平均数 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hokkaidornis</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="超越平均数"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-29 15:12" pubdate>
+          2025年7月29日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          64 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">超越平均数</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Beating-the-Averages"><a href="#Beating-the-Averages" class="headerlink" title="Beating the Averages"></a>Beating the Averages</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/avg.html">https://paulgraham.com/avg.html</a></p>
+<p>April 2001, rev. April 2003 </p>
+<p>(This article is derived from a talk given at the 2001 Franz Developer Symposium.) In the summer of 1995, my friend Robert Morris and I started a startup called Viaweb. Our plan was to write software that would let end users build online stores. What was novel about this software, at the time, was that it ran on our server, using ordinary Web pages as the interface. </p>
+<p>（本文源自 2001 年 Franz 开发者研讨会的一次演讲）</p>
+<p>1995 年夏天，我和我的朋友罗伯特・莫里斯创办了一家名为 Viaweb 的初创公司。我们计划编写一款软件，让终端用户能够构建在线商店。这款软件在当时的新颖之处在于，它运行在我们的服务器上，使用普通网页作为界面。</p>
+<p>A lot of people could have been having this idea at the same time, of course, but as far as I know, Viaweb was the first Web-based application. It seemed such a novel idea to us that we named the company after it: Viaweb, because our software worked via the Web, instead of running on your desktop computer. </p>
+<p>当然，很多人可能同时都有过这个想法，但据我所知，Viaweb 是第一款基于网络的应用程序。这个想法对我们来说非常新颖，于是我们用它来为公司命名：Viaweb，因为我们的软件是通过网络运行的，而不是在桌面计算机上运行。</p>
+<p>Another unusual thing about this software was that it was written primarily in a programming language called Lisp. It was one of the first big end-user applications to be written in Lisp, which up till then had been used mostly in universities and research labs. [1] </p>
+<p>这款软件的另一个不寻常之处在于，它主要是用一种名为 Lisp 的编程语言编写的。它是最早一批用 Lisp 编写的大型终端用户应用程序之一，在此之前，Lisp 主要在大学和研究实验室中使用。</p>
+<p>The Secret Weapon </p>
+<p>Eric Raymond has written an essay called “How to Become a Hacker,” and in it, among other things, he tells would-be hackers what languages they should learn. He suggests starting with Python and Java, because they are easy to learn. The serious hacker will also want to learn C, in order to hack Unix, and Perl for system administration and cgi scripts. Finally, the truly serious hacker should consider learning Lisp: </p>
+<p><strong>秘密武器</strong></p>
+<p>埃里克・雷蒙德写过一篇名为《如何成为一名黑客》的文章，在文中，他除了讲述其他内容外，还告诉未来的黑客应该学习哪些语言。他建议从 Python 和 Java 入手，因为它们容易学习。认真的黑客还会想学习 C 语言，以便对 Unix 进行黑客攻击，以及学习 Perl 用于系统管理和 CGI 脚本。最后，真正认真的黑客应该考虑学习 Lisp：</p>
+<blockquote>
+<p>Lisp is worth learning for the profound enlightenment experience you will have when you finally get it; that experience will make you a better programmer for the rest of your days, even if you never actually use Lisp itself a lot. </p>
+</blockquote>
+<blockquote>
+<p>学习 Lisp 是值得的，因为当你最终掌握它时，你将获得深刻的启发；这种体验将使你在余生中成为一名更优秀的程序员，即使你实际上并不经常使用 Lisp。</p>
+</blockquote>
+<p>This is the same argument you tend to hear for learning Latin. It won’t get you a job, except perhaps as a classics professor, but it will improve your mind, and make you a better writer in languages you do want to use, like English. </p>
+<p>这和你经常听到的学习拉丁语的理由是一样的。它不会让你找到一份工作，除非你可能成为一名古典文学教授，但它会提升你的思维，让你在你想用的语言（比如英语）中成为一名更好的作家。</p>
+<p>But wait a minute. This metaphor doesn’t stretch that far. The reason Latin won’t get you a job is that no one speaks it. If you write in Latin, no one can understand you. But Lisp is a computer language, and computers speak whatever language you, the programmer, tell them to. </p>
+<p>但等一下。这个比喻并不完全恰当。拉丁语不会让你找到工作的原因是没有人说拉丁语。如果你用拉丁语写作，没有人能理解你。但 Lisp 是一种计算机语言，计算机可以理解程序员告诉它们的任何语言。</p>
+<p>So if Lisp makes you a better programmer, like he says, why wouldn’t you want to use it? If a painter were offered a brush that would make him a better painter, it seems to me that he would want to use it in all his paintings, wouldn’t he? I’m not trying to make fun of Eric Raymond here. On the whole, his advice is good. What he says about Lisp is pretty much the conventional wisdom. But there is a contradiction in the conventional wisdom: Lisp will make you a better programmer, and yet you won’t use it. </p>
+<p>那么，如果像他说的那样，Lisp 能让你成为更好的程序员，为什么你不想使用它呢？如果一个画家得到了一支能让他画得更好的画笔，在我看来，他会想在所有画作中都使用它，不是吗？我这里并不是想取笑埃里克・雷蒙德。总的来说，他的建议是好的。他关于 Lisp 的说法几乎是一种传统观点。但这种传统观点存在一个矛盾：Lisp 能让你成为更好的程序员，但你却不会使用它。</p>
+<p>Why not? Programming languages are just tools, after all. If Lisp really does yield better programs, you should use it. And if it doesn’t, then who needs it? </p>
+<p>为什么不呢？编程语言毕竟只是工具。如果 Lisp 真的能编写出更好的程序，你就应该使用它。如果不能，那谁还需要它呢？</p>
+<p>This is not just a theoretical question. Software is a very competitive business, prone to natural monopolies. A company that gets software written faster and better will, all other things being equal, put its competitors out of business. And when you’re starting a startup, you feel this very keenly. Startups tend to be an all or nothing proposition. You either get rich, or you get nothing. In a startup, if you bet on the wrong technology, your competitors will crush you. </p>
+<p>这不仅仅是一个理论问题。软件行业是一个竞争非常激烈的行业，容易出现自然垄断。在其他条件相同的情况下，一个能够更快、更好地编写软件的公司会让其竞争对手破产。而当你创办一家初创公司时，你会深刻地感受到这一点。初创公司往往是一种要么全有要么全无的事情。你要么发财，要么一无所有。在初创公司中，如果你押错了技术，你的竞争对手就会把你击垮。</p>
+<p>Robert and I both knew Lisp well, and we couldn’t see any reason not to trust our instincts and go with Lisp. We knew that everyone else was writing their software in C++ or Perl. But we also knew that that didn’t mean anything. If you chose technology that way, you’d be running Windows. When you choose technology, you have to ignore what other people are doing, and consider only what will work the best. </p>
+<p>罗伯特和我都很熟悉 Lisp，我们找不到任何理由不相信自己的直觉并选择 Lisp。我们知道其他人都在用 C++ 或 Perl 编写软件。但我们也知道这并不意味着什么。如果你以那种方式选择技术，你就会选择运行 Windows。当你选择技术时，你必须忽略其他人在做什么，只考虑什么是最有效的。</p>
+<p>This is especially true in a startup. In a big company, you can do what all the other big companies are doing. But a startup can’t do what all the other startups do. I don’t think a lot of people realize this, even in startups. </p>
+<p>这在初创公司中尤其如此。在大公司里，你可以做其他大公司都在做的事情。但初创公司不能做其他初创公司都在做的事情。我认为很多人甚至在初创公司中都没有意识到这一点。</p>
+<p>The average big company grows at about ten percent a year. So if you’re running a big company and you do everything the way the average big company does it, you can expect to do as well as the average big company– that is, to grow about ten percent a year. </p>
+<p>一般的大公司每年增长约 10%。所以，如果你经营一家大公司，并且你像一般的大公司那样做所有事情，你可以期望取得和一般大公司一样的业绩，即每年增长约 10%。</p>
+<p>The same thing will happen if you’re running a startup, of course. If you do everything the way the average startup does it, you should expect average performance. The problem here is, average performance means that you’ll go out of business. The survival rate for startups is way less than fifty percent. So if you’re running a startup, you had better be doing something odd. If not, you’re in trouble. </p>
+<p>当然，如果你经营一家初创公司，情况也是如此。如果你像一般的初创公司那样做所有事情，你应该期望得到平均水平的业绩。但问题是，平均水平的业绩意味着你会倒闭。初创公司的存活率远低于 50%。所以，如果你经营一家初创公司，你最好做一些与众不同的事情。否则，你就会有麻烦。</p>
+<p>Back in 1995, we knew something that I don’t think our competitors understood, and few understand even now: when you’re writing software that only has to run on your own servers, you can use any language you want. When you’re writing desktop software, there’s a strong bias toward writing applications in the same language as the operating system. Ten years ago, writing applications meant writing applications in C. But with Web-based software, especially when you have the source code of both the language and the operating system, you can use whatever language you want. </p>
+<p>早在 1995 年，我们就知道一些我认为我们的竞争对手不理解的事情，甚至现在也很少有人理解：当你编写只需要在自己服务器上运行的软件时，你可以使用任何你想用的语言。当你编写桌面软件时，人们强烈倾向于使用与操作系统相同的语言来编写应用程序。十年前，编写应用程序意味着用 C 语言编写。但对于基于网络的软件，特别是当你拥有语言和操作系统的源代码时，你可以使用任何你想用的语言。</p>
+<p>This new freedom is a double-edged sword, however. Now that you can use any language, you have to think about which one to use. Companies that try to pretend nothing has changed risk finding that their competitors do not. </p>
+<p>然而，这种新的自由是一把双刃剑。既然你可以使用任何语言，你就必须考虑使用哪一种。那些试图假装一切都没有改变的公司可能会发现，他们的竞争对手并非如此。</p>
+<p>If you can use any language, which do you use? We chose Lisp. For one thing, it was obvious that rapid development would be important in this market. We were all starting from scratch, so a company that could get new features done before its competitors would have a big advantage. We knew Lisp was a really good language for writing software quickly, and server-based applications magnify the effect of rapid development, because you can release software the minute it’s done. </p>
+<p>如果你可以使用任何语言，你会选择哪种呢？我们选择了 Lisp。一方面，很明显，在这个市场中快速开发非常重要。我们都是从零开始，所以一家能够比竞争对手更快实现新功能的公司将拥有巨大的优势。我们知道 Lisp 是一种非常适合快速编写软件的语言，而且基于服务器的应用程序会放大快速开发的效果，因为你可以在软件完成后立即发布。</p>
+<p>If other companies didn’t want to use Lisp, so much the better. It might give us a technological edge, and we needed all the help we could get. When we started Viaweb, we had no experience in business. We didn’t know anything about marketing, or hiring people, or raising money, or getting customers. Neither of us had ever even had what you would call a real job. The only thing we were good at was writing software. We hoped that would save us. Any advantage we could get in the software department, we would take. </p>
+<p>如果其他公司不想使用 Lisp，那就更好了。这可能会给我们带来技术优势，而我们需要所有能得到的帮助。当我们创办 Viaweb 时，我们没有商业经验。我们对营销、招聘、融资或获取客户一无所知。我们俩甚至都没有过所谓的真正的工作。我们唯一擅长的就是编写软件。我们希望这能拯救我们。我们会抓住在软件方面能得到的任何优势。</p>
+<p>So you could say that using Lisp was an experiment. Our hypothesis was that if we wrote our software in Lisp, we’d be able to get features done faster than our competitors, and also to do things in our software that they couldn’t do. And because Lisp was so high-level, we wouldn’t need a big development team, so our costs would be lower. If this were so, we could offer a better product for less money, and still make a profit. We would end up getting all the users, and our competitors would get none, and eventually go out of business. That was what we hoped would happen, anyway. </p>
+<p>所以可以说，使用 Lisp 是一个实验。我们的假设是，如果我们用 Lisp 编写软件，我们将能够比竞争对手更快地实现功能，并且能够在我们的软件中实现他们无法实现的功能。而且因为 Lisp 是一种高级语言，我们不需要一个庞大的开发团队，所以我们的成本会更低。如果是这样，我们就可以以更低的价格提供更好的产品，并且仍然盈利。最终，我们会赢得所有用户，而我们的竞争对手将一无所获，最终倒闭。不管怎样，这就是我们希望发生的事情。</p>
+<p>What were the results of this experiment? Somewhat surprisingly, it worked. We eventually had many competitors, on the order of twenty to thirty of them, but none of their software could compete with ours. We had a wysiwyg online store builder that ran on the server and yet felt like a desktop application. Our competitors had cgi scripts. And we were always far ahead of them in features. Sometimes, in desperation, competitors would try to introduce features that we didn’t have. But with Lisp our development cycle was so fast that we could sometimes duplicate a new feature within a day or two of a competitor announcing it in a press release. By the time journalists covering the press release got round to calling us, we would have the new feature too. </p>
+<p>这个实验的结果如何呢？令人惊讶的是，它成功了。我们最终有了很多竞争对手，大约有二三十家，但他们的软件都无法与我们的竞争。我们有一个所见即所得的在线商店构建器，它运行在服务器上，但感觉就像一个桌面应用程序。我们的竞争对手只有 CGI 脚本。而且我们在功能上总是远远领先于他们。有时，绝望的竞争对手会试图推出我们没有的功能。但由于 Lisp，我们的开发周期非常快，以至于有时在竞争对手在新闻发布会上宣布新功能后的一两天内，我们就能复制该功能。当报道新闻发布会的记者打电话给我们时，我们也已经有了这个新功能。</p>
+<p>It must have seemed to our competitors that we had some kind of secret weapon– that we were decoding their Enigma traffic or something. In fact we did have a secret weapon, but it was simpler than they realized. No one was leaking news of their features to us. We were just able to develop software faster than anyone thought possible. </p>
+<p>在我们的竞争对手看来，我们一定有某种秘密武器，就好像我们在破解他们的恩尼格玛密码之类的。事实上，我们确实有一个秘密武器，但它比他们意识到的要简单。没有人向我们泄露他们的功能信息。我们只是能够以比任何人想象的都要快的速度开发软件。</p>
+<p>When I was about nine I happened to get hold of a copy of The Day of the Jackal, by Frederick Forsyth. The main character is an assassin who is hired to kill the president of France. The assassin has to get past the police to get up to an apartment that overlooks the president’s route. He walks right by them, dressed up as an old man on crutches, and they never suspect him. </p>
+<p>我大约九岁的时候，偶然读到了弗雷德里克・福赛斯的《豺狼的日子》。书中的主角是一名受雇刺杀法国总统的刺客。刺客必须避开警察，到达一个可以俯瞰总统行进路线的公寓。他装扮成一个拄着拐杖的老人从警察身边走过，警察从未怀疑过他。</p>
+<p>Our secret weapon was similar. We wrote our software in a weird AI language, with a bizarre syntax full of parentheses. For years it had annoyed me to hear Lisp described that way. But now it worked to our advantage. In business, there is nothing more valuable than a technical advantage your competitors don’t understand. In business, as in war, surprise is worth as much as force. </p>
+<p>我们的秘密武器与此类似。我们用一种奇怪的人工智能语言编写软件，它有着充满括号的怪异语法。多年来，听到 Lisp 被那样描述一直让我很恼火。但现在，这却对我们有利。在商业中，没有什么比你的竞争对手不理解的技术优势更有价值了。在商业中，就像在战争中一样，出其不意与力量同样重要。</p>
+<p>And so, I’m a little embarrassed to say, I never said anything publicly about Lisp while we were working on Viaweb. We never mentioned it to the press, and if you searched for Lisp on our Web site, all you’d find were the titles of two books in my bio. This was no accident. A startup should give its competitors as little information as possible. If they didn’t know what language our software was written in, or didn’t care, I wanted to keep it that way.[2] </p>
+<p>所以，有点尴尬的是，在我们开发 Viaweb 的过程中，我从未公开谈论过 Lisp。我们从未向媒体提及过它，如果你在我们的网站上搜索 Lisp，你只会在我的个人简介中找到两本书的书名。这并非偶然。初创公司应该尽可能少地向竞争对手透露信息。如果他们不知道我们的软件是用什么语言编写的，或者他们不在乎，我希望保持这种状态。[2]</p>
+<p>The people who understood our technology best were the customers. They didn’t care what language Viaweb was written in either, but they noticed that it worked really well. It let them build great looking online stores literally in minutes. And so, by word of mouth mostly, we got more and more users. By the end of 1996 we had about 70 stores online. At the end of 1997 we had 500. Six months later, when Yahoo bought us, we had 1070 users. Today, as Yahoo Store, this software continues to dominate its market. It’s one of the more profitable pieces of Yahoo, and the stores built with it are the foundation of Yahoo Shopping. I left Yahoo in 1999, so I don’t know exactly how many users they have now, but the last I heard there were about 20,000. </p>
+<p>最了解我们技术的人是客户。他们也不在乎 Viaweb 是用什么语言编写的，但他们注意到它运行得非常好。它让他们能够在几分钟内就构建出漂亮的在线商店。所以，主要是通过口口相传，我们获得了越来越多的用户。到 1996 年底，我们大约有 70 家在线商店。到 1997 年底，我们有了 500 家。六个月后，当雅虎收购我们时，我们有 1070 个用户。如今，作为雅虎商店，这款软件继续主导着它所在的市场。它是雅虎最赚钱的产品之一，用它构建的商店是雅虎购物的基础。我在 1999 年离开了雅虎，所以我不知道现在他们具体有多少用户，但我最后一次听说时大约有 20000 个。</p>
+<p>The Blub Paradox </p>
+<p>What’s so great about Lisp? And if Lisp is so great, why doesn’t everyone use it? These sound like rhetorical questions, but actually they have straightforward answers. Lisp is so great not because of some magic quality visible only to devotees, but because it is simply the most powerful language available. And the reason everyone doesn’t use it is that programming languages are not merely technologies, but habits of mind as well, and nothing changes slower. Of course, both these answers need explaining. </p>
+<p><strong>Blub悖论</strong></p>
+<p>Lisp 到底好在哪里呢？如果 Lisp 这么好，为什么不是每个人都使用它呢？这些听起来像是反问句，但实际上它们有直接的答案。Lisp 之所以好，并不是因为只有其爱好者才能看到的某种神奇特质，而是因为它确实是目前最强大的语言。而不是每个人都使用它的原因是，编程语言不仅仅是技术，也是思维习惯，而没有什么比思维习惯更难改变的了。当然，这两个答案都需要解释。</p>
+<p>I’ll begin with a shockingly controversial statement: programming languages vary in power. </p>
+<p>我将从一个极具争议性的陈述开始：编程语言的能力是有差异的。</p>
+<p>Few would dispute, at least, that high level languages are more powerful than machine language. Most programmers today would agree that you do not, ordinarily, want to program in machine language. Instead, you should program in a high-level language, and have a compiler translate it into machine language for you. This idea is even built into the hardware now: since the 1980s, instruction sets have been designed for compilers rather than human programmers. </p>
+<p>至少，很少有人会质疑高级语言比机器语言更强大。如今，大多数程序员都会同意，通常情况下，你不想用机器语言编程。相反，你应该用高级语言编程，然后让编译器将其翻译成机器语言。这个想法现在甚至已经融入了硬件设计中：自 20 世纪 80 年代以来，指令集就是为编译器而不是人类程序员设计的。</p>
+<p>Everyone knows it’s a mistake to write your whole program by hand in machine language. What’s less often understood is that there is a more general principle here: that if you have a choice of several languages, it is, all other things being equal, a mistake to program in anything but the most powerful one. [3] </p>
+<p>每个人都知道，手工用机器语言编写整个程序是错误的。但人们较少理解的是，这里有一个更普遍的原则：如果你有几种语言可供选择，在其他条件相同的情况下，不使用最强大的语言编程是错误的。[3]</p>
+<p>There are many exceptions to this rule. If you’re writing a program that has to work very closely with a program written in a certain language, it might be a good idea to write the new program in the same language. If you’re writing a program that only has to do something very simple, like number crunching or bit manipulation, you may as well use a less abstract language, especially since it may be slightly faster. And if you’re writing a short, throwaway program, you may be better off just using whatever language has the best library functions for the task. But in general, for application software, you want to be using the most powerful (reasonably efficient) language you can get, and using anything else is a mistake, of exactly the same kind, though possibly in a lesser degree, as programming in machine language. </p>
+<p>这个规则有很多例外情况。如果你编写的程序必须与用某种特定语言编写的程序紧密协作，那么用相同的语言编写新程序可能是个好主意。如果你编写的程序只需要做一些非常简单的事情，比如数值运算或位操作，那么你不妨使用一种抽象程度较低的语言，尤其是因为它可能会稍微快一些。如果你编写的是一个简短的、一次性的程序，那么使用对该任务有最佳库函数的语言可能会更好。但一般来说，对于应用软件，你应该使用你能找到的最强大（且效率合理）的语言，使用其他语言是错误的，这与用机器语言编程是同一类错误，只是程度可能较轻。</p>
+<p>You can see that machine language is very low level. But, at least as a kind of social convention, high-level languages are often all treated as equivalent. They’re not. Technically the term “high-level language” doesn’t mean anything very definite. There’s no dividing line with machine languages on one side and all the high-level languages on the other. Languages fall along a continuum [4] of abstractness, from the most powerful all the way down to machine languages, which themselves vary in power. </p>
+<p>你可以看到，机器语言是非常低级的。但至少作为一种社会惯例，高级语言通常都被视为是等效的。其实不然。从技术上讲，“高级语言” 这个术语并没有非常明确的含义。在机器语言和所有高级语言之间并没有一条明确的分界线。语言沿着抽象程度的连续体分布，从最强大的语言一直到机器语言，而机器语言本身的能力也有差异。[4]</p>
+<p>Consider Cobol. </p>
+<p>Cobol is a high-level language, in the sense that it gets compiled into machine language. Would anyone seriously argue that Cobol is equivalent in power to, say, Python? It’s probably closer to machine language than Python. </p>
+<p>以 Cobol 为例。Cobol 是一种高级语言，因为它会被编译成机器语言。有人会认真地认为 Cobol 在能力上与 Python 相当吗？它可能比 Python 更接近机器语言。</p>
+<p>Or how about Perl 4? Between Perl 4 and Perl 5, lexical closures got added to the language. Most Perl hackers would agree that Perl 5 is more powerful than Perl 4. But once you’ve admitted that, you’ve admitted that one high level language can be more powerful than another. And it follows inexorably that, except in special cases, you ought to use the most powerful you can get. </p>
+<p>那么 Perl 4 呢？在 Perl 4 和 Perl 5 之间，语言中添加了词法闭包。大多数 Perl 黑客会同意 Perl 5 比 Perl 4 更强大。但一旦你承认了这一点，你就承认了一种高级语言可以比另一种更强大。因此，除了特殊情况，你应该使用你能得到的最强大的语言，这是必然的结论。</p>
+<p>This idea is rarely followed to its conclusion, though. After a certain age, programmers rarely switch languages voluntarily. Whatever language people happen to be used to, they tend to consider just good enough. </p>
+<p>然而，这个想法很少有人贯彻到底。在某个年龄之后，程序员很少会自愿更换语言。人们往往认为自己习惯使用的任何语言就足够好了。</p>
+<p>Programmers get very attached to their favorite languages, and I don’t want to hurt anyone’s feelings, so to explain this point I’m going to use a hypothetical language called Blub. Blub falls right in the middle of the abstractness continuum. It is not the most powerful language, but it is more powerful than Cobol or machine language. </p>
+<p>程序员非常喜欢他们喜欢的语言，我不想伤害任何人的感情，所以为了解释这一点，我将使用一种假设的语言，叫做 Blub。Blub 正好处于抽象程度连续体的中间。它不是最强大的语言，但它比 Cobol 或机器语言更强大。</p>
+<p>And in fact, our hypothetical Blub programmer wouldn’t use either of them. Of course he wouldn’t program in machine language. That’s what compilers are for. And as for Cobol, he doesn’t know how anyone can get anything done with it. It doesn’t even have x (Blub feature of your choice). </p>
+<p>事实上，我们假设的 Blub 程序员不会使用这两种语言。当然，他不会用机器语言编程。那是编译器该做的事。至于 Cobol，他不知道人们怎么能用它完成任何事情。它甚至没有 x（你选择的 Blub 特性）。</p>
+<p>As long as our hypothetical Blub programmer is looking down the power continuum, he knows he’s looking down. Languages less powerful than Blub are obviously less powerful, because they’re missing some feature he’s used to. But when our hypothetical Blub programmer looks in the other direction, up the power continuum, he doesn’t realize he’s looking up. What he sees are merely weird languages. He probably considers them about equivalent in power to Blub, but with all this other hairy stuff thrown in as well. Blub is good enough for him, because he thinks in Blub. </p>
+<p>(注：power continuum暂时无法直译 老实说作者举这个例子根本就是一个败笔，没有把事情讲清楚反而引发了一堆误会。简言之：低维生物无法理解高维生物。)</p>
+<p>只要我们假设的 Blub 程序员向下看能力连续体，他就知道自己在向下看。比 Blub 能力更弱的语言显然更弱，因为它们缺少他习惯使用的某些特性。但当我们假设的 Blub 程序员向另一个方向看，即向上看能力连续体时，他没有意识到自己在向上看。他看到的只是奇怪的语言。他可能认为它们在能力上与 Blub 相当，只是还包含了其他一些难以理解的东西。Blub 对他来说已经足够好了，因为他是用 Blub 来思考的。</p>
+<p>When we switch to the point of view of a programmer using any of the languages higher up the power continuum, however, we find that he in turn looks down upon Blub. How can you get anything done in Blub? It doesn’t even have y. </p>
+<p>然而，当我们转换到使用能力连续体中更高级语言的程序员的视角时，我们会发现，他反过来会看不起 Blub。你怎么能用 Blub 完成任何事情呢？它甚至没有 y。</p>
+<p>By induction, the only programmers in a position to see all the differences in power between the various languages are those who understand the most powerful one. (This is probably what Eric Raymond meant about Lisp making you a better programmer.) You can’t trust the opinions of the others, because of the Blub paradox: they’re satisfied with whatever language they happen to use, because it dictates the way they think about programs. </p>
+<p>通过归纳法可知，只有理解最强大语言的程序员才能看到各种语言之间能力的所有差异。（这可能就是埃里克・雷蒙德所说的 Lisp 能让你成为更好的程序员的意思。）你不能相信其他人的观点，因为存在 Blub 悖论：他们对自己碰巧使用的任何语言都感到满意，因为这种语言决定了他们思考程序的方式。</p>
+<p>I know this from my own experience, as a high school kid writing programs in Basic. That language didn’t even support recursion. It’s hard to imagine writing programs without using recursion, but I didn’t miss it at the time. I thought in Basic. And I was a whiz at it. Master of all I surveyed. </p>
+<p>我从自己的经历中知道这一点，我在高中时用 Basic 编程。那种语言甚至不支持递归。很难想象不使用递归编写程序，但我当时并不觉得缺少什么。我是用 Basic 来思考的。而且我在这方面很出色。我是我所涉足领域的大师。</p>
+<p>The five languages that Eric Raymond recommends to hackers fall at various points on the power continuum. Where they fall relative to one another is a sensitive topic. What I will say is that I think Lisp is at the top. And to support this claim I’ll tell you about one of the things I find missing when I look at the other four languages. How can you get anything done in them, I think, without macros? [5] </p>
+<p>埃里克・雷蒙德推荐给黑客的五种语言处于能力连续体的不同位置。它们相对位置如何是一个敏感话题。我想说的是，我认为 Lisp 处于顶端。为了支持这一说法，我会告诉你，当我看其他四种语言时，我发现它们缺少的东西之一。我想，如果没有宏，怎么能用它们完成任何事情呢？</p>
+<p>Many languages have something called a macro. But Lisp macros are unique. And believe it or not, what they do is related to the parentheses. The designers of Lisp didn’t put all those parentheses in the language just to be different. To the Blub programmer, Lisp code looks weird. But those parentheses are there for a reason. They are the outward evidence of a fundamental difference between Lisp and other languages. </p>
+<p>很多语言都有叫做宏的东西。但 Lisp 的宏是独特的。信不信由你，它们的功能与括号有关。Lisp 的设计者在语言中使用那么多括号并不是为了与众不同。对于 Blub 程序员来说，Lisp 代码看起来很奇怪。但这些括号是有原因的。它们是 Lisp 与其他语言根本区别的外在表现。</p>
+<p>Lisp code is made out of Lisp data objects. And not in the trivial sense that the source files contain characters, and strings are one of the data types supported by the language. Lisp code, after it’s read by the parser, is made of data structures that you can traverse. </p>
+<p>Lisp 代码是由 Lisp 数据对象组成的。这并不是说源文件包含字符，而字符串是语言支持的数据类型之一这种简单的意义。Lisp 代码在被解析器读取后，是由你可以遍历的数据结构组成的。</p>
+<p>If you understand how compilers work, what’s really going on is not so much that Lisp has a strange syntax as that Lisp has no syntax. You write programs in the parse trees that get generated within the compiler when other languages are parsed. But these parse trees are fully accessible to your programs. You can write programs that manipulate them. In Lisp, these programs are called macros. They are programs that write programs. </p>
+<p>如果你了解编译器的工作原理，那么实际情况与其说是 Lisp 有奇怪的语法，不如说是 Lisp 没有语法。你在用其他语言解析时在编译器中生成的解析树来编写程序。但这些解析树对你的程序是完全可访问的。你可以编写程序来操作它们。在 Lisp 中，这些程序被称为宏。它们是编写程序的程序。</p>
+<p>Programs that write programs? When would you ever want to do that? Not very often, if you think in Cobol. All the time, if you think in Lisp. It would be convenient here if I could give an example of a powerful macro, and say there! how about that? But if I did, it would just look like gibberish to someone who didn’t know Lisp; there isn’t room here to explain everything you’d need to know to understand what it meant. In Ansi Common Lisp I tried to move things along as fast as I could, and even so I didn’t get to macros until page 160. </p>
+<p>编写程序的程序？你什么时候会想这样做呢？如果你用 Cobol 思考，这种情况很少会出现。但如果你用 Lisp 思考，这种情况会一直出现。如果我能在这里举一个强大宏的例子，然后说 “看！怎么样？”，那会很方便。但如果我这样做了，对于不懂 Lisp 的人来说，这看起来就像是胡言乱语；这里没有足够的空间来解释理解它所需的所有知识。在《ANSI Common Lisp》这本书中，我尽可能快地介绍内容，但即便如此，我直到第 160 页才讲到宏。</p>
+<p>But I think I can give a kind of argument that might be convincing. The source code of the Viaweb editor was probably about 20-25% macros. Macros are harder to write than ordinary Lisp functions, and it’s considered to be bad style to use them when they’re not necessary. So every macro in that code is there because it has to be. What that means is that at least 20-25% of the code in this program is doing things that you can’t easily do in any other language. However skeptical the Blub programmer might be about my claims for the mysterious powers of Lisp, this ought to make him curious. We weren’t writing this code for our own amusement. We were a tiny startup, programming as hard as we could in order to put technical barriers between us and our competitors. </p>
+<p>但我想我可以给出一种可能有说服力的论据。Viaweb 编辑器的源代码中可能大约有 20%-25% 是宏。宏比普通的 Lisp 函数更难编写，而且在不必要的时候使用宏被认为是不好的风格。所以那段代码中的每个宏都是必不可少的。这意味着这个程序中至少有 20%-25% 的代码在做其他任何语言都不容易做到的事情。无论 Blub 程序员对我所说的 Lisp 的神秘力量有多么怀疑，这都应该让他感到好奇。我们编写这段代码不是为了自娱自乐。我们是一家小型初创公司，尽可能努力地编程，以便在我们和竞争对手之间设置技术障碍。</p>
+<p>A suspicious person might begin to wonder if there was some correlation here. A big chunk of our code was doing things that are very hard to do in other languages. The resulting software did things our competitors’ software couldn’t do. Maybe there was some kind of connection. I encourage you to follow that thread. There may be more to that old man hobbling along on his crutches than meets the eye. </p>
+<p>一个多疑的人可能会开始怀疑这里是否存在某种关联。我们的很大一部分代码在做其他语言很难做到的事情。最终得到的软件能实现我们竞争对手的软件无法实现的功能。也许这之间存在某种联系。我鼓励你顺着这条线索思考。那个拄着拐杖蹒跚而行的老人可能有更多不为人知的秘密。</p>
+<p>Aikido for Startups </p>
+<p>But I don’t expect to convince anyone (over 25) to go out and learn Lisp. The purpose of this article is not to change anyone’s mind, but to reassure people already interested in using Lisp– people who know that Lisp is a powerful language, but worry because it isn’t widely used. In a competitive situation, that’s an advantage. Lisp’s power is multiplied by the fact that your competitors don’t get it. </p>
+<p>但我并不期望说服任何（25 岁以上的）人去学习 Lisp。本文的目的不是为了改变任何人的想法，而是为了让已经对使用 Lisp 感兴趣的人放心 —— 这些人知道 Lisp 是一种强大的语言，但因为它没有被广泛使用而感到担忧。在竞争环境中，这是一种优势。Lisp 的力量因你的竞争对手不理解它而被放大。</p>
+<p>If you think of using Lisp in a startup, you shouldn’t worry that it isn’t widely understood. You should hope that it stays that way. And it’s likely to. It’s the nature of programming languages to make most people satisfied with whatever they currently use. Computer hardware changes so much faster than personal habits that programming practice is usually ten to twenty years behind the processor. At places like MIT they were writing programs in high-level languages in the early 1960s, but many companies continued to write code in machine language well into the 1980s. I bet a lot of people continued to write machine language until the processor, like a bartender eager to close up and go home, finally kicked them out by switching to a risc instruction set. </p>
+<p>如果你考虑在初创公司使用 Lisp，不必担心它未被广泛理解。你反而应该希望它保持这种状态 —— 而且这很可能成真。编程语言的本质是，大多数人会满足于自己当前使用的语言。计算机硬件的变化速度远超人类习惯的改变，因此编程实践通常比处理器的发展落后 10 到 20 年。早在 20 世纪 60 年代初，麻省理工学院（MIT）等地就已开始用高级语言编程，但许多公司直到 80 年代仍在使用机器语言写代码。我敢说，不少人坚持用机器语言编程，直到处理器像急于打烊的酒保一样，通过转向 RISC 指令集最终把他们 “赶出去”。</p>
+<p>Ordinarily technology changes fast. But programming languages are different: programming languages are not just technology, but what programmers think in. They’re half technology and half religion.[6] </p>
+<p>通常来说，技术变化很快。但编程语言不同：它们不仅是技术，更是程序员的思维载体。它们一半是技术，一半是信仰。</p>
+<p>And so the median language, meaning whatever language the median programmer uses, moves as slow as an iceberg. Garbage collection, introduced by Lisp in about 1960, is now widely considered to be a good thing. Runtime typing, ditto, is growing in popularity. Lexical closures, introduced by Lisp in the early 1970s, are now, just barely, on the radar screen. Macros, introduced by Lisp in the mid 1960s, are still terra incognita. </p>
+<p>因此，“中位数语言”—— 即大多数程序员使用的语言 —— 像冰山一样移动缓慢。Lisp 在 1960 年左右引入的垃圾回收机制，如今已被广泛认可为有益功能；同样源自 Lisp 的运行时类型检查，普及率也在上升；20 世纪 70 年代初 Lisp 引入的词法闭包，如今才刚刚进入大众视野；而 60 年代中期 Lisp 提出的宏，至今仍是一片未知领域。</p>
+<p>Obviously, the median language has enormous momentum. I’m not proposing that you can fight this powerful force. What I’m proposing is exactly the opposite: that, like a practitioner of Aikido, you can use it against your opponents. </p>
+<p>显然，中位数语言具有巨大的惯性。我并非建议你对抗这种强大的力量，恰恰相反：你可以像合气道选手一样，借力打力，用它来对付对手。</p>
+<p>If you work for a big company, this may not be easy. You will have a hard time convincing the pointy-haired boss to let you build things in Lisp, when he has just read in the paper that some other language is poised, like Ada was twenty years ago, to take over the world. But if you work for a startup that doesn’t have pointy-haired bosses yet, you can, like we did, turn the Blub paradox to your advantage: you can use technology that your competitors, glued immovably to the median language, will never be able to match. </p>
+<p>如果你在大公司工作，这可能不容易。当你那 “地中海发型老板” 刚在报纸上看到某语言（就像 20 年前的 Ada）即将 “统治世界” 时，你很难说服他让你用 Lisp 开发。但如果你在一家还没有 “地中海老板” 的初创公司，就能像我们一样，将 “Blub 悖论” 转化为优势：你可以使用那些被中位数语言牢牢束缚的竞争对手永远无法匹敌的技术。</p>
+<p>If you ever do find yourself working for a startup, here’s a handy tip for evaluating competitors. Read their job listings. Everything else on their site may be stock photos or the prose equivalent, but the job listings have to be specific about what they want, or they’ll get the wrong candidates. </p>
+<p>如果你真的在初创公司工作，这里有个评估竞争对手的实用技巧：看他们的招聘信息。他们网站上的其他内容可能都是库存图片或套话，但招聘信息必须明确说明需求，否则会招到不合适的人。</p>
+<p>During the years we worked on Viaweb I read a lot of job descriptions. A new competitor seemed to emerge out of the woodwork every month or so. The first thing I would do, after checking to see if they had a live online demo, was look at their job listings. After a couple years of this I could tell which companies to worry about and which not to. The more of an IT flavor the job descriptions had, the less dangerous the company was. The safest kind were the ones that wanted Oracle experience. You never had to worry about those. You were also safe if they said they wanted C++ or Java developers. If they wanted Perl or Python programmers, that would be a bit frightening– that’s starting to sound like a company where the technical side, at least, is run by real hackers. If I had ever seen a job posting looking for Lisp hackers, I would have been really worried.  </p>
+<p>在开发 Viaweb 的那些年里，我读了很多招聘描述。几乎每个月都会冒出新的竞争对手。查看他们是否有在线演示后，我做的第一件事就是看招聘信息。几年下来，我已经能判断哪些公司值得警惕，哪些不必在意。招聘信息越有 “IT 味”，这家公司的威胁就越小。最安全的是那些要求 “Oracle 经验” 的公司 —— 你永远不必担心他们。如果他们招 C++ 或 Java 开发者，你也很安全。如果他们要 Perl 或 Python 程序员，那就要小心了 —— 这听起来像是一家至少技术层面由真正黑客主导的公司。而如果我看到哪家公司招 Lisp 黑客，那才真的会坐立难安。</p>
+<p>Notes </p>
+<p>[1] Viaweb at first had two parts: the editor, written in Lisp, which people used to build their sites, and the ordering system, written in C, which handled orders. The first version was mostly Lisp, because the ordering system was small. Later we added two more modules, an image generator written in C, and a back-office manager written mostly in Perl. In January 2003, Yahoo released a new version of the editor written in C++ and Perl. It’s hard to say whether the program is no longer written in Lisp, though, because to translate this program into C++ they literally had to write a Lisp interpreter: the source files of all the page-generating templates are still, as far as I know, Lisp code. (See Greenspun’s Tenth Rule.) </p>
+<p>[1] Viaweb 最初分为两部分：用于搭建网站的编辑器（用 Lisp 编写），和处理订单的订单系统（用 C 编写）。第一版以 Lisp 为主，因为订单系统规模很小。后来我们新增了两个模块：用 C 写的图像生成器，和主要用 Perl 写的后台管理工具。2003 年 1 月，雅虎发布了用 C++ 和 Perl 重写的新版编辑器。但很难说这个程序从此就与 Lisp 无关了 —— 因为要把原程序翻译成 C++，他们实际上不得不写一个 Lisp 解释器：据我所知，所有页面生成模板的源代码仍然是 Lisp 代码（参见格林斯潘第十法则）。</p>
+<p>[2] Robert Morris says that I didn’t need to be secretive, because even if our competitors had known we were using Lisp, they wouldn’t have understood why: “If they were that smart they’d already be programming in Lisp.” </p>
+<p>[2] 罗伯特・莫里斯说，我其实不必保密，因为即便竞争对手知道我们用 Lisp，也不会明白原因：“如果他们足够聪明，早就开始用 Lisp 编程了。”</p>
+<p>[3] All languages are equally powerful in the sense of being Turing equivalent, but that’s not the sense of the word programmers care about. (No one wants to program a Turing machine.) The kind of power programmers care about may not be formally definable, but one way to explain it would be to say that it refers to features you could only get in the less powerful language by writing an interpreter for the more powerful language in it. If language A has an operator for removing spaces from strings and language B doesn’t, that probably doesn’t make A more powerful, because you can probably write a subroutine to do it in B. But if A supports, say, recursion, and B doesn’t, that’s not likely to be something you can fix by writing library functions. </p>
+<p>[3] 从图灵等价的角度看，所有语言的能力相同，但这并非程序员关心的 “能力”。（没人想用图灵机编程。）程序员关注的能力或许无法被形式化定义，但可以这样解释：如果在较弱的语言中实现较强语言的某个特性，必须为此编写一个解释器，那么这个特性就体现了语言能力的差异。例如，语言 A 有移除字符串空格的运算符，而语言 B 没有，这未必说明 A 更强 —— 因为 B 可以用子程序实现；但如果 A 支持递归而 B 不支持，这就很难通过库函数弥补了。</p>
+<p>[4] Note to nerds: or possibly a lattice, narrowing toward the top; it’s not the shape that matters here but the idea that there is at least a partial order. </p>
+<p>[4] 给技术宅的注：也可能是一个向上收窄的格状结构；重要的不是形状，而是语言能力存在某种 “部分排序” 关系。</p>
+<p>[5] It is a bit misleading to treat macros as a separate feature. In practice their usefulness is greatly enhanced by other Lisp features like lexical closures and rest parameters. </p>
+<p>[5] 把宏视为独立特性有点误导。实际上，宏的价值很大程度上依赖于 Lisp 的其他特性，如词法闭包和剩余参数。</p>
+<p>[6] As a result, comparisons of programming languages either take the form of religious wars or undergraduate textbooks so determinedly neutral that they’re really works of anthropology. People who value their peace, or want tenure, avoid the topic. But the question is only half a religious one; there is something there worth studying, especially if you want to design new languages. </p>
+<p>[6] 因此，编程语言的比较要么沦为 “宗教战争”，要么像本科教材那样刻意中立，实则成了人类学研究。想保平安或求 tenure 的人会避开这个话题。但这个问题只有一半是 “宗教性” 的 —— 其中有值得研究的内容，尤其是对想设计新语言的人而言。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>超越平均数</div>
+      <div>https://hokkaidornis.github.io/2025/07/29/beating-the-averages/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/28/what-i-have-learned-from-users/" title="从用户那里我学到了什么">
+                        <span class="hidden-mobile">从用户那里我学到了什么</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
