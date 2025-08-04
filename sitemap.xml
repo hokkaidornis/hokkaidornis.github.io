@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hokkaidornis.github.io/2025/08/04/crazy-new-ideas/</loc>
+    
+    <lastmod>2025-08-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hokkaidornis.github.io/2025/08/03/how-people-get-rich-now/</loc>
     
     <lastmod>2025-08-03</lastmod>
@@ -202,7 +211,7 @@
 
   <url>
     <loc>https://hokkaidornis.github.io/</loc>
-    <lastmod>2025-08-03</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -210,7 +219,7 @@
   
   <url>
     <loc>https://hokkaidornis.github.io/tags/PAUL-GRAHAM/</loc>
-    <lastmod>2025-08-03</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -219,7 +228,7 @@
   
   <url>
     <loc>https://hokkaidornis.github.io/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2025-08-03</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
