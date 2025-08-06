@@ -1,0 +1,835 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="How to Write Usefully原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;useful.html February 2020 What should an essay be? Many people would say persuasive. That’s what a lot of us were taught essays should be. But I think">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何写出有用的文章">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/06/how-to-write-usefully/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="How to Write Usefully原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;useful.html February 2020 What should an essay be? Many people would say persuasive. That’s what a lot of us were taught essays should be. But I think">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-06T01:31:46.000Z">
+<meta property="article:modified_time" content="2025-08-06T02:26:12.555Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>如何写出有用的文章 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="如何写出有用的文章"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-06 09:31" pubdate>
+          2025年8月6日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          38 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">如何写出有用的文章</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="How-to-Write-Usefully"><a href="#How-to-Write-Usefully" class="headerlink" title="How to Write Usefully"></a>How to Write Usefully</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/useful.html">https://paulgraham.com/useful.html</a></p>
+<p>February 2020</p>
+<p>What should an essay be? Many people would say persuasive. That’s what a lot of us were taught essays should be. But I think we can aim for something more ambitious: that an essay should be useful.</p>
+<p>一篇文章应该是什么样的？很多人会说 “有说服力”。这是我们很多人被教导的文章准则。但我认为，我们可以追求更宏大的目标：文章应当 “有用”。</p>
+<p>To start with, that means it should be correct. But it’s not enough merely to be correct. It’s easy to make a statement correct by making it vague. That’s a common flaw in academic writing, for example. If you know nothing at all about an issue, you can’t go wrong by saying that the issue is a complex one, that there are many factors to be considered, that it’s a mistake to take too simplistic a view of it, and so on.</p>
+<p>首先，这意味着文章必须是正确的。但仅仅正确还不够。让一个表述正确很容易，只要让它足够模糊就行。比如，学术写作中就有这样一个常见缺陷：如果你对某个问题一无所知，说 “这个问题很复杂”“有很多因素需要考虑”“过于简化是错误的” 之类的话，就永远不会出错。</p>
+<p>Though no doubt correct, such statements tell the reader nothing. Useful writing makes claims that are as strong as they can be made without becoming false.</p>
+<p>但这类表述即便正确，也无法告诉读者任何东西。有用的文章所提出的观点，要在不变成错误的前提下，尽可能有力。</p>
+<p>For example, it’s more useful to say that Pike’s Peak is near the middle of Colorado than merely somewhere in Colorado. But if I say it’s in the exact middle of Colorado, I’ve now gone too far, because it’s a bit east of the middle.</p>
+<p>举个例子，说 “派克峰在科罗拉多州中部附近”，比只说 “在科罗拉多州某处” 更有用。但如果我说 “它就在科罗拉多州正中心”，就过头了 —— 因为它其实在中心偏东一点。</p>
+<p>Precision and correctness are like opposing forces. It’s easy to satisfy one if you ignore the other. The converse of vaporous academic writing is the bold, but false, rhetoric of demagogues. Useful writing is bold, but true.</p>
+<p>精确性和正确性就像一对相反的力。忽视其中一个，就很容易满足另一个。空洞的学术写作的对立面，是煽动者那种大胆却虚假的花言巧语。而有用的文章，既要大胆，又要真实。</p>
+<p>It’s also two other things: it tells people something important, and that at least some of them didn’t already know.</p>
+<p>此外，它还需要满足另外两个条件：告诉人们一些重要的事，且至少有一部分人此前并不知道。</p>
+<p>Telling people something they didn’t know doesn’t always mean surprising them. Sometimes it means telling them something they knew unconsciously but had never put into words. In fact those may be the more valuable insights, because they tend to be more fundamental.</p>
+<p>告诉人们不知道的事，不一定意味着要让他们惊讶。有时，是把他们潜意识里知道、却从未用语言表达过的事说出来。事实上，这类见解可能更有价值，因为它们往往更根本。</p>
+<p>Let’s put them all together. Useful writing tells people something true and important that they didn’t already know, and tells them as unequivocally as possible.</p>
+<p>把这些条件合起来：有用的文章，是用最明确的方式，告诉人们一些真实、重要且他们此前不知道的事。</p>
+<p>Notice these are all a matter of degree. For example, you can’t expect an idea to be novel to everyone. Any insight that you have will probably have already been had by at least one of the world’s 7 billion people. But it’s sufficient if an idea is novel to a lot of readers.</p>
+<p>要注意，这些条件都有程度之分。比如，你不能指望一个观点对所有人来说都是新颖的。你的任何见解，全球 70 亿人中或许至少已有一人想到过。但只要对很多读者来说是新颖的，就足够了。</p>
+<p>Ditto for correctness, importance, and strength. In effect the four components are like numbers you can multiply together to get a score for usefulness. Which I realize is almost awkwardly reductive, but nonetheless true.</p>
+<p>正确性、重要性和明确性也是如此。实际上，这四个要素就像一组数字，相乘之后就能得出 “有用性” 的分数。我知道这几乎是生硬的简化，但事实的确如此。</p>
+<hr>
+<p>How can you ensure that the things you say are true and novel and important? Believe it or not, there is a trick for doing this. I learned it from my friend Robert Morris, who has a horror of saying anything dumb. His trick is not to say anything unless he’s sure it’s worth hearing. This makes it hard to get opinions out of him, but when you do, they’re usually right.</p>
+<p>如何确保你所说的内容真实、新颖且重要？信不信由你，有个诀窍。我从朋友罗伯特・莫里斯那里学来的 —— 他极度害怕说蠢话。他的诀窍是：除非确定某句话值得听，否则绝不说。这让他很难发表看法，但一旦说出来，往往是对的。</p>
+<p>Translated into essay writing, what this means is that if you write a bad sentence, you don’t publish it. You delete it and try again. Often you abandon whole branches of four or five paragraphs. Sometimes a whole essay.</p>
+<p>放到文章写作中，这意味着：如果写出一句糟糕的话，就不要发表。删掉它，重新写。通常，你会放弃四五个段落的完整分支，有时甚至是整篇文章。</p>
+<p>You can’t ensure that every idea you have is good, but you can ensure that every one you publish is, by simply not publishing the ones that aren’t.</p>
+<p>你无法保证自己所有的想法都是好的，但可以保证发表的都是好的 —— 只要不发表那些不好的就行。</p>
+<p>In the sciences, this is called publication bias, and is considered bad. When some hypothesis you’re exploring gets inconclusive results, you’re supposed to tell people about that too. But with essay writing, publication bias is the way to go.</p>
+<p>在科学界，这被称为 “发表偏倚”，被认为是不好的。当你探索的某个假设得出不确定的结果时，按理说也应该告诉人们。但写文章时，发表偏倚反而是可取的。</p>
+<p>My strategy is loose, then tight. I write the first draft of an essay fast, trying out all kinds of ideas. Then I spend days rewriting it very carefully.</p>
+<p>我的策略是 “先松后紧”：先快速写出文章初稿，尝试各种想法；然后花几天时间仔细修改。</p>
+<p>I’ve never tried to count how many times I proofread essays, but I’m sure there are sentences I’ve read 100 times before publishing them. When I proofread an essay, there are usually passages that stick out in an annoying way, sometimes because they’re clumsily written, and sometimes because I’m not sure they’re true. The annoyance starts out unconscious, but after the tenth reading or so I’m saying “Ugh, that part” each time I hit it. They become like briars that catch your sleeve as you walk past. Usually I won’t publish an essay till they’re all gone — till I can read through the whole thing without the feeling of anything catching.</p>
+<p>我从没数过自己会校对文章多少次，但可以肯定，有些句子在发表前我读了不下 100 遍。校稿时，总会有一些段落显得刺眼 —— 有时是因为写得笨拙，有时是因为我不确定它是否正确。这种不适感一开始是潜意识的，但读了十遍左右后，每次读到那些地方，我都会想 “唉，这部分”。它们就像走过时会勾住袖子的荆棘。通常，我要等到这些 “荆棘” 都消失 —— 能一口气读完整篇文章，没有任何卡顿感 —— 才会发表。</p>
+<p>I’ll sometimes let through a sentence that seems clumsy, if I can’t think of a way to rephrase it, but I will never knowingly let through one that doesn’t seem correct. You never have to. If a sentence doesn’t seem right, all you have to do is ask why it doesn’t, and you’ve usually got the replacement right there in your head.</p>
+<p>有时，如果想不出更好的表达方式，我会容忍一句略显笨拙的话，但绝不会明知某句话不正确还放过去。你永远不必这样做。如果一句话不对劲，只要问问自己为什么不对劲，脑子里通常就会出现替代方案。</p>
+<p>This is where essayists have an advantage over journalists. You don’t have a deadline. You can work for as long on an essay as you need to get it right. You don’t have to publish the essay at all, if you can’t get it right. Mistakes seem to lose courage in the face of an enemy with unlimited resources. Or that’s what it feels like. What’s really going on is that you have different expectations for yourself. You’re like a parent saying to a child “we can sit here all night till you eat your vegetables.” Except you’re the child too.</p>
+<p>这是散文作家相对于记者的优势：你没有截稿日期。可以花足够多的时间把文章写对，写不对甚至可以不发表。错误在拥有无限时间的对手面前，似乎会失去勇气。至少感觉是这样。其实，是你对自己的期待不同了。就像父母对孩子说 “我们可以坐一整晚，直到你吃掉蔬菜”—— 只不过，你既是父母，也是孩子。</p>
+<p>I’m not saying no mistake gets through. For example, I added condition (c) in “A Way to Detect Bias” after readers pointed out that I’d omitted it. But in practice you can catch nearly all of them.</p>
+<p>我不是说不会有错误漏网。比如，在《一种检测偏见的方法》中，有读者指出我漏了（c）项，我后来补上了。但实际上，你几乎能抓住所有错误。</p>
+<p>There’s a trick for getting importance too. It’s like the trick I suggest to young founders for getting startup ideas: to make something you yourself want. You can use yourself as a proxy for the reader. The reader is not completely unlike you, so if you write about topics that seem important to you, they’ll probably seem important to a significant number of readers as well.</p>
+<p>获得 “重要性” 也有个诀窍，就像我给年轻创业者的建议：做自己想要的东西。你可以把自己当作读者的替身。读者和你不会完全不同，所以如果你写的话题对自己来说重要，对很多读者来说可能也重要。</p>
+<p>Importance has two factors. It’s the number of people something matters to, times how much it matters to them. Which means of course that it’s not a rectangle, but a sort of ragged comb, like a Riemann sum.</p>
+<p>重要性有两个要素：受影响的人数，乘以这件事对他们的重要程度。这意味着它不是一个矩形，更像一把参差不齐的梳子，类似黎曼和。</p>
+<p>The way to get novelty is to write about topics you’ve thought about a lot. Then you can use yourself as a proxy for the reader in this department too. Anything you notice that surprises you, who’ve thought about the topic a lot, will probably also surprise a significant number of readers. And here, as with correctness and importance, you can use the Morris technique to ensure that you will. If you don’t learn anything from writing an essay, don’t publish it.</p>
+<p>获得 “新颖性” 的方法，是写自己思考了很久的话题。这时，你也可以把自己当作读者的替身。如果你 —— 一个思考过这个话题很久的人 —— 发现某件事很惊讶，那么很多读者可能也会惊讶。而且，和正确性、重要性一样，你可以用莫里斯的诀窍来确保这一点：如果写一篇文章时没学到新东西，就不要发表。</p>
+<p>You need humility to measure novelty, because acknowledging the novelty of an idea means acknowledging your previous ignorance of it. Confidence and humility are often seen as opposites, but in this case, as in many others, confidence helps you to be humble. If you know you’re an expert on some topic, you can freely admit when you learn something you didn’t know, because you can be confident that most other people wouldn’t know it either.</p>
+<p>衡量新颖性需要谦逊，因为承认一个想法的新颖性，意味着承认自己此前不知道它。自信和谦逊通常被视为对立面，但在这件事上（以及很多其他事上），自信能帮你保持谦逊。如果你知道自己是某个领域的专家，就可以坦然承认学到了新知识 —— 因为你有信心，大多数人也不知道。</p>
+<p>The fourth component of useful writing, strength, comes from two things: thinking well, and the skillful use of qualification. These two counterbalance each other, like the accelerator and clutch in a car with a manual transmission. As you try to refine the expression of an idea, you adjust the qualification accordingly. Something you’re sure of, you can state baldly with no qualification at all, as I did the four components of useful writing. Whereas points that seem dubious have to be held at arm’s length with perhapses.</p>
+<p>有用的文章的第四个要素 “明确性”，来自两点：清晰的思考，以及对限定语的巧妙使用。这两者相互平衡，就像手动挡汽车的油门和离合器。当你试图完善一个想法的表达时，会相应地调整限定语。对于确定的事，你可以直言不讳，不加任何限定 —— 就像我表述有用写作的四个要素时那样。而那些存疑的观点，可能需要用 “或许” 之类的词保持距离。</p>
+<p>As you refine an idea, you’re pushing in the direction of less qualification. But you can rarely get it down to zero. Sometimes you don’t even want to, if it’s a side point and a fully refined version would be too long.</p>
+<p>完善想法时，你会朝着减少限定的方向努力，但很少能减到零。有时甚至不想减到零 —— 如果那是个次要观点，完全完善的版本可能太长了。</p>
+<p>Some say that qualifications weaken writing. For example, that you should never begin a sentence in an essay with “I think,” because if you’re saying it, then of course you think it. And it’s true that “I think x” is a weaker statement than simply “x.” Which is exactly why you need “I think.” You need it to express your degree of certainty.</p>
+<p>有人说限定语会削弱文章的力量。比如，文章里不该用 “我认为” 开头，因为你说出来的话，显然是你认为的。的确，“我认为 x” 比单纯说 “x” 要弱。但这正是需要 “我认为” 的原因：它能表达你的确定程度。</p>
+<p>But qualifications are not scalars. They’re not just experimental error. There must be 50 things they can express: how broadly something applies, how you know it, how happy you are it’s so, even how it could be falsified. I’m not going to try to explore the structure of qualification here. It’s probably more complex than the whole topic of writing usefully. Instead I’ll just give you a practical tip: Don’t underestimate qualification. It’s an important skill in its own right, not just a sort of tax you have to pay in order to avoid saying things that are false. So learn and use its full range. It may not be fully half of having good ideas, but it’s part of having them.</p>
+<p>但限定语不是标量，不只是 “实验误差”。它们能表达的东西恐怕有 50 种：适用范围有多广、你是如何得知的、你对此有多认同、甚至它如何能被证伪。我不想在这里探讨限定语的结构 —— 它可能比 “如何写出有用的文章” 这个话题本身更复杂。我只想给个实用建议：不要低估限定语。它本身就是一项重要技能，不只是为了避免说错话而必须交的 “税”。所以，要学习并充分运用它的全部功能。它或许不算 “提出好想法” 的一半，但也是其中一部分。</p>
+<p>There’s one other quality I aim for in essays: to say things as simply as possible. But I don’t think this is a component of usefulness. It’s more a matter of consideration for the reader. And it’s a practical aid in getting things right; a mistake is more obvious when expressed in simple language. But I’ll admit that the main reason I write simply is not for the reader’s sake or because it helps get things right, but because it bothers me to use more or fancier words than I need to. It seems inelegant, like a program that’s too long.</p>
+<p>我写文章时还追求一点：尽可能简单地表达。但我不认为这是 “有用性” 的要素，更多是对读者的体谅。而且，它能帮你把事情做对 —— 用简单的语言表达时，错误更明显。但说实话，我写得简单，主要不是为了读者，也不是为了更容易写对，而是因为用多余或花哨的词会让我不舒服。这显得不雅，就像一段太长的程序。</p>
+<p>I realize florid writing works for some people. But unless you’re sure you’re one of them, the best advice is to write as simply as you can.</p>
+<p>我知道华丽的文字对有些人有用。但除非你确定自己是那类人，否则最好的建议是：尽可能写得简单。</p>
+<hr>
+<p>I believe the formula I’ve given you, importance + novelty + correctness + strength, is the recipe for a good essay. But I should warn you that it’s also a recipe for making people mad.</p>
+<p>我认为，“重要性 + 新颖性 + 正确性 + 明确性” 这个公式，就是写出好文章的秘诀。但我得提醒你，这也可能让人生气。</p>
+<p>The root of the problem is novelty. When you tell people something they didn’t know, they don’t always thank you for it. Sometimes the reason people don’t know something is because they don’t want to know it. Usually because it contradicts some cherished belief. And indeed, if you’re looking for novel ideas, popular but mistaken beliefs are a good place to find them. Every popular mistaken belief creates a dead zone of ideas around it that are relatively unexplored because they contradict it.</p>
+<p>问题的根源在于 “新颖性”。当你告诉人们他们不知道的事时，他们未必会感谢你。有时，人们不知道某件事，是因为他们不想知道 —— 通常是因为这件事和他们珍视的信念相矛盾。事实上，如果你想找新颖的想法，流行却错误的信念是个好地方。每个流行的错误信念，都会围绕它形成一个 “思想死区”—— 因为与它矛盾，这些想法相对未被探索。</p>
+<p>The strength component just makes things worse. If there’s anything that annoys people more than having their cherished assumptions contradicted, it’s having them flatly contradicted.</p>
+<p>“明确性” 会让情况更糟。如果说有什么比 “珍视的假设被反驳” 更让人恼火，那就是 “被直言不讳地反驳”。</p>
+<p>Plus if you’ve used the Morris technique, your writing will seem quite confident. Perhaps offensively confident, to people who disagree with you. The reason you’ll seem confident is that you are confident: you’ve cheated, by only publishing the things you’re sure of. It will seem to people who try to disagree with you that you never admit you’re wrong. In fact you constantly admit you’re wrong. You just do it before publishing instead of after.</p>
+<p>再加上如果你用了莫里斯的诀窍，你的文章会显得很自信。对不同意你的人来说，这种自信可能很刺耳。你显得自信，是因为你确实自信：你 “作弊” 了 —— 只发表自己确定的内容。那些想反驳你的人会觉得，你从不承认自己错了。但实际上，你一直在承认错误 —— 只是在发表前，而不是之后。</p>
+<p>And if your writing is as simple as possible, that just makes things worse. Brevity is the diction of command. If you watch someone delivering unwelcome news from a position of inferiority, you’ll notice they tend to use lots of words, to soften the blow. Whereas to be short with someone is more or less to be rude to them.</p>
+<p>如果你写得尽可能简单，只会让情况更糟。简洁是命令的口吻。你会发现，地位较低的人传递坏消息时，往往会说很多话来缓和冲击。而对人说话简短，差不多就是粗鲁。</p>
+<p>It can sometimes work to deliberately phrase statements more weakly than you mean. To put “perhaps” in front of something you’re actually quite sure of. But you’ll notice that when writers do this, they usually do it with a wink.</p>
+<p>有时，故意把话说得比实际想法弱一点是有用的。比如，在你很确定的事前面加个 “或许”。但你会发现，作家这么做时，通常会带点暗示。</p>
+<p>I don’t like to do this too much. It’s cheesy to adopt an ironic tone for a whole essay. I think we just have to face the fact that elegance and curtness are two names for the same thing.</p>
+<p>我不太喜欢这么做。整篇文章都用讽刺的语气，会显得俗气。我想，我们得接受一个事实：优雅和简略其实是一回事。</p>
+<p>You might think that if you work sufficiently hard to ensure that an essay is correct, it will be invulnerable to attack. That’s sort of true. It will be invulnerable to valid attacks. But in practice that’s little consolation.</p>
+<p>你可能觉得，只要足够努力确保文章正确，它就不会被攻击。某种程度上是对的 —— 它不会被合理地攻击。但实际上，这没什么安慰作用。</p>
+<p>In fact, the strength component of useful writing will make you particularly vulnerable to misrepresentation. If you’ve stated an idea as strongly as you could without making it false, all anyone has to do is to exaggerate slightly what you said, and now it is false.</p>
+<p>事实上，有用的文章的 “明确性” 会让你特别容易被曲解。如果你把一个想法表达得尽可能有力又不虚假，那么任何人只要稍微夸大一点你说的话，它就变成错误的了。</p>
+<p>Much of the time they’re not even doing it deliberately. One of the most surprising things you’ll discover, if you start writing essays, is that people who disagree with you rarely disagree with what you’ve actually written. Instead they make up something you said and disagree with that.</p>
+<p>很多时候，他们并非故意。如果你开始写文章，会发现一个很惊讶的事：不同意你的人，很少反驳你实际写的内容。他们会编造你 “说过” 的话，然后反驳那个。</p>
+<p>For what it’s worth, the countermove is to ask someone who does this to quote a specific sentence or passage you wrote that they believe is false, and explain why. I say “for what it’s worth” because they never do. So although it might seem that this could get a broken discussion back on track, the truth is that it was never on track in the first place.</p>
+<p>不妨试试这个对策：让曲解你的人引用你写的某句话或某段话，解释为什么它是错的。我说 “不妨试试”，是因为他们从没这么做过。所以，虽然这看似能让混乱的讨论回到正轨，但事实是，讨论从一开始就不在正轨上。</p>
+<p>Should you explicitly forestall likely misinterpretations? Yes, if they’re misinterpretations a reasonably smart and well-intentioned person might make. In fact it’s sometimes better to say something slightly misleading and then add the correction than to try to get an idea right in one shot. That can be more efficient, and can also model the way such an idea would be discovered.</p>
+<p>是否应该明确预防可能的误解？是的，如果那是一个聪明且善意的人可能产生的误解。事实上，有时先说一句略带误导的话，再补充纠正，比试图一次说对更有效 —— 这能模拟发现某个想法的过程。</p>
+<p>But I don’t think you should explicitly forestall intentional misinterpretations in the body of an essay. An essay is a place to meet honest readers. You don’t want to spoil your house by putting bars on the windows to protect against dishonest ones. The place to protect against intentional misinterpretations is in end-notes. But don’t think you can predict them all. People are as ingenious at misrepresenting you when you say something they don’t want to hear as they are at coming up with rationalizations for things they want to do but know they shouldn’t. I suspect it’s the same skill.</p>
+<p>但我认为，不应该在文章主体中明确预防故意的误解。文章是与真诚的读者相遇的地方。为了防备不真诚的人而给窗户装铁栏，会毁掉你的 “房子”。防备故意误解的地方应该是尾注。但别指望能预测所有误解。当你说的话是他们不想听的，人们曲解你的本事，和他们为想做却知道不该做的事找借口的本事一样大。我怀疑这是同一种技能。</p>
+<hr>
+<p>As with most other things, the way to get better at writing essays is to practice. But how do you start? Now that we’ve examined the structure of useful writing, we can rephrase that question more precisely. Which constraint do you relax initially? The answer is, the first component of importance: the number of people who care about what you write.</p>
+<p>和大多数事情一样，写文章的技巧也需要练习。但该如何开始？既然我们已经分析了有用的写作的结构，就能更精确地重述这个问题：一开始应该放宽哪个约束？答案是 “重要性” 的第一个要素：关心你所写内容的人数。</p>
+<p>If you narrow the topic sufficiently, you can probably find something you’re an expert on. Write about that to start with. If you only have ten readers who care, that’s fine. You’re helping them, and you’re writing. Later you can expand the breadth of topics you write about.</p>
+<p>如果你把话题缩得足够小，或许能找到自己擅长的领域。先写这个。即使只有 10 个关心的读者，也没关系。你在帮他们，也在练习写作。之后，再扩大写作的话题范围。</p>
+<p>The other constraint you can relax is a little surprising: publication. Writing essays doesn’t have to mean publishing them. That may seem strange now that the trend is to publish every random thought, but it worked for me. I wrote what amounted to essays in notebooks for about 15 years. I never published any of them and never expected to. I wrote them as a way of figuring things out. But when the web came along I’d had a lot of practice.</p>
+<p>另一个可以放宽的约束有点出人意料：发表。写文章不一定意味着要发表。现在大家都倾向于把随便一个想法都发出来，这显得奇怪，但对我有用。我在笔记本上写了差不多 15 年类似文章的东西，从没发表过，也没想过要发表。我写它们是为了理清思路。但当网络出现时，我已经有了很多练习。</p>
+<p>Incidentally, Steve Wozniak did the same thing. In high school he designed computers on paper for fun. He couldn’t build them because he couldn’t afford the components. But when Intel launched 4K DRAMs in 1975, he was ready.</p>
+<p>顺便说一句，史蒂夫・沃兹尼亚克也是如此。高中时，他为了好玩，在纸上设计电脑。他造不出来，因为买不起零件。但 1975 年英特尔推出 4K DRAM 时，他已经准备好了。</p>
+<hr>
+<p>How many essays are there left to write though? The answer to that question is probably the most exciting thing I’ve learned about essay writing. Nearly all of them are left to write.</p>
+<p>但还有多少文章有待写作？这个问题的答案，可能是我在文章写作中最令人兴奋的发现：几乎所有文章都还没写。</p>
+<p>Although the essay is an old form, it hasn’t been assiduously cultivated. In the print era, publication was expensive, and there wasn’t enough demand for essays to publish that many. You could publish essays if you were already well known for writing something else, like novels. Or you could write book reviews that you took over to express your own ideas. But there was not really a direct path to becoming an essayist. Which meant few essays got written, and those that did tended to be about a narrow range of subjects.</p>
+<p>尽管散文是一种古老的体裁，但并未被精心培育。在印刷时代，出版成本高，对散文的需求也不足以支撑大量出版。你得先因写小说之类的东西出名，才能发表散文；或者写书评，借机表达自己的想法。但没有成为散文作家的直接路径。这意味着很少有散文被写出，而写出的那些，主题范围也很窄。</p>
+<p>Now, thanks to the internet, there’s a path. Anyone can publish essays online. You start in obscurity, perhaps, but at least you can start. You don’t need anyone’s permission.</p>
+<p>现在，多亏了互联网，有了路径。任何人都能在网上发表散文。或许一开始默默无闻，但至少能开始，不需要任何人的许可。</p>
+<p>It sometimes happens that an area of knowledge sits quietly for years, till some change makes it explode. Cryptography did this to number theory. The internet is doing it to the essay.</p>
+<p>有时，某个知识领域会沉寂多年，直到某个变化让它爆发。密码学让数论爆发，互联网正在让散文爆发。</p>
+<p>The exciting thing is not that there’s a lot left to write, but that there’s a lot left to discover. There’s a certain kind of idea that’s best discovered by writing essays. If most essays are still unwritten, most such ideas are still undiscovered.</p>
+<p>令人兴奋的不是还有很多文章要写，而是还有很多发现要做。有一种想法，最适合通过写散文来发现。如果大多数散文还没写，那么大多数这类想法也还没被发现。</p>
+<p>Notes</p>
+<p>[1] Put railings on the balconies, but don’t put bars on the windows.</p>
+<p>[1] 给阳台装护栏，但别给窗户装铁栏。</p>
+<p>[2] Even now I sometimes write essays that are not meant for publication. I wrote several to figure out what Y Combinator should do, and they were really helpful.</p>
+<p>[2] 即便现在，我有时也会写一些不打算发表的文章。我曾写过几篇，目的是理清 Y Combinator（一家创业孵化器）应该做什么，这些文章真的很有帮助。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>如何写出有用的文章</div>
+      <div>https://hokkaidornis.github.io/2025/08/06/how-to-write-usefully/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月6日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/05/before-the-startup/" title="创业之前">
+                        <span class="hidden-mobile">创业之前</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
