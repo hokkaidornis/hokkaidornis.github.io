@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Disconnecting Distraction原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;distraction.html May 2008 Note: The strategy described at the end of this essay didn’t work. It would work for a while, and then I’d gradually fin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="隔绝干扰">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/13/disconnecting-distraction/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Disconnecting Distraction原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;distraction.html May 2008 Note: The strategy described at the end of this essay didn’t work. It would work for a while, and then I’d gradually fin">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-13T01:17:09.000Z">
+<meta property="article:modified_time" content="2025-08-13T01:25:20.190Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>隔绝干扰 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="隔绝干扰"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-13 09:17" pubdate>
+          2025年8月13日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">隔绝干扰</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Disconnecting-Distraction"><a href="#Disconnecting-Distraction" class="headerlink" title="Disconnecting Distraction"></a>Disconnecting Distraction</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/distraction.html">https://paulgraham.com/distraction.html</a></p>
+<p>May 2008</p>
+<p>Note: The strategy described at the end of this essay didn’t work. It would work for a while, and then I’d gradually find myself using the Internet on my work computer. I’m trying other strategies now, but I think this time I’ll wait till I’m sure they work before writing about them.</p>
+<p>注：本文末尾提到的策略并未奏效。它会在一段时间内起作用，但渐渐地，我发现自己还是会用工作电脑上网。我现在正在尝试其他策略，但我想这次要等确定它们有效后再写出来。</p>
+<p>Procrastination feeds on distractions. Most people find it uncomfortable just to sit and do nothing; you avoid work by doing something else.</p>
+<p>拖延症靠干扰滋生。大多数人会觉得只是坐着无所事事很不舒服，于是你就通过做别的事情来逃避工作。</p>
+<p>So one way to beat procrastination is to starve it of distractions. But that’s not as straightforward as it sounds, because there are people working hard to distract you. Distraction is not a static obstacle that you avoid like you might avoid a rock in the road. Distraction seeks you out.</p>
+<p>所以，战胜拖延症的一个方法就是断绝它的干扰来源。但这并不像听起来那么简单，因为总有人在费尽心机地干扰你。干扰并非是像路上的石头那样，你可以避开的静态障碍。干扰会主动找上门来。</p>
+<p>Chesterfield described dirt as matter out of place. Distracting is, similarly, desirable at the wrong time. And technology is continually being refined to produce more and more desirable things. Which means that as we learn to avoid one class of distractions, new ones constantly appear, like drug-resistant bacteria.</p>
+<p>切斯特菲尔德曾将污垢描述为放错地方的物质。同样地，干扰就是在错误时间出现的合意事物。而科技在不断改进，催生着越来越多令人着迷的东西。这意味着，当我们学会避开一类干扰时，新的干扰会不断出现，就像抗药性细菌一样。</p>
+<p>Television, for example, has after 50 years of refinement reached the point where it’s like visual crack. I realized when I was 13 that TV was addictive, so I stopped watching it. But I read recently that the average American watches 4 hours of TV a day. A quarter of their life.</p>
+<p>例如，经过 50 年的改进，电视已经到了堪称视觉可卡因的地步。我 13 岁时就意识到电视会让人上瘾，于是就不再看了。但最近我看到数据称，美国人平均每天看 4 小时电视，这占了他们生命的四分之一。</p>
+<p>TV is in decline now, but only because people have found even more addictive ways of wasting time. And what’s especially dangerous is that many happen at your computer. This is no accident. An ever larger percentage of office workers sit in front of computers connected to the Internet, and distractions always evolve toward the procrastinators.</p>
+<p>如今电视的影响力在下降，只是因为人们找到了更让人上瘾的消磨时间的方式。而尤其危险的是，很多这种方式就出现在你的电脑上。这绝非偶然。越来越多的办公室职员坐在联网的电脑前，而干扰总会朝着拖延者的方向演变。</p>
+<p>I remember when computers were, for me at least, exclusively for work. I might occasionally dial up a server to get mail or ftp files, but most of the time I was offline. All I could do was write and program. Now I feel as if someone snuck a television onto my desk. Terribly addictive things are just a click away. Run into an obstacle in what you’re working on? Hmm, I wonder what’s new online. Better check.</p>
+<p>我记得，曾经电脑对我来说，至少是完全用于工作的。我偶尔会拨号连接服务器收邮件或用 FTP 传文件，但大多数时候我都是离线状态。我能做的只有写作和编程。现在我却感觉好像有人偷偷在我桌上放了一台电视。只要点一下鼠标，就能接触到极度令人上瘾的东西。在工作中遇到阻碍了？嗯，我想知道网上有什么新鲜事，还是去看看吧。</p>
+<p>After years of carefully avoiding classic time sinks like TV, games, and Usenet, I still managed to fall prey to distraction, because I didn’t realize that it evolves. Something that used to be safe, using the Internet, gradually became more and more dangerous. Some days I’d wake up, get a cup of tea and check the news, then check email, then check the news again, then answer a few emails, then suddenly notice it was almost lunchtime and I hadn’t gotten any real work done. And this started to happen more and more often.</p>
+<p>多年来，我小心翼翼地避开电视、游戏、新闻组等典型的时间黑洞，却还是没能逃过干扰的魔爪，因为我没意识到干扰是在不断演变的。曾经安全的上网行为，渐渐变得越来越危险。有些日子，我醒来后喝杯茶，看看新闻，再查收邮件，接着又看会儿新闻，然后回复几封邮件，突然就发现快到午饭时间了，而我还没做任何真正的工作。这种情况发生得越来越频繁。</p>
+<p>It took me surprisingly long to realize how distracting the Internet had become, because the problem was intermittent. I ignored it the way you let yourself ignore a bug that only appears intermittently. When I was in the middle of a project, distractions weren’t really a problem. It was when I’d finished one project and was deciding what to do next that they always bit me.</p>
+<p>我花了好长时间才意识到互联网变得多么让人分心，因为这个问题是间歇性的。我对它的忽视，就像忽视一个只偶尔出现的漏洞一样。当我全身心投入一个项目时，干扰其实不算什么问题。但当我完成一个项目，正在决定接下来做什么的时候，干扰总会缠上我。</p>
+<p>Another reason it was hard to notice the danger of this new type of distraction was that social customs hadn’t yet caught up with it. If I’d spent a whole morning sitting on a sofa watching TV, I’d have noticed very quickly. That’s a known danger sign, like drinking alone. But using the Internet still looked and felt a lot like work.</p>
+<p>这种新型干扰的危险性难以被察觉，另一个原因是社会习俗还没跟上它的脚步。如果我花一整个上午坐在沙发上看电视，我很快就会意识到这是在浪费时间。这是一个众所周知的危险信号，就像独自酗酒一样。但上网看起来和感觉上都很像在工作。</p>
+<p>Eventually, though, it became clear that the Internet had become so much more distracting that I had to start treating it differently. Basically, I had to add a new application to my list of known time sinks: Firefox.</p>
+<p>然而，最终我清楚地认识到，互联网已经变得如此让人分心，我必须用不同的方式对待它。基本上，我得在已知的时间黑洞清单上再添一个新成员：火狐浏览器。</p>
+<hr>
+<p>The problem is a hard one to solve because most people still need the Internet for some things. If you drink too much, you can solve that problem by stopping entirely. But you can’t solve the problem of overeating by stopping eating. I couldn’t simply avoid the Internet entirely, as I’d done with previous time sinks.</p>
+<p>这个问题很难解决，因为大多数人仍然在某些事情上需要互联网。如果你喝酒过量，可以通过彻底戒酒来解决问题。但你不能通过停止进食来解决暴饮暴食的问题。我不能像对待以前的时间黑洞那样，简单地完全避开互联网。</p>
+<p>At first I tried rules. For example, I’d tell myself I was only going to use the Internet twice a day. But these schemes never worked for long. Eventually something would come up that required me to use it more than that. And then I’d gradually slip back into my old ways.</p>
+<p>起初我尝试制定规则。比如，我告诉自己每天只上网两次。但这些方案都没能坚持太久。最终总会出现一些情况，要求我更频繁地上网。然后我就会逐渐回到以前的老样子。</p>
+<p>Addictive things have to be treated as if they were sentient adversaries—as if there were a little man in your head always cooking up the most plausible arguments for doing whatever you’re trying to stop doing. If you leave a path to it, he’ll find it.</p>
+<p>让人上瘾的东西必须被当作有知觉的对手来对待 —— 就好像你脑子里有个小人，总是在为你想停止做的事情编造最合理的理由。只要你给它留了条路，它就会找到。</p>
+<p>The key seems to be visibility. The biggest ingredient in most bad habits is denial. So you have to make it so that you can’t merely slip into doing the thing you’re trying to avoid. It has to set off alarms.</p>
+<p>关键似乎在于可见性。大多数坏习惯中，很大一部分原因是自我否认。所以你必须做到，不能只是不经意地就陷入你想避免的事情中。那必须得敲响警钟。</p>
+<p>Maybe in the long term the right answer for dealing with Internet distractions will be software that watches and controls them. But in the meantime I’ve found a more drastic solution that definitely works: to set up a separate computer for using the Internet.</p>
+<p>从长远来看，应对互联网干扰的正确方法可能是开发能够监控和控制它们的软件。但在此期间，我找到了一个更极端且绝对有效的解决方案：专门准备一台电脑用来上网。</p>
+<p>I now leave wifi turned off on my main computer except when I need to transfer a file or edit a web page, and I have a separate laptop on the other side of the room that I use to check mail or browse the web. (Irony of ironies, it’s the computer Steve Huffman wrote Reddit on. When Steve and Alexis auctioned off their old laptops for charity, I bought them for the Y Combinator museum.)</p>
+<p>现在，我的主电脑除非需要传输文件或编辑网页，否则都关闭无线网络，而在房间的另一边，我有一台专门的笔记本电脑用来查邮件或浏览网页。（极具讽刺意味的是，这台电脑是史蒂夫・赫夫曼开发Reddit时用的。当史蒂夫和亚历克西斯为慈善拍卖他们的旧笔记本电脑时，我把它们买了下来，放进了 Y Combinator 博物馆。）</p>
+<p>My rule is that I can spend as much time online as I want, as long as I do it on that computer. And this turns out to be enough. When I have to sit on the other side of the room to check email or browse the web, I become much more aware of it. Sufficiently aware, in my case at least, that it’s hard to spend more than about an hour a day online.</p>
+<p>我的规则是，只要在那台电脑上，我想花多少时间上网都可以。事实证明，这就足够了。当我必须坐到房间的另一边去查邮件或浏览网页时，我就会对上网这件事变得更加清醒。至少对我来说，这种清醒足以让我每天上网时间不超过一个小时。</p>
+<p>And my main computer is now freed for work. If you try this trick, you’ll probably be struck by how different it feels when your computer is disconnected from the Internet. It was alarming to me how foreign it felt to sit in front of a computer that could only be used for work, because that showed how much time I must have been wasting.</p>
+<p>而我的主电脑现在完全用来工作了。如果你也试试这个方法，你可能会惊讶地发现，当你的电脑断开互联网连接时，感觉是多么不同。坐在一台只能用来工作的电脑前，那种陌生感让我很震惊，因为这表明我以前肯定浪费了很多时间。</p>
+<p>Wow. All I can do at this computer is work. Ok, I better work then.</p>
+<p>哇，这台电脑只能用来工作。好吧，那我最好开始工作。</p>
+<p>That’s the good part. Your old bad habits now help you to work. You’re used to sitting in front of that computer for hours at a time. But you can’t browse the web or check email now. What are you going to do? You can’t just sit there. So you start working.</p>
+<p>这就是好的方面。你以前的坏习惯现在会帮助你工作。你习惯了在电脑前坐好几个小时。但现在你不能浏览网页或查邮件了。你打算做什么呢？你不能就坐在那里。所以你就开始工作了。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>隔绝干扰</div>
+      <div>https://hokkaidornis.github.io/2025/08/13/disconnecting-distraction/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/13/being-popular/" title="编程语言的流行之道">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">编程语言的流行之道</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/12/lies-we-tell-kids/" title="我们对孩子撒的谎">
+                        <span class="hidden-mobile">我们对孩子撒的谎</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
