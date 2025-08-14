@@ -1,0 +1,807 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Revenge of the Nerds原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;icad.html May 2002 “We were after the C++ programmers. We managed to drag a lot of them about halfway to Lisp.”“我们盯上了 C++ 程序员。我们成功把他们中的很多人拉到了接近 Lisp 的水">
+<meta property="og:type" content="article">
+<meta property="og:title" content="书呆子的复仇">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/14/revenge-of-the-nerds/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Revenge of the Nerds原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;icad.html May 2002 “We were after the C++ programmers. We managed to drag a lot of them about halfway to Lisp.”“我们盯上了 C++ 程序员。我们成功把他们中的很多人拉到了接近 Lisp 的水">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-14T02:12:51.000Z">
+<meta property="article:modified_time" content="2025-08-14T02:23:28.150Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>书呆子的复仇 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="书呆子的复仇"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-14 10:12" pubdate>
+          2025年8月14日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          58 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">书呆子的复仇</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Revenge-of-the-Nerds"><a href="#Revenge-of-the-Nerds" class="headerlink" title="Revenge of the Nerds"></a>Revenge of the Nerds</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/icad.html">https://paulgraham.com/icad.html</a></p>
+<p>May 2002</p>
+<p>“We were after the C++ programmers. We managed to drag a lot of them about halfway to Lisp.”<br>“我们盯上了 C++ 程序员。我们成功把他们中的很多人拉到了接近 Lisp 的水平。”</p>
+<ul>
+<li>Guy Steele, co-author of the Java spec<br>—— 盖伊・斯蒂尔，Java 规范的合著者</li>
+</ul>
+<p>In the software business there is an ongoing struggle between the pointy-headed academics, and another equally formidable force, the pointy-haired bosses. Everyone knows who the pointy-haired boss is, right? I think most people in the technology world not only recognize this cartoon character, but know the actual person in their company that he is modelled upon.<br>在软件行业，一直存在着一场斗争：一方是脑袋尖尖的学者，另一方是同样难对付的势力 ——“尖头老板”。每个人都知道尖头老板是谁，对吧？我觉得科技圈的大多数人不仅认得这个卡通形象，还能在自己公司里找到他的现实原型。</p>
+<p>The pointy-haired boss miraculously combines two qualities that are common by themselves, but rarely seen together: (a) he knows nothing whatsoever about technology, and (b) he has very strong opinions about it.<br>尖头老板神奇地兼具两种特质 —— 这两种特质单独看很常见，但同时出现却很少见：（a）他对技术一窍不通；（b）他对技术却有着强烈的主见。</p>
+<p>Suppose, for example, you need to write a piece of software. The pointy-haired boss has no idea how this software has to work, and can’t tell one programming language from another, and yet he knows what language you should write it in. Exactly. He thinks you should write it in Java.<br>举个例子，假设你需要写一个软件。尖头老板完全不知道这个软件该怎么运行，也分不清各种编程语言的区别，但他却 “知道” 你应该用什么语言来写。没错，他觉得你应该用 Java。</p>
+<p>Why does he think this? Let’s take a look inside the brain of the pointy-haired boss. What he’s thinking is something like this. Java is a standard. I know it must be, because I read about it in the press all the time. Since it is a standard, I won’t get in trouble for using it. And that also means there will always be lots of Java programmers, so if the programmers working for me now quit, as programmers working for me mysteriously always do, I can easily replace them.<br>他为什么会这么想？我们来窥探一下尖头老板的大脑。他大概在想：Java 是个标准。我肯定这一点，因为我总在媒体上看到它。既然是标准，用它就不会惹麻烦。而且这意味着总会有很多 Java 程序员，所以如果现在的程序员辞职了（他们总会莫名其妙地辞职），我能轻松找到替代者。</p>
+<p>Well, this doesn’t sound that unreasonable. But it’s all based on one unspoken assumption, and that assumption turns out to be false. The pointy-haired boss believes that all programming languages are pretty much equivalent. If that were true, he would be right on target. If languages are all equivalent, sure, use whatever language everyone else is using.<br>嗯，这听起来似乎不算太离谱。但这一切都基于一个未说出口的假设，而这个假设其实是错误的。尖头老板认为所有编程语言几乎都是等价的。如果真是这样，他的想法就没错。要是语言都一样，那当然可以用大家都在用的那种。</p>
+<p>But all languages are not equivalent, and I think I can prove this to you without even getting into the differences between them. If you asked the pointy-haired boss in 1992 what language software should be written in, he would have answered with as little hesitation as he does today. Software should be written in C++. But if languages are all equivalent, why should the pointy-haired boss’s opinion ever change? In fact, why should the developers of Java have even bothered to create a new language?<br>但并非所有语言都等价，而且我不用深入讨论它们的区别就能证明这一点。如果在 1992 年问尖头老板应该用什么语言写软件，他会像现在一样毫不犹豫地回答：应该用 C++。可如果语言都等价，他的观点为什么会变？事实上，Java 的开发者又何必费心创造一种新语言呢？</p>
+<p>Presumably, if you create a new language, it’s because you think it’s better in some way than what people already had. And in fact, Gosling makes it clear in the first Java white paper that Java was designed to fix some problems with C++. So there you have it: languages are not all equivalent. If you follow the trail through the pointy-haired boss’s brain to Java and then back through Java’s history to its origins, you end up holding an idea that contradicts the assumption you started with.<br>想必，创造新语言是因为觉得它在某些方面比已有的更好。事实上，高斯林在第一份 Java 白皮书中明确表示，Java 的设计就是为了修复 C++ 的一些问题。所以结论很明显：语言并非都等价。顺着尖头老板对 Java 的执念，追溯到 Java 的起源，你最终会得到一个与最初假设矛盾的结论。</p>
+<p>So, who’s right? James Gosling, or the pointy-haired boss? Not surprisingly, Gosling is right. Some languages are better, for certain problems, than others. And you know, that raises some interesting questions. Java was designed to be better, for certain problems, than C++. What problems? When is Java better and when is C++? Are there situations where other languages are better than either of them?<br>那么，谁是对的？詹姆斯・高斯林，还是尖头老板？毫不意外，高斯林是对的。对于特定问题，有些语言就是比其他的更好。这就引出了一些有趣的问题：Java 被设计成在某些问题上比 C++ 更好，是哪些问题？什么时候 Java 更好，什么时候 C++ 更好？有没有其他语言比这两种都更适合的情况？</p>
+<p>Once you start considering this question, you have opened a real can of worms. If the pointy-haired boss had to think about the problem in its full complexity, it would make his brain explode. As long as he considers all languages equivalent, all he has to do is choose the one that seems to have the most momentum, and since that is more a question of fashion than technology, even he can probably get the right answer. But if languages vary, he suddenly has to solve two simultaneous equations, trying to find an optimal balance between two things he knows nothing about: the relative suitability of the twenty or so leading languages for the problem he needs to solve, and the odds of finding programmers, libraries, etc. for each. If that’s what’s on the other side of the door, it is no surprise that the pointy-haired boss doesn’t want to open it.<br>一旦开始思考这个问题，你就等于打开了潘多拉魔盒。如果尖头老板必须面对这个问题的全部复杂性，他的大脑可能会爆炸。只要他认为所有语言都等价，他只需要选一个看起来最流行的就行 —— 而流行更多是时尚问题而非技术问题，就算是他也可能选对。但如果语言有差异，他突然就要解两个联立方程：在二十多种主流语言中，找到既适合当前问题、又容易找到程序员和库的最优平衡 —— 而这两样他都一窍不通。如果门后是这些，尖头老板不想开门也就不奇怪了。</p>
+<p>The disadvantage of believing that all programming languages are equivalent is that it’s not true. But the advantage is that it makes your life a lot simpler. And I think that’s the main reason the idea is so widespread. It is a comfortable idea.<br>认为所有编程语言都等价的坏处是 —— 这不是事实。但好处是，这能让生活简单得多。我觉得这就是这个想法广为流传的主要原因：它让人安心。</p>
+<p>We know that Java must be pretty good, because it is the cool, new programming language. Or is it? If you look at the world of programming languages from a distance, it looks like Java is the latest thing. (From far enough away, all you can see is the large, flashing billboard paid for by Sun.) But if you look at this world up close, you find that there are degrees of coolness. Within the hacker subculture, there is another language called Perl that is considered a lot cooler than Java. Slashdot, for example, is generated by Perl. I don’t think you would find those guys using Java Server Pages. But there is another, newer language, called Python, whose users tend to look down on Perl, and more waiting in the wings.<br>我们觉得 Java 肯定很棒，因为它是酷炫的新编程语言。真的是这样吗？从远处看编程语言的世界，Java 似乎是最新潮的（离得足够远，你只能看到 Sun 公司花钱做的巨大闪光广告牌）。但近距离观察会发现，“酷炫” 是分等级的。在黑客圈子里，Perl 被认为比 Java 酷得多。比如，Slashdot 就是用 Perl 开发的。我觉得那些人绝不会用 Java Server Pages。但还有一种更新的语言叫 Python，它的用户往往瞧不上 Perl，而且还有更多语言在排队等着上位。</p>
+<p>If you look at these languages in order, Java, Perl, Python, you notice an interesting pattern. At least, you notice this pattern if you are a Lisp hacker. Each one is progressively more like Lisp. Python copies even features that many Lisp hackers consider to be mistakes. You could translate simple Lisp programs into Python line for line. It’s 2002, and programming languages have almost caught up with 1958.<br>如果按 Java、Perl、Python 的顺序看，你会发现一个有趣的模式 —— 至少，如果你是 Lisp 黑客的话会发现。它们一个比一个像 Lisp。Python 甚至借鉴了很多 Lisp 黑客认为是 “错误” 的特性。简单的 Lisp 程序几乎能逐行翻译成 Python。现在是 2002 年，编程语言总算快追上 1958 年了。</p>
+<h3 id="Catching-Up-with-Math"><a href="#Catching-Up-with-Math" class="headerlink" title="Catching Up with Math"></a><strong>Catching Up with Math</strong></h3><p><strong>靠数学追赶</strong></p>
+<p>What I mean is that Lisp was first discovered by John McCarthy in 1958, and popular programming languages are only now catching up with the ideas he developed then.<br>我的意思是，Lisp 是约翰・麦卡锡在 1958 年提出的，而现在流行的编程语言才刚刚开始追上他当时提出的理念。</p>
+<p>Now, how could that be true? Isn’t computer technology something that changes very rapidly? I mean, in 1958, computers were refrigerator-sized behemoths with the processing power of a wristwatch. How could any technology that old even be relevant, let alone superior to the latest developments?<br>这怎么可能呢？计算机技术不是变化很快吗？要知道，1958 年的计算机还是冰箱大小的庞然大物，处理能力只相当于一块手表。一个这么古老的技术怎么可能还有用，更别说比最新的发展还强了？</p>
+<p>I’ll tell you how. It’s because Lisp was not really designed to be a programming language, at least not in the sense we mean today. What we mean by a programming language is something we use to tell a computer what to do. McCarthy did eventually intend to develop a programming language in this sense, but the Lisp that we actually ended up with was based on something separate that he did as a theoretical exercise– an effort to define a more convenient alternative to the Turing Machine. As McCarthy said later,<br>我来告诉你原因。因为 Lisp 其实不是被设计成编程语言的，至少不是我们现在所说的 “编程语言”。我们所说的编程语言是用来告诉计算机该做什么的工具。麦卡锡最终确实想开发这样一种语言，但我们现在使用的 Lisp，其实源于他另一项理论研究 —— 他试图定义一种比图灵机更方便的替代方案。正如麦卡锡后来所说：</p>
+<p>Another way to show that Lisp was neater than Turing machines was to write a universal Lisp function and show that it is briefer and more comprehensible than the description of a universal Turing machine. This was the Lisp function eval…, which computes the value of a Lisp expression…. Writing eval required inventing a notation representing Lisp functions as Lisp data, and such a notation was devised for the purposes of the paper with no thought that it would be used to express Lisp programs in practice.<br>要证明 Lisp 比图灵机更简洁，另一种方法是编写一个通用 Lisp 函数，并证明它比通用图灵机的描述更简短、更易懂。这就是 Lisp 的 eval 函数…… 它能计算 Lisp 表达式的值…… 编写 eval 需要发明一种符号，把 Lisp 函数表示为 Lisp 数据。这种符号是为了论文而设计的，当时根本没想过会在实际中用来表达 Lisp 程序。</p>
+<p>What happened next was that, some time in late 1958, Steve Russell, one of McCarthy’s grad students, looked at this definition of eval and realized that if he translated it into machine language, the result would be a Lisp interpreter.<br>接下来发生的事是，1958 年底的某个时候，麦卡锡的研究生史蒂夫・拉塞尔看到了 eval 的定义，意识到如果把它翻译成机器语言，结果会是一个 Lisp 解释器。</p>
+<p>This was a big surprise at the time. Here is what McCarthy said about it later in an interview:<br>这在当时是个大惊喜。麦卡锡后来在采访中说：</p>
+<p>Steve Russell said, look, why don’t I program this eval…, and I said to him, ho, ho, you’re confusing theory with practice, this eval is intended for reading, not for computing. But he went ahead and did it. That is, he compiled the eval in my paper into [IBM] 704 machine code, fixing bugs, and then advertised this as a Lisp interpreter, which it certainly was. So at that point Lisp had essentially the form that it has today….<br>史蒂夫・拉塞尔说：“你看，我来把这个 eval 编成程序怎么样？” 我对他说：“呵，呵，你把理论和实践搞混了，这个 eval 是用来读的，不是用来计算的。” 但他还是做了。他把我论文里的 eval 编译成了（IBM）704 的机器码，修复了 bug，然后宣称这是一个 Lisp 解释器 —— 它确实是。从那时起，Lisp 就基本有了现在的样子……</p>
+<p>Suddenly, in a matter of weeks I think, McCarthy found his theoretical exercise transformed into an actual programming language– and a more powerful one than he had intended.<br>我觉得，短短几周内，麦卡锡突然发现他的理论研究变成了一种实际的编程语言 —— 而且比他预想的更强大。</p>
+<p>So the short explanation of why this 1950s language is not obsolete is that it was not technology but math, and math doesn’t get stale. The right thing to compare Lisp to is not 1950s hardware, but, say, the Quicksort algorithm, which was discovered in 1960 and is still the fastest general-purpose sort.<br>所以，这种 50 年代的语言之所以不过时，简单说就是：它不是技术，而是数学 —— 数学不会过时。拿 Lisp 来比，不该和 50 年代的硬件比，而应该和 1960 年发明的快速排序算法比 —— 后者至今仍是最快的通用排序算法。</p>
+<p>There is one other language still surviving from the 1950s, Fortran, and it represents the opposite approach to language design. Lisp was a piece of theory that unexpectedly got turned into a programming language. Fortran was developed intentionally as a programming language, but what we would now consider a very low-level one.<br>50 年代还有另一种语言留存至今，那就是 Fortran，它代表了语言设计的另一种思路。Lisp 是理论意外变成了编程语言，而 Fortran 则是被刻意设计成编程语言的，但按现在的标准看，它的级别很低。</p>
+<p>Fortran I, the language that was developed in 1956, was a very different animal from present-day Fortran. Fortran I was pretty much assembly language with math. In some ways it was less powerful than more recent assembly languages; there were no subroutines, for example, only branches. Present-day Fortran is now arguably closer to Lisp than to Fortran I.<br>1956 年的 Fortran I 和现在的 Fortran 大不相同。Fortran I 基本上是带数学功能的汇编语言。在某些方面，它甚至不如后来的汇编语言 —— 比如没有子程序，只有分支。可以说，现在的 Fortran 比之于 Fortran I，更接近 Lisp。</p>
+<p>Lisp and Fortran were the trunks of two separate evolutionary trees, one rooted in math and one rooted in machine architecture. These two trees have been converging ever since. Lisp started out powerful, and over the next twenty years got fast. So-called mainstream languages started out fast, and over the next forty years gradually got more powerful, until now the most advanced of them are fairly close to Lisp. Close, but they are still missing a few things….<br>Lisp 和 Fortran 是两棵不同进化树的主干：一棵根植于数学，另一棵根植于机器架构。这两棵树从那以后就一直在靠近。Lisp 一开始就很强大，之后二十年变得更快；所谓的主流语言一开始很快，之后四十年逐渐变得更强大，直到现在，最先进的主流语言已经相当接近 Lisp 了。但只是接近，仍有一些东西缺失……</p>
+<h3 id="What-Made-Lisp-Different"><a href="#What-Made-Lisp-Different" class="headerlink" title="What Made Lisp Different"></a><strong>What Made Lisp Different</strong></h3><p><strong>Lisp 的独特之处</strong></p>
+<p>When it was first developed, Lisp embodied nine new ideas. Some of these we now take for granted, others are only seen in more advanced languages, and two are still unique to Lisp. The nine ideas are, in order of their adoption by the mainstream,<br>Lisp 刚出现时，包含了九个新想法。其中一些现在已被视为理所当然，另一些只在更高级的语言中出现，还有两个仍是 Lisp 独有的。按被主流采纳的顺序，这九个想法是：</p>
+<p><strong>1.Conditionals.</strong> A conditional is an if-then-else construct. We take these for granted now, but Fortran I didn’t have them. It had only a conditional goto closely based on the underlying machine instruction.<br>条件语句。条件语句即 if-then-else 结构。我们现在觉得这很平常，但 Fortran I 没有这种结构，只有基于底层机器指令的条件跳转。</p>
+<p><strong>2.A function type.</strong> In Lisp, functions are a data type just like integers or strings. They have a literal representation, can be stored in variables, can be passed as arguments, and so on.<br>函数类型。在 Lisp 中，函数和整数、字符串一样是一种数据类型。它们有字面表示，能存在变量里，能作为参数传递，等等。</p>
+<p><strong>3.Recursion.</strong> Lisp was the first programming language to support it.<br>递归。Lisp 是第一种支持递归的编程语言。</p>
+<p><strong>4.Dynamic typing.</strong> In Lisp, all variables are effectively pointers. Values are what have types, not variables, and assigning or binding variables means copying pointers, not what they point to.<br>动态类型。在 Lisp 中，所有变量本质上都是指针。类型属于值，而非变量；给变量赋值或绑定变量，只是复制指针，而非指针指向的内容。</p>
+<p><strong>5.Garbage-collection.</strong></p>
+<p>垃圾回收。</p>
+<p><strong>6.Programs composed of expressions.</strong> Lisp programs are trees of expressions, each of which returns a value. This is in contrast to Fortran and most succeeding languages, which distinguish between expressions and statements.<br>由表达式构成的程序。Lisp 程序是表达式树，每个表达式都返回一个值。这与 Fortran 及后来的大多数语言不同，它们区分表达式和语句。</p>
+<p>It was natural to have this distinction in Fortran I because you could not nest statements. And so while you needed expressions for math to work, there was no point in making anything else return a value, because there could not be anything waiting for it.<br>Fortran I 中有这种区分是很自然的，因为它不能嵌套语句。所以，虽然做数学运算需要表达式，但让其他东西返回值是没意义的 —— 因为没有东西会等着接收这个值。</p>
+<p>This limitation went away with the arrival of block-structured languages, but by then it was too late. The distinction between expressions and statements was entrenched. It spread from Fortran into Algol and then to both their descendants.<br>随着块结构语言的出现，这个限制消失了，但为时已晚。表达式和语句的区分已经根深蒂固，从 Fortran 传到 Algol，再传到它们的所有后代语言。</p>
+<p><strong>7.A symbol type.</strong> Symbols are effectively pointers to strings stored in a hash table. So you can test equality by comparing a pointer, instead of comparing each character.<br>符号类型。符号本质上是指向哈希表中字符串的指针。所以判断相等时，只需比较指针，不用逐个比较字符。</p>
+<p><strong>8.A notation for code using trees of symbols and constants.</strong><br>用符号和常量树表示代码的记法。</p>
+<p><strong>9.The whole language there all the time.</strong> There is no real distinction between read-time, compile-time, and runtime. You can compile or run code while reading, read or run code while compiling, and read or compile code at runtime.<br>整个语言始终可用。读时、编译时和运行时之间没有真正的界限。你可以在读代码时编译或运行代码，编译时读或运行代码，运行时读或编译代码。</p>
+<p>Running code at read-time lets users reprogram Lisp’s syntax; running code at compile-time is the basis of macros; compiling at runtime is the basis of Lisp’s use as an extension language in programs like Emacs; and reading at runtime enables programs to communicate using s-expressions, an idea recently reinvented as XML.<br>在 read-time 运行代码，让用户可以重新定义 Lisp 的语法；在编译时运行代码，是宏的基础；在运行时编译，是 Lisp 能作为 Emacs 等程序的扩展语言的基础；在运行时读取代码，让程序能通过 s 表达式通信 —— 这个想法最近被重新发明为 XML。</p>
+<p>When Lisp first appeared, these ideas were far removed from ordinary programming practice, which was dictated largely by the hardware available in the late 1950s. Over time, the default language, embodied in a succession of popular languages, has gradually evolved toward Lisp. Ideas 1-5 are now widespread. Number 6 is starting to appear in the mainstream. Python has a form of 7, though there doesn’t seem to be any syntax for it.<br>Lisp 刚出现时，这些想法与当时的常规编程实践相去甚远 —— 当时的实践很大程度上受限于 50 年代末的硬件。随着时间推移，主流语言（以一系列流行语言为代表）逐渐向 Lisp 进化。想法 1-5 现已普及；想法 6 开始进入主流；Python 有了想法 7 的某种形式，尽管似乎没有对应的语法。</p>
+<p>As for number 8, this may be the most interesting of the lot. Ideas 8 and 9 only became part of Lisp by accident, because Steve Russell implemented something McCarthy had never intended to be implemented. And yet these ideas turn out to be responsible for both Lisp’s strange appearance and its most distinctive features. Lisp looks strange not so much because it has a strange syntax as because it has no syntax; you express programs directly in the parse trees that get built behind the scenes when other languages are parsed, and these trees are made of lists, which are Lisp data structures.<br>至于想法 8，它可能是其中最有趣的。想法 8 和 9 能成为 Lisp 的一部分纯属偶然 —— 因为史蒂夫・拉塞尔实现了麦卡锡从未想过要实现的东西。但正是这些想法造就了 Lisp 奇特的外观和最独特的特性。Lisp 看起来奇怪，不是因为语法奇怪，而是因为它 “没有语法”：你直接用解析树来表达程序 —— 其他语言解析时会在后台生成这种树，而 Lisp 的解析树是由列表（Lisp 的数据结构）构成的。</p>
+<p>Expressing the language in its own data structures turns out to be a very powerful feature. Ideas 8 and 9 together mean that you can write programs that write programs. That may sound like a bizarre idea, but it’s an everyday thing in Lisp. The most common way to do it is with something called a macro.<br>用语言自身的数据结构来表示语言，是一个非常强大的特性。想法 8 和 9 结合起来意味着：你可以编写 “编写程序的程序”。这听起来可能很奇怪，但在 Lisp 中是家常便饭。最常见的方式是通过 “宏”。</p>
+<p>The term “macro” does not mean in Lisp what it means in other languages. A Lisp macro can be anything from an abbreviation to a compiler for a new language. If you want to really understand Lisp, or just expand your programming horizons, I would learn more about macros.<br>Lisp 中的 “宏” 和其他语言中的 “宏” 意思不同。Lisp 宏可以是缩写，也可以是新语言的编译器。如果你想真正理解 Lisp，或者只是想拓宽编程视野，建议多了解宏。</p>
+<p>Macros (in the Lisp sense) are still, as far as I know, unique to Lisp. This is partly because in order to have macros you probably have to make your language look as strange as Lisp. It may also be because if you do add that final increment of power, you can no longer claim to have invented a new language, but only a new dialect of Lisp.<br>据我所知，（Lisp 意义上的）宏仍是 Lisp 独有的。部分原因是，要支持宏，你的语言可能就得像 Lisp 一样看起来奇怪。也可能是因为，一旦你加上了这最后一点强大的特性，你就不能再声称发明了新语言，而只是 Lisp 的新方言。</p>
+<p>I mention this mostly as a joke, but it is quite true. If you define a language that has car, cdr, cons, quote, cond, atom, eq, and a notation for functions expressed as lists, then you can build all the rest of Lisp out of it. That is in fact the defining quality of Lisp: it was in order to make this so that McCarthy gave Lisp the shape it has.<br>我这么说主要是开玩笑，但确实是事实。如果你定义一种语言，包含 car、cdr、cons、quote、cond、atom、eq，以及用列表表示函数的记法，那么你就能用这些构建出 Lisp 的其余部分。这其实是 Lisp 的定义性特质：麦卡锡赋予 Lisp 这样的形态，正是为了实现这一点。</p>
+<h3 id="Where-Languages-Matter"><a href="#Where-Languages-Matter" class="headerlink" title="Where Languages Matter"></a><strong>Where Languages Matter</strong></h3><p><strong>语言的重要性何在</strong></p>
+<p>So suppose Lisp does represent a kind of limit that mainstream languages are approaching asymptotically– does that mean you should actually use it to write software? How much do you lose by using a less powerful language? Isn’t it wiser, sometimes, not to be at the very edge of innovation? And isn’t popularity to some extent its own justification? Isn’t the pointy-haired boss right, for example, to want to use a language for which he can easily hire programmers?<br>假设 Lisp 确实代表了主流语言正在逐渐接近的一种极限 —— 那这意味着你真的应该用它来写软件吗？用一种不够强大的语言，你会损失多少？有时候，不站在创新最前沿，是不是更明智？流行在某种程度上不就是合理性的证明吗？比如，尖头老板想用人容易招的语言，难道不对吗？</p>
+<p>There are, of course, projects where the choice of programming language doesn’t matter much. As a rule, the more demanding the application, the more leverage you get from using a powerful language. But plenty of projects are not demanding at all. Most programming probably consists of writing little glue programs, and for little glue programs you can use any language that you’re already familiar with and that has good libraries for whatever you need to do. If you just need to feed data from one Windows app to another, sure, use Visual Basic.<br>当然，有些项目中，编程语言的选择不那么重要。一般来说，应用的要求越高，使用强大的语言带来的优势就越大。但很多项目的要求并不高。大多数编程工作可能只是写些小的 “胶水程序”，对于这类程序，你可以用任何自己熟悉、且有合适库的语言。如果你只是需要把数据从一个 Windows 应用传到另一个，用 Visual Basic 就行。</p>
+<p>You can write little glue programs in Lisp too (I use it as a desktop calculator), but the biggest win for languages like Lisp is at the other end of the spectrum, where you need to write sophisticated programs to solve hard problems in the face of fierce competition. A good example is the airline fare search program that ITA Software licenses to Orbitz. These guys entered a market already dominated by two big, entrenched competitors, Travelocity and Expedia, and seem to have just humiliated them technologically.<br>你也可以用 Lisp 写小胶水程序（我就把它当桌面计算器用），但 Lisp 这类语言的最大优势体现在另一端：当你需要写复杂程序，在激烈竞争中解决难题时。一个很好的例子是 ITA 软件公司授权给 Orbitz 的机票价格搜索程序。他们进入的市场早已被 Travelocity 和 Expedia 这两个巨头占据，但他们似乎在技术上轻松碾压了对手。</p>
+<p>The core of ITA’s application is a 200,000 line Common Lisp program that searches many orders of magnitude more possibilities than their competitors, who apparently are still using mainframe-era programming techniques. (Though ITA is also in a sense using a mainframe-era programming language.) I have never seen any of ITA’s code, but according to one of their top hackers they use a lot of macros, and I am not surprised to hear it.<br>ITA 应用的核心是一个 20 万行的 Common Lisp 程序，它搜索的可能性比竞争对手多好几个数量级 —— 竞争对手显然还在用大型机时代的编程技术（尽管从某种意义上说，ITA 用的也是大型机时代的编程语言）。我没见过 ITA 的代码，但据他们的一位顶尖黑客说，他们大量使用宏，我对此并不意外。</p>
+<h3 id="Centripetal-Forces"><a href="#Centripetal-Forces" class="headerlink" title="Centripetal Forces"></a><strong>Centripetal Forces</strong></h3><p><strong>向心力</strong></p>
+<p>I’m not saying there is no cost to using uncommon technologies. The pointy-haired boss is not completely mistaken to worry about this. But because he doesn’t understand the risks, he tends to magnify them.<br>我不是说用不常见的技术没有代价。尖头老板对此的担忧并非完全没道理。但因为他不理解其中的风险，往往会夸大它们。</p>
+<p>I can think of three problems that could arise from using less common languages. Your programs might not work well with programs written in other languages. You might have fewer libraries at your disposal. And you might have trouble hiring programmers.<br>我能想到使用冷门语言可能带来的三个问题：你的程序可能和其他语言写的程序兼容不好；可用的库可能更少；可能很难招到程序员。</p>
+<p>How much of a problem is each of these? The importance of the first varies depending on whether you have control over the whole system. If you’re writing software that has to run on a remote user’s machine on top of a buggy, closed operating system (I mention no names), there may be advantages to writing your application in the same language as the OS. But if you control the whole system and have the source code of all the parts, as ITA presumably does, you can use whatever languages you want. If any incompatibility arises, you can fix it yourself.<br>这些问题有多严重？第一个问题的重要性取决于你是否能控制整个系统。如果你写的软件必须在远程用户的机器上运行，而用户的操作系统又有 bug、且是封闭的（我就不点名了），那么用和操作系统相同的语言写应用可能有优势。但如果你像 ITA 那样，能控制整个系统，且拥有所有部分的源代码，你就可以用任何语言。如果出现不兼容，你自己就能修复。</p>
+<p>In server-based applications you can get away with using the most advanced technologies, and I think this is the main cause of what Jonathan Erickson calls the “programming language renaissance.” This is why we even hear about new languages like Perl and Python. We’re not hearing about these languages because people are using them to write Windows apps, but because people are using them on servers. And as software shifts off the desktop and onto servers (a future even Microsoft seems resigned to), there will be less and less pressure to use middle-of-the-road technologies.<br>在基于服务器的应用中，你可以放心使用最先进的技术。我认为这是乔纳森・埃里克森所说的 “编程语言复兴” 的主要原因。这也是我们会听说 Perl、Python 等新语言的原因 —— 不是因为人们用它们写 Windows 应用，而是因为人们在服务器上用它们。随着软件从桌面转向服务器（连微软似乎都接受了这个未来），使用中庸技术的压力会越来越小。</p>
+<p>As for libraries, their importance also depends on the application. For less demanding problems, the availability of libraries can outweigh the intrinsic power of the language. Where is the breakeven point? Hard to say exactly, but wherever it is, it is short of anything you’d be likely to call an application. If a company considers itself to be in the software business, and they’re writing an application that will be one of their products, then it will probably involve several hackers and take at least six months to write. In a project of that size, powerful languages probably start to outweigh the convenience of pre-existing libraries.<br>至于库，其重要性也取决于应用。对于要求不高的问题，库的可用性可能比语言本身的强大更重要。平衡点在哪里？很难说清楚，但可以肯定的是，它远低于 “应用” 的级别。如果一家公司认为自己是做软件的，并且在写一个将成为其产品之一的应用，那么这个项目可能需要几个黑客，至少花六个月时间。在这种规模的项目中，强大的语言可能开始比现有库的便利性更重要。</p>
+<p>The third worry of the pointy-haired boss, the difficulty of hiring programmers, I think is a red herring. How many hackers do you need to hire, after all? Surely by now we all know that software is best developed by teams of less than ten people. And you shouldn’t have trouble hiring hackers on that scale for any language anyone has ever heard of. If you can’t find ten Lisp hackers, then your company is probably based in the wrong city for developing software.<br>尖头老板的第三个担忧 —— 招程序员难，我觉得是个无关紧要的问题。毕竟，你需要招多少黑客？现在大家肯定都知道，软件最好由不到十人的团队开发。对于任何有点名气的语言，招这么多人应该都不难。如果连十个 Lisp 黑客都找不到，那你的公司可能选错了软件开发的城市。</p>
+<p>In fact, choosing a more powerful language probably decreases the size of the team you need, because (a) if you use a more powerful language you probably won’t need as many hackers, and (b) hackers who work in more advanced languages are likely to be smarter.<br>事实上，选择更强大的语言可能会减少所需的团队规模，因为：（a）用更强大的语言，可能不需要那么多黑客；（b）用更高级语言的黑客可能更聪明。</p>
+<p>I’m not saying that you won’t get a lot of pressure to use what are perceived as “standard” technologies. At Viaweb (now Yahoo Store), we raised some eyebrows among VCs and potential acquirers by using Lisp. But we also raised eyebrows by using generic Intel boxes as servers instead of “industrial strength” servers like Suns, for using a then-obscure open-source Unix variant called FreeBSD instead of a real commercial OS like Windows NT, for ignoring a supposed e-commerce standard called SET that no one now even remembers, and so on.<br>我不是说你不会面临使用 “标准” 技术的压力。在 Viaweb（现在的 Yahoo Store），我们用 Lisp 让风投和潜在收购方大跌眼镜。但我们还用普通英特尔机器当服务器（而非 Sun 那样的 “工业级” 服务器）、用当时鲜为人知的开源 Unix 变体 FreeBSD（而非 Windows NT 这样的商业操作系统）、无视所谓的电子商务标准 SET（现在没人记得了）等等，同样让他们惊讶。</p>
+<p>You can’t let the suits make technical decisions for you. Did it alarm some potential acquirers that we used Lisp? Some, slightly, but if we hadn’t used Lisp, we wouldn’t have been able to write the software that made them want to buy us. What seemed like an anomaly to them was in fact cause and effect.<br>你不能让西装革履的人替你做技术决策。我们用 Lisp 有没有让一些潜在收购方不安？有一些，轻微的。但如果我们不用 Lisp，就写不出让他们想买的软件。在他们看来是反常的事，其实是因果关系。</p>
+<p>If you start a startup, don’t design your product to please VCs or potential acquirers. Design your product to please the users. If you win the users, everything else will follow. And if you don’t, no one will care how comfortingly orthodox your technology choices were.<br>如果你创业，不要为了讨好风投或潜在收购方而设计产品。要为了讨好用户而设计。赢得用户，其他一切都会随之而来。如果赢不了用户，没人会在乎你的技术选择有多 “正统”、多让人安心。</p>
+<h3 id="The-Cost-of-Being-Average"><a href="#The-Cost-of-Being-Average" class="headerlink" title="The Cost of Being Average"></a><strong>The Cost of Being Average</strong></h3><p><strong>平庸的代价</strong></p>
+<p>How much do you lose by using a less powerful language? There is actually some data out there about that.<br>用不够强大的语言，你会损失多少？其实有一些相关数据。</p>
+<p>The most convenient measure of power is probably code size. The point of high-level languages is to give you bigger abstractions– bigger bricks, as it were, so you don’t need as many to build a wall of a given size. So the more powerful the language, the shorter the program (not simply in characters, of course, but in distinct elements).<br>衡量语言强大程度最方便的指标可能是代码长度。高级语言的意义在于提供更大的抽象 —— 可以说，是更大的砖块，所以建同样大小的墙，需要的砖块更少。因此，语言越强大，程序就越短（当然，不是指字符数，而是指不同元素的数量）。</p>
+<p>How does a more powerful language enable you to write shorter programs? One technique you can use, if the language will let you, is something called bottom-up programming. Instead of simply writing your application in the base language, you build on top of the base language a language for writing programs like yours, then write your program in it. The combined code can be much shorter than if you had written your whole program in the base language– indeed, this is how most compression algorithms work. A bottom-up program should be easier to modify as well, because in many cases the language layer won’t have to change at all.<br>更强大的语言怎么能让程序更短？如果语言支持，你可以用一种叫 “自底向上编程” 的技术。不是直接用基础语言写应用，而是在基础语言之上构建一种适合写这类应用的语言，再用这种语言写应用。这样一来，总代码量会比全用基础语言写短得多 —— 其实，大多数压缩算法也是这个原理。自底向上编写的程序也更容易修改，因为很多情况下，语言层根本不需要改动。</p>
+<p>Code size is important, because the time it takes to write a program depends mostly on its length. If your program would be three times as long in another language, it will take three times as long to write– and you can’t get around this by hiring more people, because beyond a certain size new hires are actually a net lose. Fred Brooks described this phenomenon in his famous book The Mythical Man-Month, and everything I’ve seen has tended to confirm what he said.<br>代码长度很重要，因为写程序的时间主要取决于长度。如果用另一种语言，你的程序会变长三倍，那么写它的时间也会变成三倍 —— 而且你不能通过多招人来解决，因为超过一定规模后，新员工实际上是净损耗。弗雷德・布鲁克斯在他的名著《人月神话》中描述了这种现象，我所见的一切都印证了他的说法。</p>
+<p>So how much shorter are your programs if you write them in Lisp? Most of the numbers I’ve heard for Lisp versus C, for example, have been around 7-10x. But a recent article about ITA in New Architect magazine said that “one line of Lisp can replace 20 lines of C,” and since this article was full of quotes from ITA’s president, I assume they got this number from ITA. If so then we can put some faith in it; ITA’s software includes a lot of C and C++ as well as Lisp, so they are speaking from experience.<br>那么，用 Lisp 写程序，代码会短多少？比如，我听说的 Lisp 对 C 的比例大多在 7-10 倍左右。但《新架构师》杂志最近一篇关于 ITA 的文章说，“一行 Lisp 能替代 20 行 C”。因为文章里有很多 ITA 总裁的引言，我猜这个数字来自 ITA。如果是这样，我们可以相信它 ——ITA 的软件既用了很多 C 和 C++，也用了 Lisp，所以他们是有经验的。</p>
+<p>My guess is that these multiples aren’t even constant. I think they increase when you face harder problems and also when you have smarter programmers. A really good hacker can squeeze more out of better tools.<br>我猜这个倍数不是固定的。面对更难的问题，或者有更聪明的程序员时，这个倍数会更大。真正优秀的黑客能从更好的工具中榨取出更多价值。</p>
+<p>As one data point on the curve, at any rate, if you were to compete with ITA and chose to write your software in C, they would be able to develop software twenty times faster than you. If you spent a year on a new feature, they’d be able to duplicate it in less than three weeks. Whereas if they spent just three months developing something new, it would be five years before you had it too.<br>无论如何，有一个数据可以参考：如果你要和 ITA 竞争，却选择用 C 写软件，他们的开发速度会是你的 20 倍。你花一年开发的新功能，他们不到三周就能复制；而他们花三个月开发的新东西，你可能要五年才能做出来。</p>
+<p>And you know what? That’s the best-case scenario. When you talk about code-size ratios, you’re implicitly assuming that you can actually write the program in the weaker language. But in fact there are limits on what programmers can do. If you’re trying to solve a hard problem with a language that’s too low-level, you reach a point where there is just too much to keep in your head at once.<br>你知道吗？这还是最好的情况。谈论代码长度比时，你隐含的假设是：用较弱的语言确实能写出这个程序。但事实上，程序员的能力是有限的。如果你用太低级的语言解决难题，最终会发现，要同时记住的东西太多，根本记不住。</p>
+<p>So when I say it would take ITA’s imaginary competitor five years to duplicate something ITA could write in Lisp in three months, I mean five years if nothing goes wrong. In fact, the way things work in most companies, any development project that would take five years is likely never to get finished at all.<br>所以，当我说 ITA 的假想竞争对手要用五年复制 ITA 用 Lisp 三个月能完成的东西时，我指的是 “如果一切顺利” 的情况。但事实上，在大多数公司里，任何需要五年的开发项目，很可能根本完不成。</p>
+<p>I admit this is an extreme case. ITA’s hackers seem to be unusually smart, and C is a pretty low-level language. But in a competitive market, even a differential of two or three to one would be enough to guarantee that you’d always be behind.<br>我承认这是个极端案例。ITA 的黑客似乎异常聪明，而 C 确实是很低级的语言。但在竞争激烈的市场中，哪怕只是 2-3 倍的差距，也足以保证你永远落后。</p>
+<h3 id="A-Recipe"><a href="#A-Recipe" class="headerlink" title="A Recipe"></a><strong>A Recipe</strong></h3><p><strong>一个秘诀</strong></p>
+<p>This is the kind of possibility that the pointy-haired boss doesn’t even want to think about. And so most of them don’t. Because, you know, when it comes down to it, the pointy-haired boss doesn’t mind if his company gets their ass kicked, so long as no one can prove it’s his fault. The safest plan for him personally is to stick close to the center of the herd.<br>这种可能性是尖头老板连想都不愿想的。所以他们大多不会去想。因为，说到底，尖头老板不在乎公司是否会被碾压，只要没人能证明是他的错就行。对他个人来说，最安全的计划就是紧跟大流。</p>
+<p>Within large organizations, the phrase used to describe this approach is “industry best practice.” Its purpose is to shield the pointy-haired boss from responsibility: if he chooses something that is “industry best practice,” and the company loses, he can’t be blamed. He didn’t choose, the industry did.<br>在大公司里，描述这种做法的词是 “行业最佳实践”。它的目的是为尖头老板推卸责任：如果他选择了 “行业最佳实践”，而公司输了，他不用背锅。不是他选的，是行业选的。</p>
+<p>I believe this term was originally used to describe accounting methods and so on. What it means, roughly, is don’t do anything weird. And in accounting that’s probably a good idea. The terms “cutting-edge” and “accounting” do not sound good together. But when you import this criterion into decisions about technology, you start to get the wrong answers.<br>我认为这个词最初是用来描述会计方法等的。它大致意思是 “别做怪事”。在会计领域，这可能是个好主意 ——“前沿” 和 “会计” 放在一起确实不搭。但把这个标准用到技术决策上，你就会得到错误的答案。</p>
+<p>Technology often should be cutting-edge. In programming languages, as Erann Gat has pointed out, what “industry best practice” actually gets you is not the best, but merely the average. When a decision causes you to develop software at a fraction of the rate of more aggressive competitors, “best practice” is a misnomer.<br>技术往往就该是前沿的。正如埃兰・盖特指出的，在编程语言领域，“行业最佳实践” 给你的不是最好，只是平均水平。当一个决策让你的软件开发速度只有更激进竞争对手的几分之一时，“最佳实践” 就是个误称。</p>
+<p>So here we have two pieces of information that I think are very valuable. In fact, I know it from my own experience. Number 1, languages vary in power. Number 2, most managers deliberately ignore this. Between them, these two facts are literally a recipe for making money. ITA is an example of this recipe in action. If you want to win in a software business, just take on the hardest problem you can find, use the most powerful language you can get, and wait for your competitors’ pointy-haired bosses to revert to the mean.<br>所以，我觉得有两个信息非常有价值。其实，我自己的经验也证明了这一点。第一，语言的强大程度不同。第二，大多数管理者故意忽视这一点。这两个事实加起来，简直就是赚钱的秘诀。ITA 就是这个秘诀的实践者。如果你想在软件行业获胜，就去解决你能找到的最难的问题，用你能得到的最强大的语言，然后等着竞争对手的尖头老板们回归平庸就行了。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>书呆子的复仇</div>
+      <div>https://hokkaidornis.github.io/2025/08/14/revenge-of-the-nerds/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/14/the-other-road-ahead/" title="前路殊途">
+                        <span class="hidden-mobile">前路殊途</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
