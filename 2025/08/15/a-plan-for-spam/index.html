@@ -1,0 +1,820 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="A Plan for Spam原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;spam.html August 2002 (This article describes the spam-filtering techniques used in the spamproof web-based mail reader we built to exercise Arc. An improve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="垃圾邮件应对方案">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/15/a-plan-for-spam/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="A Plan for Spam原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;spam.html August 2002 (This article describes the spam-filtering techniques used in the spamproof web-based mail reader we built to exercise Arc. An improve">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-15T01:29:14.000Z">
+<meta property="article:modified_time" content="2025-08-15T01:32:50.722Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>垃圾邮件应对方案 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="垃圾邮件应对方案"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-15 09:29" pubdate>
+          2025年8月15日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          46 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">垃圾邮件应对方案</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="A-Plan-for-Spam"><a href="#A-Plan-for-Spam" class="headerlink" title="A Plan for Spam"></a>A Plan for Spam</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/spam.html">https://paulgraham.com/spam.html</a></p>
+<p>August 2002</p>
+<p>(This article describes the spam-filtering techniques used in the spamproof web-based mail reader we built to exercise Arc. An improved algorithm is described in Better Bayesian Filtering.)</p>
+<p>（本文介绍了我们为测试 Arc 语言而开发的防垃圾邮件网页邮件阅读器中使用的垃圾邮件过滤技术。更完善的算法详见《更好的贝叶斯过滤》。）</p>
+<p>I think it’s possible to stop spam, and that content-based filters are the way to do it. The Achilles heel of the spammers is their message. They can circumvent any other barrier you set up. They have so far, at least. But they have to deliver their message, whatever it is. If we can write software that recognizes their messages, there is no way they can get around that.</p>
+<p>我认为阻止垃圾邮件是有可能的，而基于内容的过滤器是实现这一目标的方法。垃圾邮件发送者的致命弱点在于他们的邮件内容。他们能绕过你设置的任何其他障碍 —— 至少到目前为止是这样。但无论内容是什么，他们总得传递信息。如果我们能写出识别这些信息的软件，他们就无从遁形了。</p>
+<hr>
+<p>To the recipient, spam is easily recognizable. If you hired someone to read your mail and discard the spam, they would have little trouble doing it. How much do we have to do, short of AI, to automate this process?</p>
+<p>对收件人来说，垃圾邮件很容易识别。如果雇人读邮件并删掉垃圾邮件，他们做起来毫不费力。抛开人工智能不谈，要实现这个过程的自动化，我们需要做到什么程度呢？</p>
+<p>I think we will be able to solve the problem with fairly simple algorithms. In fact, I’ve found that you can filter present-day spam acceptably well using nothing more than a Bayesian combination of the spam probabilities of individual words. Using a slightly tweaked (as described below) Bayesian filter, we now miss less than 5 per 1000 spams, with 0 false positives.</p>
+<p>我认为我们能用相当简单的算法解决这个问题。事实上，我发现仅通过对单个单词的垃圾邮件概率进行贝叶斯组合，就能很好地过滤当前的垃圾邮件。使用经过轻微调整（如下所述）的贝叶斯过滤器，我们现在每 1000 封垃圾邮件中漏过的不到 5 封，且误判率为 0。</p>
+<p>The statistical approach is not usually the first one people try when they write spam filters. Most hackers’ first instinct is to try to write software that recognizes individual properties of spam. You look at spams and you think, the gall of these guys to try sending me mail that begins “Dear Friend” or has a subject line that’s all uppercase and ends in eight exclamation points. I can filter out that stuff with about one line of code.</p>
+<p>人们编写垃圾邮件过滤器时，通常不会首先尝试统计方法。大多数黑客的第一反应是编写能识别垃圾邮件个别特征的软件。看到垃圾邮件时，你会想：这些人竟然敢给我发以 “亲爱的朋友” 开头、或主题全是大写且以八个感叹号结尾的邮件。我用一行代码就能过滤掉这类东西。</p>
+<p>And so you do, and in the beginning it works. A few simple rules will take a big bite out of your incoming spam. Merely looking for the word “click” will catch 79.7% of the emails in my spam corpus, with only 1.2% false positives.</p>
+<p>于是你就这么做了，一开始确实有效。几条简单的规则就能大幅减少收到的垃圾邮件。仅搜索 “click” 这个词，就能拦截我垃圾邮件语料库中 79.7% 的邮件，误判率仅为 1.2%。</p>
+<p>I spent about six months writing software that looked for individual spam features before I tried the statistical approach. What I found was that recognizing that last few percent of spams got very hard, and that as I made the filters stricter I got more false positives.</p>
+<p>在尝试统计方法之前，我花了大约六个月时间编写识别垃圾邮件个别特征的软件。我发现，识别最后那几个百分点的垃圾邮件变得非常困难，而且随着过滤器越来越严格，误判也越来越多。</p>
+<p>False positives are innocent emails that get mistakenly identified as spams. For most users, missing legitimate email is an order of magnitude worse than receiving spam, so a filter that yields false positives is like an acne cure that carries a risk of death to the patient.</p>
+<p>误判指的是正常邮件被错误地标记为垃圾邮件。对大多数用户来说，错过合法邮件比收到垃圾邮件要糟糕得多，所以产生误判的过滤器就像一种痤疮疗法，却有导致患者死亡的风险。</p>
+<p>The more spam a user gets, the less likely he’ll be to notice one innocent mail sitting in his spam folder. And strangely enough, the better your spam filters get, the more dangerous false positives become, because when the filters are really good, users will be more likely to ignore everything they catch.</p>
+<p>用户收到的垃圾邮件越多，就越难注意到垃圾邮件文件夹里有一封正常邮件。奇怪的是，你的垃圾邮件过滤器越好，误判就越危险，因为当过滤器非常出色时，用户更可能忽略它拦截的所有内容。</p>
+<p>I don’t know why I avoided trying the statistical approach for so long. I think it was because I got addicted to trying to identify spam features myself, as if I were playing some kind of competitive game with the spammers. (Nonhackers don’t often realize this, but most hackers are very competitive.) When I did try statistical analysis, I found immediately that it was much cleverer than I had been. It discovered, of course, that terms like “virtumundo” and “teens” were good indicators of spam. But it also discovered that “per” and “FL” and “ff0000” are good indicators of spam. In fact, “ff0000” (html for bright red) turns out to be as good an indicator of spam as any pornographic term.</p>
+<p>我不知道为什么我这么久都没尝试统计方法。我想是因为我沉迷于自己识别垃圾邮件特征，就像在和垃圾邮件发送者玩一种竞争性游戏（非黑客往往意识不到，但大多数黑客都极具竞争性）。当我尝试统计分析时，立刻发现它比我聪明得多。当然，它发现了 “virtumundo” 和 “teens” 这类词是垃圾邮件的良好指示器，但也发现 “per”“FL” 和 “ff0000” 也是如此。事实上，“ff0000”（HTML 中表示亮红色）作为垃圾邮件指示器的效果，和任何色情词汇一样好。</p>
+<hr>
+<p>Here’s a sketch of how I do statistical filtering. I start with one corpus of spam and one of nonspam mail. At the moment each one has about 4000 messages in it. I scan the entire text, including headers and embedded html and javascript, of each message in each corpus. I currently consider alphanumeric characters, dashes, apostrophes, and dollar signs to be part of tokens, and everything else to be a token separator. (There is probably room for improvement here.) I ignore tokens that are all digits, and I also ignore html comments, not even considering them as token separators.</p>
+<p>下面简要介绍我进行统计过滤的方法。我从一个垃圾邮件语料库和一个非垃圾邮件语料库开始。目前每个语料库大约有 4000 条消息。我扫描每个语料库中每条消息的全部文本，包括标题、嵌入的 HTML 和 JavaScript。目前，我将字母数字字符、连字符、撇号和美元符号视为令牌的一部分，其他所有字符都作为令牌分隔符（这方面可能还有改进空间）。我忽略全是数字的令牌，也忽略 HTML 注释，甚至不把它们当作令牌分隔符。</p>
+<p>I count the number of times each token (ignoring case, currently) occurs in each corpus. At this stage I end up with two large hash tables, one for each corpus, mapping tokens to number of occurrences.</p>
+<p>我统计每个令牌（目前不区分大小写）在每个语料库中出现的次数。在这个阶段，我得到两个大型哈希表，每个语料库一个，用于将令牌映射到出现次数。</p>
+<p>Next I create a third hash table, this time mapping each token to the probability that an email containing it is a spam, which I calculate as follows [1]:</p>
+<p>接下来，我创建第三个哈希表，这次是将每个令牌映射到包含该令牌的邮件是垃圾邮件的概率，计算方法如下 [1]：</p>
+<p>(let ((g (* 2 (or (gethash word good) 0)))<br>(b (or (gethash word bad) 0)))<br>(unless (&lt; (+ g b) 5)<br>(max .01<br>(min .99 (float (&#x2F; (min 1 (&#x2F; b nbad))<br>(+ (min 1 (&#x2F; g ngood))<br>(min 1 (&#x2F; b nbad)))))))))<br>where word is the token whose probability we’re calculating, good and bad are the hash tables I created in the first step, and ngood and nbad are the number of nonspam and spam messages respectively.</p>
+<p>其中，word 是我们要计算概率的令牌，good 和 bad 是第一步创建的哈希表，ngood 和 nbad 分别是非垃圾邮件和垃圾邮件的数量。</p>
+<p>I explained this as code to show a couple of important details. I want to bias the probabilities slightly to avoid false positives, and by trial and error I’ve found that a good way to do it is to double all the numbers in good. This helps to distinguish between words that occasionally do occur in legitimate email and words that almost never do. I only consider words that occur more than five times in total (actually, because of the doubling, occurring three times in nonspam mail would be enough). And then there is the question of what probability to assign to words that occur in one corpus but not the other. Again by trial and error I chose .01 and .99. There may be room for tuning here, but as the corpus grows such tuning will happen automatically anyway.</p>
+<p>我用代码来解释是为了展示几个重要细节。我想略微调整概率以避免误判，通过反复试验发现，一个好方法是将 good 中的所有数值加倍。这有助于区分偶尔出现在合法邮件中的单词和几乎从不出现的单词。我只考虑总出现次数超过 5 次的单词（实际上，由于加倍处理，在非垃圾邮件中出现 3 次就足够了）。还有一个问题是，对于在一个语料库中出现而在另一个中不出现的单词，该分配什么概率。我再次通过反复试验选择了 0.01 和 0.99。这里可能有调整的空间，但随着语料库的扩大，这种调整会自动进行。</p>
+<p>The especially observant will notice that while I consider each corpus to be a single long stream of text for purposes of counting occurrences, I use the number of emails in each, rather than their combined length, as the divisor in calculating spam probabilities. This adds another slight bias to protect against false positives.</p>
+<p>观察力特别敏锐的人会注意到，虽然为了统计出现次数，我将每个语料库视为一个连续的长文本流，但在计算垃圾邮件概率时，我使用每个语料库中的邮件数量作为除数，而不是它们的总长度。这又增加了一个轻微的偏向，以防止误判。</p>
+<p>When new mail arrives, it is scanned into tokens, and the most interesting fifteen tokens, where interesting is measured by how far their spam probability is from a neutral .5, are used to calculate the probability that the mail is spam. If probs is a list of the fifteen individual probabilities, you calculate the combined probability thus:</p>
+<p>当新邮件到达时，它会被扫描成令牌，然后选取 15 个最 “有趣” 的令牌（“有趣” 的衡量标准是它们的垃圾邮件概率与中性值 0.5 的距离）来计算该邮件是垃圾邮件的概率。如果 probs 是这 15 个单独概率的列表，那么联合概率的计算方法如下：</p>
+<p>(let ((prod (apply #’* probs)))<br>(&#x2F; prod (+ prod (apply #’* (mapcar #’(lambda (x)<br>(- 1 x))<br>probs)))))<br>One question that arises in practice is what probability to assign to a word you’ve never seen, i.e. one that doesn’t occur in the hash table of word probabilities. I’ve found, again by trial and error, that .4 is a good number to use. If you’ve never seen a word before, it is probably fairly innocent; spam words tend to be all too familiar.</p>
+<p>在实际应用中出现的一个问题是，对于从未见过的单词（即在单词概率哈希表中没有出现的单词），该分配什么概率。我再次通过反复试验发现，0.4 是个不错的数值。如果你从未见过某个单词，它很可能是无害的；而垃圾邮件中出现的单词往往都很常见。</p>
+<p>There are examples of this algorithm being applied to actual emails in an appendix at the end.</p>
+<p>文末的附录中有该算法应用于实际邮件的例子。</p>
+<p>I treat mail as spam if the algorithm above gives it a probability of more than .9 of being spam. But in practice it would not matter much where I put this threshold, because few probabilities end up in the middle of the range.</p>
+<p>如果上述算法给出的邮件是垃圾邮件的概率超过 0.9，我就将其视为垃圾邮件。但实际上，这个阈值设在哪里影响不大，因为很少有概率会落在中间范围。</p>
+<hr>
+<p>One great advantage of the statistical approach is that you don’t have to read so many spams. Over the past six months, I’ve read literally thousands of spams, and it is really kind of demoralizing. Norbert Wiener said if you compete with slaves you become a slave, and there is something similarly degrading about competing with spammers. To recognize individual spam features you have to try to get into the mind of the spammer, and frankly I want to spend as little time inside the minds of spammers as possible.</p>
+<p>统计方法的一大优势是你不必阅读那么多垃圾邮件。在过去六个月里，我确实读了数千封垃圾邮件，这真的很让人泄气。诺伯特・维纳说过，与奴隶竞争，你会变成奴隶；与垃圾邮件发送者竞争，也有类似的屈辱感。要识别垃圾邮件的个别特征，你就得试图钻进垃圾邮件发送者的脑子里，坦率地说，我想尽可能少花时间去琢磨他们的想法。</p>
+<p>But the real advantage of the Bayesian approach, of course, is that you know what you’re measuring. Feature-recognizing filters like SpamAssassin assign a spam “score” to email. The Bayesian approach assigns an actual probability. The problem with a “score” is that no one knows what it means. The user doesn’t know what it means, but worse still, neither does the developer of the filter. How many points should an email get for having the word “sex” in it? A probability can of course be mistaken, but there is little ambiguity about what it means, or how evidence should be combined to calculate it. Based on my corpus, “sex” indicates a .97 probability of the containing email being a spam, whereas “sexy” indicates .99 probability. And Bayes’ Rule, equally unambiguous, says that an email containing both words would, in the (unlikely) absence of any other evidence, have a 99.97% chance of being a spam.</p>
+<p>当然，贝叶斯方法的真正优势在于你知道自己在衡量什么。像 SpamAssassin 这样的特征识别过滤器会给邮件分配一个垃圾邮件 “分数”，而贝叶斯方法则给出实际概率。“分数” 的问题在于没人知道它意味着什么。用户不知道，更糟糕的是，过滤器的开发者也不知道。邮件中出现 “sex” 一词应该扣多少分？概率当然可能出错，但它的含义以及如何结合证据计算概率，几乎没有歧义。根据我的语料库，“sex” 意味着包含它的邮件有 97% 的概率是垃圾邮件，而 “sexy” 则意味着 99% 的概率。同样明确的是，根据贝叶斯法则，在（不太可能的）没有其他证据的情况下，同时包含这两个词的邮件有 99.97% 的概率是垃圾邮件。</p>
+<p>Because it is measuring probabilities, the Bayesian approach considers all the evidence in the email, both good and bad. Words that occur disproportionately rarely in spam (like “though” or “tonight” or “apparently”) contribute as much to decreasing the probability as bad words like “unsubscribe” and “opt-in” do to increasing it. So an otherwise innocent email that happens to include the word “sex” is not going to get tagged as spam.</p>
+<p>由于贝叶斯方法是在衡量概率，它会考虑邮件中所有的证据，包括有利的和不利的。在垃圾邮件中出现频率异常低的词（如 “though”“tonight”“apparently”）在降低概率方面的作用，与 “unsubscribe”“opt-in” 等不利词汇在提高概率方面的作用相当。因此，一封原本正常、只是碰巧包含 “sex” 一词的邮件不会被标记为垃圾邮件。</p>
+<p>Ideally, of course, the probabilities should be calculated individually for each user. I get a lot of email containing the word “Lisp”, and (so far) no spam that does. So a word like that is effectively a kind of password for sending mail to me. In my earlier spam-filtering software, the user could set up a list of such words and mail containing them would automatically get past the filters. On my list I put words like “Lisp” and also my zipcode, so that (otherwise rather spammy-sounding) receipts from online orders would get through. I thought I was being very clever, but I found that the Bayesian filter did the same thing for me, and moreover discovered of a lot of words I hadn’t thought of.</p>
+<p>当然，理想情况下，概率应该为每个用户单独计算。我收到很多包含 “Lisp” 一词的邮件，（到目前为止）没有垃圾邮件包含这个词。所以像这样的词实际上是给我发邮件的一种 “密码”。在我早期的垃圾邮件过滤软件中，用户可以设置这样的单词列表，包含这些单词的邮件会自动通过过滤器。我在自己的列表中加入了 “Lisp” 和我的邮政编码，这样（否则听起来很像垃圾邮件的）在线订单收据就能通过。我以为自己很聪明，但发现贝叶斯过滤器也为我做了同样的事，而且还发现了很多我没想到的单词。</p>
+<p>When I said at the start that our filters let through less than 5 spams per 1000 with 0 false positives, I’m talking about filtering my mail based on a corpus of my mail. But these numbers are not misleading, because that is the approach I’m advocating: filter each user’s mail based on the spam and nonspam mail he receives. Essentially, each user should have two delete buttons, ordinary delete and delete-as-spam. Anything deleted as spam goes into the spam corpus, and everything else goes into the nonspam corpus.</p>
+<p>我一开始说我们的过滤器每 1000 封垃圾邮件中漏过的不到 5 封，且误判率为 0，指的是基于我自己的邮件语料库过滤我的邮件。但这些数字并不具有误导性，因为这正是我所倡导的方法：根据每个用户收到的垃圾邮件和非垃圾邮件来过滤他们的邮件。本质上，每个用户应该有两个删除按钮，一个是普通删除，一个是标记为垃圾邮件删除。标记为垃圾邮件删除的内容进入垃圾邮件语料库，其他内容进入非垃圾邮件语料库。</p>
+<p>You could start users with a seed filter, but ultimately each user should have his own per-word probabilities based on the actual mail he receives. This (a) makes the filters more effective, (b) lets each user decide their own precise definition of spam, and (c) perhaps best of all makes it hard for spammers to tune mails to get through the filters. If a lot of the brain of the filter is in the individual databases, then merely tuning spams to get through the seed filters won’t guarantee anything about how well they’ll get through individual users’ varying and much more trained filters.</p>
+<p>可以给用户一个初始过滤器，但最终每个用户都应该根据自己收到的实际邮件拥有自己的单词概率。这（a）能提高过滤器的效率；（b）让每个用户可以自己定义垃圾邮件；（c）或许最重要的是，让垃圾邮件发送者难以调整邮件以通过过滤器。如果过滤器的核心部分存在于各个用户的数据库中，那么仅仅调整垃圾邮件以通过初始过滤器，并不能保证它们能顺利通过每个用户各不相同且训练更充分的过滤器。</p>
+<p>Content-based spam filtering is often combined with a whitelist, a list of senders whose mail can be accepted with no filtering. One easy way to build such a whitelist is to keep a list of every address the user has ever sent mail to. If a mail reader has a delete-as-spam button then you could also add the from address of every email the user has deleted as ordinary trash.</p>
+<p>基于内容的垃圾邮件过滤通常与白名单结合使用，白名单是指可以无过滤接收邮件的发送者列表。构建这种白名单的一个简单方法是保存用户曾经发送过邮件的所有地址。如果邮件阅读器有 “标记为垃圾邮件删除” 按钮，还可以添加用户以普通方式删除的所有邮件的发件人地址。</p>
+<p>I’m an advocate of whitelists, but more as a way to save computation than as a way to improve filtering. I used to think that whitelists would make filtering easier, because you’d only have to filter email from people you’d never heard from, and someone sending you mail for the first time is constrained by convention in what they can say to you. Someone you already know might send you an email talking about sex, but someone sending you mail for the first time would not be likely to. The problem is, people can have more than one email address, so a new from-address doesn’t guarantee that the sender is writing to you for the first time. It is not unusual for an old friend (especially if he is a hacker) to suddenly send you an email with a new from-address, so you can’t risk false positives by filtering mail from unknown addresses especially stringently.</p>
+<p>我支持使用白名单，但更多是作为节省计算资源的方式，而非改进过滤效果的方式。我曾经认为白名单会让过滤更容易，因为你只需要过滤来自陌生发件人的邮件，而第一次给你发邮件的人在内容上会受到惯例的约束。你认识的人可能会给你发谈论性的邮件，但第一次给你发邮件的人不太可能这样做。问题是，人们可能有多个电子邮件地址，所以一个新的发件人地址并不能保证发送者是第一次给你写信。老朋友（尤其是黑客朋友）突然用新地址给你发邮件并不罕见，所以不能为了严格过滤陌生地址的邮件而冒误判的风险。</p>
+<p>In a sense, though, my filters do themselves embody a kind of whitelist (and blacklist) because they are based on entire messages, including the headers. So to that extent they “know” the email addresses of trusted senders and even the routes by which mail gets from them to me. And they know the same about spam, including the server names, mailer versions, and protocols.</p>
+<p>不过，从某种意义上说，我的过滤器本身就包含了一种白名单（和黑名单），因为它们基于整个邮件，包括标题。因此，它们在一定程度上 “知道” 可信发送者的电子邮件地址，甚至知道邮件从他们那里发送到我这里的路径。它们对垃圾邮件也有同样的了解，包括服务器名称、邮件程序版本和协议。</p>
+<hr>
+<p>If I thought that I could keep up current rates of spam filtering, I would consider this problem solved. But it doesn’t mean much to be able to filter out most present-day spam, because spam evolves. Indeed, most antispam techniques so far have been like pesticides that do nothing more than create a new, resistant strain of bugs.</p>
+<p>如果我认为能保持目前的垃圾邮件过滤效率，我会认为这个问题已经解决了。但能过滤掉大多数当前的垃圾邮件意义不大，因为垃圾邮件在不断演变。事实上，到目前为止，大多数反垃圾邮件技术就像杀虫剂，只是催生了新的、有抗药性的 “虫子”。</p>
+<p>I’m more hopeful about Bayesian filters, because they evolve with the spam. So as spammers start using “c0ck” instead of “cock” to evade simple-minded spam filters based on individual words, Bayesian filters automatically notice. Indeed, “c0ck” is far more damning evidence than “cock”, and Bayesian filters know precisely how much more.</p>
+<p>我对贝叶斯过滤器更有信心，因为它们能随垃圾邮件一起演变。所以当垃圾邮件发送者开始用 “c0ck” 代替 “cock” 来规避基于单个单词的简单垃圾邮件过滤器时，贝叶斯过滤器会自动注意到。事实上，“c0ck” 比 “cock” 更能证明是垃圾邮件，而贝叶斯过滤器能精确地知道其程度。</p>
+<p>Still, anyone who proposes a plan for spam filtering has to be able to answer the question: if the spammers knew exactly what you were doing, how well could they get past you? For example, I think that if checksum-based spam filtering becomes a serious obstacle, the spammers will just switch to mad-lib techniques for generating message bodies.</p>
+<p>不过，任何提出垃圾邮件过滤方案的人都必须能够回答这个问题：如果垃圾邮件发送者确切知道你在做什么，他们能有多容易绕过你？例如，我认为如果基于校验和的垃圾邮件过滤成为一个严重障碍，垃圾邮件发送者就会转向用 “疯狂填词” 技术生成邮件正文。</p>
+<p>To beat Bayesian filters, it would not be enough for spammers to make their emails unique or to stop using individual naughty words. They’d have to make their mails indistinguishable from your ordinary mail. And this I think would severely constrain them. Spam is mostly sales pitches, so unless your regular mail is all sales pitches, spams will inevitably have a different character. And the spammers would also, of course, have to change (and keep changing) their whole infrastructure, because otherwise the headers would look as bad to the Bayesian filters as ever, no matter what they did to the message body. I don’t know enough about the infrastructure that spammers use to know how hard it would be to make the headers look innocent, but my guess is that it would be even harder than making the message look innocent.</p>
+<p>要击败贝叶斯过滤器，垃圾邮件发送者仅仅让他们的邮件独一无二或停止使用个别不雅词汇是不够的。他们必须让自己的邮件与你的普通邮件无法区分。而我认为这会严重限制他们。垃圾邮件大多是推销信息，所以除非你的常规邮件全是推销信息，否则垃圾邮件必然会有不同的特征。当然，垃圾邮件发送者还必须改变（并不断改变）他们的整个基础设施，否则无论他们对邮件正文做什么，标题在贝叶斯过滤器看来仍会和以前一样可疑。我对垃圾邮件发送者使用的基础设施了解不够，不知道要让标题看起来无害有多难，但我猜这比让邮件正文看起来无害更难。</p>
+<p>Assuming they could solve the problem of the headers, the spam of the future will probably look something like this:</p>
+<p>Hey there. Thought you should check out the following:<br><a target="_blank" rel="noopener" href="http://www.27meg.com/foo">http://www.27meg.com/foo</a><br>because that is about as much sales pitch as content-based filtering will leave the spammer room to make. (Indeed, it will be hard even to get this past filters, because if everything else in the email is neutral, the spam probability will hinge on the url, and it will take some effort to make that look neutral.)</p>
+<p>假设他们能解决标题的问题，未来的垃圾邮件可能会是这样的：</p>
+<p>嘿，觉得你应该看看这个：<br><a target="_blank" rel="noopener" href="http://www.27meg.com/foo">http://www.27meg.com/foo</a></p>
+<p>因为这差不多是基于内容的过滤留给垃圾邮件发送者的推销空间了。（实际上，甚至这样的邮件也很难通过过滤器，因为如果邮件中其他内容都是中性的，垃圾邮件概率就取决于网址，而要让网址看起来中性需要下一番功夫。）</p>
+<p>Spammers range from businesses running so-called opt-in lists who don’t even try to conceal their identities, to guys who hijack mail servers to send out spams promoting porn sites. If we use filtering to whittle their options down to mails like the one above, that should pretty much put the spammers on the “legitimate” end of the spectrum out of business; they feel obliged by various state laws to include boilerplate about why their spam is not spam, and how to cancel your “subscription,” and that kind of text is easy to recognize.</p>
+<p>垃圾邮件发送者形形色色，既有运营所谓 “选择加入” 列表、甚至不试图隐瞒身份的企业，也有劫持邮件服务器发送推广色情网站垃圾邮件的人。如果我们通过过滤将他们的选择范围缩小到上面这样的邮件，应该能让那些处于 “合法” 端的垃圾邮件发送者倒闭；他们迫于各州法律的规定，会在邮件中加入一些套话，说明他们的垃圾邮件不是垃圾邮件、如何取消 “订阅” 等，而这类文本很容易识别。</p>
+<p>(I used to think it was naive to believe that stricter laws would decrease spam. Now I think that while stricter laws may not decrease the amount of spam that spammers send, they can certainly help filters to decrease the amount of spam that recipients actually see.)</p>
+<p>（我曾经认为相信更严格的法律会减少垃圾邮件是天真的。现在我认为，虽然更严格的法律可能不会减少垃圾邮件发送者发送的垃圾邮件数量，但它们肯定能帮助过滤器减少收件人实际看到的垃圾邮件数量。）</p>
+<p>All along the spectrum, if you restrict the sales pitches spammers can make, you will inevitably tend to put them out of business. That word business is an important one to remember. The spammers are businessmen. They send spam because it works. It works because although the response rate is abominably low (at best 15 per million, vs 3000 per million for a catalog mailing), the cost, to them, is practically nothing. The cost is enormous for the recipients, about 5 man-weeks for each million recipients who spend a second to delete the spam, but the spammer doesn’t have to pay that.</p>
+<p>在整个范围内，如果你限制垃圾邮件发送者能进行的推销，就必然会让他们逐渐倒闭。“商业” 这个词很重要，要记住。垃圾邮件发送者是商人，他们发送垃圾邮件是因为这招管用。之所以管用，是因为虽然回复率极低（最多每百万封有 15 封回复，而目录邮件每百万封有 3000 封回复），但对他们来说，成本几乎为零。而对收件人来说，成本巨大 —— 每百万收件人花一秒钟删除垃圾邮件，就相当于 5 个人周的工作量，但垃圾邮件发送者不必支付这笔费用。</p>
+<p>Sending spam does cost the spammer something, though. [2] So the lower we can get the response rate– whether by filtering, or by using filters to force spammers to dilute their pitches– the fewer businesses will find it worth their while to send spam.</p>
+<p>不过，发送垃圾邮件确实会让发送者付出一些代价 [2]。所以，我们能把回复率压得越低 —— 无论是通过过滤，还是通过过滤器迫使垃圾邮件发送者淡化他们的推销 —— 就会有越少的企业觉得值得发送垃圾邮件。</p>
+<p>The reason the spammers use the kinds of sales pitches that they do is to increase response rates. This is possibly even more disgusting than getting inside the mind of a spammer, but let’s take a quick look inside the mind of someone who responds to a spam. This person is either astonishingly credulous or deeply in denial about their sexual interests. In either case, repulsive or idiotic as the spam seems to us, it is exciting to them. The spammers wouldn’t say these things if they didn’t sound exciting. And “thought you should check out the following” is just not going to have nearly the pull with the spam recipient as the kinds of things that spammers say now. Result: if it can’t contain exciting sales pitches, spam becomes less effective as a marketing vehicle, and fewer businesses want to use it.</p>
+<p>垃圾邮件发送者使用这类推销话术是为了提高回复率。这可能比琢磨垃圾邮件发送者的想法更令人反感，但我们还是快速看看回复垃圾邮件的人的想法吧。这类人要么极其轻信，要么在性趣方面极力否认。不管是哪种情况，尽管垃圾邮件在我们看来令人厌恶或愚蠢，但对他们来说却很有吸引力。如果这些话听起来没有吸引力，垃圾邮件发送者是不会说的。而 “觉得你应该看看下面这个” 对垃圾邮件收件人的吸引力，远不及垃圾邮件发送者现在说的那些话。结果就是：如果垃圾邮件不能包含吸引人的推销话术，作为营销手段，它的效果就会大打折扣，使用它的企业也会更少。</p>
+<p>That is the big win in the end. I started writing spam filtering software because I didn’t want have to look at the stuff anymore. But if we get good enough at filtering out spam, it will stop working, and the spammers will actually stop sending it.</p>
+<p>这才是最终的巨大胜利。我开始编写垃圾邮件过滤软件是因为我不想再看到这些东西了。但如果我们的垃圾邮件过滤足够出色，垃圾邮件就会失去作用，发送者最终会停止发送。</p>
+<hr>
+<p>Of all the approaches to fighting spam, from software to laws, I believe Bayesian filtering will be the single most effective. But I also think that the more different kinds of antispam efforts we undertake, the better, because any measure that constrains spammers will tend to make filtering easier. And even within the world of content-based filtering, I think it will be a good thing if there are many different kinds of software being used simultaneously. The more different filters there are, the harder it will be for spammers to tune spams to get through them.</p>
+<p>在所有打击垃圾邮件的方法中，从软件到法律，我认为贝叶斯过滤将是最有效的。但我也认为，我们采取的反垃圾邮件措施种类越多越好，因为任何限制垃圾邮件发送者的措施都可能让过滤变得更容易。即使在基于内容的过滤领域，我认为同时使用多种不同的软件也是件好事。过滤器种类越多，垃圾邮件发送者就越难调整邮件以通过它们。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>垃圾邮件应对方案</div>
+      <div>https://hokkaidornis.github.io/2025/08/15/a-plan-for-spam/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/15/the-age-of-essay/" title="散文的时代">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">散文的时代</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/15/design-and-research/" title="设计与研究">
+                        <span class="hidden-mobile">设计与研究</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

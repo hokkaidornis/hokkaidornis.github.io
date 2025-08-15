@@ -1,0 +1,808 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Design and Research原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;desres.html January 2003 (This article is derived from a keynote talk at the fall 2002 meeting of NEPLS.) （本文源自 2002 年秋季 NEPLS 会议上的主题演讲。） Visitors to th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计与研究">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/15/design-and-research/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Design and Research原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;desres.html January 2003 (This article is derived from a keynote talk at the fall 2002 meeting of NEPLS.) （本文源自 2002 年秋季 NEPLS 会议上的主题演讲。） Visitors to th">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-15T01:16:05.000Z">
+<meta property="article:modified_time" content="2025-08-15T01:22:03.689Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>设计与研究 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="设计与研究"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-15 09:16" pubdate>
+          2025年8月15日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          38 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">设计与研究</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Design-and-Research"><a href="#Design-and-Research" class="headerlink" title="Design and Research"></a>Design and Research</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/desres.html">https://paulgraham.com/desres.html</a></p>
+<p>January 2003</p>
+<p>(This article is derived from a keynote talk at the fall 2002 meeting of NEPLS.)</p>
+<p>（本文源自 2002 年秋季 NEPLS 会议上的主题演讲。）</p>
+<p>Visitors to this country are often surprised to find that Americans like to begin a conversation by asking “what do you do?” I’ve never liked this question. I’ve rarely had a neat answer to it. But I think I have finally solved the problem. Now, when someone asks me what I do, I look them straight in the eye and say “I’m designing a new dialect of Lisp.” I recommend this answer to anyone who doesn’t like being asked what they do. The conversation will turn immediately to other topics.</p>
+<p>来这个国家的游客常常会惊讶地发现，美国人喜欢以 “你是做什么的？” 开启一段对话。我从来不喜欢这个问题，也很少能给出一个简洁的答案。但我想我终于解决了这个问题。现在，当有人问我是做什么的，我会直视他们的眼睛说：“我正在设计 Lisp 的一种新方言。” 我把这个答案推荐给所有不喜欢被问 “你是做什么的” 的人，这样对话会立刻转向其他话题。</p>
+<p>I don’t consider myself to be doing research on programming languages. I’m just designing one, in the same way that someone might design a building or a chair or a new typeface. I’m not trying to discover anything new. I just want to make a language that will be good to program in. In some ways, this assumption makes life a lot easier.</p>
+<p>我不认为自己在做编程语言研究。我只是在设计一种编程语言，就像有人设计一座建筑、一把椅子或一种新字体那样。我不是要去发现什么新东西，只是想做出一种好用的编程语言。在某些方面，这种定位让事情变得简单多了。</p>
+<p>The difference between design and research seems to be a question of new versus good. Design doesn’t have to be new, but it has to be good. Research doesn’t have to be good, but it has to be new. I think these two paths converge at the top: the best design surpasses its predecessors by using new ideas, and the best research solves problems that are not only new, but actually worth solving. So ultimately we’re aiming for the same destination, just approaching it from different directions.</p>
+<p>设计和研究的区别似乎在于 “新” 与 “好” 的差异。设计不一定需要新颖，但必须出色；研究不一定需要出色，但必须新颖。我认为这两条路径在顶端会交汇：最好的设计通过运用新思想超越前人，最好的研究解决的问题不仅是新的，而且是真正值得解决的。所以最终我们的目标是一致的，只是从不同方向接近而已。</p>
+<p>What I’m going to talk about today is what your target looks like from the back. What do you do differently when you treat programming languages as a design problem instead of a research topic?</p>
+<p>我今天要谈的是，当你从 “后端” 看待目标时会是什么样子。当你把编程语言当作一个设计问题而非研究课题时，做法会有哪些不同？</p>
+<p>The biggest difference is that you focus more on the user. Design begins by asking, who is this for and what do they need from it? A good architect, for example, does not begin by creating a design that he then imposes on the users, but by studying the intended users and figuring out what they need.</p>
+<p>最大的不同是你会更关注用户。设计始于这样的问题：这是为谁设计的？他们需要从中得到什么？例如，一位优秀的建筑师不会先设计出方案再强加给用户，而是先研究目标用户，弄清楚他们的需求。</p>
+<p>Notice I said “what they need,” not “what they want.” I don’t mean to give the impression that working as a designer means working as a sort of short-order cook, making whatever the client tells you to. This varies from field to field in the arts, but I don’t think there is any field in which the best work is done by the people who just make exactly what the customers tell them to.</p>
+<p>注意我说的是 “他们需要的”，而不是 “他们想要的”。我不是说设计师的工作就像快餐厨师，客户说要什么就做什么。艺术领域的情况各不相同，但我认为没有哪个领域里，最好的作品是由那些完全按客户要求制作的人完成的。</p>
+<p>The customer is always right in the sense that the measure of good design is how well it works for the user. If you make a novel that bores everyone, or a chair that’s horribly uncomfortable to sit in, then you’ve done a bad job, period. It’s no defense to say that the novel or the chair is designed according to the most advanced theoretical principles.</p>
+<p>从 “好设计的衡量标准是它对用户的适用性” 这个角度来说，客户总是对的。如果你写了一本让所有人都觉得无聊的小说，或者做了一把坐起来极其不舒服的椅子，那你就是做得不好，没什么可说的。说这本小说或这把椅子是按照最先进的理论原则设计的，这可不是什么辩解。</p>
+<p>And yet, making what works for the user doesn’t mean simply making what the user tells you to. Users don’t know what all the choices are, and are often mistaken about what they really want.</p>
+<p>然而，做出对用户有用的东西，并不意味着简单地按照用户说的去做。用户不知道所有的选择，而且常常对自己真正想要的东西存在误解。</p>
+<p>The answer to the paradox, I think, is that you have to design for the user, but you have to design what the user needs, not simply what he says he wants. It’s much like being a doctor. You can’t just treat a patient’s symptoms. When a patient tells you his symptoms, you have to figure out what’s actually wrong with him, and treat that.</p>
+<p>我认为，这个矛盾的答案是：你必须为用户设计，但你要设计的是用户需要的东西，而不仅仅是他们说自己想要的。这很像医生的工作，你不能只治疗病人的症状。当病人告诉你他的症状时，你必须弄清楚他实际的问题是什么，然后对症治疗。</p>
+<p>This focus on the user is a kind of axiom from which most of the practice of good design can be derived, and around which most design issues center.</p>
+<p>这种对用户的关注是一种公理，优秀设计的大部分实践都源于此，而且大多数设计问题也围绕此展开。</p>
+<p>If good design must do what the user needs, who is the user? When I say that design must be for users, I don’t mean to imply that good design aims at some kind of lowest common denominator. You can pick any group of users you want. If you’re designing a tool, for example, you can design it for anyone from beginners to experts, and what’s good design for one group might be bad for another. The point is, you have to pick some group of users. I don’t think you can even talk about good or bad design except with reference to some intended user.</p>
+<p>如果好的设计必须满足用户的需求，那用户是谁呢？当我说设计必须为用户服务时，我并不是说优秀的设计要以某种 “最低共同标准” 为目标。你可以选择任何用户群体。例如，如果你在设计一个工具，你可以为从初学者到专家的任何人群设计，对一个群体来说是好的设计，对另一个群体可能就是糟糕的。关键是，你必须选定某个用户群体。我认为，脱离特定的目标用户，根本无法谈论设计的好坏。</p>
+<p>You’re most likely to get good design if the intended users include the designer himself. When you design something for a group that doesn’t include you, it tends to be for people you consider to be less sophisticated than you, not more sophisticated.</p>
+<p>如果目标用户包括设计者自己，那么你最有可能做出好的设计。当你为一个不包括自己的群体设计东西时，这个群体往往会被你认为是比自己更不成熟的人，而不是更成熟的人。</p>
+<p>That’s a problem, because looking down on the user, however benevolently, seems inevitably to corrupt the designer. I suspect that very few housing projects in the US were designed by architects who expected to live in them. You can see the same thing in programming languages. C, Lisp, and Smalltalk were created for their own designers to use. Cobol, Ada, and Java, were created for other people to use.</p>
+<p>这是个问题，因为轻视用户 —— 无论多么善意 —— 似乎不可避免地会毁掉设计师。我怀疑美国很少有住宅项目是由那些打算住进去的建筑师设计的。在编程语言中也能看到同样的情况：C、Lisp 和 Smalltalk 是为设计者自己使用而创建的；Cobol、Ada 和 Java 则是为其他人使用而创建的。</p>
+<p>If you think you’re designing something for idiots, the odds are that you’re not designing something good, even for idiots.</p>
+<p>如果你认为自己在为 “傻瓜” 设计东西，那么很可能你设计的东西即使对 “傻瓜” 来说也不是好东西。</p>
+<p>Even if you’re designing something for the most sophisticated users, though, you’re still designing for humans. It’s different in research. In math you don’t choose abstractions because they’re easy for humans to understand; you choose whichever make the proof shorter. I think this is true for the sciences generally. Scientific ideas are not meant to be ergonomic.</p>
+<p>然而，即使你在为最成熟的用户设计东西，你仍然是在为人类设计。研究则不同。在数学中，你选择抽象概念不是因为它们容易被人类理解，而是因为它们能让证明更简洁。我认为这一点在整个科学界都成立：科学思想并不旨在符合人体工学。</p>
+<p>Over in the arts, things are very different. Design is all about people. The human body is a strange thing, but when you’re designing a chair, that’s what you’re designing for, and there’s no way around it. All the arts have to pander to the interests and limitations of humans. In painting, for example, all other things being equal a painting with people in it will be more interesting than one without. It is not merely an accident of history that the great paintings of the Renaissance are all full of people. If they hadn’t been, painting as a medium wouldn’t have the prestige that it does.</p>
+<p>在艺术领域，情况则大不相同。设计完全是关于人的。人体是一种奇特的存在，但当你设计一把椅子时，你就是在为人体设计，这是无法回避的。所有艺术都必须迎合人类的兴趣和局限。例如，在绘画中，在其他条件相同的情况下，有人物的画会比没有人物的画更有趣。文艺复兴时期的伟大画作都充满了人物，这不仅仅是历史的偶然。如果不是这样，绘画作为一种媒介就不会有现在的声望。</p>
+<p>Like it or not, programming languages are also for people, and I suspect the human brain is just as lumpy and idiosyncratic as the human body. Some ideas are easy for people to grasp and some aren’t. For example, we seem to have a very limited capacity for dealing with detail. It’s this fact that makes programing languages a good idea in the first place; if we could handle the detail, we could just program in machine language.</p>
+<p>不管你喜不喜欢，编程语言也是为人服务的，而且我怀疑人类的大脑和人体一样，都是不规整且独特的。有些概念人们很容易理解，有些则不然。例如，我们处理细节的能力似乎非常有限。正是这个事实使得编程语言首先成为一个好主意 —— 如果我们能处理这些细节，我们直接用机器语言编程就可以了。</p>
+<p>Remember, too, that languages are not primarily a form for finished programs, but something that programs have to be developed in. Anyone in the arts could tell you that you might want different mediums for the two situations. Marble, for example, is a nice, durable medium for finished ideas, but a hopelessly inflexible one for developing new ideas.</p>
+<p>还要记住，语言主要不是成品程序的形式，而是开发程序的工具。艺术领域的任何人都会告诉你，这两种情况可能需要不同的媒介。例如，大理石是呈现成品想法的好材料，耐用且精美，但用它来开发新想法则死板得无可救药。</p>
+<p>A program, like a proof, is a pruned version of a tree that in the past has had false starts branching off all over it. So the test of a language is not simply how clean the finished program looks in it, but how clean the path to the finished program was. A design choice that gives you elegant finished programs may not give you an elegant design process. For example, I’ve written a few macro-defining macros full of nested backquotes that look now like little gems, but writing them took hours of the ugliest trial and error, and frankly, I’m still not entirely sure they’re correct.</p>
+<p>一个程序，就像一个证明，是一棵树经过修剪后的版本，这棵树在过去曾有过无数错误的分支。所以，衡量一种语言的标准不仅仅是成品程序在其中看起来有多简洁，还要看通向成品程序的过程有多顺畅。能产生优雅成品程序的设计选择，未必能带来优雅的设计过程。例如，我写过一些宏定义宏，里面满是嵌套的反引号，现在看起来像小宝石一样精致，但写它们时却花了好几个小时进行极其丑陋的试错，而且坦白说，我至今仍不能完全确定它们是正确的。</p>
+<p>We often act as if the test of a language were how good finished programs look in it. It seems so convincing when you see the same program written in two languages, and one version is much shorter. When you approach the problem from the direction of the arts, you’re less likely to depend on this sort of test. You don’t want to end up with a programming language like marble.</p>
+<p>我们常常把 “成品程序在语言中呈现的效果” 当作衡量语言的标准。当你看到同一个程序用两种语言编写，其中一种版本短得多时，这种标准似乎很有说服力。但当你从艺术的角度来看待这个问题时，就不太可能依赖这种测试了。你不会想最终得到一种像大理石一样的编程语言。</p>
+<p>For example, it is a huge win in developing software to have an interactive toplevel, what in Lisp is called a read-eval-print loop. And when you have one this has real effects on the design of the language. It would not work well for a language where you have to declare variables before using them, for example. When you’re just typing expressions into the toplevel, you want to be able to set x to some value and then start doing things to x. You don’t want to have to declare the type of x first. You may dispute either of the premises, but if a language has to have a toplevel to be convenient, and mandatory type declarations are incompatible with a toplevel, then no language that makes type declarations mandatory could be convenient to program in.</p>
+<p>例如，在软件开发中，拥有一个交互式顶层环境（在 Lisp 中称为读取 - 求值 - 打印循环）是一个巨大的优势。而一旦有了这样的环境，就会对语言的设计产生实际影响。例如，对于那种必须先声明变量才能使用的语言来说，这种环境就不太适用。当你只是在顶层输入表达式时，你希望能把 x 设为某个值，然后直接对 x 进行操作，而不是先声明 x 的类型。你可能会对这两个前提中的任何一个提出异议，但如果一种语言必须有顶层环境才能方便使用，而强制类型声明与顶层环境不兼容，那么任何强制要求类型声明的语言都不可能便于编程。</p>
+<p>In practice, to get good design you have to get close, and stay close, to your users. You have to calibrate your ideas on actual users constantly, especially in the beginning. One of the reasons Jane Austen’s novels are so good is that she read them out loud to her family. That’s why she never sinks into self-indulgently arty descriptions of landscapes, or pretentious philosophizing. (The philosophy’s there, but it’s woven into the story instead of being pasted onto it like a label.) If you open an average “literary” novel and imagine reading it out loud to your friends as something you’d written, you’ll feel all too keenly what an imposition that kind of thing is upon the reader.</p>
+<p>在实践中，要做出好的设计，你必须贴近用户，并一直保持贴近。你必须不断根据实际用户来校准你的想法，尤其是在初期。简・奥斯汀的小说之所以如此出色，原因之一就是她会把小说大声读给家人听。这就是为什么她从不会沉溺于自我放纵的艺术性风景描写，也不会进行自命不凡的哲学议论（哲学思想是存在的，但它被融入故事中，而不是像标签一样贴在上面）。如果你翻开一本普通的 “文学” 小说，想象着把它作为自己写的东西大声读给朋友听，你会强烈地感受到这种内容对读者来说是一种负担。</p>
+<p>In the software world, this idea is known as Worse is Better. Actually, there are several ideas mixed together in the concept of Worse is Better, which is why people are still arguing about whether worse is actually better or not. But one of the main ideas in that mix is that if you’re building something new, you should get a prototype in front of users as soon as possible.</p>
+<p>在软件界，这种理念被称为 “差即是好”。实际上，“差即是好” 的概念中混合了几个观点，这也是人们仍在争论 “差是否真的好” 的原因。但其中一个主要观点是：如果你在构建新东西，应该尽快让原型呈现在用户面前。</p>
+<p>The alternative approach might be called the Hail Mary strategy. Instead of getting a prototype out quickly and gradually refining it, you try to create the complete, finished, product in one long touchdown pass. As far as I know, this is a recipe for disaster. Countless startups destroyed themselves this way during the Internet bubble. I’ve never heard of a case where it worked.</p>
+<p>另一种方法可以称为 “孤注一掷策略”。它不是快速推出原型并逐步改进，而是试图通过一次 “长传达阵” 就创造出完整的成品。据我所知，这是导致灾难的做法。在互联网泡沫时期，无数初创公司因此自我毁灭，我从未听说过这种方法成功的案例。</p>
+<p>What people outside the software world may not realize is that Worse is Better is found throughout the arts. In drawing, for example, the idea was discovered during the Renaissance. Now almost every drawing teacher will tell you that the right way to get an accurate drawing is not to work your way slowly around the contour of an object, because errors will accumulate and you’ll find at the end that the lines don’t meet. Instead you should draw a few quick lines in roughly the right place, and then gradually refine this initial sketch.</p>
+<p>软件界之外的人可能没有意识到，“差即是好” 的理念在整个艺术领域都存在。例如，在绘画中，这个理念在文艺复兴时期就被发现了。现在几乎每个绘画老师都会告诉你，画出精准画作的正确方法不是沿着物体的轮廓慢慢勾勒，因为错误会累积，最后你会发现线条无法闭合。相反，你应该在大致正确的位置快速画几条线，然后逐步完善这个初始草图。</p>
+<p>In most fields, prototypes have traditionally been made out of different materials. Typefaces to be cut in metal were initially designed with a brush on paper. Statues to be cast in bronze were modelled in wax. Patterns to be embroidered on tapestries were drawn on paper with ink wash. Buildings to be constructed from stone were tested on a smaller scale in wood.</p>
+<p>在大多数领域，传统上原型是用不同材料制作的。要在金属上雕刻的字体最初是用刷子在纸上设计的；要铸成青铜的雕像先用蜡塑造模型；要绣在挂毯上的图案先用墨水洗刷在纸上绘制；要用石头建造的建筑先以较小的比例用木头做测试。</p>
+<p>What made oil paint so exciting, when it first became popular in the fifteenth century, was that you could actually make the finished work from the prototype. You could make a preliminary drawing if you wanted to, but you weren’t held to it; you could work out all the details, and even make major changes, as you finished the painting.</p>
+<p>15 世纪油画首次流行时，让人兴奋的是你实际上可以从原型直接创作成品。你可以画一个初步的草图（如果你想的话），但不必受其束缚；在完成画作的过程中，你可以完善所有细节，甚至做出重大修改。</p>
+<p>You can do this in software too. A prototype doesn’t have to be just a model; you can refine it into the finished product. I think you should always do this when you can. It lets you take advantage of new insights you have along the way. But perhaps even more important, it’s good for morale.</p>
+<p>在软件中你也可以这样做。原型不一定只是一个模型，你可以把它完善成成品。我认为只要有可能，就应该这样做。这能让你利用过程中产生的新见解，而或许更重要的是，这对士气有好处。</p>
+<p>Morale is key in design. I’m surprised people don’t talk more about it. One of my first drawing teachers told me: if you’re bored when you’re drawing something, the drawing will look boring. For example, suppose you have to draw a building, and you decide to draw each brick individually. You can do this if you want, but if you get bored halfway through and start making the bricks mechanically instead of observing each one, the drawing will look worse than if you had merely suggested the bricks.</p>
+<p>士气在设计中是关键。我很惊讶人们不常谈论这一点。我的第一位绘画老师告诉我：如果你画画时感到无聊，画出来的东西也会显得无聊。例如，假设你要画一座建筑，你决定把每一块砖都单独画出来。如果你愿意，你可以这样做，但如果你中途感到无聊，开始机械地画砖而不是观察每一块砖，那么画出来的效果会比你只是大致勾勒出砖的样子更差。</p>
+<p>Building something by gradually refining a prototype is good for morale because it keeps you engaged. In software, my rule is: always have working code. If you’re writing something that you’ll be able to test in an hour, then you have the prospect of an immediate reward to motivate you. The same is true in the arts, and particularly in oil painting. Most painters start with a blurry sketch and gradually refine it. If you work this way, then in principle you never have to end the day with something that actually looks unfinished. Indeed, there is even a saying among painters: “A painting is never finished, you just stop working on it.” This idea will be familiar to anyone who has worked on software.</p>
+<p>通过逐步完善原型来构建东西对士气有好处，因为它能让你保持投入。在软件领域，我的原则是：始终要有可运行的代码。如果你正在写的东西一小时后就能测试，那么你就有了即时回报的预期，这会激励你。艺术领域也是如此，尤其是油画。大多数画家从模糊的草图开始，然后逐步完善。如果你用这种方式工作，原则上你永远不必在一天结束时留下一个看起来确实未完成的作品。事实上，画家中间甚至有这样一种说法：“一幅画永远不会完成，你只是停止对它的创作。” 任何做过软件的人都会对这个想法感到熟悉。</p>
+<p>Morale is another reason that it’s hard to design something for an unsophisticated user. It’s hard to stay interested in something you don’t like yourself. To make something good, you have to be thinking, “wow, this is really great,” not “what a piece of shit; those fools will love it.”</p>
+<p>士气是难以给不成熟的用户设计东西的另一个原因。要对自己不喜欢的东西保持兴趣是很难的。要做出好东西，你必须想 “哇，这真的很棒”，而不是 “什么破烂玩意儿，那些傻瓜会喜欢的”。</p>
+<p>Design means making things for humans. But it’s not just the user who’s human. The designer is human too.</p>
+<p>设计意味着为人类制作东西。但不只是用户是人，设计师也是人。</p>
+<p>Notice all this time I’ve been talking about “the designer.” Design usually has to be under the control of a single person to be any good. And yet it seems to be possible for several people to collaborate on a research project. This seems to me one of the most interesting differences between research and design.</p>
+<p>注意到一直以来我都在说 “设计师”（单数）。设计通常必须由一个人掌控才能出色，而研究项目则可以由多个人合作完成。在我看来，这是研究和设计之间最有趣的区别之一。</p>
+<p>There have been famous instances of collaboration in the arts, but most of them seem to have been cases of molecular bonding rather than nuclear fusion. In an opera it’s common for one person to write the libretto and another to write the music. And during the Renaissance, journeymen from northern Europe were often employed to do the landscapes in the backgrounds of Italian paintings. But these aren’t true collaborations. They’re more like examples of Robert Frost’s “good fences make good neighbors.” You can stick instances of good design together, but within each individual project, one person has to be in control.</p>
+<p>艺术领域有一些著名的合作案例，但大多数似乎是 “分子键合” 而非 “核聚变”。在歌剧中，一个人写歌词、另一个人谱曲是很常见的；文艺复兴时期，北欧的工匠常被雇来绘制意大利画作的背景风景。但这些都不是真正的合作，更像是罗伯特・弗罗斯特所说的 “好篱笆促成好邻居”。你可以把优秀设计的各个部分拼接起来，但在每个独立的项目中，必须有一个人掌控全局。</p>
+<p>I’m not saying that good design requires that one person think of everything. There’s nothing more valuable than the advice of someone whose judgement you trust. But after the talking is done, the decision about what to do has to rest with one person.</p>
+<p>我不是说优秀的设计需要一个人想出所有东西。没有什么比你信任的人的判断更有价值的了。但讨论结束后，该做什么的决定必须由一个人来做。</p>
+<p>Why is it that research can be done by collaborators and design can’t? This is an interesting question. I don’t know the answer. Perhaps, if design and research converge, the best research is also good design, and in fact can’t be done by collaborators. A lot of the most famous scientists seem to have worked alone. But I don’t know enough to say whether there is a pattern here. It could be simply that many famous scientists worked when collaboration was less common.</p>
+<p>为什么研究可以由合作者完成而设计不能？这是一个有趣的问题，我没有答案。或许，如果设计和研究在顶端交汇，那么最好的研究也是优秀的设计，事实上也不能由合作者完成。很多最著名的科学家似乎都是独自工作的，但我了解得不够多，无法确定这是否是一种模式。这可能只是因为许多著名科学家工作的时代，合作并不普遍。</p>
+<p>Whatever the story is in the sciences, true collaboration seems to be vanishingly rare in the arts. Design by committee is a synonym for bad design. Why is that so? Is there some way to beat this limitation?</p>
+<p>无论科学界的情况如何，艺术领域的真正合作似乎极其罕见。“委员会设计” 是糟糕设计的同义词。为什么会这样？有没有办法克服这个局限？</p>
+<p>I’m inclined to think there isn’t– that good design requires a dictator. One reason is that good design has to be all of a piece. Design is not just for humans, but for individual humans. If a design represents an idea that fits in one person’s head, then the idea will fit in the user’s head too.</p>
+<p>我倾向于认为没有 —— 优秀的设计需要一个 “独裁者”。一个原因是，优秀的设计必须是浑然一体的。设计不仅是为人类，更是为个体的人。如果一个设计所代表的想法能装进一个人的头脑，那么这个想法也能装进用户的头脑。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>设计与研究</div>
+      <div>https://hokkaidornis.github.io/2025/08/15/design-and-research/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/15/a-plan-for-spam/" title="垃圾邮件应对方案">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">垃圾邮件应对方案</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/14/revenge-of-the-nerds/" title="书呆子的复仇">
+                        <span class="hidden-mobile">书呆子的复仇</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
