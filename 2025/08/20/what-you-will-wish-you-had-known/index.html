@@ -1,0 +1,879 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="What You’ll Wish You’d Known原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;hs.html January 2005 (I wrote this talk for a high school. I never actually gave it, because the school authorities vetoed the plan to invite m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="那些你希望当初就知道的事">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/20/what-you-will-wish-you-had-known/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="What You’ll Wish You’d Known原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;hs.html January 2005 (I wrote this talk for a high school. I never actually gave it, because the school authorities vetoed the plan to invite m">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-20T02:47:41.000Z">
+<meta property="article:modified_time" content="2025-08-20T02:54:17.108Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>那些你希望当初就知道的事 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="那些你希望当初就知道的事"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-20 10:47" pubdate>
+          2025年8月20日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          72 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">那些你希望当初就知道的事</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="What-You’ll-Wish-You’d-Known"><a href="#What-You’ll-Wish-You’d-Known" class="headerlink" title="What You’ll Wish You’d Known"></a>What You’ll Wish You’d Known</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/hs.html">https://paulgraham.com/hs.html</a></p>
+<p>January 2005</p>
+<p>(I wrote this talk for a high school. I never actually gave it, because the school authorities vetoed the plan to invite me.)</p>
+<p>（我为一所高中写了这篇演讲稿。但最终没讲成，因为学校当局否决了邀请我的计划。）</p>
+<p>When I said I was speaking at a high school, my friends were curious. What will you say to high school students? So I asked them, what do you wish someone had told you in high school? Their answers were remarkably similar. So I’m going to tell you what we all wish someone had told us.</p>
+<p>当我说要去高中演讲时，我的朋友们都很好奇。你要对高中生说些什么？于是我问他们：“你们希望高中时有人告诉自己什么？” 他们的答案惊人地相似。所以接下来，我要讲的就是我们都希望当初有人告诉自己的事。</p>
+<p>I’ll start by telling you something you don’t have to know in high school: what you want to do with your life. People are always asking you this, so you think you’re supposed to have an answer. But adults ask this mainly as a conversation starter. They want to know what sort of person you are, and this question is just to get you talking. They ask it the way you might poke a hermit crab in a tide pool, to see what it does.</p>
+<p>我先从一件你在高中不必知道的事说起：你这辈子想做什么。总有人问你这个问题，以至于你觉得自己 “应该” 有个答案。但成年人问这个，主要是为了开启对话。他们想了解你是个什么样的人，这个问题只是让你开口的引子。他们问的时候，就像你用手指戳潮池里的寄居蟹，想看看它会有什么反应。</p>
+<p>If I were back in high school and someone asked about my plans, I’d say that my first priority was to learn what the options were. You don’t need to be in a rush to choose your life’s work. What you need to do is discover what you like. You have to work on stuff you like if you want to be good at what you do.</p>
+<p>如果我回到高中，有人问我的计划，我会说：“我的首要任务是了解有哪些选择。” 你不必急于选定一生的事业。你需要做的是发现自己喜欢什么。如果你想把一件事做好，就得去做自己喜欢的事。</p>
+<p>It might seem that nothing would be easier than deciding what you like, but it turns out to be hard, partly because it’s hard to get an accurate picture of most jobs. Being a doctor is not the way it’s portrayed on TV. Fortunately you can also watch real doctors, by volunteering in hospitals. [1]</p>
+<p>看起来，没什么比确定自己喜欢什么更简单的了，但事实并非如此。部分原因是，大多数职业的真实面貌很难准确了解。医生的工作和电视里演的根本不一样。幸运的是，你可以去医院做志愿者，亲眼看看真正的医生是怎么工作的。[1]</p>
+<p>But there are other jobs you can’t learn about, because no one is doing them yet. Most of the work I’ve done in the last ten years didn’t exist when I was in high school. The world changes fast, and the rate at which it changes is itself speeding up. In such a world it’s not a good idea to have fixed plans.</p>
+<p>但还有些工作你根本无从了解，因为现在还没人做这些工作。我过去十年做的大部分工作，在我高中时都还不存在。世界变化很快，而且变化的速度本身还在加快。在这样的世界里，制定固定的计划不是个好主意。</p>
+<p>And yet every May, speakers all over the country fire up the Standard Graduation Speech, the theme of which is: don’t give up on your dreams. I know what they mean, but this is a bad way to put it, because it implies you’re supposed to be bound by some plan you made early on. The computer world has a name for this: premature optimization. And it is synonymous with disaster. These speakers would do better to say simply, don’t give up.</p>
+<p>然而每年五月，全国各地的演讲者都会发表千篇一律的毕业演讲，主题无非是：“不要放弃梦想。” 我懂他们的意思，但这种说法很糟糕，因为它暗示你应该被早年制定的某个计划束缚。计算机领域有个词形容这种情况：“过早优化”，而这简直就是灾难的同义词。这些演讲者还不如简单说一句：“不要放弃。”</p>
+<p>What they really mean is, don’t get demoralized. Don’t think that you can’t do what other people can. And I agree you shouldn’t underestimate your potential. People who’ve done great things tend to seem as if they were a race apart. And most biographies only exaggerate this illusion, partly due to the worshipful attitude biographers inevitably sink into, and partly because, knowing how the story ends, they can’t help streamlining the plot till it seems like the subject’s life was a matter of destiny, the mere unfolding of some innate genius. In fact I suspect if you had the sixteen year old Shakespeare or Einstein in school with you, they’d seem impressive, but not totally unlike your other friends.</p>
+<p>他们真正想表达的是：别气馁。别觉得别人能做到的事你做不到。我也认为你不该低估自己的潜力。那些做出伟大成就的人，往往显得和普通人不是一个 “物种”。而大多数传记只会放大这种错觉 —— 部分是因为传记作者难免会陷入崇拜的心态，部分是因为他们知道故事的结局，总会忍不住简化情节，让主人公的人生看起来像命中注定，仿佛只是某种天生天赋的自然展现。但事实上，我怀疑如果 16 岁的莎士比亚或爱因斯坦和你同班，他们可能会让人印象深刻，但和你的其他朋友也不会完全不同。</p>
+<p>Which is an uncomfortable thought. If they were just like us, then they had to work very hard to do what they did. And that’s one reason we like to believe in genius. It gives us an excuse for being lazy. If these guys were able to do what they did only because of some magic Shakespeareness or Einsteinness, then it’s not our fault if we can’t do something as good.</p>
+<p>这想法有点让人不安。如果他们和我们一样，那他们能取得那样的成就，一定付出了巨大的努力。这也是我们愿意相信 “天才” 存在的原因之一 —— 它给了我们偷懒的借口。如果这些人能成功只是因为他们身上有种 “莎士比亚特质” 或 “爱因斯坦魔力”，那我们做不出同样优秀的事，就不是我们的错了。</p>
+<p>I’m not saying there’s no such thing as genius. But if you’re trying to choose between two theories and one gives you an excuse for being lazy, the other one is probably right.</p>
+<p>我不是说世上没有天才。但如果你要在两种理论中选一个，其中一个能给你偷懒的借口，那另一个很可能才是对的。</p>
+<p>So far we’ve cut the Standard Graduation Speech down from “don’t give up on your dreams” to “what someone else can do, you can do.” But it needs to be cut still further. There is some variation in natural ability. Most people overestimate its role, but it does exist. If I were talking to a guy four feet tall whose ambition was to play in the NBA, I’d feel pretty stupid saying, you can do anything if you really try. [2]</p>
+<p>到目前为止，我们把标准毕业演讲的内容从 “不要放弃梦想” 精简成了 “别人能做到的，你也能做到”。但还可以再精简。人的天赋确实存在差异。大多数人高估了天赋的作用，但它确实存在。如果我面对一个身高四英尺、却想打 NBA 的人，说 “只要努力，你什么都能做到”，那我会觉得自己很蠢。[2]</p>
+<p>We need to cut the Standard Graduation Speech down to, “what someone else with your abilities can do, you can do; and don’t underestimate your abilities.” But as so often happens, the closer you get to the truth, the messier your sentence gets. We’ve taken a nice, neat (but wrong) slogan, and churned it up like a mud puddle. It doesn’t make a very good speech anymore. But worse still, it doesn’t tell you what to do anymore. Someone with your abilities? What are your abilities?</p>
+<p>我们需要把标准毕业演讲再精简成：“和你能力相当的人能做到的，你也能做到；而且别低估自己的能力。” 但往往是这样，越接近真相，句子就越啰嗦。我们把一句漂亮、简洁（但错误）的口号，搅成了一滩泥水。它不再是句好台词，更糟的是，它没法告诉你该做什么了。“和你能力相当的人”？你的能力到底是什么？</p>
+<h3 id="Upwind"><a href="#Upwind" class="headerlink" title="Upwind"></a><strong>Upwind</strong></h3><p><strong>逆风方向</strong></p>
+<p>I think the solution is to work in the other direction. Instead of working back from a goal, work forward from promising situations. This is what most successful people actually do anyway.</p>
+<p>我觉得解决办法是换个方向努力。不要从目标倒推该做什么，而要从有前景的当下出发，一步步向前。大多数成功人士其实都是这么做的。</p>
+<p>In the graduation-speech approach, you decide where you want to be in twenty years, and then ask: what should I do now to get there? I propose instead that you don’t commit to anything in the future, but just look at the options available now, and choose those that will give you the most promising range of options afterward.</p>
+<p>按毕业演讲的思路，你会先决定 20 年后想在哪里，然后问：“现在该做什么才能到达那里？” 但我建议，你不必对未来做任何承诺，只需看看当下有哪些选择，然后选那些能为你带来更多有前景的后续选项的事去做。</p>
+<p>It’s not so important what you work on, so long as you’re not wasting your time. Work on things that interest you and increase your options, and worry later about which you’ll take.</p>
+<p>你做什么其实没那么重要，只要别浪费时间就行。去做那些既能让你感兴趣、又能增加你选择的事，至于最终选哪条路，以后再操心也不迟。</p>
+<p>Suppose you’re a college freshman deciding whether to major in math or economics. Well, math will give you more options: you can go into almost any field from math. If you major in math it will be easy to get into grad school in economics, but if you major in economics it will be hard to get into grad school in math.</p>
+<p>假设你是个大一新生，在纠结选数学还是经济学专业。其实数学能给你更多选择：从数学出发，你几乎能进入任何领域。学数学的话，申请经济学研究生会很容易；但学经济学的话，申请数学研究生就很难了。</p>
+<p>Flying a glider is a good metaphor here. Because a glider doesn’t have an engine, you can’t fly into the wind without losing a lot of altitude. If you let yourself get far downwind of good places to land, your options narrow uncomfortably. As a rule you want to stay upwind. So I propose that as a replacement for “don’t give up on your dreams.” Stay upwind.</p>
+<p>滑翔机飞行是个很贴切的比喻。滑翔机没有引擎，逆风飞行就会大幅降低高度。如果你让自己处于远离理想着陆点的下风处，你的选择就会令人不安地变少。通常来说，你要待在逆风方向。所以我建议，用 “保持在逆风方向” 来替代 “不要放弃梦想”。</p>
+<p>How do you do that, though? Even if math is upwind of economics, how are you supposed to know that as a high school student?</p>
+<p>但怎么才能做到呢？就算数学比经济学更 “逆风”，你一个高中生怎么会知道呢？</p>
+<p>Well, you don’t, and that’s what you need to find out. Look for smart people and hard problems. Smart people tend to clump together, and if you can find such a clump, it’s probably worthwhile to join it. But it’s not straightforward to find these, because there is a lot of faking going on.</p>
+<p>你确实不知道，而这正是你需要去弄明白的。去寻找聪明人和难题。聪明人往往扎堆，如果能找到这样的群体，加入他们很可能是值得的。但找到他们并不容易，因为有太多 “伪装者”。</p>
+<p>To a newly arrived undergraduate, all university departments look much the same. The professors all seem forbiddingly intellectual and publish papers unintelligible to outsiders. But while in some fields the papers are unintelligible because they’re full of hard ideas, in others they’re deliberately written in an obscure way to seem as if they’re saying something important. This may seem a scandalous proposition, but it has been experimentally verified, in the famous Social Text affair. Suspecting that the papers published by literary theorists were often just intellectual-sounding nonsense, a physicist deliberately wrote a paper full of intellectual-sounding nonsense, and submitted it to a literary theory journal, which published it.</p>
+<p>对刚入学的本科生来说，大学里的所有院系看起来都差不多。教授们似乎都学识高深、难以接近，发表的论文对外行来说晦涩难懂。但有些领域的论文难懂，是因为充满了艰深的思想；而另一些领域的论文，则是故意写得晦涩，让人觉得它们在说很重要的事。这听起来可能像个丑闻，但著名的 “《社会文本》事件” 已经通过实验证实了这一点。一位物理学家怀疑文学理论家发表的论文往往只是听起来有学问的废话，于是故意写了一篇满是这种 “伪学问” 的论文，投稿给一家文学理论期刊，结果论文被发表了。</p>
+<p>The best protection is always to be working on hard problems. Writing novels is hard. Reading novels isn’t. Hard means worry: if you’re not worrying that something you’re making will come out badly, or that you won’t be able to understand something you’re studying, then it isn’t hard enough. There has to be suspense.</p>
+<p>最好的保护措施，永远是去做难题。写小说很难，读小说则不然。“难” 意味着担忧：如果你不担心自己正在做的东西会搞砸，或者不担心自己学不会正在研究的内容，那这件事就还不够难。必须有悬念才行。</p>
+<p>Well, this seems a grim view of the world, you may think. What I’m telling you is that you should worry? Yes, but it’s not as bad as it sounds. It’s exhilarating to overcome worries. You don’t see faces much happier than people winning gold medals. And you know why they’re so happy? Relief.</p>
+<p>你可能会觉得，这是对世界的一种悲观看法。我这是在说你应该担忧吗？是的，但事情没听起来那么糟。克服担忧是件令人兴奋的事。你很少能看到比赢得金牌的人更开心的面孔了。你知道他们为什么这么开心吗？因为如释重负。</p>
+<p>I’m not saying this is the only way to be happy. Just that some kinds of worry are not as bad as they sound.</p>
+<p>我不是说这是获得快乐的唯一方式。只是想说明，有些担忧并不像听起来那么可怕。</p>
+<h3 id="Ambition"><a href="#Ambition" class="headerlink" title="Ambition"></a><strong>Ambition</strong></h3><p><strong>野心</strong></p>
+<p>In practice, “stay upwind” reduces to “work on hard problems.” And you can start today. I wish I’d grasped that in high school.</p>
+<p>实际上，“保持在逆风方向” 可以简化为 “做难题”。而你今天就可以开始。我真希望自己高中时就明白这一点。</p>
+<p>Most people like to be good at what they do. In the so-called real world this need is a powerful force. But high school students rarely benefit from it, because they’re given a fake thing to do. When I was in high school, I let myself believe that my job was to be a high school student. And so I let my need to be good at what I did be satisfied by merely doing well in school.</p>
+<p>大多数人都想把自己做的事做好。在所谓的 “现实世界” 里，这种需求是一种强大的动力。但高中生很少能从中受益，因为他们被赋予的是一种 “虚假的任务”。我上高中时，就天真地以为自己的 “工作” 就是做个高中生。于是，我仅仅通过在学校表现好，就满足了 “把事做好” 的需求。</p>
+<p>If you’d asked me in high school what the difference was between high school kids and adults, I’d have said it was that adults had to earn a living. Wrong. It’s that adults take responsibility for themselves. Making a living is only a small part of it. Far more important is to take intellectual responsibility for oneself.</p>
+<p>如果高中时有人问我，高中生和成年人的区别是什么，我会说：成年人得挣钱谋生。错了。真正的区别是，成年人会为自己负责。谋生只是其中很小的一部分。重要得多的是，为自己的思想负责。</p>
+<p>If I had to go through high school again, I’d treat it like a day job. I don’t mean that I’d slack in school. Working at something as a day job doesn’t mean doing it badly. It means not being defined by it. I mean I wouldn’t think of myself as a high school student, just as a musician with a day job as a waiter doesn’t think of himself as a waiter. [3] And when I wasn’t working at my day job I’d start trying to do real work.</p>
+<p>如果我能重新上一次高中，我会把它当成一份 “日常工作”。我不是说要在学校偷懒。把一件事当日常工作，不代表要做不好它，而是说不要被它定义。我不会觉得自己 “就是个高中生”，就像一个白天当服务员的音乐家，不会觉得自己 “就是个服务员”。[3] 而当我不做这份 “日常工作” 时，我会开始尝试做真正的事。</p>
+<p>When I ask people what they regret most about high school, they nearly all say the same thing: that they wasted so much time. If you’re wondering what you’re doing now that you’ll regret most later, that’s probably it. [4]</p>
+<p>当我问别人高中时最后悔的事，几乎所有人的答案都一样：浪费了太多时间。如果你在想，现在做什么事会让你日后最后悔，答案很可能就是这个。[4]</p>
+<p>Some people say this is inevitable — that high school students aren’t capable of getting anything done yet. But I don’t think this is true. And the proof is that you’re bored. You probably weren’t bored when you were eight. When you’re eight it’s called “playing” instead of “hanging out,” but it’s the same thing. And when I was eight, I was rarely bored. Give me a back yard and a few other kids and I could play all day.</p>
+<p>有人说这是难免的 —— 高中生还没能力做出什么成就。但我不这么认为。证据就是：你觉得无聊。你 8 岁时可能不觉得无聊。8 岁时，那种状态叫 “玩耍” 而不是 “闲逛”，但本质是一样的。我 8 岁时就很少无聊。只要有个后院，再加上几个小伙伴，我就能玩一整天。</p>
+<p>The reason this got stale in middle school and high school, I now realize, is that I was ready for something else. Childhood was getting old.</p>
+<p>现在我才明白，到了初中和高中，这种状态变得乏味，是因为我已经准备好做别的事了。童年已经过时了。</p>
+<p>I’m not saying you shouldn’t hang out with your friends — that you should all become humorless little robots who do nothing but work. Hanging out with friends is like chocolate cake. You enjoy it more if you eat it occasionally than if you eat nothing but chocolate cake for every meal. No matter how much you like chocolate cake, you’ll be pretty queasy after the third meal of it. And that’s what the malaise one feels in high school is: mental queasiness. [5]</p>
+<p>我不是说你不该和朋友闲逛 —— 不是说你们都要变成毫无趣味、只知道工作的小机器人。和朋友闲逛就像吃巧克力蛋糕。偶尔吃一次会很享受，可要是顿顿都吃，就不是那么回事了。不管你多喜欢巧克力蛋糕，连吃三顿也会觉得恶心。而高中生那种莫名的不适感，就是一种 “精神恶心”。[5]</p>
+<p>You may be thinking, we have to do more than get good grades. We have to have extracurricular activities. But you know perfectly well how bogus most of these are. Collecting donations for a charity is an admirable thing to do, but it’s not hard. It’s not getting something done. What I mean by getting something done is learning how to write well, or how to program computers, or what life was really like in preindustrial societies, or how to draw the human face from life. This sort of thing rarely translates into a line item on a college application.</p>
+<p>你可能会想：我们不能只拿好成绩，还得有课外活动。但你心里很清楚，大多数课外活动有多虚假。为慈善机构募捐是件值得称赞的事，但并不难，也算不上 “做出成就”。我说的 “做出成就”，是指学会写好文章、编程，了解前工业社会的真实生活，或者学会写生人脸。这类事很少能变成大学申请表上的一项。</p>
+<h3 id="Corruption"><a href="#Corruption" class="headerlink" title="Corruption"></a><strong>Corruption</strong></h3><p><strong>虚伪</strong></p>
+<p>It’s dangerous to design your life around getting into college, because the people you have to impress to get into college are not a very discerning audience. At most colleges, it’s not the professors who decide whether you get in, but admissions officers, and they are nowhere near as smart. They’re the NCOs of the intellectual world. They can’t tell how smart you are. The mere existence of prep schools is proof of that.</p>
+<p>围绕 “考上大学” 来设计自己的人生很危险，因为你需要打动的那些人，并不是很有鉴别力。在大多数大学，决定你能否入学的不是教授，而是招生官，而他们远没有那么聪明。他们就像知识界的士官，看不出你有多聪明。预科学校的存在本身就证明了这一点。</p>
+<p>Few parents would pay so much for their kids to go to a school that didn’t improve their admissions prospects. Prep schools openly say this is one of their aims. But what that means, if you stop to think about it, is that they can hack the admissions process: that they can take the very same kid and make him seem a more appealing candidate than he would if he went to the local public school. [6]</p>
+<p>如果一所学校不能提高孩子的录取概率，很少有家长会花那么多钱送孩子去。预科学校公开说这是他们的目标之一。但仔细想想，这意味着他们能 “破解” 招生流程：同样一个孩子，经过他们培养，会比在公立学校看起来更有吸引力。[6]</p>
+<p>Right now most of you feel your job in life is to be a promising college applicant. But that means you’re designing your life to satisfy a process so mindless that there’s a whole industry devoted to subverting it. No wonder you become cynical. The malaise you feel is the same that a producer of reality TV shows or a tobacco industry executive feels. And you don’t even get paid a lot.</p>
+<p>现在，你们大多数人觉得自己的人生任务是 “成为有前途的大学申请者”。但这意味着，你在围绕一个毫无头脑的流程设计人生 —— 这个流程愚蠢到有一整个行业专门颠覆它。难怪你会变得愤世嫉俗。你感受到的那种不适感，和真人秀制片人或烟草公司高管的感受是一样的。而你甚至得不到高薪。</p>
+<p>So what do you do? What you should not do is rebel. That’s what I did, and it was a mistake. I didn’t realize exactly what was happening to us, but I smelled a major rat. And so I just gave up. Obviously the world sucked, so why bother?</p>
+<p>那该怎么办？不该做的是反抗。我以前就反抗过，现在看来是个错误。当时我不完全明白我们身上在发生什么，但我察觉到了不对劲，于是就放弃了。显然世界一团糟，何必费力气呢？</p>
+<p>When I discovered that one of our teachers was herself using Cliff’s Notes, it seemed par for the course. Surely it meant nothing to get a good grade in such a class.</p>
+<p>当我发现我们的一个老师自己也在用《克利夫笔记》（一种学习指南）时，我觉得这很正常。在这样的课上拿好成绩，显然毫无意义。</p>
+<p>In retrospect this was stupid. It was like someone getting fouled in a soccer game and saying, hey, you fouled me, that’s against the rules, and walking off the field in indignation. Fouls happen. The thing to do when you get fouled is not to lose your cool. Just keep playing.</p>
+<p>现在回想起来，这很愚蠢。就像有人在足球比赛中被犯规，然后说 “你犯规了，这违反规则”，接着愤愤不平地离场。犯规总会发生。被犯规时，不该失控，而是继续比赛。</p>
+<p>By putting you in this situation, society has fouled you. Yes, as you suspect, a lot of the stuff you learn in your classes is crap. And yes, as you suspect, the college admissions process is largely a charade. But like many fouls, this one was unintentional. [7] So just keep playing.</p>
+<p>社会把你置于这种境地，相当于对你犯了规。没错，就像你怀疑的那样，你在课堂上学的很多东西都是垃圾。没错，就像你怀疑的那样，大学招生流程在很大程度上是场骗局。但就像很多犯规一样，这并非故意的。[7] 所以，继续 “比赛” 吧。</p>
+<p>Rebellion is almost as stupid as obedience. In either case you let yourself be defined by what they tell you to do. The best plan, I think, is to step onto an orthogonal vector. Don’t just do what they tell you, and don’t just refuse to. Instead treat school as a day job. As day jobs go, it’s pretty sweet. You’re done at 3 o’clock, and you can even work on your own stuff while you’re there.</p>
+<p>反抗几乎和顺从一样愚蠢。两种情况下，你都是被别人告诉你该做什么而定义的。我觉得最好的办法是走上一条 “正交向量”—— 既不只是按他们说的做，也不只是拒绝。而是把学校当成一份日常工作。作为日常工作，它其实很不错：下午 3 点就下班，甚至在学校时也能做自己的事。</p>
+<h3 id="Curiosity"><a href="#Curiosity" class="headerlink" title="Curiosity"></a><strong>Curiosity</strong></h3><p><strong>好奇心</strong></p>
+<p>And what’s your real job supposed to be? Unless you’re Mozart, your first task is to figure that out. What are the great things to work on? Where are the imaginative people? And most importantly, what are you interested in? The word “aptitude” is misleading, because it implies something innate. The most powerful sort of aptitude is a consuming interest in some question, and such interests are often acquired tastes.</p>
+<p>那你真正的 “工作” 该是什么？除非你是莫扎特，否则你的首要任务是弄清楚这一点。哪些是值得做的伟大事业？有想象力的人在哪里？最重要的是，你对什么感兴趣？“天赋” 这个词有误导性，因为它暗示某种与生俱来的东西。最强大的 “天赋” 是对某个问题的强烈兴趣，而这种兴趣往往是后天培养的。</p>
+<p>A distorted version of this idea has filtered into popular culture under the name “passion.” I recently saw an ad for waiters saying they wanted people with a “passion for service.” The real thing is not something one could have for waiting on tables. And passion is a bad word for it. A better name would be curiosity.</p>
+<p>这个想法的扭曲版本以 “热情” 的名义渗透到了流行文化中。我最近看到一则招聘服务员的广告，说他们想要 “对服务有热情” 的人。但真正的 “热情”（此处指强烈兴趣）不可能用在伺候人吃饭上。而且 “热情” 这个词也不合适，更好的词是 “好奇心”。</p>
+<p>Kids are curious, but the curiosity I mean has a different shape from kid curiosity. Kid curiosity is broad and shallow; they ask why at random about everything. In most adults this curiosity dries up entirely. It has to: you can’t get anything done if you’re always asking why about everything. But in ambitious adults, instead of drying up, curiosity becomes narrow and deep. The mud flat morphs into a well.</p>
+<p>孩子是好奇的，但我所说的好奇心和孩子的好奇心不一样。孩子的好奇心广泛而肤浅，他们会随便对任何事问 “为什么”。大多数成年人的好奇心会完全枯竭。这也没办法：如果你总对所有事问 “为什么”，就什么也做不成。但有野心的成年人，他们的好奇心不会枯竭，而是变得狭窄而深刻。就像泥滩变成了深井。</p>
+<p>Curiosity turns work into play. For Einstein, relativity wasn’t a book full of hard stuff he had to learn for an exam. It was a mystery he was trying to solve. So it probably felt like less work to him to invent it than it would seem to someone now to learn it in a class.</p>
+<p>好奇心能把工作变成玩耍。对爱因斯坦来说，相对论不是一本需要为考试而死记硬背的难题集，而是一个他试图解开的谜团。所以，对他来说，发明相对论可能比现在的人在课堂上学相对论更不像 “工作”。</p>
+<p>One of the most dangerous illusions you get from school is the idea that doing great things requires a lot of discipline. Most subjects are taught in such a boring way that it’s only by discipline that you can flog yourself through them. So I was surprised when, early in college, I read a quote by Wittgenstein saying that he had no self-discipline and had never been able to deny himself anything, not even a cup of coffee.</p>
+<p>学校给你的最危险的错觉之一，是 “做伟大的事需要极强的自律”。大多数科目教得太无聊，以至于你只能靠自律硬撑着学下去。所以大学时，我读到维特根斯坦说自己毫无自律，甚至连一杯咖啡都忍不住要喝，时感到很惊讶。</p>
+<p>Now I know a number of people who do great work, and it’s the same with all of them. They have little discipline. They’re all terrible procrastinators and find it almost impossible to make themselves do anything they’re not interested in. One still hasn’t sent out his half of the thank-you notes from his wedding, four years ago. Another has 26,000 emails in her inbox.</p>
+<p>现在我认识很多做出伟大成就的人，他们都一样：没什么自律性。他们都超爱拖延，几乎没办法让自己做不感兴趣的事。有个人结婚四年了，还有一半的感谢信没发出去。另一个人的收件箱里有 2.6 万封邮件。</p>
+<p>I’m not saying you can get away with zero self-discipline. You probably need about the amount you need to go running. I’m often reluctant to go running, but once I do, I enjoy it. And if I don’t run for several days, I feel ill. It’s the same with people who do great things. They know they’ll feel bad if they don’t work, and they have enough discipline to get themselves to their desks to start working. But once they get started, interest takes over, and discipline is no longer necessary.</p>
+<p>我不是说你可以完全没有自律。你需要的自律，大概和跑步需要的差不多。我经常不想跑步，但一旦跑起来就会很享受。如果几天不跑，我会觉得不舒服。做出伟大成就的人也是如此。他们知道不工作会难受，有足够的自律让自己坐到书桌前开始工作。但一旦开始，兴趣就会接管一切，自律就不再需要了。</p>
+<p>Do you think Shakespeare was gritting his teeth and diligently trying to write Great Literature? Of course not. He was having fun. That’s why he’s so good.</p>
+<p>你觉得莎士比亚是咬着牙、勤奋地 “创作伟大文学” 吗？当然不是。他是在享受乐趣。这就是他能那么优秀的原因。</p>
+<p>If you want to do good work, what you need is a great curiosity about a promising question. The critical moment for Einstein was when he looked at Maxwell’s equations and said, what the hell is going on here?</p>
+<p>如果你想做出好的成就，你需要的是对一个有前景的问题抱有极大的好奇心。对爱因斯坦来说，关键一刻是他看着麦克斯韦方程组，心想：“这到底是怎么回事？”</p>
+<p>It can take years to zero in on a productive question, because it can take years to figure out what a subject is really about. To take an extreme example, consider math. Most people think they hate math, but the boring stuff you do in school under the name “mathematics” is not at all like what mathematicians do.</p>
+<p>聚焦一个有价值的问题可能需要数年时间，因为弄明白一个领域真正在研究什么，可能就需要数年。举个极端的例子：数学。大多数人觉得自己讨厌数学，但你在学校里学的那些被称为 “数学” 的无聊内容，和数学家做的事完全不是一回事。</p>
+<p>The great mathematician G. H. Hardy said he didn’t like math in high school either. He only took it up because he was better at it than the other students. Only later did he realize math was interesting — only later did he start to ask questions instead of merely answering them correctly.</p>
+<p>伟大的数学家 G・H・哈代说，他高中时也不喜欢数学。他学数学只是因为自己比其他同学擅长。直到后来，他才意识到数学很有趣 —— 直到后来，他才开始提出问题，而不只是正确地回答问题。</p>
+<p>When a friend of mine used to grumble because he had to write a paper for school, his mother would tell him: find a way to make it interesting. That’s what you need to do: find a question that makes the world interesting. People who do great things look at the same world everyone else does, but notice some odd detail that’s compellingly mysterious.</p>
+<p>我的一个朋友以前总抱怨要为学校写论文，他妈妈会告诉他：“想办法让它变得有趣。” 这就是你需要做的：找到一个能让世界变得有趣的问题。做出伟大成就的人，和其他人看的是同一个世界，但他们会注意到某个奇怪的细节 —— 一个引人入胜的谜团。</p>
+<p>And not only in intellectual matters. Henry Ford’s great question was, why do cars have to be a luxury item? What would happen if you treated them as a commodity? Franz Beckenbauer’s was, in effect, why does everyone have to stay in his position? Why can’t defenders score goals too?</p>
+<p>而且这不只限于知识领域。亨利・福特的伟大问题是：为什么汽车必须是奢侈品？如果把汽车当成日用品会怎样？弗朗茨・贝肯鲍尔的问题本质上是：为什么每个人都必须待在自己的位置上？后卫为什么不能进球？</p>
+<h3 id="Now"><a href="#Now" class="headerlink" title="Now"></a><strong>Now</strong></h3><p><strong>现在</strong></p>
+<p>If it takes years to articulate great questions, what do you do now, at sixteen? Work toward finding one. Great questions don’t appear suddenly. They gradually congeal in your head. And what makes them congeal is experience. So the way to find great questions is not to search for them — not to wander about thinking, what great discovery shall I make? You can’t answer that; if you could, you’d have made it.</p>
+<p>如果明确一个伟大的问题需要数年，那你 16 岁的现在该做什么？努力去寻找一个。伟大的问题不会突然出现，它们会在你脑海中逐渐成形。而让它们成形的是经验。所以，找到伟大问题的方法不是去 “寻找” 它们 —— 不是四处闲逛，想着 “我要做出什么伟大发现？” 你回答不了这个问题；如果能，你早就做出发现了。</p>
+<p>The way to get a big idea to appear in your head is not to hunt for big ideas, but to put in a lot of time on work that interests you, and in the process keep your mind open enough that a big idea can take roost. Einstein, Ford, and Beckenbauer all used this recipe. They all knew their work like a piano player knows the keys. So when something seemed amiss to them, they had the confidence to notice it.</p>
+<p>让一个伟大的想法出现在你脑海里的方法，不是去追逐伟大的想法，而是花大量时间做你感兴趣的事，同时保持思想开放，让伟大的想法能在此扎根。爱因斯坦、福特和贝肯鲍尔都用了这个方法。他们对自己的工作了如指掌，就像钢琴家熟悉琴键一样。所以当有什么不对劲时，他们有信心察觉到。</p>
+<p>Put in time how and on what? Just pick a project that seems interesting: to master some chunk of material, or to make something, or to answer some question. Choose a project that will take less than a month, and make it something you have the means to finish. Do something hard enough to stretch you, but only just, especially at first. If you’re deciding between two projects, choose whichever seems most fun. If one blows up in your face, start another. Repeat till, like an internal combustion engine, the process becomes self-sustaining, and each project generates the next one. (This could take years.)</p>
+<p>该如何花时间，花在什么上？选一个看起来有趣的项目就行：比如掌握某块知识、做个东西，或者回答某个问题。选一个能在一个月内完成的项目，而且是你有能力完成的。做的事要足够难，能让你有所成长，但也别太难，尤其是刚开始的时候。如果在两个项目间犹豫，选那个看起来更有趣的。如果一个项目搞砸了，就换一个。重复这个过程，直到它像内燃机一样能自我维持，一个项目能催生下一个项目。（这可能需要好几年。）</p>
+<p>It may be just as well not to do a project “for school,” if that will restrict you or make it seem like work. Involve your friends if you want, but not too many, and only if they’re not flakes. Friends offer moral support (few startups are started by one person), but secrecy also has its advantages. There’s something pleasing about a secret project. And you can take more risks, because no one will know if you fail.</p>
+<p>如果为 “学校” 做项目会限制你，或者让它显得像份苦差事，那最好别这么做。你可以找朋友一起，但别找太多，而且只能找靠谱的。朋友能提供精神支持（很少有创业公司是一个人创办的），但保密也有好处。秘密项目有种特别的乐趣。而且你可以承担更多风险，因为就算失败了也没人知道。</p>
+<p>Don’t worry if a project doesn’t seem to be on the path to some goal you’re supposed to have. Paths can bend a lot more than you think. So let the path grow out the project. The most important thing is to be excited about it, because it’s by doing that you learn.</p>
+<p>如果一个项目看起来不在你 “应该” 走的那条路上，别担心。道路的弯曲程度会远超你的想象。所以让道路从项目中自然延伸出来吧。最重要的是对它感到兴奋，因为你是通过做这件事来学习的。</p>
+<p>Don’t disregard unseemly motivations. One of the most powerful is the desire to be better than other people at something. Hardy said that’s what got him started, and I think the only unusual thing about him is that he admitted it. Another powerful motivator is the desire to do, or know, things you’re not supposed to. Closely related is the desire to do something audacious. Sixteen year olds aren’t supposed to write novels. So if you try, anything you achieve is on the plus side of the ledger; if you fail utterly, you’re doing no worse than expectations. [8]</p>
+<p>别忽视那些不那么 “体面” 的动机。其中最强大的一种是 “想在某件事上比别人做得好”。哈代说这是他的起点，我觉得他唯一特别的地方是承认了这一点。另一种强大的动机是 “想做或想知道那些不应该做 &#x2F; 知道的事”。与此相关的是 “想做大胆的事”。没人觉得 16 岁的孩子能写小说。所以如果你尝试了，取得的任何成就都是加分项；就算彻底失败，也没比预期的差。[8]</p>
+<p>Beware of bad models. Especially when they excuse laziness. When I was in high school I used to write “existentialist” short stories like ones I’d seen by famous writers. My stories didn’t have a lot of plot, but they were very deep. And they were less work to write than entertaining ones would have been. I should have known that was a danger sign. And in fact I found my stories pretty boring; what excited me was the idea of writing serious, intellectual stuff like the famous writers.</p>
+<p>要警惕坏的榜样，尤其是那些为懒惰找借口的。我高中时曾模仿著名作家写 “存在主义” 短篇小说。我的故事没什么情节，但 “很深刻”。而且写起来比写有趣的故事省力。我早该知道这是个危险信号。事实上，我觉得自己的故事很无聊；让我兴奋的是 “像著名作家一样写严肃、有思想的东西” 这个想法。</p>
+<p>Now I have enough experience to realize that those famous writers actually sucked. Plenty of famous people do; in the short term, the quality of one’s work is only a small component of fame. I should have been less worried about doing something that seemed cool, and just done something I liked. That’s the actual road to coolness anyway.</p>
+<p>现在我有足够的经验意识到，那些著名作家其实不怎么样。很多名人都是如此；短期内，作品质量只是成名的一小部分原因。我当初不该总想着做 “看起来很酷” 的事，而应该只做自己喜欢的事。毕竟，这才是真正变酷的路。</p>
+<p>A key ingredient in many projects, almost a project on its own, is to find good books. Most books are bad. Nearly all textbooks are bad. [9] So don’t assume a subject is to be learned from whatever book on it happens to be closest. You have to search actively for the tiny number of good books.</p>
+<p>很多项目中，有一个关键要素（几乎本身就是一个项目）是找到好书。大多数书都很差，几乎所有教科书都很差。[9] 所以别以为随便拿起一本关于某个领域的书，就能从中学到东西。你得主动去寻找那极少数的好书。</p>
+<p>The important thing is to get out there and do stuff. Instead of waiting to be taught, go out and learn.</p>
+<p>重要的是走出去，去做事。不要等着被教，要主动去学。</p>
+<p>Your life doesn’t have to be shaped by admissions officers. It could be shaped by your own curiosity. It is for all ambitious adults. And you don’t have to wait to start. In fact, you don’t have to wait to be an adult. There’s no switch inside you that magically flips when you turn a certain age or graduate from some institution. You start being an adult when you decide to take responsibility for your life. You can do that at any age. [10]</p>
+<p>你的人生不必由招生官塑造。它可以由你自己的好奇心塑造。所有有野心的成年人都是如此。而且你不必等，不必等到成年。你体内没有什么开关，会在某个年龄或从某个机构毕业后神奇地打开。当你决定为自己的人生负责时，你就开始成为一个成年人了。这在任何年龄都能做到。[10]</p>
+<p>This may sound like bullshit. I’m just a minor, you may think, I have no money, I have to live at home, I have to do what adults tell me all day long. Well, most adults labor under restrictions just as cumbersome, and they manage to get things done. If you think it’s restrictive being a kid, imagine having kids.</p>
+<p>这可能听起来像废话。你可能会想：“我只是个未成年人，没钱，得住在家里，一整天都得听成年人的。” 但大多数成年人也受着同样繁琐的限制，却依然能做出成就。如果你觉得当孩子受限制，想想养孩子的人吧。</p>
+<p>The only real difference between adults and high school kids is that adults realize they need to get things done, and high school kids don’t. That realization hits most people around 23. But I’m letting you in on the secret early. So get to work. Maybe you can be the first generation whose greatest regret from high school isn’t how much time you wasted.</p>
+<p>成年人和高中生唯一真正的区别是：成年人知道自己需要做出成就，而高中生不知道。大多数人在 23 岁左右才明白这一点。但我提前把这个秘密告诉你了。所以，开始做事吧。或许你们能成为第一代人，高中时最后悔的不是 “浪费了太多时间”。</p>
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a><strong>Notes</strong></h3><p>[1] A doctor friend warns that even this can give an inaccurate picture. “Who knew how much time it would take up, how little autonomy one would have for endless years of training, and how unbelievably annoying it is to carry a beeper?”<br>一位医生朋友提醒说，即便如此，也可能产生不准确的认识。“谁能想到，多年无休止的培训要耗费多少时间，个人能有多少自主权，还有携带寻呼机是多么令人难以置信地烦人？”</p>
+<p>[2] His best bet would probably be to become dictator and intimidate the NBA into letting him play. So far the closest anyone has come is Secretary of Labor.<br>他最好的办法或许是成为独裁者，胁迫 NBA 让他打球。到目前为止，最接近这一情况的人是劳工部长。</p>
+<p>[3] A day job is one you take to pay the bills so you can do what you really want, like play in a band, or invent relativity.<br>日常工作是你为了支付账单而做的，这样你才能去做自己真正想做的事，比如在乐队里演奏，或者提出相对论。</p>
+<p>Treating high school as a day job might actually make it easier for some students to get good grades. If you treat your classes as a game, you won’t be demoralized if they seem pointless.<br>把高中当作一份日常工作，实际上可能会让一些学生更容易取得好成绩。如果你把课程当作一场游戏，即便它们看起来毫无意义，你也不会士气低落。</p>
+<p>However bad your classes, you need to get good grades in them to get into a decent college. And that is worth doing, because universities are where a lot of the clumps of smart people are these days.<br>不管你的课程有多糟糕，你都需要取得好成绩才能进入一所不错的大学。这是值得去做的，因为如今大学里有很多聪明人群集。</p>
+<p>[4] The second biggest regret was caring so much about unimportant things. And especially about what other people thought of them.<br>第二大遗憾是太过在意无关紧要的事情，尤其是别人对自己的看法。</p>
+<p>I think what they really mean, in the latter case, is caring what random people thought of them. Adults care just as much what other people think, but they get to be more selective about the other people.<br>我认为，就后一种情况而言，他们真正的意思是在意那些随机遇到的人的看法。成年人同样在乎别人的看法，但他们会更有选择性地对待这些 “别人”。</p>
+<p>I have about thirty friends whose opinions I care about, and the opinion of the rest of the world barely affects me. The problem in high school is that your peers are chosen for you by accidents of age and geography, rather than by you based on respect for their judgement.<br>我有大约 30 个朋友，我会在意他们的看法，而世界上其他人的看法几乎影响不到我。高中时期的问题在于，你的同龄人是由年龄和地域的偶然因素为你选定的，而不是你基于对他们判断力的尊重而选择的。</p>
+<p>[5] The key to wasting time is distraction. Without distractions it’s too obvious to your brain that you’re not doing anything with it, and you start to feel uncomfortable. If you want to measure how dependent you’ve become on distractions, try this experiment: set aside a chunk of time on a weekend and sit alone and think. You can have a notebook to write your thoughts down in, but nothing else: no friends, TV, music, phone, IM, email, Web, games, books, newspapers, or magazines. Within an hour most people will feel a strong craving for distraction.<br>浪费时间的关键在于分心。没有分心的事物时，你的大脑会很明显地意识到自己无所事事，然后你就会开始感到不适。如果你想衡量自己对分心事物的依赖程度，不妨试试这个实验：在周末留出一大段时间，独自坐着思考。你可以有一个笔记本用来写下自己的想法，但不能有其他东西：没有朋友、电视、音乐、手机、即时通讯、电子邮件、网络、游戏、书籍、报纸或杂志。不到一个小时，大多数人就会强烈渴望分心的事物。</p>
+<p>[6] I don’t mean to imply that the only function of prep schools is to trick admissions officers. They also generally provide a better education. But try this thought experiment: suppose prep schools supplied the same superior education but had a tiny (.001) negative effect on college admissions. How many parents would still send their kids to them?<br>我并不是想说预科学校的唯一作用就是欺骗招生官。它们通常也能提供更好的教育。但不妨做个思想实验：假设预科学校提供同样优质的教育，但对大学录取有微小（0.001）的负面影响。还有多少父母会送孩子去呢？</p>
+<p>It might also be argued that kids who went to prep schools, because they’ve learned more, are better college candidates. But this seems empirically false. What you learn in even the best high school is rounding error compared to what you learn in college. Public school kids arrive at college with a slight disadvantage, but they start to pull ahead in the sophomore year.<br>也有人可能会说，上预科学校的孩子因为学到了更多东西，所以更适合进入大学。但从经验来看，这似乎是错误的。即便是在最好的高中所学的知识，与在大学学到的相比，也只是微不足道的。公立学校的孩子进入大学时略处劣势，但到了大二就开始领先了。</p>
+<p>(I’m not saying public school kids are smarter than preppies, just that they are within any given college. That follows necessarily if you agree prep schools improve kids’ admissions prospects.)<br>（我并不是说公立学校的孩子比预科学校的孩子更聪明，只是说在任何一所特定的大学里，他们的水平不相上下。如果你认同预科学校能提高孩子的录取前景，那么这一点是必然的。）</p>
+<p>[7] Why does society foul you? Indifference, mainly. There are simply no outside forces pushing high school to be good. The air traffic control system works because planes would crash otherwise. Businesses have to deliver because otherwise competitors would take their customers. But no planes crash if your school sucks, and it has no competitors. High school isn’t evil; it’s random; but random is pretty bad.<br>为什么社会会亏待你？主要是因为冷漠。根本没有外部力量推动高中变得更好。空中交通管制系统之所以有效，是因为否则飞机就会坠毁。企业必须履约，否则竞争对手就会抢走客户。但如果你的学校很糟糕，也不会有飞机坠毁，而且学校也没有竞争对手。高中并非邪恶，只是随机无序，但随机无序的状态相当糟糕。</p>
+<p>[8] And then of course there is money. It’s not a big factor in high school, because you can’t do much that anyone wants. But a lot of great things were created mainly to make money. Samuel Johnson said “no man but a blockhead ever wrote except for money.” (Many hope he was exaggerating.)<br>当然，还有金钱因素。在高中阶段，金钱并不是一个重要因素，因为你做不了太多别人愿意为之付费的事情。但很多伟大的事物主要是为了赚钱而创造出来的。塞缪尔・约翰逊说过：“除了傻瓜，没有人会不为钱而写作。”（很多人希望他是在夸张。）</p>
+<p>[9] Even college textbooks are bad. When you get to college, you’ll find that (with a few stellar exceptions) the textbooks are not written by the leading scholars in the field they describe. Writing college textbooks is unpleasant work, done mostly by people who need the money. It’s unpleasant because the publishers exert so much control, and there are few things worse than close supervision by someone who doesn’t understand what you’re doing. This phenomenon is apparently even worse in the production of high school textbooks.<br>即便是大学教材也很差劲。上了大学你会发现，（除了少数杰出的例外）教材并非由其所描述领域的顶尖学者编写。编写大学教材是件令人不快的工作，主要由需要钱的人来做。之所以令人不快，是因为出版商控制太多，而且没有什么比被一个不懂你在做什么的人严密监督更糟糕的了。显然，这种现象在高中教材的编写中更为严重。</p>
+<p>[10] Your teachers are always telling you to behave like adults. I wonder if they’d like it if you did. You may be loud and disorganized, but you’re very docile compared to adults. If you actually started acting like adults, it would be just as if a bunch of adults had been transposed into your bodies. Imagine the reaction of an FBI agent or taxi driver or reporter to being told they had to ask permission to go the bathroom, and only one person could go at a time. To say nothing of the things you’re taught. If a bunch of actual adults suddenly found themselves trapped in high school, the first thing they’d do is form a union and renegotiate all the rules with the administration.<br>你的老师总是告诉你要表现得像个成年人。我想知道如果真的那样做了，他们是否会喜欢。你们可能吵闹且缺乏条理，但和成年人相比，你们非常温顺。如果你们真的开始像成年人那样行事，就好比一群成年人被转移到了你们的身体里。想象一下，联邦调查局特工、出租车司机或记者要是被告知必须请求许可才能去洗手间，而且一次只能一个人去，他们会有什么反应。更不用说你们所学的东西了。如果一群真正的成年人突然发现自己被困在高中里，他们要做的第一件事就是组建工会，与校方重新协商所有规则。</p>
+<p>Thanks to Ingrid Bassett, Trevor Blackwell, Rich Draves, Dan Giffin, Sarah Harlin, Jessica Livingston, Jackie McDonough, Robert Morris, Mark Nitzberg, Lisa Randall, and Aaron Swartz for reading drafts of this, and to many others for talking to me about high school.</p>
+<p>感谢英格丽德・巴塞特、特雷弗・布莱克韦尔、里奇・德雷夫斯、丹・吉芬、萨拉・哈林、杰西卡・利文斯顿、杰基・麦克多诺、罗伯特・莫里斯、马克・尼茨伯格、莉萨・兰德尔和亚伦・斯沃茨阅读了本文的草稿，也感谢许多其他人与我谈论高中的话题。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>那些你希望当初就知道的事</div>
+      <div>https://hokkaidornis.github.io/2025/08/20/what-you-will-wish-you-had-known/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/20/how-to-start-a-startup/" title="如何创办一家初创公司">
+                        <span class="hidden-mobile">如何创办一家初创公司</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
