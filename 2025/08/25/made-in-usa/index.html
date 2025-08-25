@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Made in USA原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;usa.html November 2004（2004 年 11 月） (This is a new essay for the Japanese edition of Hackers &amp; Painters. It tries to explain why Americans make some things">
+<meta property="og:type" content="article">
+<meta property="og:title" content="美国制造">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/25/made-in-usa/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Made in USA原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;usa.html November 2004（2004 年 11 月） (This is a new essay for the Japanese edition of Hackers &amp; Painters. It tries to explain why Americans make some things">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-25T07:23:21.000Z">
+<meta property="article:modified_time" content="2025-08-25T07:24:55.920Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>美国制造 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="美国制造"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-25 15:23" pubdate>
+          2025年8月25日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">美国制造</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Made-in-USA"><a href="#Made-in-USA" class="headerlink" title="Made in USA"></a>Made in USA</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/usa.html">https://paulgraham.com/usa.html</a></p>
+<p>November 2004（2004 年 11 月）</p>
+<p>(This is a new essay for the Japanese edition of Hackers &amp; Painters. It tries to explain why Americans make some things well and others badly.)<br>（本文是为《黑客与画家》日文版撰写的新文章，旨在解释为何美国人在某些领域擅长制造，在另一些领域却表现糟糕。）</p>
+<p>A few years ago an Italian friend of mine travelled by train from Boston to Providence. She had only been in America for a couple weeks and hadn’t seen much of the country yet. She arrived looking astonished. “It’s so ugly!”<br>几年前，我的一位意大利朋友乘火车从波士顿前往普罗维登斯。她来美国才几周，尚未充分见识这个国家。抵达后，她满脸惊讶地说：“这里也太丑了！”</p>
+<p>People from other rich countries can scarcely imagine the squalor of the man-made bits of America. In travel books they show you mostly natural environments: the Grand Canyon, whitewater rafting, horses in a field. If you see pictures with man-made things in them, it will be either a view of the New York skyline shot from a discreet distance, or a carefully cropped image of a seacoast town in Maine.<br>其他富裕国家的人几乎无法想象美国人工建造区域的破败景象。旅游书籍中呈现的大多是自然景观：大峡谷、激流漂流、田野中的马匹。即便出现有人工建筑的图片，要么是从合适距离拍摄的纽约天际线，要么是经过精心裁剪的缅因州海滨小镇画面。</p>
+<p>How can it be, visitors must wonder. How can the richest country in the world look like this?<br>游客们肯定会疑惑：怎么会这样？世界上最富有的国家，怎么会是这副模样？</p>
+<p>Oddly enough, it may not be a coincidence. Americans are good at some things and bad at others. We’re good at making movies and software, and bad at making cars and cities. And I think we may be good at what we’re good at for the same reason we’re bad at what we’re bad at. We’re impatient. In America, if you want to do something, you don’t worry that it might come out badly, or upset delicate social balances, or that people might think you’re getting above yourself. If you want to do something, as Nike says, just do it.<br>奇怪的是，这或许并非巧合。美国人在某些事上表现出色，在另一些事上则不尽如人意 —— 我们擅长制作电影和软件，却不擅长制造汽车和规划城市。而我认为，我们擅长某些事与不擅长另一些事，根源或许是相同的：我们缺乏耐心。在美国，若你想做某件事，不会担心结果可能糟糕、会打破微妙的社会平衡，或是别人会觉得你自命不凡。正如耐克的广告语所说，想做就做。</p>
+<p>This works well in some fields and badly in others. I suspect it works in movies and software because they’re both messy processes. “Systematic” is the last word I’d use to describe the way good programmers write software. Code is not something they assemble painstakingly after careful planning, like the pyramids. It’s something they plunge into, working fast and constantly changing their minds, like a charcoal sketch.<br>这种 “想做就做” 的模式在部分领域效果显著，在另一些领域却适得其反。我猜想它在电影和软件领域奏效，是因为这两个领域的创作过程本就混乱无序。“系统化” 绝不是用来形容优秀程序员编写软件方式的词。代码并非程序员经过周密规划后精心拼凑而成的产物（就像建造金字塔那样），而是他们全身心投入、快速推进且不断改变思路的成果，如同创作炭笔素描一般。</p>
+<p>In software, paradoxical as it sounds, good craftsmanship means working fast. If you work slowly and meticulously, you merely end up with a very fine implementation of your initial, mistaken idea. Working slowly and meticulously is premature optimization. Better to get a prototype done fast, and see what new ideas it gives you.<br>在软件领域，尽管听起来有些矛盾，但精湛的技艺恰恰意味着快速工作。若你慢条斯理、一丝不苟地做，最终不过是将最初错误的想法完美地落地而已。这种慢节奏、精细化的工作方式属于 “过早优化”。不如快速完成一个原型，再从中发掘新的思路。</p>
+<p>It sounds like making movies works a lot like making software. Every movie is a Frankenstein, full of imperfections and usually quite different from what was originally envisioned. But interesting, and finished fairly quickly.<br>电影制作的过程似乎与软件制作十分相似。每一部电影都像 “弗兰肯斯坦”（指拼凑而成的事物），充满瑕疵，且往往与最初的设想相去甚远。但这类电影通常很有趣，且能较快完成制作。</p>
+<p>I think we get away with this in movies and software because they’re both malleable mediums. Boldness pays. And if at the last minute two parts don’t quite fit, you can figure out some hack that will at least conceal the problem.<br>我认为我们能在电影和软件领域采用这种模式而不受惩罚，是因为这两种媒介都具有较强的可塑性。大胆尝试会带来回报，而且即便在最后一刻发现两个部分无法完美契合，你也能找到一些 “权宜之计”，至少能掩盖问题。</p>
+<p>Not so with cars, or cities. They are all too physical. If the car business worked like software or movies, you’d surpass your competitors by making a car that weighed only fifty pounds, or folded up to the size of a motorcycle when you wanted to park it. But with physical products there are more constraints. You don’t win by dramatic innovations so much as by good taste and attention to detail.<br>但汽车制造和城市规划却并非如此，它们具有太强的实体属性。若汽车行业的运作方式像软件或电影领域那样，你或许能通过制造出仅重 50 磅（约 22.7 公斤）的汽车，或是能折叠成摩托车大小方便停放的汽车来超越竞争对手。但实体产品面临的限制更多，要在这个领域胜出，靠的不是惊天动地的创新，而是出色的审美品位和对细节的关注。</p>
+<p>The trouble is, the very word “taste” sounds slightly ridiculous to American ears. It seems pretentious, or frivolous, or even effeminate. Blue staters think it’s “subjective,” and red staters think it’s for sissies. So anyone in America who really cares about design will be sailing upwind.<br>问题在于，“品位” 这个词在美国人听来，总有些可笑。它似乎带有自命不凡、轻浮，甚至柔弱的意味。支持民主党的 “蓝州” 民众认为 “品位” 是主观的，支持共和党的 “红州” 民众则觉得讲究品位是 “娘娘腔” 的表现。因此，在美国，真正在乎设计的人往往是在逆风前行。</p>
+<p>Twenty years ago we used to hear that the problem with the US car industry was the workers. We don’t hear that any more now that Japanese companies are building cars in the US. The problem with American cars is bad design. You can see that just by looking at them.<br>20 年前，人们常说美国汽车行业的问题出在工人身上。但如今，日本企业已在美国本土生产汽车，这种说法便不复存在了。美国汽车的真正问题在于设计糟糕 —— 只需看一眼，你就能发现这一点。</p>
+<p>All that extra sheet metal on the AMC Matador wasn’t added by the workers. The problem with this car, as with American cars today, is that it was designed by marketing people instead of designers.<br>AMC 马塔多汽车上那些多余的金属板材，并非工人擅自添加。这款车的问题（如今美国汽车也存在同样问题）在于，它的设计出自营销人员之手，而非专业设计师。</p>
+<p>Why do the Japanese make better cars than us? Some say it’s because their culture encourages cooperation. That may come into it. But in this case it seems more to the point that their culture prizes design and craftsmanship.<br>为何日本人能制造出比我们更好的汽车？有人认为是因为日本文化鼓励合作。这或许是原因之一，但在汽车制造领域，更关键的原因似乎是日本文化推崇设计与工艺。</p>
+<p>For centuries the Japanese have made finer things than we have in the West. When you look at swords they made in 1200, you just can’t believe the date on the label is right. Presumably their cars fit together more precisely than ours for the same reason their joinery always has. They’re obsessed with making things well.<br>几个世纪以来，日本人制作的器物一直比西方更精良。当你看到他们在 1200 年打造的武士刀时，简直不敢相信标签上的年份是真的。想必他们的汽车能比我们的汽车组装得更精密，与他们的木工工艺始终精湛的原因相同 —— 他们执着于把东西做好。</p>
+<p>Not us. When we make something in America, our aim is just to get the job done. Once we reach that point, we take one of two routes. We can stop there, and have something crude but serviceable, like a Vise-grip. Or we can improve it, which usually means encrusting it with gratuitous ornament. When we want to make a car “better,” we stick tail fins on it, or make it longer, or make the windows smaller, depending on the current fashion.<br>我们却并非如此。在美国，制作东西的目标仅仅是 “完成任务”。一旦达到这个目标，我们会选择两条路中的一条：要么就此打住，做出一个粗糙但能用的东西（比如 vise-grip 牌大力钳）；要么所谓的 “改进”，通常只是给它加上不必要的装饰。当我们想让汽车 “变得更好” 时，会根据当下的潮流给它装上尾翼、加长车身，或是缩小车窗 —— 仅此而已。</p>
+<p>Ditto for houses. In America you can have either a flimsy box banged together out of two by fours and drywall, or a McMansion– a flimsy box banged together out of two by fours and drywall, but larger, more dramatic-looking, and full of expensive fittings. Rich people don’t get better design or craftsmanship; they just get a larger, more conspicuous version of the standard house.<br>房屋建造也是如此。在美国，你能买到的要么是用 2×4 英寸（约 5×10 厘米）的木方和石膏板仓促搭建的单薄房屋，要么是 “麦克豪宅”—— 本质上还是用同样材料搭建的单薄房屋，只是面积更大、外观更浮夸，且装满了昂贵的配件。富人并没有享受到更好的设计或工艺，他们只是得到了普通房屋的 “加大版”，更引人注目而已。</p>
+<p>We don’t especially prize design or craftsmanship here. What we like is speed, and we’re willing to do something in an ugly way to get it done fast. In some fields, like software or movies, this is a net win.<br>我们并不特别推崇设计或工艺，更看重的是速度 —— 为了快速完成任务，即便方式难看也无所谓。在软件、电影等领域，这种做法最终是划算的。</p>
+<p>But it’s not just that software and movies are malleable mediums. In those businesses, the designers (though they’re not generally called that) have more power. Software companies, at least successful ones, tend to be run by programmers. And in the film industry, though producers may second-guess directors, the director controls most of what appears on the screen. And so American software and movies, and Japanese cars, all have this in common: the people in charge care about design– the former because the designers are in charge, and the latter because the whole culture cares about design.<br>但这不仅仅是因为软件和电影是可塑性强的媒介，更因为在这些行业中，“设计师”（尽管他们通常不被如此称呼）拥有更大的权力。软件公司（至少是成功的软件公司）往往由程序员运营；在电影行业，尽管制片人可能会对导演指手画脚，但屏幕上呈现的大部分内容仍由导演掌控。因此，美国的软件、电影与日本的汽车有一个共同点：负责人都在乎设计 —— 前者是因为设计师本身就是负责人，后者则是因为整个文化都推崇设计。</p>
+<p>I think most Japanese executives would be horrified at the idea of making a bad car. Whereas American executives, in their hearts, still believe the most important thing about a car is the image it projects. Make a good car? What’s “good?” It’s so subjective. If you want to know how to design a car, ask a focus group.<br>我想，大多数日本高管若想到要制造一辆劣质汽车，都会感到震惊。而美国高管在内心深处仍认为，汽车最重要的是它所传递的形象。“制造一辆好车？”——“好” 是什么定义？这太主观了。若想知道该如何设计汽车，问问焦点小组就好。</p>
+<p>Instead of relying on their own internal design compass (like Henry Ford did), American car companies try to make what marketing people think consumers want. But it isn’t working. American cars continue to lose market share. And the reason is that the customer doesn’t want what he thinks he wants.<br>美国汽车公司没有像亨利・福特那样依靠自身内在的设计判断力，反而试图制造营销人员认为消费者想要的产品。但这种做法行不通 —— 美国汽车的市场份额持续下滑。原因在于，消费者想要的并非他们自己认为想要的东西。</p>
+<p>Letting focus groups design your cars for you only wins in the short term. In the long term, it pays to bet on good design. The focus group may say they want the meretricious feature du jour, but what they want even more is to imitate sophisticated buyers, and they, though a small minority, really do care about good design. Eventually the pimps and drug dealers notice that the doctors and lawyers have switched from Cadillac to Lexus, and do the same.<br>让焦点小组 “设计” 汽车，只能在短期内奏效。从长远来看，押注于优秀设计才会有回报。焦点小组可能会说他们想要当下花哨的功能，但他们更渴望模仿有品位的消费者 —— 尽管这类消费者占比很小，却真正在乎优秀的设计。最终，就连皮条客和毒贩都会发现，医生和律师已经从开凯迪拉克换成了开雷克萨斯，于是他们也会跟风更换。</p>
+<p>Apple is an interesting counterexample to the general American trend. If you want to buy a nice CD player, you’ll probably buy a Japanese one. But if you want to buy an MP3 player, you’ll probably buy an iPod. What happened? Why doesn’t Sony dominate MP3 players? Because Apple is in the consumer electronics business now, and unlike other American companies, they’re obsessed with good design. Or more precisely, their CEO is.<br>苹果公司是美国普遍趋势下一个有趣的反例。若你想买一台好的 CD 播放器，很可能会选择日本产品；但若是想买 MP3 播放器，大概率会选择 iPod。这是为什么？为何索尼没有主导 MP3 播放器市场？因为苹果如今涉足消费电子领域，且与其他美国公司不同，苹果执着于优秀的设计 —— 更准确地说，是苹果的 CEO（指史蒂夫・乔布斯）执着于设计。</p>
+<p>I just got an iPod, and it’s not just nice. It’s surprisingly nice. For it to surprise me, it must be satisfying expectations I didn’t know I had. No focus group is going to discover those. Only a great designer can.<br>我刚买了一台 iPod，它不仅好用，还好用得让人惊喜。它能给我带来惊喜，说明它满足了我自己都未曾察觉的期望。这种期望，任何焦点小组都无法发现，只有伟大的设计师才能捕捉到。</p>
+<p>Cars aren’t the worst thing we make in America. Where the just-do-it model fails most dramatically is in our cities– or rather, exurbs. If real estate developers operated on a large enough scale, if they built whole towns, market forces would compel them to build towns that didn’t suck. But they only build a couple office buildings or suburban streets at a time, and the result is so depressing that the inhabitants consider it a great treat to fly to Europe and spend a couple weeks living what is, for people there, just everyday life. [1]<br>汽车并非美国制造的最糟糕的东西。“想做就做” 模式失败得最彻底的领域，是我们的城市 —— 更准确地说是郊区。若房地产开发商的运营规模足够大，能整体规划建设城镇，市场力量或许会迫使他们建造出不那么糟糕的城镇。但现实是，他们每次只建几栋办公楼或几条郊区街道，最终的结果令人沮丧：居民们会把飞往欧洲、过上几周当地人眼中的日常生活，当作一种难得的享受。[1]</p>
+<p>But the just-do-it model does have advantages. It seems the clear winner for generating wealth and technical innovations (which are practically the same thing). I think speed is the reason. It’s hard to create wealth by making a commodity. The real value is in things that are new, and if you want to be the first to make something, it helps to work fast. For better or worse, the just-do-it model is fast, whether you’re Dan Bricklin writing the prototype of VisiCalc in a weekend, or a real estate developer building a block of shoddy condos in a month.<br>但 “想做就做” 的模式确实有其优势：在创造财富和技术创新（二者实际上几乎是一回事）方面，它显然是赢家。我认为关键原因在于速度。靠生产大宗商品很难创造财富，真正的价值存在于新事物之中。若想成为首个创造某事物的人，快速行动会大有帮助。无论结果好坏，这种模式的效率都很高：无论是丹・布里克林在一个周末就写出 VisiCalc（首款电子表格软件）的原型，还是房地产开发商在一个月内建起一栋劣质公寓楼，都是如此。</p>
+<p>If I had to choose between the just-do-it model and the careful model, I’d probably choose just-do-it. But do we have to choose? Could we have it both ways? Could Americans have nice places to live without undermining the impatient, individualistic spirit that makes us good at software? Could other countries introduce more individualism into their technology companies and research labs without having it metastasize as strip malls? I’m optimistic. It’s harder to say about other countries, but in the US, at least, I think we can have both.<br>若必须在 “想做就做” 模式和 “谨慎细致” 模式之间选择，我或许会选前者。但我们真的必须二选一吗？能否两者兼得？美国人能否在拥有宜居环境的同时，不削弱那种让我们擅长软件开发的急躁、个人主义精神？其他国家能否在科技公司和研究实验室中引入更多个人主义，同时避免其像郊区商业街那样无序扩张？我对此持乐观态度。其他国家的情况难以断言，但至少在美国，我认为我们可以两者兼得。</p>
+<p>Apple is an encouraging example. They’ve managed to preserve enough of the impatient, hackerly spirit you need to write software. And yet when you pick up a new Apple laptop, well, it doesn’t seem American. It’s too perfect. It seems as if it must have been made by a Swedish or a Japanese company.<br>苹果公司就是一个令人鼓舞的例子。它成功保留了编写软件所必需的那种急躁、“黑客式” 的精神；但当你拿起一台全新的苹果笔记本电脑时，它却不像是 “美国制造”—— 它太完美了，仿佛出自瑞典或日本公司之手。</p>
+<p>In many technologies, version 2 has higher resolution. Why not in design generally? I think we’ll gradually see national characters superseded by occupational characters: hackers in Japan will be allowed to behave with a willfulness that would now seem unJapanese, and products in America will be designed with an insistence on taste that would now seem unAmerican. Perhaps the most successful countries, in the future, will be those most willing to ignore what are now considered national characters, and do each kind of work in the way that works best. Race you.<br>在许多技术领域，2.0 版本总会有更高的精度。那么在设计领域，为何不能如此呢？我认为，我们将逐渐看到 “职业特质” 取代 “民族特质”：日本的黑客将被允许展现出如今看来 “不符合日本风格” 的任性；美国的产品设计将开始坚持如今看来 “不符合美国风格” 的品位。或许在未来，最成功的国家将是那些最愿意抛开当下所谓 “民族特质”，并以最有效的方式去完成各类工作的国家。咱们拭目以待。</p>
+<p>Notes（注释）</p>
+<p>[1] Japanese cities are ugly too, but for different reasons. Japan is prone to earthquakes, so buildings are traditionally seen as temporary; there is no grand tradition of city planning like the one Europeans inherited from Rome. The other cause is the notoriously corrupt relationship between the government and construction companies.<br>[1] 日本的城市也很丑，但原因不同。日本是地震多发国，因此建筑传统上被视为临时性的；而且日本没有像欧洲那样从罗马继承下来的宏大城市规划传统。另一个原因是政府与建筑公司之间众所周知的腐败关系。</p>
+<p>Thanks to Trevor Blackwell, Barry Eisler, Sarah Harlin, Shiro Kawai, Jessica Livingston, Jackie McDonough, Robert Morris, and Eric Raymond for reading drafts of this.<br>感谢特雷弗・布莱克威尔、巴里・艾斯勒、萨拉・哈林、川井史郎、杰西卡・利文斯顿、杰姬・麦克多诺、罗伯特・莫里斯和埃里克・雷蒙德阅读本文初稿并提出建议。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>美国制造</div>
+      <div>https://hokkaidornis.github.io/2025/08/25/made-in-usa/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/25/what-the-bubble-got-right/" title="互联网泡沫中那些正确的事">
+                        <span class="hidden-mobile">互联网泡沫中那些正确的事</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
