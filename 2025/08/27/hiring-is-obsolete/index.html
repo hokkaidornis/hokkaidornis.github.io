@@ -1,0 +1,818 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Hiring is Obsolete原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;hiring.html May 2005 (This essay is derived from a talk at the Berkeley CSUA.)（本文改编自在加州大学伯克利分校计算机科学本科生协会（CSUA）的一次演讲。） The three big powers on the Interne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="招聘已过时">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/27/hiring-is-obsolete/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Hiring is Obsolete原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;hiring.html May 2005 (This essay is derived from a talk at the Berkeley CSUA.)（本文改编自在加州大学伯克利分校计算机科学本科生协会（CSUA）的一次演讲。） The three big powers on the Interne">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-27T09:38:03.000Z">
+<meta property="article:modified_time" content="2025-08-28T01:22:12.215Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>招聘已过时 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="招聘已过时"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-27 17:38" pubdate>
+          2025年8月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          74 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">招聘已过时</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Hiring-is-Obsolete"><a href="#Hiring-is-Obsolete" class="headerlink" title="Hiring is Obsolete"></a>Hiring is Obsolete</h2><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/hiring.html">https://paulgraham.com/hiring.html</a></p>
+<p>May 2005</p>
+<p>(This essay is derived from a talk at the Berkeley CSUA.)<br>（本文改编自在加州大学伯克利分校计算机科学本科生协会（CSUA）的一次演讲。）</p>
+<p>The three big powers on the Internet now are Yahoo, Google, and Microsoft. Average age of their founders: 24. So it is pretty well established now that grad students can start successful companies. And if grad students can do it, why not undergrads?<br>如今互联网领域的三大巨头是雅虎（Yahoo）、谷歌（Google）和微软（Microsoft）。它们创始人的平均年龄仅 24 岁。由此可见，研究生能创办成功的公司这一点已得到充分印证。既然研究生能做到，本科生为何不能呢？</p>
+<p>Like everything else in technology, the cost of starting a startup has decreased dramatically. Now it’s so low that it has disappeared into the noise. The main cost of starting a Web-based startup is food and rent. Which means it doesn’t cost much more to start a company than to be a total slacker. You can probably start a startup on ten thousand dollars of seed funding, if you’re prepared to live on ramen.<br>与科技领域的其他所有事物一样，创办初创公司的成本已大幅下降。如今，这一成本低到几乎可以忽略不计。创办一家基于网络的初创公司，主要成本不过是衣食住行。这意味着，创办公司的成本与当个彻底的闲人相比，并没有高多少。只要你愿意靠吃拉面度日，或许有一万美元的种子资金就能启动一家初创公司。</p>
+<p>The less it costs to start a company, the less you need the permission of investors to do it. So a lot of people will be able to start companies now who never could have before.<br>创办公司的成本越低，你创办公司所需获得的投资人许可就越少。因此，如今许多以前没能力创办公司的人，现在都有机会开启自己的创业之路了。</p>
+<p>The most interesting subset may be those in their early twenties. I’m not so excited about founders who have everything investors want except intelligence, or everything except energy. The most promising group to be liberated by the new, lower threshold are those who have everything investors want except experience.<br>其中最值得关注的群体或许是二十出头的年轻人。对于那些除了智慧外具备投资人所需一切条件，或是除了精力外无所不有的人，我并不觉得有多振奋。而在创业门槛降低这一新趋势下，最有潜力获得机遇的群体，是那些除了经验外，拥有投资人所需全部特质的人。</p>
+<h3 id="Market-Rate"><a href="#Market-Rate" class="headerlink" title="Market Rate"></a><strong>Market Rate</strong></h3><p><strong>市场估值</strong></p>
+<p>I once claimed that nerds were unpopular in secondary school mainly because they had better things to do than work full-time at being popular. Some said I was just telling people what they wanted to hear. Well, I’m now about to do that in a spectacular way: I think undergraduates are undervalued.<br>我曾提出，书呆子在中学不受欢迎，主要是因为他们有更有意义的事要做，而非把全部精力放在追求受欢迎上。有人说我不过是在说人们爱听的话。好吧，现在我要更 “语出惊人” 地说一句：我认为本科生的价值被低估了。</p>
+<p>Or more precisely, I think few realize the huge spread in the value of 20 year olds. Some, it’s true, are not very capable. But others are more capable than all but a handful of 30 year olds. [1]<br>更准确地说，我认为很少有人意识到，20 岁左右年轻人的能力差异极大。诚然，有些 20 岁的年轻人能力并不突出，但也有一些 20 岁的年轻人，能力远超除少数 30 岁人士之外的大多数人。[1]</p>
+<p>Till now the problem has always been that it’s difficult to pick them out. Every VC in the world, if they could go back in time, would try to invest in Microsoft. But which would have then? How many would have understood that this particular 19 year old was Bill Gates?<br>时至今日，核心问题始终是难以甄别出那些能力出众的年轻人。如果能回到过去，世界上每一位风险投资人（VC）都会试图投资微软。但在当时，谁会这么做呢？又有多少人能意识到，那个 19 岁的年轻人就是比尔・盖茨？</p>
+<p>It’s hard to judge the young because (a) they change rapidly, (b) there is great variation between them, and (c) they’re individually inconsistent. That last one is a big problem. When you’re young, you occasionally say and do stupid things even when you’re smart. So if the algorithm is to filter out people who say stupid things, as many investors and employers unconsciously do, you’re going to get a lot of false positives.<br>评判年轻人之所以困难，原因有三：（1）他们成长变化迅速；（2）彼此之间能力差异巨大；（3）个人表现不稳定。最后一点尤为关键。即便本身很聪明，年轻人偶尔也会说蠢话、做蠢事。因此，若像许多投资人和雇主下意识所做的那样，采用 “过滤掉说蠢话的人” 这种筛选逻辑，必然会出现大量 “误判”（即错过真正有能力的人）。</p>
+<p>Most organizations who hire people right out of college are only aware of the average value of 22 year olds, which is not that high. And so the idea for most of the twentieth century was that everyone had to begin as a trainee in some entry-level job. Organizations realized there was a lot of variation in the incoming stream, but instead of pursuing this thought they tended to suppress it, in the belief that it was good for even the most promising kids to start at the bottom, so they didn’t get swelled heads.<br>大多数招聘应届毕业生的机构，只看到了 22 岁年轻人的平均价值，而这一平均价值并不算高。因此，在 20 世纪的大部分时间里，主流观念是：所有人都必须从基层实习生或入门级岗位做起。这些机构固然意识到新入职者能力参差不齐，但并未重视这一差异，反而倾向于压制它 —— 他们认为，即便最有潜力的年轻人，也该从底层起步，这样才不会自视甚高、骄傲自满。</p>
+<p>The most productive young people will always be undervalued by large organizations, because the young have no performance to measure yet, and any error in guessing their ability will tend toward the mean.<br>在大型机构中，能力最强的年轻人往往始终被低估。因为年轻人尚无过往业绩可作评判依据，而在预估他们能力时，任何判断偏差最终都会趋向于 “平均水平”（即默认其能力处于中等）。</p>
+<p>What’s an especially productive 22 year old to do? One thing you can do is go over the heads of organizations, directly to the users. Any company that hires you is, economically, acting as a proxy for the customer. The rate at which they value you (though they may not consciously realize it) is an attempt to guess your value to the user. But there’s a way to appeal their judgement. If you want, you can opt to be valued directly by users, by starting your own company.<br>对于一位能力极强的 22 岁年轻人而言，该如何做呢？有一种选择是绕过机构，直接面向用户。从经济角度来看，任何雇佣你的公司，本质上都是在充当用户的 “代理人”。公司对你的估值（即便他们可能并未有意识地意识到这一点），其实是在试图预估你对用户的价值。但你有办法 “反驳” 这种估值 —— 如果你愿意，完全可以通过创办自己的公司，让用户直接对你进行价值评判。</p>
+<p>The market is a lot more discerning than any employer. And it is completely non-discriminatory. On the Internet, nobody knows you’re a dog. And more to the point, nobody knows you’re 22. All users care about is whether your site or software gives them what they want. They don’t care if the person behind it is a high school kid.<br>市场比任何雇主都更具洞察力，而且完全不带偏见。正如互联网上流传的说法：“没人知道你是一条狗”，更重要的是，没人知道你只有 22 岁。用户唯一关心的，是你的网站或软件能否满足他们的需求，至于背后的创作者是高中生还是资深人士，他们毫不在意。</p>
+<p>If you’re really productive, why not make employers pay market rate for you? Why go work as an ordinary employee for a big company, when you could start a startup and make them buy it to get you?<br>如果你确实能力出众，为何不让雇主按市场价值为你付费呢？既然你可以创办一家初创公司，让大公司为了招揽你而收购这家公司，那又何必去大公司做一名普通员工呢？</p>
+<p>When most people hear the word “startup,” they think of the famous ones that have gone public. But most startups that succeed do it by getting bought. And usually the acquirer doesn’t just want the technology, but the people who created it as well.<br>大多数人听到 “初创公司” 一词时，想到的都是那些成功上市的知名企业。但实际上，大多数成功的初创公司，是通过被收购实现 “成功” 的。而且通常情况下，收购方想要的不只是技术，还有创造出这些技术的团队。</p>
+<p>Often big companies buy startups before they’re profitable. Obviously in such cases they’re not after revenues. What they want is the development team and the software they’ve built so far. When a startup gets bought for 2 or 3 million six months in, it’s really more of a hiring bonus than an acquisition.<br>大公司常常会在初创公司盈利前就将其收购。显然，在这种情况下，它们追求的不是营收，而是初创公司的开发团队以及其已开发的软件。如果一家初创公司成立仅半年就以 200 万或 300 万美元的价格被收购，这本质上更像是一笔 “招聘奖金”，而非单纯的企业收购。</p>
+<p>I think this sort of thing will happen more and more, and that it will be better for everyone. It’s obviously better for the people who start the startup, because they get a big chunk of money up front. But I think it will be better for the acquirers too. The central problem in big companies, and the main reason they’re so much less productive than small companies, is the difficulty of valuing each person’s work. Buying larval startups solves that problem for them: the acquirer doesn’t pay till the developers have proven themselves. Acquirers are protected on the downside, but still get most of the upside.<br>我认为这类收购会越来越普遍，而且对所有人都更有利。对初创公司创始人而言，这显然是好事，因为他们能提前获得一大笔资金。但我认为这对收购方同样有益。大公司面临的核心问题 —— 也是它们效率远低于小公司的主要原因 —— 是难以评估每位员工的工作价值。收购处于 “萌芽阶段” 的初创公司，恰好能为它们解决这一问题：只有当开发团队证明了自身价值后，收购方才需要支付费用。这样一来，收购方既能规避下行风险，又能享受大部分潜在收益。</p>
+<h3 id="Product-Development"><a href="#Product-Development" class="headerlink" title="Product Development"></a><strong>Product Development</strong></h3><p><strong>产品开发</strong></p>
+<p>Buying startups also solves another problem afflicting big companies: they can’t do product development. Big companies are good at extracting the value from existing products, but bad at creating new ones.<br>收购初创公司还能解决困扰大公司的另一个问题：它们不擅长产品开发。大公司擅长从现有产品中挖掘价值，却不擅长打造新产品。</p>
+<p>Why? It’s worth studying this phenomenon in detail, because this is the raison d’etre of startups.<br>为何会这样？这一现象值得深入研究，因为这正是初创公司存在的核心意义。</p>
+<p>To start with, most big companies have some kind of turf to protect, and this tends to warp their development decisions. For example, Web-based applications are hot now, but within Microsoft there must be a lot of ambivalence about them, because the very idea of Web-based software threatens the desktop. So any Web-based application that Microsoft ends up with, will probably, like Hotmail, be something developed outside the company.<br>首先，大多数大公司都有自己的 “地盘” 要守护，这往往会扭曲它们的产品开发决策。例如，如今基于网络的应用程序（Web 应用）十分热门，但微软内部对此必然态度矛盾 —— 因为网络软件的理念本身就对桌面软件构成了威胁。因此，微软最终推出的网络应用（如 Hotmail 邮箱），很可能都是源自公司外部的开发成果。</p>
+<p>Another reason big companies are bad at developing new products is that the kind of people who do that tend not to have much power in big companies (unless they happen to be the CEO). Disruptive technologies are developed by disruptive people. And they either don’t work for the big company, or have been outmaneuvered by yes-men and have comparatively little influence.<br>大公司不擅长开发新产品的另一个原因是：擅长创新的人，在大公司里往往没有太多话语权（除非他们恰好是 CEO）。颠覆性技术是由具有颠覆性思维的人创造的，而这类人要么根本不在大公司任职，要么被只会阿谀奉承的人排挤，影响力微乎其微。</p>
+<p>Big companies also lose because they usually only build one of each thing. When you only have one Web browser, you can’t do anything really risky with it. If ten different startups design ten different Web browsers and you take the best, you’ll probably get something better.<br>大公司的劣势还在于，它们通常对同类型产品只开发一款。如果你只有一款网页浏览器，就不敢在它身上尝试任何真正有风险的创新。但如果有十家不同的初创公司分别设计十款不同的网页浏览器，你从中挑选最优的那一款，最终得到的产品很可能会更出色。</p>
+<p>The more general version of this problem is that there are too many new ideas for companies to explore them all. There might be 500 startups right now who think they’re making something Microsoft might buy. Even Microsoft probably couldn’t manage 500 development projects in-house.<br>这个问题更普遍的体现是：新想法数量太多，大公司根本无法全部探索。目前可能有 500 家初创公司认为，自己开发的产品会被微软收购。但即便强大如微软，也不可能在公司内部同时推进 500 个开发项目。</p>
+<p>Big companies also don’t pay people the right way. People developing a new product at a big company get paid roughly the same whether it succeeds or fails. People at a startup expect to get rich if the product succeeds, and get nothing if it fails. [2] So naturally the people at the startup work a lot harder.<br>大公司的薪酬体系也存在问题。在大公司开发新产品的人，无论产品成功与否，薪酬都相差不大；而初创公司的员工则清楚：产品成功，自己就能致富；产品失败，自己则一无所获。[2] 因此，初创公司的员工自然会更加努力地工作。</p>
+<p>The mere bigness of big companies is an obstacle. In startups, developers are often forced to talk directly to users, whether they want to or not, because there is no one else to do sales and support. It’s painful doing sales, but you learn much more from trying to sell people something than reading what they said in focus groups.<br>大公司的 “大” 本身就是一种障碍。在初创公司，无论开发人员是否愿意，他们往往都得直接与用户沟通 —— 因为没人能替代他们做销售和客服工作。销售工作固然痛苦，但通过尝试向用户推销产品所学到的东西，远比阅读焦点小组的反馈报告要多得多。</p>
+<p>And then of course, big companies are bad at product development because they’re bad at everything. Everything happens slower in big companies than small ones, and product development is something that has to happen fast, because you have to go through a lot of iterations to get something good.<br>当然，还有一个显而易见的原因：大公司不擅长产品开发，是因为它们在所有事情上都效率低下。大公司做任何事都比小公司慢，而产品开发恰恰需要快速推进 —— 因为要打造出优质产品，必须经过大量的迭代优化。</p>
+<h3 id="Trend"><a href="#Trend" class="headerlink" title="Trend"></a><strong>Trend</strong></h3><p><strong>趋势</strong></p>
+<p>I think the trend of big companies buying startups will only accelerate. One of the biggest remaining obstacles is pride. Most companies, at least unconsciously, feel they ought to be able to develop stuff in house, and that buying startups is to some degree an admission of failure. And so, as people generally do with admissions of failure, they put it off for as long as possible. That makes the acquisition very expensive when it finally happens.<br>我认为大公司收购初创公司的趋势只会加速。目前尚存的最大障碍之一，是 “面子问题”。大多数公司（至少是下意识地）认为，自己应该有能力在内部开发产品，而收购初创公司在某种程度上相当于承认自己的失败。因此，就像人们通常会拖延承认失败一样，公司也会尽可能推迟收购，这就导致最终收购时，成本变得非常高昂。</p>
+<p>What companies should do is go out and discover startups when they’re young, before VCs have puffed them up into something that costs hundreds of millions to acquire. Much of what VCs add, the acquirer doesn’t need anyway.<br>公司真正应该做的，是在初创公司尚处于早期阶段、尚未被风险投资人炒到数亿美元估值之前，就主动发掘它们。毕竟，风险投资人给初创公司附加的很多价值，收购方其实并不需要。</p>
+<p>Why don’t acquirers try to predict the companies they’re going to have to buy for hundreds of millions, and grab them early for a tenth or a twentieth of that? Because they can’t predict the winners in advance? If they’re only paying a twentieth as much, they only have to predict a twentieth as well. Surely they can manage that.<br>为什么收购方不提前预判那些未来可能需要花数亿美元收购的公司，在早期就以十分之一或二十分之一的价格将其拿下呢？是因为他们无法提前预测赢家吗？但如果只需支付二十分之一的成本，那么他们的预判准确率只需达到二十分之一即可，这显然是可以做到的。</p>
+<p>I think companies that acquire technology will gradually learn to go after earlier stage startups. They won’t necessarily buy them outright. The solution may be some hybrid of investment and acquisition: for example, to buy a chunk of the company and get an option to buy the rest later.<br>我认为，那些需要通过收购获取技术的公司，会逐渐学会关注更早期的初创公司。它们未必会直接全额收购，而是可能采用 “投资 + 收购” 的混合模式：例如，先收购初创公司的一部分股权，同时获得日后收购剩余股权的选择权。</p>
+<p>When companies buy startups, they’re effectively fusing recruiting and product development. And I think that’s more efficient than doing the two separately, because you always get people who are really committed to what they’re working on.<br>公司收购初创公司，本质上是将 “招聘” 与 “产品开发” 这两件事融合在了一起。我认为这种模式比分开做这两件事更高效，因为通过这种方式招到的人，必然是对自己所做的工作充满热忱和投入的。</p>
+<p>Plus this method yields teams of developers who already work well together. Any conflicts between them have been ironed out under the very hot iron of running a startup. By the time the acquirer gets them, they’re finishing one another’s sentences. That’s valuable in software, because so many bugs occur at the boundaries between different people’s code.<br>此外，这种方式还能获得一支已经磨合良好的开发团队。在运营初创公司的高压环境下，团队成员之间可能存在的矛盾早已化解。当收购方接手这支团队时，他们已经达到了 “心有灵犀” 的默契程度 —— 一个人没说完的话，另一个人能接下去。这在软件开发领域极具价值，因为很多程序漏洞恰恰出现在不同人编写的代码衔接处。</p>
+<h3 id="Investors"><a href="#Investors" class="headerlink" title="Investors"></a><strong>Investors</strong></h3><p><strong>投资人</strong></p>
+<p>The increasing cheapness of starting a company doesn’t just give hackers more power relative to employers. It also gives them more power relative to investors.<br>创办公司的成本越来越低，不仅让技术开发者（黑客）相对于雇主拥有了更多话语权，也让他们相对于投资人的话语权有所提升。</p>
+<p>The conventional wisdom among VCs is that hackers shouldn’t be allowed to run their own companies. The founders are supposed to accept MBAs as their bosses, and themselves take on some title like Chief Technical Officer. There may be cases where this is a good idea. But I think founders will increasingly be able to push back in the matter of control, because they just don’t need the investors’ money as much as they used to.<br>风险投资人中的传统观点认为，技术开发者不应掌控自己的公司。他们认为创始人应该接受拥有 MBA 学位的人作为上司，自己则担任首席技术官（CTO）之类的职位。或许在某些情况下，这种安排是合理的。但我认为，创始人在公司控制权问题上会越来越有底气拒绝这种安排，因为他们对投资人资金的依赖程度，已远不如过去。</p>
+<p>Startups are a comparatively new phenomenon. Fairchild Semiconductor is considered the first VC-backed startup, and they were founded in 1959, less than fifty years ago. Measured on the time scale of social change, what we have now is pre-beta. So we shouldn’t assume the way startups work now is the way they have to work.<br>初创公司是一种相对较新的现象。仙童半导体（Fairchild Semiconductor）被认为是第一家由风险投资支持的初创公司，它成立于 1959 年，距今还不到 50 年。若以社会变革的时间尺度来衡量，当前初创公司的运作模式仍处于 “测试前期”（pre-beta）阶段。因此，我们不应想当然地认为，现在初创公司的运作方式就是唯一可行的方式。</p>
+<p>Fairchild needed a lot of money to get started. They had to build actual factories. What does the first round of venture funding for a Web-based startup get spent on today? More money can’t get software written faster; it isn’t needed for facilities, because those can now be quite cheap; all money can really buy you is sales and marketing. A sales force is worth something, I’ll admit. But marketing is increasingly irrelevant. On the Internet, anything genuinely good will spread by word of mouth.<br>仙童半导体当年创办时需要大量资金，因为他们必须建造实体工厂。而如今，一家基于网络的初创公司，其第一轮风险投资会用在什么地方呢？更多的资金并不能让软件开发速度加快；办公设施也无需太多投入，因为现在的办公成本已经很低；资金真正能买到的，其实只有销售团队和市场营销。我承认销售团队有其价值，但市场营销的重要性正日益下降。在互联网上，任何真正优质的产品，都会通过口碑传播开来。</p>
+<p>Investors’ power comes from money. When startups need less money, investors have less power over them. So future founders may not have to accept new CEOs if they don’t want them. The VCs will have to be dragged kicking and screaming down this road, but like many things people have to be dragged kicking and screaming toward, it may actually be good for them.<br>投资人的权力源于资金。当初创公司对资金的需求减少时，投资人对它们的掌控力也会随之减弱。因此，未来的创始人如果不愿意，就不必接受投资人派来的新 CEO。风险投资人或许会不情愿地被推向这条道路，但就像许多人们起初抗拒、最终却受益的事情一样，这对他们其实可能是件好事。</p>
+<p>Google is a sign of the way things are going. As a condition of funding, their investors insisted they hire someone old and experienced as CEO. But from what I’ve heard the founders didn’t just give in and take whoever the VCs wanted. They delayed for an entire year, and when they did finally take a CEO, they chose a guy with a PhD in computer science.<br>谷歌的例子预示了未来的趋势。当年在获取投资时，投资人要求谷歌聘请一位年长且经验丰富的人担任 CEO。但据我所知，创始人并没有轻易妥协、接受投资人推荐的任何人选。他们拖延了整整一年，最终选定的 CEO，是一位拥有计算机科学博士学位的人（指埃里克・施密特）。</p>
+<p>It sounds to me as if the founders are still the most powerful people in the company, and judging by Google’s performance, their youth and inexperience doesn’t seem to have hurt them. Indeed, I suspect Google has done better than they would have if the founders had given the VCs what they wanted, when they wanted it, and let some MBA take over as soon as they got their first round of funding.<br>在我看来，谷歌的创始人依然是公司最有权力的人。从谷歌的业绩来看，他们的年轻和缺乏经验似乎并未对公司造成负面影响。事实上，我甚至认为，如果谷歌创始人当初按照投资人的要求，早早让某个 MBA 接手 CEO 职位，谷歌的发展未必会像现在这么好。</p>
+<p>I’m not claiming the business guys installed by VCs have no value. Certainly they have. But they don’t need to become the founders’ bosses, which is what that title CEO means. I predict that in the future the executives installed by VCs will increasingly be COOs rather than CEOs. The founders will run engineering directly, and the rest of the company through the COO.<br>我并非认为投资人派来的商务人士毫无价值 —— 他们当然有其作用。但他们不必成为创始人的上司，而 CEO 这个头衔本身就意味着 “上司”。我预测，未来投资人派往初创公司的高管，将更多地担任首席运营官（COO）而非 CEO。创始人将直接负责技术研发，并通过 COO 管理公司的其他业务。</p>
+<h3 id="The-Open-Cage"><a href="#The-Open-Cage" class="headerlink" title="The Open Cage"></a><strong>The Open Cage</strong></h3><p><strong>打开的牢笼</strong></p>
+<p>With both employers and investors, the balance of power is slowly shifting towards the young. And yet they seem the last to realize it. Only the most ambitious undergrads even consider starting their own company when they graduate. Most just want to get a job.<br>无论是相对于雇主还是投资人，权力的天平都在缓慢地向年轻人倾斜。然而，年轻人自己似乎是最后才意识到这一点的群体。只有极少数极具野心的本科生，会在毕业时考虑创办自己的公司，大多数人还是只想找一份工作。</p>
+<p>Maybe this is as it should be. Maybe if the idea of starting a startup is intimidating, you filter out the uncommitted. But I suspect the filter is set a little too high. I think there are people who could, if they tried, start successful startups, and who instead let themselves be swept into the intake ducts of big companies.<br>或许这也合乎情理。或许正是因为创办初创公司的想法令人却步，才筛选掉了那些不够坚定的人。但我怀疑，这个 “筛选门槛” 设置得有些过高了。我相信，有不少人如果尝试创业，是能够创办成功的初创公司的，但他们最终却选择进入大公司，成为其中的一员。</p>
+<p>Have you ever noticed that when animals are let out of cages, they don’t always realize at first that the door’s open? Often they have to be poked with a stick to get them out. Something similar happened with blogs. People could have been publishing online in 1995, and yet blogging has only really taken off in the last couple years. In 1995 we thought only professional writers were entitled to publish their ideas, and that anyone else who did was a crank. Now publishing online is becoming so popular that everyone wants to do it, even print journalists. But blogging has not taken off recently because of any technical innovation; it just took eight years for everyone to realize the cage was open.<br>你是否注意过，当动物被放出笼子时，它们起初往往意识不到笼门已经打开，常常需要被人用棍子戳一下才会走出来？博客的兴起也经历了类似的过程。早在 1995 年，人们就可以在网上发布内容，但博客真正流行起来，却是在最近几年。1995 年时，我们认为只有专业作家才有资格发表自己的观点，其他人若这么做，就会被视为怪人。如今，在线发布内容变得如此普及，几乎人人都想尝试，甚至纸质媒体的记者也不例外。但博客近年来的兴起，并非源于任何技术革新，只是人们花了八年时间才意识到，“发表观点的牢笼” 早已打开。</p>
+<p>I think most undergrads don’t realize yet that the economic cage is open. A lot have been told by their parents that the route to success is to get a good job. This was true when their parents were in college, but it’s less true now. The route to success is to build something valuable, and you don’t have to be working for an existing company to do that. Indeed, you can often do it better if you’re not.<br>我认为，大多数本科生尚未意识到，“经济层面的牢笼” 也已经打开。很多人从小就被父母告知，成功的道路是找到一份好工作。在他们父母上大学的年代，这或许是正确的，但如今这一说法已不再那么成立。成功的道路，是创造出有价值的事物，而你不必为现有公司工作才能做到这一点。事实上，若不依附于现有公司，你往往能做得更好。</p>
+<p>When I talk to undergrads, what surprises me most about them is how conservative they are. Not politically, of course. I mean they don’t seem to want to take risks. This is a mistake, because the younger you are, the more risk you can take.<br>在与本科生交流时，最让我惊讶的是他们的保守 —— 当然，我指的不是政治立场上的保守，而是他们似乎不愿承担风险。这其实是一个错误，因为越年轻，就越有资本承担风险。</p>
+<h3 id="Risk"><a href="#Risk" class="headerlink" title="Risk"></a><strong>Risk</strong></h3><p><strong>风险</strong></p>
+<p>Risk and reward are always proportionate. For example, stocks are riskier than bonds, and over time always have greater returns. So why does anyone invest in bonds? The catch is that phrase “over time.” Stocks will generate greater returns over thirty years, but they might lose value from year to year. So what you should invest in depends on how soon you need the money. If you’re young, you should take the riskiest investments you can find.<br>风险与回报始终是成正比的。例如，股票比债券风险更高，但长期来看，股票的回报率也必然更高。那为什么还会有人投资债券呢？关键在于 “长期来看” 这个前提。股票在 30 年的周期内会带来更高回报，但可能在某几年出现贬值。因此，你应该投资什么，取决于你多久后需要用到这笔钱。如果你年轻，就应该选择你能找到的风险最高的投资方式。</p>
+<p>All this talk about investing may seem very theoretical. Most undergrads probably have more debts than assets. They may feel they have nothing to invest. But that’s not true: they have their time to invest, and the same rule about risk applies there. Your early twenties are exactly the time to take insane career risks.<br>这些关于投资的讨论，听起来可能有些理论化。大多数本科生或许负债多于资产，可能会觉得自己没什么可投资的。但事实并非如此：他们可以投资自己的时间，而风险与回报的法则在这里同样适用。二十出头的年纪，正是承担 “疯狂” 职业风险的最佳时期。</p>
+<p>The reason risk is always proportionate to reward is that market forces make it so. People will pay extra for stability. So if you choose stability– by buying bonds, or by going to work for a big company– it’s going to cost you.<br>风险与回报之所以始终成正比，是市场规律作用的结果。人们愿意为 “稳定性” 支付额外成本。因此，如果你选择追求稳定 —— 无论是通过购买债券，还是去大公司工作 —— 都需要为此付出代价（即放弃更高的潜在回报）。</p>
+<p>Riskier career moves pay better on average, because there is less demand for them. Extreme choices like starting a startup are so frightening that most people won’t even try. So you don’t end up having as much competition as you might expect, considering the prizes at stake.<br>平均而言，风险更高的职业选择能带来更高回报，因为愿意选择这类职业的人更少。像创办初创公司这样的极端选择，因风险过高而让大多数人望而却步。因此，尽管潜在回报丰厚，但你面临的竞争，并不会像你想象的那么激烈。</p>
+<p>The math is brutal. While perhaps 9 out of 10 startups fail, the one that succeeds will pay the founders more than 10 times what they would have made in an ordinary job. [3] That’s the sense in which startups pay better “on average.”<br>其中的数学逻辑很直白：或许 10 家初创公司中有 9 家会失败，但成功的那 1 家，能给创始人带来的收益，将是他们从事普通工作的 10 倍以上。[3] 这就是 “从平均水平来看，初创公司回报更高” 的含义。</p>
+<p>Remember that. If you start a startup, you’ll probably fail. Most startups fail. It’s the nature of the business. But it’s not necessarily a mistake to try something that has a 90% chance of failing, if you can afford the risk. Failing at 40, when you have a family to support, could be serious. But if you fail at 22, so what? If you try to start a startup right out of college and it tanks, you’ll end up at 23 broke and a lot smarter. Which, if you think about it, is roughly what you hope to get from a graduate program.<br>请记住这一点：如果你创办初创公司，很可能会失败。大多数初创公司都会失败，这是行业的常态。但如果你的风险承受能力允许，尝试一件有 90% 失败概率的事，未必是错误的。40 岁时失败，可能会很严重，因为你要养家糊口；但 22 岁时失败，又有什么关系呢？如果大学刚毕业就尝试创业，即便失败了，到 23 岁时，你可能身无分文，但会变得更加成熟睿智。仔细想想，这与你从研究生项目中期望获得的成长，其实相差无几。</p>
+<p>Even if your startup does tank, you won’t harm your prospects with employers. To make sure I asked some friends who work for big companies. I asked managers at Yahoo, Google, Amazon, Cisco and Microsoft how they’d feel about two candidates, both 24, with equal ability, one who’d tried to start a startup that tanked, and another who’d spent the two years since college working as a developer at a big company. Every one responded that they’d prefer the guy who’d tried to start his own company. Zod Nazem, who’s in charge of engineering at Yahoo, said:<br>即便你的初创公司失败了，也不会影响你未来找工作的前景。为了确认这一点，我询问了几位在大公司工作的朋友。我问雅虎、谷歌、亚马逊、思科和微软的管理者：面对两位 24 岁、能力相当的求职者，一位曾尝试创办初创公司但失败了，另一位大学毕业后在大公司做了两年开发，他们会更倾向于录用谁？所有人的回答都是，更愿意录用那位尝试过创业的人。雅虎负责工程部门的佐德・纳泽姆（Zod Nazem）说：</p>
+<p>I actually put more value on the guy with the failed startup. And you can quote me!<br>“事实上，我更看重那个创业失败的人。这句话你可以引用！”</p>
+<p>So there you have it. Want to get hired by Yahoo? Start your own company.<br>所以结论很明确：想被雅虎录用吗？先创办一家自己的公司吧。</p>
+<h3 id="The-Man-is-the-Customer"><a href="#The-Man-is-the-Customer" class="headerlink" title="The Man is the Customer"></a><strong>The Man is the Customer</strong></h3><p><strong>“甲方” 是用户</strong></p>
+<p>If even big employers think highly of young hackers who start companies, why don’t more do it? Why are undergrads so conservative? I think it’s because they’ve spent so much time in institutions.<br>既然连大公司的雇主都高度认可那些尝试创业的年轻技术开发者，为什么没有更多年轻人这么做呢？为什么本科生如此保守？我认为，这是因为他们在各类 “机构” 中待得太久了。</p>
+<p>The first twenty years of everyone’s life consists of being piped from one institution to another. You probably didn’t have much choice about the secondary schools you went to. And after high school it was probably understood that you were supposed to go to college. You may have had a few different colleges to choose between, but they were probably pretty similar. So by this point you’ve been riding on a subway line for twenty years, and the next stop seems to be a job.<br>每个人人生的前 20 年，基本都是在 “机构” 之间被 “输送”：你上哪所中学，很可能没有太多选择；高中毕业后，似乎理所当然要去上大学；你或许能在几所大学中选择，但这些大学本质上都大同小异。因此，到大学毕业时，你就像在一条地铁线路上坐了 20 年，而下一站似乎自然而然就是 “找份工作”。</p>
+<p>Actually college is where the line ends. Superficially, going to work for a company may feel like just the next in a series of institutions, but underneath, everything is different. The end of school is the fulcrum of your life, the point where you go from net consumer to net producer.<br>但实际上，大学就是这条 “地铁线路” 的终点。表面上看，去公司工作似乎只是进入了另一个 “机构”，但本质上，一切都变了。学业的结束，是你人生的一个支点 —— 从这一刻起，你从 “纯消费者” 转变为 “纯生产者”。</p>
+<p>The other big change is that now, you’re steering. You can go anywhere you want. So it may be worth standing back and understanding what’s going on, instead of just doing the default thing.<br>另一个重大变化是：现在，你掌握了 “方向盘”，可以去任何你想去的地方。因此，或许你应该停下来，弄清楚当下的处境，而不是盲目地按 “默认选项” 行事。</p>
+<p>All through college, and probably long before that, most undergrads have been thinking about what employers want. But what really matters is what customers want, because they’re the ones who give employers the money to pay you.<br>在整个大学期间，甚至更早之前，大多数本科生都在思考 “雇主想要什么”。但真正重要的，是 “用户想要什么”—— 因为正是用户给了雇主钱，雇主才能给你发工资。</p>
+<p>So instead of thinking about what employers want, you’re probably better off thinking directly about what users want. To the extent there’s any difference between the two, you can even use that to your advantage if you start a company of your own. For example, big companies like docile conformists. But this is merely an artifact of their bigness, not something customers need.<br>因此，与其思考雇主想要什么，不如直接思考用户想要什么。如果这两者之间存在差异，那么创办自己的公司，就能将这种差异转化为你的优势。例如，大公司喜欢顺从听话的员工，但这只是大公司的 “组织特性”，并非用户的需求。</p>
+<h3 id="Grad-School"><a href="#Grad-School" class="headerlink" title="Grad School"></a><strong>Grad School</strong></h3><p><strong>研究生阶段</strong></p>
+<p>I didn’t consciously realize all this when I was graduating from college– partly because I went straight to grad school. Grad school can be a pretty good deal, even if you think of one day starting a startup. You can start one when you’re done, or even pull the ripcord part way through, like the founders of Yahoo and Google.<br>我大学毕业时，并没有清醒地认识到这些 —— 部分原因是我直接去读了研究生。即便你有朝一日想创办初创公司，研究生阶段也可能是个不错的选择。你可以在毕业后创业，甚至可以像雅虎和谷歌的创始人那样，在研究生就读期间就 “中途退出” 去创业。</p>
+<p>Grad school makes a good launch pad for startups, because you’re collected together with a lot of smart people, and you have bigger chunks of time to work on your own projects than an undergrad or corporate employee would. As long as you have a fairly tolerant advisor, you can take your time developing an idea before turning it into a company. David Filo and Jerry Yang started the Yahoo directory in February 1994 and were getting a million hits a day by the fall, but they didn’t actually drop out of grad school and start a company till March 1995.<br>研究生阶段是创业的绝佳跳板：你身边聚集了许多聪明人，而且相比本科生或公司员工，你有更完整的大块时间来做自己的项目。只要你的导师足够宽容，你就可以慢慢打磨自己的想法，再将其转化为一家公司。大卫・费罗（David Filo）和杨致远（Jerry Yang）在 1994 年 2 月推出了雅虎目录，到当年秋天，该目录的日访问量就达到了 100 万次，但他们直到 1995 年 3 月才从研究生阶段退学，正式创办公司。</p>
+<p>You could also try the startup first, and if it doesn’t work, then go to grad school. When startups tank they usually do it fairly quickly. Within a year you’ll know if you’re wasting your time.<br>你也可以先尝试创业，如果失败了再去读研究生。初创公司即便失败，通常也会很快有结果 —— 一年内，你就能知道自己是否在浪费时间。</p>
+<p>If it fails, that is. If it succeeds, you may have to delay grad school a little longer. But you’ll have a much more enjoyable life once there than you would on a regular grad student stipend.<br>当然，这是假设创业失败的情况。如果创业成功了，你可能需要推迟一段时间再去读研究生。但届时，你在研究生阶段的生活，会比靠普通研究生津贴度日要惬意得多。</p>
+<h3 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a><strong>Experience</strong></h3><p><strong>经验</strong></p>
+<p>Another reason people in their early twenties don’t start startups is that they feel they don’t have enough experience. Most investors feel the same.<br>二十岁出头的人不创办初创公司的另一个原因是，他们觉得自己经验不足。大多数投资者也持相同看法。</p>
+<p>I remember hearing a lot of that word “experience” when I was in college. What do people really mean by it? Obviously it’s not the experience itself that’s valuable, but something it changes in your brain. What’s different about your brain after you have “experience,” and can you make that change happen faster?<br>我记得上大学时经常听到 “经验” 这个词。人们说的 “经验” 到底指什么？显然，有价值的不是经验本身，而是它给你大脑带来的某种改变。拥有 “经验” 后，你的大脑会发生哪些不同的变化？这种变化能否更快地实现？</p>
+<p>I now have some data on this, and I can tell you what tends to be missing when people lack experience. I’ve said that every startup needs three things: to start with good people, to make something users want, and not to spend too much money. It’s the middle one you get wrong when you’re inexperienced. There are plenty of undergrads with enough technical skill to write good software, and undergrads are not especially prone to waste money. If they get something wrong, it’s usually not realizing they have to make something people want.<br>如今我有了一些相关数据，可以告诉你经验不足的人通常欠缺什么。我之前说过，每个初创公司都需要三样东西：从优秀的人才起步、打造用户想要的产品、不浪费过多资金。经验不足时，人们往往会在第二点上出错。很多本科生拥有足够的技术能力来编写优质软件，而且本科生并不特别容易浪费钱。如果他们出了问题，通常是没有意识到必须打造人们真正想要的东西。</p>
+<p>This is not exclusively a failing of the young. It’s common for startup founders of all ages to build things no one wants.<br>这并非年轻人独有的缺点。各个年龄段的初创公司创始人，都经常会打造出无人问津的产品。</p>
+<p>Fortunately, this flaw should be easy to fix. If undergrads were all bad programmers, the problem would be a lot harder. It can take years to learn how to program. But I don’t think it takes years to learn how to make things people want. My hypothesis is that all you have to do is smack hackers on the side of the head and tell them: Wake up. Don’t sit here making up a priori theories about what users need. Go find some users and see what they need.<br>幸运的是，这个缺陷很容易弥补。如果本科生都是糟糕的程序员，那问题就棘手多了，因为学习编程可能需要数年时间。但我认为，学会打造用户想要的产品并不需要数年。我的观点是，你只需要敲醒那些技术人员，告诉他们：醒醒吧。别坐在这儿凭空臆想用户需要什么，去找到一些用户，看看他们真正需要的是什么。</p>
+<p>Most successful startups not only do something very specific, but solve a problem people already know they have.<br>大多数成功的初创公司不仅专注于做某件非常具体的事，还能解决人们早已意识到的自身问题。</p>
+<p>The big change that “experience” causes in your brain is learning that you need to solve people’s problems. Once you grasp that, you advance quickly to the next step, which is figuring out what those problems are. And that takes some effort, because the way software actually gets used, especially by the people who pay the most for it, is not at all what you might expect. For example, the stated purpose of Powerpoint is to present ideas. Its real role is to overcome people’s fear of public speaking. It allows you to give an impressive-looking talk about nothing, and it causes the audience to sit in a dark room looking at slides, instead of a bright one looking at you.<br>“经验” 给大脑带来的重大改变，是让你明白需要去解决人们的问题。一旦理解了这一点，你就能快速进入下一步 —— 弄清楚这些问题具体是什么。而这需要付出一些努力，因为软件的实际使用方式，尤其是那些付费最高的用户对它的使用方式，完全可能和你预想的不一样。比如，PowerPoint 宣称的用途是展示想法，但它真正的作用是帮助人们克服公开演讲的恐惧。它能让你对着毫无实质内容的东西发表一场看似精彩的演讲，还能让听众坐在昏暗的房间里看幻灯片，而不是在明亮的环境中盯着你看。</p>
+<p>This kind of thing is out there for anyone to see. The key is to know to look for it– to realize that having an idea for a startup is not like having an idea for a class project. The goal in a startup is not to write a cool piece of software. It’s to make something people want. And to do that you have to look at users– forget about hacking, and just look at users. This can be quite a mental adjustment, because little if any of the software you write in school even has users.<br>这类情况其实随处可见，关键在于要知道去发现它 —— 要明白，为初创公司构思想法和为课堂作业构思想法是两码事。初创公司的目标不是编写一段酷炫的软件，而是打造人们想要的产品。要做到这一点，你必须关注用户 —— 暂时忘掉编程，只专注于观察用户。这可能需要一个相当大的思维调整，因为你在学校编写的软件，即便有用户，数量也少得可怜。</p>
+<p>A few steps before a Rubik’s Cube is solved, it still looks like a mess. I think there are a lot of undergrads whose brains are in a similar position: they’re only a few steps away from being able to start successful startups, if they wanted to, but they don’t realize it. They have more than enough technical skill. They just haven’t realized yet that the way to create wealth is to make what users want, and that employers are just proxies for users in which risk is pooled.<br>在魔方被还原的前几步，它看起来依然杂乱无章。我认为很多本科生的思维就处于类似状态：只要他们愿意，距离创办成功的初创公司其实只差几步，但他们自己却没有意识到。他们拥有的技术能力已经足够，只是还没明白创造财富的方式是打造用户想要的东西，也没意识到雇主不过是用户的 “代理人”，起到了风险集中的作用。</p>
+<p>If you’re young and smart, you don’t need either of those. You don’t need someone else to tell you what users want, because you can figure it out yourself. And you don’t want to pool risk, because the younger you are, the more risk you should take.<br>如果你年轻又聪明，这两样东西都不需要。你不需要别人告诉你用户想要什么，因为你自己就能弄明白；你也不需要集中风险，因为越年轻，就越应该承担更多风险。</p>
+<h3 id="A-Public-Service-Message"><a href="#A-Public-Service-Message" class="headerlink" title="A Public Service Message"></a><strong>A Public Service Message</strong></h3><p><strong>一个共同的建议</strong></p>
+<p>I’d like to conclude with a joint message from me and your parents. Don’t drop out of college to start a startup. There’s no rush. There will be plenty of time to start companies after you graduate. In fact, it may be just as well to go work for an existing company for a couple years after you graduate, to learn how companies work.<br>最后，我想传达一个我和你们父母共同的建议：不要为了创办初创公司而辍学。不用急，毕业后有足够的时间去开公司。事实上，毕业后先去一家现有公司工作几年，了解公司的运作方式，或许也是个不错的选择。</p>
+<p>And yet, when I think about it, I can’t imagine telling Bill Gates at 19 that he should wait till he graduated to start a company. He’d have told me to get lost. And could I have honestly claimed that he was harming his future– that he was learning less by working at ground zero of the microcomputer revolution than he would have if he’d been taking classes back at Harvard? No, probably not.<br>然而，仔细想想，我无法想象在比尔・盖茨 19 岁时，告诉他应该等毕业再开公司。他肯定会让我走开。而且，我能真诚地说他是在损害自己的未来吗？—— 说他在微型计算机革命的核心地带工作，比回到哈佛上课学到的东西更少？不，很可能不能。</p>
+<p>And yes, while it is probably true that you’ll learn some valuable things by going to work for an existing company for a couple years before starting your own, you’d learn a thing or two running your own company during that time too.<br>诚然，在创办自己的公司之前，去现有公司工作几年可能确实能学到一些有价值的东西，但在这段时间里，经营自己的公司同样能学到不少东西。</p>
+<p>The advice about going to work for someone else would get an even colder reception from the 19 year old Bill Gates. So I’m supposed to finish college, then go work for another company for two years, and then I can start my own? I have to wait till I’m 23? That’s four years. That’s more than twenty percent of my life so far. Plus in four years it will be way too late to make money writing a Basic interpreter for the Altair.<br>“去为别人工作” 这个建议，在 19 岁的比尔・盖茨那里肯定会遭到更冷淡的对待。“所以我得先读完大学，再去另一家公司工作两年，然后才能创办自己的公司？我得等到 23 岁？那可是四年啊，占了我目前人生的 20% 还多。而且四年后，再为阿尔泰电脑编写 Basic 解释器来赚钱，就太晚了。”</p>
+<p>And he’d be right. The Apple II was launched just two years later. In fact, if Bill had finished college and gone to work for another company as we’re suggesting, he might well have gone to work for Apple. And while that would probably have been better for all of us, it wouldn’t have been better for him.<br>而且他说得对。两年后，Apple II 就推出了。事实上，如果比尔按照我们的建议，读完大学后去另一家公司工作，他很可能会去苹果公司。虽然这对我们所有人来说可能是件好事，但对他自己而言并非如此。</p>
+<p>So while I stand by our responsible advice to finish college and then go work for a while before starting a startup, I have to admit it’s one of those things the old tell the young, but don’t expect them to listen to. We say this sort of thing mainly so we can claim we warned you. So don’t say I didn’t warn you.<br>因此，尽管我依然坚持那条负责任的建议 —— 读完大学，先工作一段时间再创办初创公司，但我不得不承认，这是老一辈对年轻人说的那些话之一，并不指望他们会听。我们说这类话，主要是为了日后能说 “我早就提醒过你”。所以，别说我没警告过你。</p>
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a><strong>Notes</strong></h3><p>[1] The average B-17 pilot in World War II was in his early twenties. (Thanks to Tad Marko for pointing this out.)<br>[1] 二战期间，B-17 轰炸机飞行员的平均年龄在 20 岁出头。（感谢塔德・马尔科指出这一点。）</p>
+<p>[2] If a company tried to pay employees this way, they’d be called unfair. And yet when they buy some startups and not others, no one thinks of calling that unfair.<br>[2] 如果一家公司试图用这种方式给员工发薪水，会被认为是不公平的。但当他们收购某些初创公司而不收购另一些时，却没人觉得这是不公平的。</p>
+<p>[3] The 1&#x2F;10 success rate for startups is a bit of an urban legend. It’s suspiciously neat. My guess is the odds are slightly worse.<br>[3] 初创公司 1&#x2F;10 的成功率有点像都市传说，整齐得令人怀疑。我猜实际成功率可能更低一些。</p>
+<p>Thanks to Jessica Livingston for reading drafts of this, to the friends I promised anonymity to for their opinions about hiring, and to Karen Nguyen and the Berkeley CSUA for organizing this talk.<br>感谢杰西卡・利文斯顿审阅本文初稿，感谢那些我承诺匿名的朋友提供有关招聘的看法，同时感谢凯伦・阮和加州大学伯克利分校计算机科学本科生协会（Berkeley CSUA）组织这次演讲。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>招聘已过时</div>
+      <div>https://hokkaidornis.github.io/2025/08/27/hiring-is-obsolete/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/27/the-submarine/" title="公关 “潜水艇”">
+                        <span class="hidden-mobile">公关 “潜水艇”</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
