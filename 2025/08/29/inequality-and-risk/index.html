@@ -1,0 +1,791 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Inequality and Risk原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;inequality.html August 2005 2005年8月 (This essay is derived from a talk at Defcon 2005.) （本文改编自作者在2005年Defcon大会上的演讲。） Suppose you wanted to get rid of ec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不平等与风险">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/08/29/inequality-and-risk/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Inequality and Risk原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;inequality.html August 2005 2005年8月 (This essay is derived from a talk at Defcon 2005.) （本文改编自作者在2005年Defcon大会上的演讲。） Suppose you wanted to get rid of ec">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-29T01:44:57.000Z">
+<meta property="article:modified_time" content="2025-08-29T01:48:25.808Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>不平等与风险 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="不平等与风险"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-29 09:44" pubdate>
+          2025年8月29日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          43 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">不平等与风险</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Inequality-and-Risk"><a href="#Inequality-and-Risk" class="headerlink" title="Inequality and Risk"></a>Inequality and Risk</h1><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/inequality.html">https://paulgraham.com/inequality.html</a></p>
+<p>August 2005 2005年8月</p>
+<p>(This essay is derived from a talk at Defcon 2005.) （本文改编自作者在2005年Defcon大会上的演讲。）</p>
+<p>Suppose you wanted to get rid of economic inequality. There are two ways to do it: give money to the poor, or take it away from the rich. But they amount to the same thing, because if you want to give money to the poor, you have to get it from somewhere. You can’t get it from the poor, or they just end up where they started. You have to get it from the rich. </p>
+<p>假设你想消除经济不平等。有两种方法可以做到：把钱给穷人，或者从富人那里拿走钱。但这两者本质上是一回事，因为如果你想把钱给穷人，就必须从某个地方获取资金。你不能从穷人那里拿钱，否则他们最终还是处于原点。你必须从富人那里拿钱。</p>
+<p>There is of course a way to make the poor richer without simply shifting money from the rich. You could help the poor become more productive — for example, by improving access to education. Instead of taking money from engineers and giving it to checkout clerks, you could enable people who would have become checkout clerks to become engineers. </p>
+<p>当然，有一种方法可以在不简单地从富人那里转移金钱的情况下让穷人变得更富有。你可以帮助穷人提高生产力——例如，通过改善教育机会。与其从工程师那里拿钱给收银员，不如帮助那些本可能成为收银员的人成为工程师。</p>
+<p>This is an excellent strategy for making the poor richer. But the evidence of the last 200 years shows that it doesn’t reduce economic inequality, because it makes the rich richer too. If there are more engineers, then there are more opportunities to hire them and to sell them things. Henry Ford couldn’t have made a fortune building cars in a society in which most people were still subsistence farmers; he would have had neither workers nor customers. </p>
+<p>这是让穷人更富有的极佳策略。但过去200年的证据表明，这并不能减少经济不平等，因为它也让富人变得更富。如果有更多工程师，就会有更多雇佣他们和向他们销售产品的机会。亨利·福特不可能在一个大多数人仍是自给自足的农民的社会里靠造车致富；他既没有工人，也没有顾客。</p>
+<p>If you want to reduce economic inequality instead of just improving the overall standard of living, it’s not enough just to raise up the poor. What if one of your newly minted engineers gets ambitious and goes on to become another Bill Gates? Economic inequality will be as bad as ever. If you actually want to compress the gap between rich and poor, you have to push down on the top as well as pushing up on the bottom. </p>
+<p>如果你想减少经济不平等，而不仅仅是提高整体生活水平，仅仅提升穷人是不够的。如果你培养出的新工程师变得雄心勃勃，最终成为另一个比尔·盖茨怎么办？经济不平等状况将依旧严重。如果你真的想缩小贫富差距，你必须同时压低顶层和提升底层。</p>
+<p>How do you push down on the top? You could try to decrease the productivity of the people who make the most money: make the best surgeons operate with their left hands, force popular actors to overeat, and so on. But this approach is hard to implement. The only practical solution is to let people do the best work they can, and then (either by taxation or by limiting what they can charge) to confiscate whatever you deem to be surplus. </p>
+<p>如何压低顶层？你可以尝试降低那些收入最高的人的生产力：让最好的外科医生用左手做手术，强迫受欢迎的演员暴饮暴食，等等。但这种方法很难实施。唯一可行的解决方案是让人们尽可能做好工作，然后（通过征税或限制收费）没收你认为多余的收入。</p>
+<p>So let’s be clear what reducing economic inequality means. It is identical with taking money from the rich. </p>
+<p>因此，让我们明确一下减少经济不平等意味着什么。它等同于从富人那里拿钱。</p>
+<p>When you transform a mathematical expression into another form, you often notice new things. So it is in this case. Taking money from the rich turns out to have consequences one might not foresee when one phrases the same idea in terms of “reducing inequality.” </p>
+<p>当你将一个数学表达式转换成另一种形式时，你常常会注意到新的东西。这种情况也是如此。从富人那里拿钱，结果会带来一些意想不到的后果，而这些后果在你用“减少不平等”来表述同一想法时可能不会预见。</p>
+<p>The problem is, risk and reward have to be proportionate. A bet with only a 10% chance of winning has to pay more than one with a 50% chance of winning, or no one will take it. So if you lop off the top of the possible rewards, you thereby decrease people’s willingness to take risks. </p>
+<p>问题是，风险和回报必须成比例。一个只有10%胜算的赌注，其回报必须高于一个有50%胜算的赌注，否则没人会接受。因此，如果你削减了可能回报的上限，就会降低人们承担风险的意愿。</p>
+<p>Transposing into our original expression, we get: decreasing economic inequality means decreasing the risk people are willing to take. </p>
+<p>转换回我们最初的表达方式，我们得到：减少经济不平等意味着减少人们愿意承担的风险。</p>
+<p>There are whole classes of risks that are no longer worth taking if the maximum return is decreased. One reason high tax rates are disastrous is that this class of risks includes starting new companies. </p>
+<p>如果最大回报降低，那么有一整类风险就不再值得承担。高税率之所以是灾难性的，原因之一就是这类风险包括创办新公司。</p>
+<h2 id="Investors-投资者"><a href="#Investors-投资者" class="headerlink" title="Investors 投资者"></a><strong>Investors 投资者</strong></h2><p>Startups are intrinsically risky. A startup is like a small boat in the open sea. One big wave and you’re sunk. A competing product, a downturn in the economy, a delay in getting funding or regulatory approval, a patent suit, changing technical standards, the departure of a key employee, the loss of a big account — any one of these can destroy you overnight. It seems only about 1 in 10 startups succeeds. [1] 初创企业本质上是高风险的。一家初创企业就像海上的一叶小舟。一个大浪打来，你就沉没了。一个竞争产品、经济衰退、融资或监管审批延迟、专利诉讼、技术标准变更、关键员工离职、失去一个大客户——这些中的任何一个都可能在一夜之间摧毁你。似乎只有大约十分之一的初创企业能成功。[1]</p>
+<p>Our startup paid its first round of outside investors 36x. Which meant, with current US tax rates, that it made sense to invest in us if we had better than a 1 in 24 chance of succeeding. That sounds about right. That’s probably roughly how we looked when we were a couple of nerds with no business experience operating out of an apartment. 我们的初创企业给第一轮外部投资者带来了36倍的回报。这意味着，按照当前美国的税率，只要我们成功的几率超过1&#x2F;24，投资我们就是合理的。这听起来差不多。这大概就是我们当时的样子：两个没有商业经验的书呆子，在一间公寓里运营。</p>
+<p>If that kind of risk doesn’t pay, venture investing, as we know it, doesn’t happen. 如果这种风险得不到相应的回报，我们所熟知的风险投资就不会发生。</p>
+<p>That might be ok if there were other sources of capital for new companies. Why not just have the government, or some large almost-government organization like Fannie Mae, do the venture investing instead of private funds? 如果新公司有其他资本来源，这也许没问题。为什么不干脆让政府，或像房利美这样的大型准政府机构，代替私人基金进行风险投资呢？</p>
+<p>I’ll tell you why that wouldn’t work. Because then you’re asking government or almost-government employees to do the one thing they are least able to do: take risks. 我来告诉你为什么这行不通。因为这等于要求政府或准政府的雇员去做他们最不擅长的一件事：承担风险。</p>
+<p>As anyone who has worked for the government knows, the important thing is not to make the right choices, but to make choices that can be justified later if they fail. If there is a safe option, that’s the one a bureaucrat will choose. But that is exactly the wrong way to do venture investing. The nature of the business means that you want to make terribly risky choices, if the upside looks good enough. 任何在政府工作过的人家都知道，重要的不是做出正确的选择，而是做出失败后也能被合理解释的选择。如果有安全选项，官僚就会选择它。但这恰恰是风险投资最错误的方式。这种业务的性质决定了，如果潜在回报足够好，你就必须做出极其冒险的选择。</p>
+<p>VCs are currently paid in a way that makes them focus on the upside: they get a percentage of the fund’s gains. And that helps overcome their understandable fear of investing in a company run by nerds who look like (and perhaps are) college students. 风险投资家目前的报酬方式使他们关注潜在的高回报：他们获得基金收益的一部分。这有助于克服他们对投资由看起来像（甚至就是）大学生的书呆子运营的公司的合理恐惧。</p>
+<p>If VCs weren’t allowed to get rich, they’d behave like bureaucrats. Without hope of gain, they’d have only fear of loss. And so they’d make the wrong choices. They’d turn down the nerds in favor of the smooth-talking MBA in a suit, because that investment would be easier to justify later if it failed. 如果风险投资家不被允许致富，他们就会像官僚一样行事。没有获得收益的希望，他们就只剩下对损失的恐惧。因此他们会做出错误的选择。他们会拒绝书呆子，而选择穿着西装、口才流利的MBA，因为如果投资失败，后者更容易事后解释。</p>
+<h2 id="Founders-创始人"><a href="#Founders-创始人" class="headerlink" title="Founders 创始人"></a><strong>Founders 创始人</strong></h2><p>But even if you could somehow redesign venture funding to work without allowing VCs to become rich, there’s another kind of investor you simply cannot replace: the startups’ founders and early employees. 但即使你能够以某种方式重新设计风险投资机制，使其在不允许风险投资家致富的情况下也能运作，还有一种投资者是你根本无法替代的：初创企业的创始人和早期员工。</p>
+<p>What they invest is their time and ideas. But these are equivalent to money; the proof is that investors are willing (if forced) to treat them as interchangeable, granting the same status to “sweat equity” and the equity they’ve purchased with cash. 他们投入的是时间和想法。但这些等同于金钱；证据是，投资者愿意（如果被迫的话）将它们视为可互换的，给予“汗水股权”与用现金购买的股权同等的地位。</p>
+<p>The fact that you’re investing time doesn’t change the relationship between risk and reward. If you’re going to invest your time in something with a small chance of succeeding, you’ll only do it if there is a proportionately large payoff. [2] 你投入的是时间，这一事实并不改变风险与回报之间的关系。如果你打算将时间投入到一个成功几率很小的项目中，你只会这样做，前提是存在相应巨大的回报。[2]</p>
+<p>If large payoffs aren’t allowed, you may as well play it safe. 如果巨大的回报不被允许，你最好还是选择稳妥的道路。</p>
+<p>Like many startup founders, I did it to get rich. But not because I wanted to buy expensive things. What I wanted was security. I wanted to make enough money that I didn’t have to worry about money. If I’d been forbidden to make enough from a startup to do this, I would have sought security by some other means: for example, by going to work for a big, stable organization from which it would be hard to get fired. Instead of busting my ass in a startup, I would have tried to get a nice, low-stress job at a big research lab, or tenure at a university. 和许多初创企业创始人一样，我这样做是为了致富。但不是因为我想要买昂贵的东西。我想要的是安全感。我想赚足够的钱，这样就不用再为钱发愁。如果我被禁止通过初创企业赚到足够的钱来实现这一点，我就会通过其他方式寻求安全感：例如，去一家大而稳定的组织工作，很难被解雇。我不会在初创企业里拼命，而是会努力在一家大型研究实验室或大学里找一份轻松、低压力的工作。</p>
+<p>That’s what everyone does in societies where risk isn’t rewarded. If you can’t ensure your own security, the next best thing is to make a nest for yourself in some large organization where your status depends mostly on seniority. [3] 这就是在那些风险得不到回报的社会里，每个人都会做的事。如果你无法确保自己的安全，次优的选择就是在某个大型组织中为自己筑一个巢，你的地位主要取决于资历。[3]</p>
+<p>Even if we could somehow replace investors, I don’t see how we could replace founders. Investors mainly contribute money, which in principle is the same no matter what the source. But the founders contribute ideas. You can’t replace those. 即使我们能够以某种方式替代投资者，我也看不出我们如何能替代创始人。投资者主要贡献的是金钱，原则上无论来源如何，金钱都是一样的。但创始人贡献的是想法。这些是无法替代的。</p>
+<p>Let’s rehearse the chain of argument so far. I’m heading for a conclusion to which many readers will have to be dragged kicking and screaming, so I’ve tried to make each link unbreakable. Decreasing economic inequality means taking money from the rich. Since risk and reward are equivalent, decreasing potential rewards automatically decreases people’s appetite for risk. Startups are intrinsically risky. Without the prospect of rewards proportionate to the risk, founders will not invest their time in a startup. Founders are irreplaceable. So eliminating economic inequality means eliminating startups. 让我们回顾一下到目前为止的论证链条。我正走向一个许多读者可能需要被强行拖拽才能接受的结论，因此我试图让每一个环节都无懈可击。减少经济不平等意味着从富人那里拿钱。由于风险与回报是等价的，降低潜在回报会自动降低人们承担风险的意愿。初创企业本质上是高风险的。如果没有与风险相称的回报前景，创始人就不会将时间投入到初创企业中。创始人是不可替代的。因此，消除经济不平等就意味着消除初创企业。</p>
+<p>Economic inequality is not just a consequence of startups. It’s the engine that drives them, in the same way a fall of water drives a water mill. People start startups in the hope of becoming much richer than they were before. And if your society tries to prevent anyone from being much richer than anyone else, it will also prevent one person from being much richer at t2 than t1. 经济不平等不仅仅是初创企业的结果。它是驱动初创企业的引擎，就像瀑布驱动水车一样。人们创办初创企业，是希望变得比以前富有得多。如果你的社会试图阻止任何人比其他人富有得多，它也会阻止一个人在t2时刻比t1时刻富有得多。</p>
+<h2 id="Growth-增长"><a href="#Growth-增长" class="headerlink" title="Growth 增长"></a><strong>Growth 增长</strong></h2><p>This argument applies proportionately. It’s not just that if you eliminate economic inequality, you get no startups. To the extent you reduce economic inequality, you decrease the number of startups. [4] Increase taxes, and willingness to take risks decreases in proportion. 这个论点是成比例适用的。不仅仅是说，如果你消除经济不平等，你就没有初创企业。你在多大程度上减少经济不平等，你就相应地减少初创企业的数量。[4] 提高税收，承担风险的意愿就会成比例下降。</p>
+<p>And that seems bad for everyone. New technology and new jobs both come disproportionately from new companies. Indeed, if you don’t have startups, pretty soon you won’t have established companies either, just as, if you stop having kids, pretty soon you won’t have any adults. 这对每个人来说似乎都是坏事。新技术和新工作主要来自新公司。事实上，如果你没有初创企业，很快你也不会有成熟的企业，就像如果你停止生育孩子，很快你也不会有成年人一样。</p>
+<p>It sounds benevolent to say we ought to reduce economic inequality. When you phrase it that way, who can argue with you? Inequality has to be bad, right? It sounds a good deal less benevolent to say we ought to reduce the rate at which new companies are founded. And yet the one implies the other. 说我们应该减少经济不平等，听起来很仁慈。当你这样表述时，谁能反对你呢？不平等一定是坏事，对吧？说我们应该降低新公司成立的速率，听起来就远没有那么仁慈了。然而，前者意味着后者。</p>
+<p>Indeed, it may be that reducing investors’ appetite for risk doesn’t merely kill off larval startups, but kills off the most promising ones especially. Startups yield faster growth at greater risk than established companies. Does this trend also hold among startups? That is, are the riskiest startups the ones that generate most growth if they succeed? I suspect the answer is yes. And that’s a chilling thought, because it means that if you cut investors’ appetite for risk, the most beneficial startups are the first to go. 事实上，降低投资者承担风险的意愿，可能不仅仅是扼杀那些尚在萌芽状态的初创企业，更是特别地扼杀那些最有前途的企业。与成熟公司相比，初创企业以更高的风险换取更快的增长。这种趋势在初创企业内部也成立吗？也就是说，风险最高的初创企业，如果成功，是否也是带来最多增长的企业？我怀疑答案是肯定的。这是一个令人不寒而栗的想法，因为它意味着，如果你削减了投资者承担风险的意愿，最先消失的将是那些最有益的初创企业。</p>
+<p>Not all rich people got that way from startups, of course. What if we let people get rich by starting startups, but taxed away all other surplus wealth? Wouldn’t that at least decrease inequality? 当然，并非所有富人都是通过初创企业致富的。如果我们允许人们通过创办初创企业致富，但对所有其他形式的剩余财富征税，会怎样？这难道不会至少减少不平等吗？</p>
+<p>Less than you might think. If you made it so that people could only get rich by starting startups, people who wanted to get rich would all start startups. And that might be a great thing. But I don’t think it would have much effect on the distribution of wealth. People who want to get rich will do whatever they have to. If startups are the only way to do it, you’ll just get far more people starting startups. (If you write the laws very carefully, that is. More likely, you’ll just get a lot of people doing things that can be made to look on paper like startups.) 效果可能比你想象的要小。如果你让人们只能通过创办初创企业致富，那么想致富的人就都会去创办初创企业。这可能是一件好事。但我不认为这会对财富分配产生太大影响。想致富的人会不惜一切代价。如果创办初创企业是唯一的途径，那么你会看到更多人创办初创企业。（当然，前提是你把法律写得非常仔细。更可能的情况是，你会看到很多人做一些在纸面上看起来像初创企业但实际上不是的事。）</p>
+<p>If we’re determined to eliminate economic inequality, there is still one way out: we could say that we’re willing to go ahead and do without startups. What would happen if we did? 如果我们决心消除经济不平等，仍然有一种出路：我们可以说，我们愿意放弃初创企业。如果我们这样做，会发生什么？</p>
+<p>At a minimum, we’d have to accept lower rates of technological growth. If you believe that large, established companies could somehow be made to develop new technology as fast as startups, the ball is in your court to explain how. (If you can come up with a remotely plausible story, you can make a fortune writing business books and consulting for large companies.) [5] 至少，我们必须接受更低的技术发展速度。如果你相信大型成熟公司可以以某种方式做到像初创企业一样快速开发新技术，那么现在轮到你来解释如何实现了。（如果你能想出一个勉强说得通的故事，你就能通过写商业书籍和为大公司咨询而发大财。）[5]</p>
+<p>Ok, so we get slower growth. Is that so bad? Well, one reason it’s bad in practice is that other countries might not agree to slow down with us. If you’re content to develop new technologies at a slower rate than the rest of the world, what happens is that you don’t invent anything at all. Anything you might discover has already been invented elsewhere. And the only thing you can offer in return is raw materials and cheap labor. Once you sink that low, other countries can do whatever they like with you: install puppet governments, siphon off your best workers, use your women as prostitutes, dump their toxic waste on your territory — all the things we do to poor countries now. The only defense is to isolate yourself, as communist countries did in the twentieth century. But the problem then is, you have to become a police state to enforce it. 好吧，所以我们发展得更慢了。这有那么糟糕吗？嗯，一个实际原因是，其他国家可能不会同意和我们一起放慢脚步。如果你满足于以比世界其他地方更慢的速度发展新技术，结果就是你根本不会发明任何东西。你可能发现的任何东西，都已经在其他地方被发明了。你能提供的回报只有原材料和廉价劳动力。一旦你陷入这种境地，其他国家就可以对你为所欲为：安插傀儡政府、吸走你最优秀的工人、把你的女性当作妓女、在你的领土上倾倒有毒废物——所有我们现在对贫穷国家做的事。唯一的防御方式就是自我隔离，就像二十世纪的共产主义国家那样。但问题是，你必须成为一个警察国家才能维持这种隔离。</p>
+<h2 id="Wealth-and-Power-财富与权力"><a href="#Wealth-and-Power-财富与权力" class="headerlink" title="Wealth and Power 财富与权力"></a><strong>Wealth and Power 财富与权力</strong></h2><p>I realize startups are not the main target of those who want to eliminate economic inequality. What they really dislike is the sort of wealth that becomes self-perpetuating through an alliance with power. For example, construction firms that fund politicians’ campaigns in return for government contracts, or rich parents who get their children into good colleges by sending them to expensive schools designed for that purpose. But if you try to attack this type of wealth through economic policy, it’s hard to hit without destroying startups as collateral damage. 我意识到，那些想消除经济不平等的人，其主要目标并非初创企业。他们真正厌恶的是那种通过与权力结盟而自我延续的财富。例如，建筑公司资助政客的竞选活动以换取政府合同，或富裕的父母将孩子送入昂贵的学校，以便让他们进入好大学。但如果你试图通过经济政策来打击这种财富，很难在不把初创企业作为附带损害摧毁的情况下击中目标。</p>
+<p>The problem here is not wealth, but corruption. So why not go after corruption? 这里的问题不是财富，而是腐败。那么为什么不直接打击腐败呢？</p>
+<p>We don’t need to prevent people from being rich if we can prevent wealth from translating into power. And there has been progress on that front. Before he died of drink in 1925, Commodore Vanderbilt’s wastrel grandson Reggie ran down pedestrians on five separate occasions, killing two of them. By 1969, when Ted Kennedy drove off the bridge at Chappaquiddick, the limit seemed to be down to one. Today it may well be zero. But what’s changed is not variation in wealth. What’s changed is the ability to translate wealth into power. 如果我们能阻止财富转化为权力，我们就不需要阻止人们致富。在这方面已经取得了进展。1925年，科尼利厄斯·范德比尔特的败家孙子雷吉因酗酒而死，他曾五次驾车撞倒行人，导致两人死亡。到了1969年，当泰德·肯尼迪在查帕奎迪克驾车坠桥时，似乎上限已经降到了一人。如今，这个上限可能已经是零。但发生变化的不是财富的差异，而是将财富转化为权力的能力。</p>
+<p>How do you break the connection between wealth and power? Demand transparency. Watch closely how power is exercised, and demand an account of how decisions are made. Why aren’t all police interrogations videotaped? Why did 36% of Princeton’s class of 2007 come from prep schools, when only 1.7% of American kids attend them? Why did the US really invade Iraq? Why don’t government officials disclose more about their finances, and why only during their term of office? 如何打破财富与权力之间的联系？要求透明度。密切关注权力的行使方式，并要求对决策过程做出解释。为什么不是所有警察审讯都被录像？当只有1.7%的美国孩子上预科学校时，为什么普林斯顿大学2007届学生中有36%来自预科学校？美国真正入侵伊拉克的原因是什么？为什么政府官员不披露更多关于他们财务状况的信息，而且只在任职期间披露？</p>
+<p>A friend of mine who knows a lot about computer security says the single most important step is to log everything. Back when he was a kid trying to break into computers, what worried him most was the idea of leaving a trail. He was more inconvenienced by the need to avoid that than by any obstacle deliberately put in his path. 一位精通计算机安全的朋友告诉我，最重要的一步是记录一切。当他小时候试图入侵计算机时，最让他担心的就是留下痕迹。避免留下痕迹的需求给他带来的不便，超过了任何人为设置的障碍。</p>
+<p>Like all illicit connections, the connection between wealth and power flourishes in secret. Expose all transactions, and you will greatly reduce it. Log everything. That’s a strategy that already seems to be working, and it doesn’t have the side effect of making your whole country poor. 像所有非法联系一样，财富与权力的联系在秘密中滋生。公开所有交易，你就能大大减少这种联系。记录一切。这是一种似乎已经在奏效的策略，而且它不会让你整个国家变穷。</p>
+<p>I don’t think many people realize there is a connection between economic inequality and risk. I didn’t fully grasp it till recently. I’d known for years of course that if one didn’t score in a startup, the other alternative was to get a cozy, tenured research job. But I didn’t understand the equation governing my behavior. Likewise, it’s obvious empirically that a country that doesn’t let people get rich is headed for disaster, whether it’s Diocletian’s Rome or Harold Wilson’s Britain. But I did not till recently understand the role risk played. 我认为很多人没有意识到经济不平等与风险之间的联系。直到最近我才完全理解这一点。当然，多年来我一直知道，如果在初创企业中没有成功，另一种选择就是找一份舒适、有终身职位的研究工作。但我没有理解支配我行为的方程式。同样，从经验上看，一个不允许人们致富的国家注定会走向灾难，无论是戴克里先时期的罗马还是哈罗德·威尔逊时期的英国。但直到最近，我才理解了风险所扮演的角色。</p>
+<p>If you try to attack wealth, you end up nailing risk as well, and with it growth. If we want a fairer world, I think we’re better off attacking one step downstream, where wealth turns into power. 如果你试图打击财富，你最终也会扼杀风险，以及随之而来的增长。如果我们想要一个更公平的世界，我认为我们最好在下游一步采取行动，即在财富转化为权力的地方进行打击。</p>
+<h2 id="Notes-注释"><a href="#Notes-注释" class="headerlink" title="Notes 注释"></a><strong>Notes 注释</strong></h2><p>[1] Success here is defined from the initial investors’ point of view: either an IPO, or an acquisition for more than the valuation at the last round of funding. The conventional 1 in 10 success rate is suspiciously neat, but conversations with VCs suggest it’s roughly correct for startups overall. Top VC firms expect to do better. [1] 这里的“成功”是从最初投资者的角度定义的：要么是首次公开募股（IPO），要么是以高于上一轮融资估值的价格被收购。传统的十分之一成功率看起来过于整齐，但与风险投资家的交谈表明，这对所有初创企业总体而言大致正确。顶级风险投资公司期望表现更好。</p>
+<p>[2] I’m not claiming founders sit down and calculate the expected after-tax return from a startup. They’re motivated by examples of other people who did it. And those examples do reflect after-tax returns. [2] 我并不是说创始人会坐下来计算初创企业的税后预期回报。他们受到其他人成功案例的激励。而这些案例确实反映了税后回报。</p>
+<p>[3] Conjecture: The variation in wealth in a (non-corrupt) country or organization will be inversely proportional to the prevalence of systems of seniority. So if you suppress variation in wealth, seniority will become correspondingly more important. So far, I know of no counterexamples, though in very corrupt countries you may get both simultaneously. (Thanks to Daniel Sobral for pointing this out.) [3] 猜想：在一个（非腐败的）国家或组织中，财富的差异与资历制度的普遍程度成反比。因此，如果你压制财富差异，资历就会相应地变得更加重要。到目前为止，我不知道有反例，尽管在非常腐败的国家，你可能同时看到两者。（感谢丹尼尔·索布拉尔指出这一点。）</p>
+<p>[4] In a country with a truly feudal economy, you might be able to redistribute wealth successfully, because there are no startups to kill. [4] 在一个真正具有封建经济的国家，你或许能够成功地重新分配财富，因为那里没有初创企业可以被扼杀。</p>
+<p>[5] The speed at which startups develop new techology is the other reason they pay so well. As I explained in “How to Make Wealth”, what you do in a startup is compress a lifetime’s worth of work into a few years. It seems as dumb to discourage that as to discourage risk-taking. [5] 初创企业开发新技术的速度是它们报酬如此之高的另一个原因。正如我在《如何创造财富》中所解释的，在初创企业中，你把一生的工作压缩到几年内完成。阻止这种行为，就像阻止承担风险一样愚蠢。</p>
+<p>Thanks to Chris Anderson, Trevor Blackwell, Dan Giffin, Jessica Livingston, and Evan Williams for reading drafts of this essay, and to Langley Steinert, Sangam Pant, and Mike Moritz for information about venture investing. 感谢克里斯·安德森、特雷弗·布莱克威尔、丹·吉芬、杰西卡·利文斯顿和埃文·威廉姆斯阅读本文草稿，以及感谢兰利·斯坦特、桑甘·潘特和迈克·莫里茨提供有关风险投资的信息。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>不平等与风险</div>
+      <div>https://hokkaidornis.github.io/2025/08/29/inequality-and-risk/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/29/what-i-did-this-summer/" title="今年夏天我做了什么">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">今年夏天我做了什么</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/29/after-the-ladder/" title="阶梯之后">
+                        <span class="hidden-mobile">阶梯之后</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

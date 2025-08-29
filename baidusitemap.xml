@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://hokkaidornis.github.io/2025/08/29/what-i-did-this-summer/</loc>
+    <lastmod>2025-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hokkaidornis.github.io/2025/08/29/inequality-and-risk/</loc>
+    <lastmod>2025-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hokkaidornis.github.io/2025/08/29/after-the-ladder/</loc>
+    <lastmod>2025-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hokkaidornis.github.io/2025/08/29/what-business-can-learn-from-open-source/</loc>
+    <lastmod>2025-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hokkaidornis.github.io/2025/08/26/why-smart-people-have-bad-ideas/</loc>
+    <lastmod>2025-08-29</lastmod>
+  </url>
+  <url>
     <loc>https://hokkaidornis.github.io/2025/08/28/donald-trump-interview-lex-fridman/</loc>
     <lastmod>2025-08-28</lastmod>
   </url>
@@ -15,10 +35,6 @@
   <url>
     <loc>https://hokkaidornis.github.io/2025/08/27/the-submarine/</loc>
     <lastmod>2025-08-27</lastmod>
-  </url>
-  <url>
-    <loc>https://hokkaidornis.github.io/2025/08/26/why-smart-people-have-bad-ideas/</loc>
-    <lastmod>2025-08-26</lastmod>
   </url>
   <url>
     <loc>https://hokkaidornis.github.io/2025/08/26/writing-briefly/</loc>
