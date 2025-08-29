@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hokkaidornis.github.io/2025/08/29/gregory-aldrete-the-roman-empire/</loc>
+    
+    <lastmod>2025-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hokkaidornis.github.io/2025/08/29/what-i-did-this-summer/</loc>
     
     <lastmod>2025-08-29</lastmod>
@@ -551,6 +560,20 @@
   
   <url>
     <loc>https://hokkaidornis.github.io/tags/Donald-Trump/</loc>
+    <lastmod>2025-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hokkaidornis.github.io/tags/%E6%A0%BC%E9%9B%B7%E6%88%88%E9%87%8C%E3%83%BB%E5%A5%A5%E5%B0%94%E5%BE%B7%E9%9B%B7%E7%89%B9/</loc>
+    <lastmod>2025-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hokkaidornis.github.io/tags/Gregory-Aldrete/</loc>
     <lastmod>2025-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
