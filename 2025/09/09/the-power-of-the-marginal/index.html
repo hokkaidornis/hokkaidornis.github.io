@@ -1,0 +1,816 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="The Power of the Marginal边缘的力量原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;marginal.html June 2006 (This essay is derived from talks at Usenix 2006 and Railsconf 2006.)（本文改编自 2006 年 Usenix 大会与 Railsconf 大会上的演讲内容。） A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="the_power_of_the_marginal">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/09/09/the-power-of-the-marginal/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="The Power of the Marginal边缘的力量原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;marginal.html June 2006 (This essay is derived from talks at Usenix 2006 and Railsconf 2006.)（本文改编自 2006 年 Usenix 大会与 Railsconf 大会上的演讲内容。） A">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-09-09T06:02:47.000Z">
+<meta property="article:modified_time" content="2025-09-09T06:12:48.621Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>the_power_of_the_marginal - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="the_power_of_the_marginal"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-09 14:02" pubdate>
+          2025年9月9日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          95 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">the_power_of_the_marginal</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="The-Power-of-the-Marginal"><a href="#The-Power-of-the-Marginal" class="headerlink" title="The Power of the Marginal"></a>The Power of the Marginal</h1><h1 id="边缘的力量"><a href="#边缘的力量" class="headerlink" title="边缘的力量"></a>边缘的力量</h1><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/marginal.html">https://paulgraham.com/marginal.html</a></p>
+<p>June 2006</p>
+<p>(This essay is derived from talks at Usenix 2006 and Railsconf 2006.)<br>（本文改编自 2006 年 Usenix 大会与 Railsconf 大会上的演讲内容。）</p>
+<p>A couple years ago my friend Trevor and I went to look at the Apple garage. As we stood there, he said that as a kid growing up in Saskatchewan he’d been amazed at the dedication Jobs and Wozniak must have had to work in a garage.<br>几年前，我和朋友特雷弗去参观了苹果公司最初的那个车库。站在那里时，他说，自己小时候在萨斯喀彻温省长大，一直很惊叹乔布斯和沃兹尼亚克竟有如此坚定的信念，能在车库里埋头工作。</p>
+<p>“Those guys must have been freezing!”<br>“那两个人当时肯定冻坏了！”</p>
+<p>That’s one of California’s hidden advantages: the mild climate means there’s lots of marginal space. In cold places that margin gets trimmed off. There’s a sharper line between outside and inside, and only projects that are officially sanctioned — by organizations, or parents, or wives, or at least by oneself — get proper indoor space. That raises the activation energy for new ideas. You can’t just tinker. You have to justify.<br>这正是加利福尼亚州一个不为人知的优势：温和的气候造就了大量 “边缘空间”。而在寒冷地区，这样的边缘空间会被大大压缩。室内与室外的界限变得十分清晰，只有那些得到官方认可 —— 无论是来自机构、父母、妻子，还是至少得到自己认可 —— 的项目，才能获得合适的室内空间。这无疑增加了新想法产生的 “启动门槛”。你不能再只是随便捣鼓，而是必须先证明做这件事的合理性。</p>
+<p>Some of Silicon Valley’s most famous companies began in garages: Hewlett-Packard in 1938, Apple in 1976, Google in 1998. In Apple’s case the garage story is a bit of an urban legend. Woz says all they did there was assemble some computers, and that he did all the actual design of the Apple I and Apple II in his apartment or his cube at HP. [1] This was apparently too marginal even for Apple’s PR people.<br>硅谷一些最知名的公司都发源于车库：1938 年的惠普、1976 年的苹果、1998 年的谷歌。不过，苹果的 “车库创业” 故事多少带点都市传说的色彩。沃兹尼亚克曾表示，他们当时在车库里只是组装了一些电脑，而苹果 I 型和苹果 II 型的所有实际设计工作，都是他在自己的公寓或惠普公司的办公隔间里完成的。[1] 显然，就连苹果的公关团队都觉得这样的经历 “边缘” 得有些过头了。</p>
+<p>By conventional standards, Jobs and Wozniak were marginal people too. Obviously they were smart, but they can’t have looked good on paper. They were at the time a pair of college dropouts with about three years of school between them, and hippies to boot. Their previous business experience consisted of making “blue boxes” to hack into the phone system, a business with the rare distinction of being both illegal and unprofitable.<br>按照传统标准来看，乔布斯和沃兹尼亚克本身也属于 “边缘人物”。显然他们很聪明，但从纸面履历上看却毫无亮点。当时两人都是大学辍学生，加起来的在校时间也就三年左右，而且还是嬉皮士。他们之前的 “商业经历”，不过是制作用于破解电话系统的 “蓝盒子”—— 这种生意堪称 “奇葩”，既违法又不赚钱。</p>
+<h2 id="Outsiders"><a href="#Outsiders" class="headerlink" title="Outsiders"></a><strong>Outsiders</strong></h2><h2 id="局外人"><a href="#局外人" class="headerlink" title="局外人"></a><strong>局外人</strong></h2><p>Now a startup operating out of a garage in Silicon Valley would feel part of an exalted tradition, like the poet in his garret, or the painter who can’t afford to heat his studio and thus has to wear a beret indoors. But in 1976 it didn’t seem so cool. The world hadn’t yet realized that starting a computer company was in the same category as being a writer or a painter. It hadn’t been for long. Only in the preceding couple years had the dramatic fall in the cost of hardware allowed outsiders to compete.<br>如今，在硅谷的车库里创办初创公司，会让人感觉自己置身于一种崇高的传统之中，就像阁楼里的诗人，或是付不起工作室取暖费、只能在室内戴贝雷帽的画家。但在 1976 年，这样的做法可一点都不 “酷”。当时的人们还没意识到，创办电脑公司与当作家、画家是同一类事 —— 这种认知的转变其实来得很晚。仅仅是在那之前的几年，硬件成本的大幅下降，才让 “局外人” 有了参与竞争的可能。</p>
+<p>In 1976, everyone looked down on a company operating out of a garage, including the founders. One of the first things Jobs did when they got some money was to rent office space. He wanted Apple to seem like a real company.<br>1976 年时，所有人都看不起在车库里运营的公司，包括公司的创始人自己。乔布斯在他们赚到第一笔钱后，做的第一件事就是租办公空间。他想让苹果看起来像一家 “正经公司”。</p>
+<p>They already had something few real companies ever have: a fabulously well designed product. You’d think they’d have had more confidence. But I’ve talked to a lot of startup founders, and it’s always this way. They’ve built something that’s going to change the world, and they’re worried about some nit like not having proper business cards.<br>其实他们当时已经拥有了许多正经公司都没有的东西：一款设计极佳的产品。你可能会觉得他们应该更有信心才对。但我和很多初创公司创始人聊过，发现情况总是如此：他们明明打造出了可能改变世界的产品，却在为没有像样的名片这种小事焦虑。</p>
+<p>That’s the paradox I want to explore: great new things often come from the margins, and yet the people who discover them are looked down on by everyone, including themselves.<br>这正是我想探讨的悖论：伟大的新事物往往源自边缘，但创造这些事物的人，却会被所有人（包括他们自己）看不起。</p>
+<p>It’s an old idea that new things come from the margins. I want to examine its internal structure. Why do great ideas come from the margins? What kind of ideas? And is there anything we can do to encourage the process?<br>“新事物源于边缘” 是一个古老的观点。我想深入剖析它的内在逻辑：为什么伟大的想法会出自边缘地带？这些想法通常是什么类型？我们又能做些什么来推动这一过程？</p>
+<h2 id="Insiders"><a href="#Insiders" class="headerlink" title="Insiders"></a><strong>Insiders</strong></h2><h2 id="局内人"><a href="#局内人" class="headerlink" title="局内人"></a><strong>局内人</strong></h2><p>One reason so many good ideas come from the margin is simply that there’s so much of it. There have to be more outsiders than insiders, if insider means anything. If the number of outsiders is huge it will always seem as if a lot of ideas come from them, even if few do per capita. But I think there’s more going on than this. There are real disadvantages to being an insider, and in some kinds of work they can outweigh the advantages.<br>之所以有这么多好想法来自边缘，一个简单的原因是 “边缘” 本身的体量巨大。如果 “局内人” 有明确含义，那么局外人的数量必然多于局内人。即便从人均角度看，局外人产出的好想法并不多，但由于基数庞大，总会让人觉得大量想法都来自他们。不过，我认为事情远不止这么简单。成为局内人其实存在实实在在的劣势，在某些领域，这些劣势甚至会超过优势。</p>
+<p>Imagine, for example, what would happen if the government decided to commission someone to write an official Great American Novel. First there’d be a huge ideological squabble over who to choose. Most of the best writers would be excluded for having offended one side or the other. Of the remainder, the smart ones would refuse such a job, leaving only a few with the wrong sort of ambition. The committee would choose one at the height of his career — that is, someone whose best work was behind him — and hand over the project with copious free advice about how the book should show in positive terms the strength and diversity of the American people, etc, etc.<br>举个例子，试想如果政府决定委托某人撰写一部 “官方版伟大的美国小说”，会发生什么？首先，在人选问题上会爆发激烈的意识形态争论。大多数优秀作家会因为得罪了某一方而被排除在外。剩下的人里，聪明的会拒绝这份工作，最后只留下少数野心错位的人。委员会最终会选中一位 “事业巅峰期” 的作家 —— 换句话说，就是那些最佳创作时期已经过去的人 —— 然后还会给出一大堆 “免费建议”，比如这本书必须正面展现美国人民的力量与多样性等等。</p>
+<p>The unfortunate writer would then sit down to work with a huge weight of expectation on his shoulders. Not wanting to blow such a public commission, he’d play it safe. This book had better command respect, and the way to ensure that would be to make it a tragedy. Audiences have to be enticed to laugh, but if you kill people they feel obliged to take you seriously. As everyone knows, America plus tragedy equals the Civil War, so that’s what it would have to be about. When finally completed twelve years later, the book would be a 900-page pastiche of existing popular novels — roughly Gone with the Wind plus Roots. But its bulk and celebrity would make it a bestseller for a few months, until blown out of the water by a talk-show host’s autobiography. The book would be made into a movie and thereupon forgotten, except by the more waspish sort of reviewers, among whom it would be a byword for bogusness like Milli Vanilli or Battlefield Earth.<br>随后，这位不幸的作家会在巨大的期望压力下开始创作。由于不想搞砸这份公开委托，他会选择稳妥的路线。这本书必须赢得尊重，而确保这一点的方法，就是把它写成一部悲剧。观众需要被引导才会发笑，但只要故事里有人死亡，他们就会觉得必须严肃对待。众所周知，“美国” 加 “悲剧” 的组合，结果必然是写南北战争 —— 所以这本书的主题也就定下来了。十二年后，这本书终于完成，会是一部 900 页的作品，拼凑了各种已有的流行小说元素，大致相当于《飘》加上《根》的混合体。不过，凭借其篇幅和 “官方光环”，它会在几个月内成为畅销书，直到被某位脱口秀主持人的自传挤下榜单。之后这本书会被改编成电影，然后就此被人遗忘，只有那些尖刻的评论家还会提起它 —— 在他们眼中，这本书会成为 “虚假” 的代名词，就像 Milli Vanilli（注：曾因假唱丑闻闻名的双人组合）或《地球战场》（注：被认为是史上最差电影之一）一样。</p>
+<p>Maybe I got a little carried away with this example. And yet is this not at each point the way such a project would play out? The government knows better than to get into the novel business, but in other fields where they have a natural monopoly, like nuclear waste dumps, aircraft carriers, and regime change, you’d find plenty of projects isomorphic to this one — and indeed, plenty that were less successful.<br>或许这个例子有些夸张，但这样的项目难道不正是在各个环节都会朝着这个方向发展吗？政府很清楚不该涉足小说创作，但在其他他们拥有天然垄断权的领域 —— 比如核废料处理、航空母舰建造、政权更迭干预 —— 你会发现大量与这个 “小说项目” 结构相似的项目，而且其中很多甚至比这更失败。</p>
+<p>This little thought experiment suggests a few of the disadvantages of insider projects: the selection of the wrong kind of people, the excessive scope, the inability to take risks, the need to seem serious, the weight of expectations, the power of vested interests, the undiscerning audience, and perhaps most dangerous, the tendency of such work to become a duty rather than a pleasure.<br>这个小小的思想实验揭示了局内人项目的几个劣势：选错合适的人选、项目范围过于宽泛、无法承担风险、必须表现得 “严肃”、承受巨大的期望压力、受既得利益者影响、面对缺乏判断力的受众，而最危险的或许是 —— 这类工作会逐渐变成一种责任，而非乐趣。</p>
+<h2 id="Tests"><a href="#Tests" class="headerlink" title="Tests"></a><strong>Tests</strong></h2><h2 id="筛选标准"><a href="#筛选标准" class="headerlink" title="筛选标准"></a><strong>筛选标准</strong></h2><p>A world with outsiders and insiders implies some kind of test for distinguishing between them. And the trouble with most tests for selecting elites is that there are two ways to pass them: to be good at what they try to measure, and to be good at hacking the test itself.<br>一个存在局内人与局外人的世界，必然需要某种筛选标准来区分两者。但大多数筛选精英的标准都存在一个问题：通过标准的方式有两种 —— 要么真正擅长标准想要衡量的能力，要么擅长 “钻标准的空子”。</p>
+<p>So the first question to ask about a field is how honest its tests are, because this tells you what it means to be an outsider. This tells you how much to trust your instincts when you disagree with authorities, whether it’s worth going through the usual channels to become one yourself, and perhaps whether you want to work in this field at all.<br>因此，看待一个领域时，首先要问的是它的筛选标准有多 “诚实”—— 因为这能让你明白 “成为局外人” 意味着什么。它会告诉你，当你与权威观点不一致时，该在多大程度上相信自己的直觉；告诉你是否值得通过常规渠道让自己成为局内人；甚至告诉你是否真的想在这个领域工作。</p>
+<p>Tests are least hackable when there are consistent standards for quality, and the people running the test really care about its integrity. Admissions to PhD programs in the hard sciences are fairly honest, for example. The professors will get whoever they admit as their own grad students, so they try hard to choose well, and they have a fair amount of data to go on. Whereas undergraduate admissions seem to be much more hackable.<br>当一个领域存在统一的质量标准，且执行筛选的人真正重视标准的公正性时，这类筛选标准就最难被钻空子。例如，硬科学领域（注：指自然科学中依赖实验与量化分析的学科，如物理、化学等）的博士项目录取就相当诚实。教授们录取的学生会成为自己的研究生，所以他们会尽力做好筛选，而且也有足够多的客观数据作为参考。相比之下，本科录取则更容易被 “钻空子”。</p>
+<p>One way to tell whether a field has consistent standards is the overlap between the leading practitioners and the people who teach the subject in universities. At one end of the scale you have fields like math and physics, where nearly all the teachers are among the best practitioners. In the middle are medicine, law, history, architecture, and computer science, where many are. At the bottom are business, literature, and the visual arts, where there’s almost no overlap between the teachers and the leading practitioners. It’s this end that gives rise to phrases like “those who can’t do, teach.”<br>判断一个领域是否有统一标准，有一种方法是看该领域的顶尖从业者与大学里教授这门学科的人之间有多少重合。在光谱的一端是数学和物理这样的领域，几乎所有教师都是该领域最优秀的从业者；中间地带包括医学、法律、历史、建筑学和计算机科学，这些领域的教师中有不少是顶尖从业者；而在最底端的是商业、文学和视觉艺术 —— 在这些领域，教师与顶尖从业者之间几乎没有重合。也正是这个领域，催生了 “不会做事的人才去教书” 这样的说法。</p>
+<p>Incidentally, this scale might be helpful in deciding what to study in college. When I was in college the rule seemed to be that you should study whatever you were most interested in. But in retrospect you’re probably better off studying something moderately interesting with someone who’s good at it than something very interesting with someone who isn’t. You often hear people say that you shouldn’t major in business in college, but this is actually an instance of a more general rule: don’t learn things from teachers who are bad at them.<br>顺便说一句，这个 “重合度光谱” 或许能帮你决定在大学学什么。我上大学时，似乎大家都遵循 “学自己最感兴趣的东西” 这一原则。但现在回想起来，选择一个 “还算感兴趣” 的领域，跟着擅长它的人学习，可能比选择一个 “非常感兴趣” 的领域，却跟着不擅长的人学习要好得多。你经常会听到有人说 “不要在大学主修商科”，但这其实是一个更普遍原则的体现：不要向不擅长某件事的人学习这件事。</p>
+<p>How much you should worry about being an outsider depends on the quality of the insiders. If you’re an amateur mathematician and think you’ve solved a famous open problem, better go back and check. When I was in grad school, a friend in the math department had the job of replying to people who sent in proofs of Fermat’s last theorem and so on, and it did not seem as if he saw it as a valuable source of tips — more like manning a mental health hotline. Whereas if the stuff you’re writing seems different from what English professors are interested in, that’s not necessarily a problem.<br>你需要在多大程度上担心自己是 “局外人”，取决于局内人的水平。如果你是一名业余数学家，且认为自己解决了某个著名的未解决难题，那最好再回去检查一遍。我读研究生时，数学系有个朋友的工作是回复那些寄来费马大定理证明等内容的人，他显然不觉得这些来信能提供有价值的思路 —— 这更像是在值守一条心理健康热线。但如果你写的东西与英语教授感兴趣的内容不同，那未必是个问题。</p>
+<h2 id="Anti-Tests"><a href="#Anti-Tests" class="headerlink" title="Anti-Tests"></a><strong>Anti-Tests</strong></h2><h2 id="反向筛选标准"><a href="#反向筛选标准" class="headerlink" title="反向筛选标准"></a><strong>反向筛选标准</strong></h2><p>Where the method of selecting the elite is thoroughly corrupt, most of the good people will be outsiders. In art, for example, the image of the poor, misunderstood genius is not just one possible image of a great artist: it’s the standard image. I’m not saying it’s correct, incidentally, but it is telling how well this image has stuck. You couldn’t make a rap like that stick to math or medicine. [2]<br>当筛选精英的方式完全腐败时，大多数优秀的人都会沦为局外人。以艺术领域为例，“贫穷且不被理解的天才” 不仅是伟大艺术家的一种可能形象，更是一种标准形象。顺便说一句，我并不是说这种形象是正确的，但它能长久流传，本身就很能说明问题。你绝不可能在数学或医学领域，塑造出类似的经典形象。[2]</p>
+<p>If it’s corrupt enough, a test becomes an anti-test, filtering out the people it should select by making them to do things only the wrong people would do. Popularity in high school seems to be such a test. There are plenty of similar ones in the grownup world. For example, rising up through the hierarchy of the average big company demands an attention to politics few thoughtful people could spare. [3] Someone like Bill Gates can grow a company under him, but it’s hard to imagine him having the patience to climb the corporate ladder at General Electric — or Microsoft, actually.<br>若筛选机制腐败到一定程度，就会沦为 “反向筛选”—— 它会迫使本应被选中的人去做只有不合适的人才愿意做的事，从而将前者排除在外。高中时期的 “受欢迎程度” 似乎就是这样一种筛选。在成人世界里，类似的情况也比比皆是。例如，在普通大公司的层级体系中晋升，需要花费大量精力钻研 “办公室政治”，而大多数有思想的人都不愿在这方面投入时间。[3] 像比尔・盖茨这样的人，有能力自己创办并发展公司，但很难想象他会有耐心在通用电气 —— 事实上，即便在微软 —— 的职场阶梯上一步步攀爬。</p>
+<p>It’s kind of strange when you think about it, because lord-of-the-flies schools and bureaucratic companies are both the default. There are probably a lot of people who go from one to the other and never realize the whole world doesn’t work this way.<br>仔细想想，这其实有些奇怪：像 “蝇王” 式（注：源自小说《蝇王》，形容群体中混乱、残酷的生存状态）混乱的学校，以及充满官僚主义的公司，竟然都是一种 “默认常态”。或许有很多人从这样的学校进入这样的公司，却从未意识到，并非整个世界都遵循这种逻辑运转。</p>
+<p>I think that’s one reason big companies are so often blindsided by startups. People at big companies don’t realize the extent to which they live in an environment that is one large, ongoing test for the wrong qualities.<br>我认为，这正是大公司常常被初创公司 “打个措手不及” 的原因之一。大公司的人没有意识到，他们所处的环境，本质上是一个持续不断、却在筛选 “错误特质” 的大型测试场。</p>
+<p>If you’re an outsider, your best chances for beating insiders are obviously in fields where corrupt tests select a lame elite. But there’s a catch: if the tests are corrupt, your victory won’t be recognized, at least in your lifetime. You may feel you don’t need that, but history suggests it’s dangerous to work in fields with corrupt tests. You may beat the insiders, and yet not do as good work, on an absolute scale, as you would in a field that was more honest.<br>如果你是局外人，那么击败局内人的最佳机会，显然存在于那些筛选机制腐败、选出的精英能力平庸的领域。但这里有个隐患：若筛选机制腐败，你的成就可能无法得到认可，至少在你有生之年是如此。你或许觉得自己不需要这种认可，但历史表明，在筛选机制腐败的领域工作是有风险的。即便你能击败局内人，从绝对水平来看，你做出的成果也可能不如在筛选机制更公正的领域中那么出色。</p>
+<p>Standards in art, for example, were almost as corrupt in the first half of the eighteenth century as they are today. This was the era of those fluffy idealized portraits of countesses with their lapdogs. Chardin decided to skip all that and paint ordinary things as he saw them. He’s now considered the best of that period — and yet not the equal of Leonardo or Bellini or Memling, who all had the additional encouragement of honest standards.<br>以艺术领域为例，18 世纪上半叶的艺术标准几乎和如今一样腐败。那个时代流行的是描绘女伯爵与哈巴狗的、浮夸而理想化的肖像画。夏尔丹（注：法国写实主义画家）选择摒弃这一切，转而描绘他眼中的日常事物。如今，他被视为那个时代最优秀的画家 —— 但仍无法与达・芬奇、贝里尼或梅姆林（注：均为文艺复兴时期著名画家）相提并论，而后者都曾受益于更公正的艺术标准所带来的额外激励。</p>
+<p>It can be worth participating in a corrupt contest, however, if it’s followed by another that isn’t corrupt. For example, it would be worth competing with a company that can spend more than you on marketing, as long as you can survive to the next round, when customers compare your actual products. Similarly, you shouldn’t be discouraged by the comparatively corrupt test of college admissions, because it’s followed immediately by less hackable tests. [4]<br>不过，若腐败的竞争之后还有一场公正的竞争，那么参与前者或许是值得的。例如，即便对手公司在营销上的投入比你多，只要你能撑到下一轮 —— 也就是消费者直接对比产品本身的阶段 —— 这场竞争就值得参与。同样，你也不必因大学录取这种相对腐败的筛选机制而气馁，因为紧随其后的，就是更难被 “钻空子” 的公正测试。[4]</p>
+<h2 id="Risk"><a href="#Risk" class="headerlink" title="Risk"></a><strong>Risk</strong></h2><h2 id="风险"><a href="#风险" class="headerlink" title="风险"></a><strong>风险</strong></h2><p>Even in a field with honest tests, there are still advantages to being an outsider. The most obvious is that outsiders have nothing to lose. They can do risky things, and if they fail, so what? Few will even notice.<br>即便在筛选机制公正的领域，局外人依然拥有优势。最明显的一点是，局外人 “没什么可失去的”。他们可以尝试有风险的事，即便失败了又如何？几乎没人会在意。</p>
+<p>The eminent, on the other hand, are weighed down by their eminence. Eminence is like a suit: it impresses the wrong people, and it constrains the wearer.<br>反观那些知名人士，他们的 “名望” 却成了负担。名望就像一套西装：它能给不该被打动的人留下印象，却会束缚穿着它的人。</p>
+<p>Outsiders should realize the advantage they have here. Being able to take risks is hugely valuable. Everyone values safety too much, both the obscure and the eminent. No one wants to look like a fool. But it’s very useful to be able to. If most of your ideas aren’t stupid, you’re probably being too conservative. You’re not bracketing the problem.<br>局外人应当意识到自己在这方面的优势。敢于冒险的能力极具价值。无论是无名之辈还是知名人士，所有人都过于看重 “安全”，没人愿意看起来像个傻瓜。但事实上，“愿意看起来像傻瓜” 是一种非常有用的特质。如果你的大多数想法都不算 “愚蠢”，那很可能说明你过于保守，没有充分探索问题的边界。</p>
+<p>Lord Acton said we should judge talent at its best and character at its worst. For example, if you write one great book and ten bad ones, you still count as a great writer — or at least, a better writer than someone who wrote eleven that were merely good. Whereas if you’re a quiet, law-abiding citizen most of the time but occasionally cut someone up and bury them in your backyard, you’re a bad guy.<br>阿克顿勋爵（注：19 世纪英国历史学家）曾说，评价才华要看其巅峰之作，评价品格要看其最差表现。例如，若你写出一本杰作和十本烂书，你依然算得上是伟大的作家 —— 至少比写出十一本 “还不错” 的书的人更优秀。但如果你平时是个安静守法的公民，却偶尔会杀人并埋在自家后院，那你就是个坏人。</p>
+<p>Almost everyone makes the mistake of treating ideas as if they were indications of character rather than talent — as if having a stupid idea made you stupid. There’s a huge weight of tradition advising us to play it safe. “Even a fool is thought wise if he keeps silent,” says the Old Testament (Proverbs 17:28).<br>几乎所有人都会犯一个错误：将想法视为品格的体现，而非才华的体现 —— 仿佛有一个愚蠢的想法，就意味着你本人很愚蠢。传统观念也在极力劝我们 “稳妥行事”。《旧约圣经》中就有这样的说法：“愚昧人静默不言，也可算为智慧”（《箴言》17:28）。</p>
+<p>Well, that may be fine advice for a bunch of goatherds in Bronze Age Palestine. There conservatism would be the order of the day. But times have changed. It might still be reasonable to stick with the Old Testament in political questions, but materially the world now has a lot more state. Tradition is less of a guide, not just because things change faster, but because the space of possibilities is so large. The more complicated the world gets, the more valuable it is to be willing to look like a fool.<br>诚然，对于青铜时代巴勒斯坦地区的牧羊人来说，这或许是个不错的建议 —— 在那个时代，保守本就是常态。但时代已经变了。在政治问题上遵循《旧约》的观点或许仍有道理，但在物质层面，如今的世界已经有了天翻地覆的变化。传统不再是可靠的指南，这不仅是因为事物变化更快，还因为 “可能性的空间” 变得无比广阔。世界越复杂，“愿意看起来像傻瓜” 的品质就越有价值。</p>
+<h2 id="Delegation"><a href="#Delegation" class="headerlink" title="Delegation"></a><strong>Delegation</strong></h2><h2 id="委派"><a href="#委派" class="headerlink" title="委派"></a><strong>委派</strong></h2><p>And yet the more successful people become, the more heat they get if they screw up — or even seem to screw up. In this respect, as in many others, the eminent are prisoners of their own success. So the best way to understand the advantages of being an outsider may be to look at the disadvantages of being an insider.<br>然而，一个人越成功，一旦搞砸事情 —— 哪怕只是 “看似搞砸”—— 所面临的压力就越大。在这方面，与其他许多方面一样，知名人士其实是自己成功的 “囚徒”。因此，要理解局外人的优势，最好的方法或许是审视局内人的劣势。</p>
+<p>If you ask eminent people what’s wrong with their lives, the first thing they’ll complain about is the lack of time. A friend of mine at Google is fairly high up in the company and went to work for them long before they went public. In other words, he’s now rich enough not to have to work. I asked him if he could still endure the annoyances of having a job, now that he didn’t have to. And he said that there weren’t really any annoyances, except — and he got a wistful look when he said this — that he got so much email.<br>若你问知名人士生活中最大的困扰是什么，他们最先抱怨的往往是 “时间不够用”。我有个朋友在谷歌工作，职位相当高，而且在谷歌上市前就加入了公司 —— 换句话说，他现在已经富有到无需工作的程度。我问他，既然没必要再工作，是否还能忍受职场中的那些烦心事。他说，其实没什么烦心事，除了 —— 说这话时，他露出了怅然若失的表情 —— 每天要处理大量邮件。</p>
+<p>The eminent feel like everyone wants to take a bite out of them. The problem is so widespread that people pretending to be eminent do it by pretending to be overstretched.<br>知名人士会觉得，所有人都想从他们身上 “分一杯羹”。这个问题如此普遍，以至于那些想装成 “知名人士” 的人，都会通过假装 “忙得不可开交” 来达到目的。</p>
+<p>The lives of the eminent become scheduled, and that’s not good for thinking. One of the great advantages of being an outsider is long, uninterrupted blocks of time. That’s what I remember about grad school: apparently endless supplies of time, which I spent worrying about, but not writing, my dissertation. Obscurity is like health food — unpleasant, perhaps, but good for you. Whereas fame tends to be like the alcohol produced by fermentation. When it reaches a certain concentration, it kills off the yeast that produced it.<br>知名人士的生活被各种日程填满，这对思考非常不利。局外人最大的优势之一，就是拥有大块、不受干扰的时间。我还记得读研究生时的状态：仿佛有无限的时间，而我却把这些时间都用来焦虑，迟迟没动笔写论文。“默默无闻” 就像健康食品 —— 或许不好吃，但对人有益。而名望则更像发酵产生的酒精：当浓度达到一定程度时，就会杀死产生它的酵母（注：此处比喻名望会扼杀创造名望的创造力）。</p>
+<p>The eminent generally respond to the shortage of time by turning into managers. They don’t have time to work. They’re surrounded by junior people they’re supposed to help or supervise. The obvious solution is to have the junior people do the work. Some good stuff happens this way, but there are problems it doesn’t work so well for: the kind where it helps to have everything in one head.<br>面对时间短缺，知名人士通常会选择 “转型为管理者”。他们没有时间亲自做事，身边围绕着需要他们指导或监督的下属。最直接的解决办法，就是让下属来承担具体工作。这种方式确实能做出一些好成果，但对于某些问题却效果不佳 —— 比如那些需要 “一个人掌握所有细节” 才能解决的问题。</p>
+<p>For example, it recently emerged that the famous glass artist Dale Chihuly hasn’t actually blown glass for 27 years. He has assistants do the work for him. But one of the most valuable sources of ideas in the visual arts is the resistance of the medium. That’s why oil paintings look so different from watercolors. In principle you could make any mark in any medium; in practice the medium steers you. And if you’re no longer doing the work yourself, you stop learning from this.<br>例如，最近有消息称，著名玻璃艺术家戴尔・奇胡利（注：美国玻璃艺术家，以大型玻璃雕塑闻名）已经有 27 年没有亲手吹制玻璃了，所有工作都由助手完成。但在视觉艺术领域，创意最宝贵的来源之一，恰恰是 “媒介本身的局限性”。这就是油画与水彩画看起来截然不同的原因：理论上，你可以在任何媒介上留下任何痕迹；但实际上，媒介会反过来引导你的创作。而如果你不再亲手创作，就会失去从这种 “媒介引导” 中学习的机会。</p>
+<p>So if you want to beat those eminent enough to delegate, one way to do it is to take advantage of direct contact with the medium. In the arts it’s obvious how: blow your own glass, edit your own films, stage your own plays. And in the process pay close attention to accidents and to new ideas you have on the fly. This technique can be generalized to any sort of work: if you’re an outsider, don’t be ruled by plans. Planning is often just a weakness forced on those who delegate.<br>因此，若你想击败那些因知名而 “委派他人做事” 的人，方法之一就是利用 “与创作媒介直接接触” 的优势。在艺术领域，这一点很明确：自己吹制玻璃、自己剪辑电影、自己编排戏剧。在这个过程中，要密切关注意外情况，以及即兴产生的新想法。这种方法可以推广到任何领域：如果你是局外人，就不要被计划束缚。“做计划” 往往是那些需要委派他人的人，因自身局限而被迫采取的做法。</p>
+<p>Is there a general rule for finding problems best solved in one head? Well, you can manufacture them by taking any project usually done by multiple people and trying to do it all yourself. Wozniak’s work was a classic example: he did everything himself, hardware and software, and the result was miraculous. He claims not one bug was ever found in the Apple II, in either hardware or software.<br>有没有一个通用原则，能帮我们找到 “最好由一个人解决” 的问题？答案是，你可以将任何通常由多人完成的项目，尝试自己独立完成 —— 这样就能找到这类问题。沃兹尼亚克的工作就是经典案例：他独自一人完成了所有工作，包括硬件和软件设计，最终成果堪称奇迹。他声称，苹果 II 型电脑的硬件和软件中，从未发现过任何漏洞。</p>
+<p>Another way to find good problems to solve in one head is to focus on the grooves in the chocolate bar — the places where tasks are divided when they’re split between several people. If you want to beat delegation, focus on a vertical slice: for example, be both writer and editor, or both design buildings and construct them.<br>另一种找到 “适合独自解决的好问题” 的方法，是关注 “巧克力棒上的凹槽”—— 也就是多人协作时，任务被分割的节点。若你想击败 “委派模式”，可以专注于 “垂直领域的完整流程”：例如，既当作家又当编辑，或既设计建筑又负责施工。</p>
+<p>One especially good groove to span is the one between tools and things made with them. For example, programming languages and applications are usually written by different people, and this is responsible for a lot of the worst flaws in programming languages. I think every language should be designed simultaneously with a large application written in it, the way C was with Unix.<br>在所有 “需要跨越的凹槽” 中，“工具” 与 “用工具制作的产品” 之间的界限尤为关键。例如，编程语言和应用程序通常由不同的人开发，这正是许多编程语言存在严重缺陷的原因。我认为，每种编程语言在设计时，都应该同步用它来开发一个大型应用程序 —— 就像 C 语言与 Unix 操作系统同步开发那样。</p>
+<p>Techniques for competing with delegation translate well into business, because delegation is endemic there. Instead of avoiding it as a drawback of senility, many companies embrace it as a sign of maturity. In big companies software is often designed, implemented, and sold by three separate types of people. In startups one person may have to do all three. And though this feels stressful, it’s one reason startups win. The needs of customers and the means of satisfying them are all in one head.<br>与 “委派模式” 竞争的方法，在商业领域同样适用，因为 “委派” 在商业世界中极为普遍。许多公司非但没有将委派视为 “发展到一定阶段的弊端” 而规避，反而将其视为 “成熟的标志”。在大公司里，软件的设计、开发和销售，通常由三类不同的人负责；而在初创公司，一个人可能需要包揽这三项工作。尽管这会让人感到压力，但这正是初创公司能够胜出的原因之一 —— 因为客户的需求与满足需求的方法，都集中在同一个人的脑海里。</p>
+<h2 id="Focus"><a href="#Focus" class="headerlink" title="Focus"></a><strong>Focus</strong></h2><h2 id="专注"><a href="#专注" class="headerlink" title="专注"></a><strong>专注</strong></h2><p>The very skill of insiders can be a weakness. Once someone is good at something, they tend to spend all their time doing that. This kind of focus is very valuable, actually. Much of the skill of experts is the ability to ignore false trails. But focus has drawbacks: you don’t learn from other fields, and when a new approach arrives, you may be the last to notice.<br>局内人自身的专业技能，恰恰可能成为一种弱点。一个人一旦擅长某件事，往往会把所有时间都投入其中。事实上，这种专注本身极具价值 —— 专家的核心能力之一，就是能够忽略那些无关的 “岔路”。但专注也有弊端：你无法从其他领域汲取经验，而且当新的方法出现时，你可能会是最后一个察觉的人。</p>
+<p>For outsiders this translates into two ways to win. One is to work on a variety of things. Since you can’t derive as much benefit (yet) from a narrow focus, you may as well cast a wider net and derive what benefit you can from similarities between fields. Just as you can compete with delegation by working on larger vertical slices, you can compete with specialization by working on larger horizontal slices — by both writing and illustrating your book, for example.<br>对於局外人而言，这意味着有两种胜出路径。第一种是涉足多个领域。既然你暂时无法从 “窄领域专注” 中获得太多收益，不如扩大范围，从不同领域的共性中挖掘价值。就像你可以通过 “覆盖垂直领域全流程”（如前文所述）来对抗 “委派模式” 一样，你也可以通过 “覆盖水平领域多技能” 来对抗 “专业化”—— 例如，自己既写书又为书绘制插图。</p>
+<p>The second way to compete with focus is to see what focus overlooks. In particular, new things. So if you’re not good at anything yet, consider working on something so new that no one else is either. It won’t have any prestige yet, if no one is good at it, but you’ll have it all to yourself.<br>第二种对抗 “专注” 的方法，是关注专注所忽略的事物 —— 尤其是新事物。因此，如果你目前在任何领域都不算擅长，不妨考虑投身於一个足够新、以至於还没人擅长的领域。既然没人精通，这个领域暂时不会有什麼声望，但你能独享这片 “蓝海”。</p>
+<p>The potential of a new medium is usually underestimated, precisely because no one has yet explored its possibilities. Before Durer tried making engravings, no one took them very seriously. Engraving was for making little devotional images — basically fifteenth century baseball cards of saints. Trying to make masterpieces in this medium must have seemed to Durer’s contemporaries the way that, say, making masterpieces in comics might seem to the average person today.<br>新媒介的潜力往往被低估，原因很简单：还没人探索过它的可能性。在丢勒（注：文艺复兴时期德国艺术家）尝试制作版画之前，没人把版画当回事 —— 当时的版画只是用来制作小型宗教画像，本质上就像 15 世纪的 “圣徒棒球卡”。在丢勒的同时代人看来，试图用版画创作杰作，大概就像如今普通人看待 “用漫画创作杰作” 一样荒谬。</p>
+<p>In the computer world we get not new mediums but new platforms: the minicomputer, the microprocessor, the web-based application. At first they’re always dismissed as being unsuitable for real work. And yet someone always decides to try anyway, and it turns out you can do more than anyone expected. So in the future when you hear people say of a new platform: yeah, it’s popular and cheap, but not ready yet for real work, jump on it.<br>在计算机领域，我们遇到的不是新媒介，而是新平台：小型计算机、微处理器、基於网页的应用程序。起初，这些平台总会被贬低为 “不适合正经工作”。但总会有人决定放手一试，结果往往是 —— 人们能用它做到远超预期的事。因此，未来当你听到有人评价某个新平台：“嗯，它确实流行又便宜，但还没准备好用于正经工作” 时，赶紧抓住这个机会。</p>
+<p>As well as being more comfortable working on established lines, insiders generally have a vested interest in perpetuating them. The professor who made his reputation by discovering some new idea is not likely to be the one to discover its replacement. This is particularly true with companies, who have not only skill and pride anchoring them to the status quo, but money as well. The Achilles heel of successful companies is their inability to cannibalize themselves. Many innovations consist of replacing something with a cheaper alternative, and companies just don’t want to see a path whose immediate effect is to cut an existing source of revenue.<br>除了更习惯在成熟领域工作，局内人通常还存在 “维持现状的既得利益”。一个靠某个新理论成名的教授，不太可能成为推翻这个理论的人。企业更是如此 —— 它们不仅因专业技能和荣誉感被束缚在现状中，还被金钱利益捆绑。成功企业的致命弱点，就是无法 “自我颠覆”。许多创新本质上是用更廉价的方案替代现有产品，而企业往往不愿接受这种 “会直接削减现有收入” 的路径。</p>
+<p>So if you’re an outsider you should actively seek out contrarian projects. Instead of working on things the eminent have made prestigious, work on things that could steal that prestige.<br>因此，如果你是局外人，应当主动寻找 “反主流项目”。不要去做那些已被知名人士赋予声望的事，而要去做那些有可能 “夺走这些声望” 的事。</p>
+<p>The really juicy new approaches are not the ones insiders reject as impossible, but those they ignore as undignified. For example, after Wozniak designed the Apple II he offered it first to his employer, HP. They passed. One of the reasons was that, to save money, he’d designed the Apple II to use a TV as a monitor, and HP felt they couldn’t produce anything so declasse.<br>真正有价值的新方法，不是那些被局内人斥为 “不可能” 的方案，而是那些被他们视为 “不够体面” 而忽略的方案。例如，沃兹尼亚克设计出苹果 II 型电脑后，首先将其推荐给了自己的雇主惠普，但惠普拒绝了。原因之一是，为了节省成本，沃兹尼亚克设计的苹果 II 型用电视机作为显示器，而惠普认为自己不能生产如此 “低端” 的产品。</p>
+<h2 id="Less"><a href="#Less" class="headerlink" title="Less"></a><strong>Less</strong></h2><h2 id="精简"><a href="#精简" class="headerlink" title="精简"></a><strong>精简</strong></h2><p>Wozniak used a TV as a monitor for the simple reason that he couldn’t afford a monitor. Outsiders are not merely free but compelled to make things that are cheap and lightweight. And both are good bets for growth: cheap things spread faster, and lightweight things evolve faster.<br>沃兹尼亚克用电视机当显示器，原因很简单 —— 他买不起专用显示器。局外人不仅 “可以” 做廉价、轻量化的产品，更是 “不得不” 这样做。而这两点恰恰是成长的绝佳优势：廉价的产品传播更快，轻量化的产品迭代更快。</p>
+<p>The eminent, on the other hand, are almost forced to work on a large scale. Instead of garden sheds they must design huge art museums. One reason they work on big things is that they can: like our hypothetical novelist, they’re flattered by such opportunities. They also know that big projects will by their sheer bulk impress the audience. A garden shed, however lovely, would be easy to ignore; a few might even snicker at it. You can’t snicker at a giant museum, no matter how much you dislike it. And finally, there are all those people the eminent have working for them; they have to choose projects that can keep them all busy.<br>反观知名人士，他们几乎被迫要做 “大规模项目”。他们不能设计花园小屋，而必须设计大型艺术博物馆。原因之一是 “他们有能力做”：就像我们之前假设的那位小说家一样，他们会被这样的机会打动。同时他们也清楚，大型项目仅凭体量就能给观众留下深刻印象 —— 一座再精致的花园小屋也容易被忽视，甚至可能有人会嘲笑它；但无论你多不喜欢一座巨型博物馆，都不会嘲笑它。最後，知名人士手下有许多员工，他们必须选择能让所有人都有事可做的大项目。</p>
+<p>Outsiders are free of all this. They can work on small things, and there’s something very pleasing about small things. Small things can be perfect; big ones always have something wrong with them. But there’s a magic in small things that goes beyond such rational explanations. All kids know it. Small things have more personality.<br>局外人则不受这些束缚。他们可以专注於小项目，而小项目本身就有一种独特的魅力。小事物可以做到完美，大事物却总有瑕疵。而且小事物中蕴含着一种难以用理性解释的魔力 —— 所有孩子都懂这一点：小事物更有 “个性”。</p>
+<p>Plus making them is more fun. You can do what you want; you don’t have to satisfy committees. And perhaps most important, small things can be done fast. The prospect of seeing the finished project hangs in the air like the smell of dinner cooking. If you work fast, maybe you could have it done tonight.<br>此外，做小项目更有乐趣。你可以随心所欲，不必去满足委员会的要求。或许最重要的是，小项目能快速完成。想到很快就能看到成品，那种期待感就像空气中弥漫的晚餐香味 —— 只要你加快速度，或许今晚就能完成。</p>
+<p>Working on small things is also a good way to learn. The most important kinds of learning happen one project at a time. (“Next time, I won’t…”) The faster you cycle through projects, the faster you’ll evolve.<br>做小项目也是学习的好方法。最重要的学习往往来自一个个具体项目的实践（比如总结 “下次不会再犯的错”）。你完成项目的周期越快，成长就越快。</p>
+<p>Plain materials have a charm like small scale. And in addition there’s the challenge of making do with less. Every designer’s ears perk up at the mention of that game, because it’s a game you can’t lose. Like the JV playing the varsity, if you even tie, you win. So paradoxically there are cases where fewer resources yield better results, because the designers’ pleasure at their own ingenuity more than compensates. [5]<br>普通材料也拥有类似 “小体量” 的魅力。此外，“用有限资源完成任务” 本身就是一种挑战。所有设计师一听到这种挑战，都会立刻提起兴趣 —— 因为这是一场 “稳赚不赔的游戏”。就像校队二队对抗一队，哪怕打平，你也算赢了。因此，看似矛盾的是：在某些情况下，资源越少，成果反而越好 —— 因为设计师从 “发挥巧思” 中获得的乐趣，足以弥补资源的不足。[5]</p>
+<p>So if you’re an outsider, take advantage of your ability to make small and inexpensive things. Cultivate the pleasure and simplicity of that kind of work; one day you’ll miss it.<br>因此，如果你是局外人，一定要利用好自己 “能做小而廉价的事物” 的优势。享受这种工作带来的乐趣与纯粹 —— 总有一天，你会怀念这种感觉。</p>
+<h2 id="Responsibility"><a href="#Responsibility" class="headerlink" title="Responsibility"></a><strong>Responsibility</strong></h2><h2 id="责任"><a href="#责任" class="headerlink" title="责任"></a><strong>责任</strong></h2><p>When you’re old and eminent, what will you miss about being young and obscure? What people seem to miss most is the lack of responsibilities.<br>当你年老成名后，会怀念年轻时默默无闻的什麼？人们最怀念的，似乎是 “没有那麼多责任” 的状态。</p>
+<p>Responsibility is an occupational disease of eminence. In principle you could avoid it, just as in principle you could avoid getting fat as you get old, but few do. I sometimes suspect that responsibility is a trap and that the most virtuous route would be to shirk it, but regardless it’s certainly constraining.<br>责任是成名带来的 “职业病”。理论上，你可以避免它，就像理论上你可以避免年老发胖一样，但很少有人能做到。有时我会怀疑，责任其实是一个陷阱，而 “逃避责任” 反而是更明智的选择 —— 但无论如何，责任无疑会带来束缚。</p>
+<p>When you’re an outsider you’re constrained too, of course. You’re short of money, for example. But that constrains you in different ways. How does responsibility constrain you? The worst thing is that it allows you not to focus on real work. Just as the most dangerous forms of procrastination are those that seem like work, the danger of responsibilities is not just that they can consume a whole day, but that they can do it without setting off the kind of alarms you’d set off if you spent a whole day sitting on a park bench.<br>当然，局外人也会面临束缚，比如缺钱。但这种束缚与责任带来的束缚截然不同。责任是如何束缚人的？最糟糕的一点是，它会让你 “无法专注於真正的工作”。就像最危险的拖延，是那些 “看似在工作” 的拖延一样 —— 责任的危险之处不仅在於它会占据你一整天的时间，更在於它不会像 “你在公园长椅上坐一整天” 那样，让你产生 “自己在浪费时间” 的警觉。</p>
+<p>A lot of the pain of being an outsider is being aware of one’s own procrastination. But this is actually a good thing. You’re at least close enough to work that the smell of it makes you hungry.<br>局外人的许多痛苦，来自 “意识到自己在拖延”。但这其实是件好事 —— 至少你离 “真正的工作” 足够近，能被它的 “吸引力” 勾起渴望。</p>
+<p>As an outsider, you’re just one step away from getting things done. A huge step, admittedly, and one that most people never seem to make, but only one step. If you can summon up the energy to get started, you can work on projects with an intensity (in both senses) that few insiders can match. For insiders work turns into a duty, laden with responsibilities and expectations. It’s never so pure as it was when they were young.<br>作为局外人，你离 “完成事情” 只有一步之遥。诚然，这是一大步，而且大多数人似乎永远跨不过去，但终究只是一步。只要你能鼓起勇气开始，就能以一种 “局内人难以企及的强度” 投入项目（这里的 “强度” 既指专注度，也指投入的精力）。对局内人而言，工作已经变成了一种责任，背负着各种义务和期望，再也没有年轻时那种纯粹的热爱了。</p>
+<p>Work like a dog being taken for a walk, instead of an ox being yoked to the plow. That’s what they miss.<br>像被牵去散步的狗一样享受工作，而不是像被套上犁的牛一样被迫劳作 —— 这正是他们所怀念的状态。</p>
+<h2 id="Audience"><a href="#Audience" class="headerlink" title="Audience"></a><strong>Audience</strong></h2><h2 id="受众"><a href="#受众" class="headerlink" title="受众"></a><strong>受众</strong></h2><p>A lot of outsiders make the mistake of doing the opposite; they admire the eminent so much that they copy even their flaws. Copying is a good way to learn, but copy the right things. When I was in college I imitated the pompous diction of famous professors. But this wasn’t what made them eminent — it was more a flaw their eminence had allowed them to sink into. Imitating it was like pretending to have gout in order to seem rich.<br>许多局外人会犯一个相反的错误：他们过分崇拜知名人士，甚至会模仿对方的缺点。模仿确实是学习的好方法，但要模仿 “对的东西”。我上大学时，曾模仿著名教授那种浮夸的措辞，但这并非他们成名的原因 —— 这种措辞更像是 “成名后被纵容出的缺点”。模仿这种缺点，就像为了显得富有而假装患痛风一样可笑。</p>
+<p>Half the distinguishing qualities of the eminent are actually disadvantages. Imitating these is not only a waste of time, but will make you seem a fool to your models, who are often well aware of it.<br>知名人士身上，有一半的 “独特特质” 其实是缺点。模仿这些特质不仅浪费时间，还会让你在 “模仿对象” 眼中显得愚蠢 —— 而他们往往很清楚自己的这些缺点。</p>
+<p>What are the genuine advantages of being an insider? The greatest is an audience. It often seems to outsiders that the great advantage of insiders is money — that they have the resources to do what they want. But so do people who inherit money, and that doesn’t seem to help, not as much as an audience. It’s good for morale to know people want to see what you’re making; it draws work out of you.<br>局内人真正的优势是什麼？最大的优势是 “拥有受众”。在局外人看来，局内人的最大优势似乎是金钱 —— 他们有资源去做自己想做的事。但继承遗产的人也有钱，却没因此获得太多帮助，远不如 “拥有受众” 的作用大。知道有人期待看你创作的东西，这对士气是极大的鼓舞，能推动你产出更多作品。</p>
+<p>If I’m right that the defining advantage of insiders is an audience, then we live in exciting times, because just in the last ten years the Internet has made audiences a lot more liquid. Outsiders don’t have to content themselves anymore with a proxy audience of a few smart friends. Now, thanks to the Internet, they can start to grow themselves actual audiences. This is great news for the marginal, who retain the advantages of outsiders while increasingly being able to siphon off what had till recently been the prerogative of the elite.<br>如果我没说错，局内人的核心优势是 “受众”，那麼我们正生活在一个令人兴奋的时代 —— 因为在过去十年里，互联网让 “受众” 变得极具流动性。如今，局外人不必再满足於 “只有几个聪明朋友当‘代理受众’”；借助互联网，他们可以自己培养真正的受众。这对 “边缘群体” 来说是个好消息：他们既能保留局外人的优势，又能逐渐获得那些直到最近仍被精英阶层垄断的资源（指受众）。</p>
+<p>Though the Web has been around for more than ten years, I think we’re just beginning to see its democratizing effects. Outsiders are still learning how to steal audiences. But more importantly, audiences are still learning how to be stolen — they’re still just beginning to realize how much deeper bloggers can dig than journalists, how much more interesting a democratic news site can be than a front page controlled by editors, and how much funnier a bunch of kids with webcams can be than mass-produced sitcoms.<br>尽管互联网已经存在了十多年，但我认为它的 “民主化效应” 才刚刚开始显现。局外人仍在学习如何 “争夺受众”，但更重要的是，受众也在学习 “如何被争夺”—— 他们才刚刚开始意识到：博主能比记者挖掘更深入的内容；民主型新闻网站能比编辑掌控的头版更有趣；一群拿着摄像头的年轻人，能比批量生产的情景喜剧更搞笑。</p>
+<p>The big media companies shouldn’t worry that people will post their copyrighted material on YouTube. They should worry that people will post their own stuff on YouTube, and audiences will watch that instead.<br>大型媒体公司不该担心有人会把他们的版权内容发到 YouTube 上，而该担心人们会把自己创作的内容发到 YouTube 上 —— 观众会转而看这些内容。</p>
+<h2 id="Hacking"><a href="#Hacking" class="headerlink" title="Hacking"></a><strong>Hacking</strong></h2><h2 id="即兴创作（“拼凑式创新”）"><a href="#即兴创作（“拼凑式创新”）" class="headerlink" title="即兴创作（“拼凑式创新”）"></a><strong>即兴创作（“拼凑式创新”）</strong></h2><p>If I had to condense the power of the marginal into one sentence it would be: just try hacking something together. That phrase draws in most threads I’ve mentioned here. Hacking something together means deciding what to do as you’re doing it, not a subordinate executing the vision of his boss. It implies the result won’t be pretty, because it will be made quickly out of inadequate materials. It may work, but it won’t be the sort of thing the eminent would want to put their name on. Something hacked together means something that barely solves the problem, or maybe doesn’t solve the problem at all, but another you discovered en route. But that’s ok, because the main value of that initial version is not the thing itself, but what it leads to. Insiders who daren’t walk through the mud in their nice clothes will never make it to the solid ground on the other side.<br>若要把 “边缘的力量” 浓缩成一句话，那就是：试着即兴拼凑点东西出来。这句话能串联起我之前提到的大部分观点。“即兴拼凑” 指的是边做边确定方向，而非下属机械执行老板的构想。这种方式的结果往往不 “精致”—— 因为它是用不够完善的材料快速做成的。它可能管用，但绝不会是那种知名人士愿意署名的作品。“拼凑出来的东西”，要么勉强能解决问题，要么根本没解决原本的问题，却在过程中意外解决了另一个问题。但这没关系，因为最初版本的核心价值不在于它本身，而在于它能引出什么。那些穿着体面、不愿踩进泥泞的局内人，永远到不了对岸坚实的土地。</p>
+<p>The word “try” is an especially valuable component. I disagree here with Yoda, who said there is no try. There is try. It implies there’s no punishment if you fail. You’re driven by curiosity instead of duty. That means the wind of procrastination will be in your favor: instead of avoiding this work, this will be what you do as a way of avoiding other work. And when you do it, you’ll be in a better mood. The more the work depends on imagination, the more that matters, because most people have more ideas when they’re happy.<br>“试着” 这个词尤为关键。我不太认同尤达（《星球大战》角色）所说的 “没有‘试着’，只有‘做到’或‘没做到’”——“试着做” 是存在的。它意味着即使失败，也不会有惩罚；你做事的动力是好奇心，而非责任感。这会让 “拖延” 反而对你有利：你不会逃避这件事，反而会把做它当作逃避其他事的方式。而且做的时候，你的心情会更轻松。工作对想象力的依赖程度越高，心情的影响就越大 —— 因为大多数人在开心时，能产生更多想法。</p>
+<p>If I could go back and redo my twenties, that would be one thing I’d do more of: just try hacking things together. Like many people that age, I spent a lot of time worrying about what I should do. I also spent some time trying to build stuff. I should have spent less time worrying and more time building. If you’re not sure what to do, make something.<br>如果能回到二十多岁重新来过，我一定会多做一件事：试着即兴拼凑些东西。和很多同龄人一样，那时的我总在纠结 “该做什么”，虽然也花了些时间尝试创作，但其实应该少些焦虑、多些行动。如果你不确定该做什么，那就动手做点东西出来。</p>
+<p>Raymond Chandler’s advice to thriller writers was “When in doubt, have a man come through a door with a gun in his hand.” He followed that advice. Judging from his books, he was often in doubt. But though the result is occasionally cheesy, it’s never boring. In life, as in books, action is underrated.<br>雷蒙德・钱德勒（美国硬汉派侦探小说作家）给惊悚小说作家的建议是：“不确定怎么写时，就让一个男人举着枪从门里走进来。” 他自己也践行了这条建议。从他的作品来看，他确实经常 “不确定”。虽然这样写出来的内容有时显得俗套，但绝不会无聊。无论是生活还是写作，“行动” 的价值都被低估了。</p>
+<p>Fortunately the number of things you can just hack together keeps increasing. People fifty years ago would be astonished that one could just hack together a movie, for example. Now you can even hack together distribution. Just make stuff and put it online.<br>幸运的是，如今能 “即兴拼凑” 的事物越来越多。比如，五十年前的人绝对想不到，普通人也能 “拼凑出一部电影”；现在，连 “传播渠道” 都能即兴搭建 —— 只要做出东西，放到网上就行。</p>
+<h2 id="Inappropriate"><a href="#Inappropriate" class="headerlink" title="Inappropriate"></a><strong>Inappropriate</strong></h2><h2 id="“不合时宜”"><a href="#“不合时宜”" class="headerlink" title="“不合时宜”"></a><strong>“不合时宜”</strong></h2><p>If you really want to score big, the place to focus is the margin of the margin: the territories only recently captured from the insiders. That’s where you’ll find the juiciest projects still undone, either because they seemed too risky, or simply because there were too few insiders to explore everything.<br>如果真想取得重大突破，应该关注 “边缘的边缘”—— 那些刚刚从局内人手中 “夺取” 的领域。在那里，你能找到最有价值且尚未被开发的项目：要么是因为局内人觉得风险太高，要么就是因为局内人数量太少，无法探索所有可能性。</p>
+<p>This is why I spend most of my time writing essays lately. The writing of essays used to be limited to those who could get them published. In principle you could have written them and just shown them to your friends; in practice that didn’t work. [6] An essayist needs the resistance of an audience, just as an engraver needs the resistance of the plate.<br>这就是我最近大部分时间都在写随笔的原因。过去，随笔写作只局限于那些能发表文章的人。理论上，你可以写完随笔只给朋友看，但实际上这种方式行不通。[6] 随笔作家需要受众的 “反馈压力”，就像版画家需要金属板的 “阻力” 一样（注：版画家需在金属板上刻制图案，金属板的硬度会形成创作阻力，反而能激发灵感）。</p>
+<p>Up till a few years ago, writing essays was the ultimate insider’s game. Domain experts were allowed to publish essays about their field, but the pool allowed to write on general topics was about eight people who went to the right parties in New York. Now the reconquista has overrun this territory, and, not surprisingly, found it sparsely cultivated. There are so many essays yet unwritten. They tend to be the naughtier ones; the insiders have pretty much exhausted the motherhood and apple pie topics.<br>就在几年前，写随笔还是 “终极局内人游戏”。只有领域专家能发表本领域的随笔，而能写通用话题随笔的人，大概只有纽约那些能参加 “高端派对” 的八个人。如今，“重新征服” 这片领域的人越来越多，不出所料，大家发现这里几乎没被开发过 —— 还有太多随笔没被写出来，而且大多是 “更大胆、更出格” 的主题；那些 “歌颂母爱、赞美苹果派” 式的安全话题，早就被局内人写遍了。</p>
+<p>This leads to my final suggestion: a technique for determining when you’re on the right track. You’re on the right track when people complain that you’re unqualified, or that you’ve done something inappropriate. If people are complaining, that means you’re doing something rather than sitting around, which is the first step. And if they’re driven to such empty forms of complaint, that means you’ve probably done something good.<br>这引出我的最后一条建议：一个判断自己是否走在正确道路上的方法。当人们抱怨你 “不够格”，或指责你做的事 “不合时宜” 时，你就走对了。有人抱怨，说明你在行动，而不是无所事事 —— 这本身就是第一步；如果他们只能用这种空洞的理由指责你，说明你很可能做出了有价值的事。</p>
+<p>If you make something and people complain that it doesn’t work, that’s a problem. But if the worst thing they can hit you with is your own status as an outsider, that implies that in every other respect you’ve succeeded. Pointing out that someone is unqualified is as desperate as resorting to racial slurs. It’s just a legitimate sounding way of saying: we don’t like your type around here.<br>如果你做了某件事，别人抱怨 “它不管用”，那确实是个问题；但如果他们能用来攻击你的 “最有力武器”，只是你 “局外人” 的身份，那就说明你在其他所有方面都成功了。指责别人 “不够格”，和使用种族歧视言论一样，都是黔驴技穷的表现 —— 它只是一种听起来 “合理” 的说法，本质上是在说：“我们不喜欢你这种人在这里。”</p>
+<p>But the best thing of all is when people call what you’re doing inappropriate. I’ve been hearing this word all my life and I only recently realized that it is, in fact, the sound of the homing beacon. “Inappropriate” is the null criticism. It’s merely the adjective form of “I don’t like it.”<br>但最棒的情况，是别人说你做的事 “不合时宜”。我这辈子总听到这个词，直到最近才意识到，它其实是 “指路明灯” 的信号。“不合时宜” 是一种 “无效批评”，它只是 “我不喜欢” 的形容词形式而已。</p>
+<p>So that, I think, should be the highest goal for the marginal. Be inappropriate. When you hear people saying that, you’re golden. And they, incidentally, are busted.<br>因此，我认为 “边缘群体” 的最高目标应该是：做 “不合时宜” 的事。当你听到别人这么说你时，就说明你走对了；而他们，顺便说一句，已经输了。</p>
+<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a><strong>Notes</strong></h2><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a><strong>注释</strong></h2><p>[1] The facts about Apple’s early history are from an interview with Steve Wozniak in Jessica Livingston’s Founders at Work.<br>[1] 关于苹果早期历史的事实，源自杰西卡・利文斯顿所著《创业者访谈录》（Founders at Work）中对史蒂夫・沃兹尼亚克的采访。</p>
+<p>[2] As usual the popular image is several decades behind reality. Now the misunderstood artist is not a chain-smoking drunk who pours his soul into big, messy canvases that philistines see and say “that’s not art” because it isn’t a picture of anything. The philistines have now been trained that anything hung on a wall is art. Now the misunderstood artist is a coffee-drinking vegan cartoonist whose work they see and say “that’s not art” because it looks like stuff they’ve seen in the Sunday paper.<br>[2] 通常，大众对 “艺术家” 的印象会落后现实几十年。如今，“不被理解的艺术家” 不再是 “抽着烟、喝着酒，把灵魂倾注在杂乱的大画布上，却被俗人指责‘这不是艺术’（因为画里没有具体形象）” 的人 —— 现在的俗人已经被 “训练” 得认为 “挂在墙上的都是艺术”。如今，“不被理解的艺术家” 是 “喝着咖啡的素食主义漫画家”，俗人看到他们的作品会说 “这不是艺术”，因为它看起来像周日报纸上的漫画。</p>
+<p>[3] In fact this would do fairly well as a definition of politics: what determines rank in the absence of objective tests.<br>[3] 事实上，这可以作为 “办公室政治” 的一个不错定义：在缺乏客观标准的情况下，决定一个人地位的东西。</p>
+<p>[4] In high school you’re led to believe your whole future depends on where you go to college, but it turns out only to buy you a couple years. By your mid-twenties the people worth impressing already judge you more by what you’ve done than where you went to school.<br>[4] 高中时，有人会让你相信 “未来全看你考上哪所大学”，但事实是，大学学历只能给你 “两年优势”。到二十五六岁时，那些值得你去 “打动” 的人，评判你的标准会变成 “你做过什么”，而非 “你毕业于哪所学校”。</p>
+<p>[5] Managers are presumably wondering, how can I make this miracle happen? How can I make the people working for me do more with less? Unfortunately the constraint probably has to be self-imposed. If you’re expected to do more with less, then you’re being starved, not eating virtuously.<br>[5] 管理者可能会想：“我怎么才能创造这种奇迹？怎么让下属用更少的资源做更多事？” 遗憾的是，这种 “资源约束” 很可能需要是 “自我施加的”。如果是别人要求你 “用更少资源做更多事”，那不是 “主动精简”，而是 “被剥夺资源”。</p>
+<p>[6] Without the prospect of publication, the closest most people come to writing essays is to write in a journal. I find I never get as deeply into subjects as I do in proper essays. As the name implies, you don’t go back and rewrite journal entries over and over for two weeks.<br>[6] 没有发表的可能时，大多数人最接近 “写随笔” 的行为是写日记。但我发现，写日记时我永远无法像写正式随笔那样深入探讨一个话题 —— 顾名思义，你不会花两周时间反复修改一篇日记。</p>
+<p>Thanks to Sam Altman, Trevor Blackwell, Paul Buchheit, Sarah Harlin, Jessica Livingston, Jackie McDonough, Robert Morris, Olin Shivers, and Chris Small for reading drafts of this, and to Chris Small and Chad Fowler for inviting me to speak.<br>感谢山姆・奥特曼、特雷弗・布莱克韦尔、保罗・布赫海特、萨拉・哈林、杰西卡・利文斯顿、杰姬・麦克多诺、罗伯特・莫里斯、奥林・希弗斯和克里斯・斯莫尔阅读本文初稿，也感谢克里斯・斯莫尔和查德・福勒邀请我进行相关演讲。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>the_power_of_the_marginal</div>
+      <div>https://hokkaidornis.github.io/2025/09/09/the-power-of-the-marginal/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年9月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/09/why-startups-condense-in-america/" title="why_startups_condense_in_america">
+                        <span class="hidden-mobile">why_startups_condense_in_america</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
