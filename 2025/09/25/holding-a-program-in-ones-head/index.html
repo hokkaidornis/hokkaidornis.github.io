@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Holding a Program in One’s Head在脑中构建程序原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;head.html August 2007 A good programmer working intensively on his own code can hold it in his mind the way a mathematician holds a p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在脑中构建程序">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/09/25/holding-a-program-in-ones-head/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Holding a Program in One’s Head在脑中构建程序原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;head.html August 2007 A good programmer working intensively on his own code can hold it in his mind the way a mathematician holds a p">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-09-25T01:45:13.000Z">
+<meta property="article:modified_time" content="2025-09-25T01:51:16.526Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>在脑中构建程序 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="在脑中构建程序"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-25 09:45" pubdate>
+          2025年9月25日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">在脑中构建程序</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Holding-a-Program-in-One’s-Head"><a href="#Holding-a-Program-in-One’s-Head" class="headerlink" title="Holding a Program in One’s Head"></a>Holding a Program in One’s Head</h1><h1 id="在脑中构建程序"><a href="#在脑中构建程序" class="headerlink" title="在脑中构建程序"></a>在脑中构建程序</h1><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/head.html">https://paulgraham.com/head.html</a></p>
+<p>August 2007</p>
+<p>A good programmer working intensively on his own code can hold it in his mind the way a mathematician holds a problem he’s working on. Mathematicians don’t answer questions by working them out on paper the way schoolchildren are taught to. They do more in their heads: they try to understand a problem space well enough that they can walk around it the way you can walk around the memory of the house you grew up in. At its best programming is the same. You hold the whole program in your head, and you can manipulate it at will.一位专注于自己代码的优秀程序员，能像数学家牢记正在研究的问题那样，将程序记在脑中。数学家不会像学生被教的那样，通过在纸上演算来解答问题。他们更多的思考是在脑中进行的：他们会努力充分理解一个问题域，以至于能在其中 “穿梭自如”，就像你能在对自己成长的房子的记忆中 “漫步” 一样。最理想的编程状态亦是如此 —— 你将整个程序记在脑中，并且能随意对其进行调整。</p>
+<p>That’s particularly valuable at the start of a project, because initially the most important thing is to be able to change what you’re doing. Not just to solve the problem in a different way, but to change the problem you’re solving.这在项目初期尤为重要，因为项目起步阶段，最重要的能力是能够调整自己的工作方向。这不仅指用不同方法解决现有问题，还包括调整你正在解决的问题本身。</p>
+<p>Your code is your understanding of the problem you’re exploring. So it’s only when you have your code in your head that you really understand the problem.你的代码，就是你对正在探索的问题的理解。因此，只有当你能将代码记在脑中时，你才真正理解了这个问题。</p>
+<p>It’s not easy to get a program into your head. If you leave a project for a few months, it can take days to really understand it again when you return to it. Even when you’re actively working on a program it can take half an hour to load into your head when you start work each day. And that’s in the best case. Ordinary programmers working in typical office conditions never enter this mode. Or to put it more dramatically, ordinary programmers working in typical office conditions never really understand the problems they’re solving.将程序记在脑中并非易事。若你搁置一个项目数月，当你重新接手时，可能需要好几天才能再次真正理解它。即便你正在积极开发某个程序，每天开始工作时，也可能需要半小时才能将其 “载入” 脑中 —— 而这已是最佳情况。在常规办公环境中工作的普通程序员，从未进入过这种状态。更夸张地说，在常规办公环境中工作的普通程序员，从未真正理解过他们正在解决的问题。</p>
+<p>Even the best programmers don’t always have the whole program they’re working on loaded into their heads. But there are things you can do to help:即便是最优秀的程序员，也并非总能将正在开发的整个程序 “载入” 脑中。但你可以通过一些方法来提供帮助：</p>
+<p>Avoid distractions. Distractions are bad for many types of work, but especially bad for programming, because programmers tend to operate at the limit of the detail they can handle.避免分心。分心对多种工作都不利，但对编程尤其有害 —— 因为程序员的工作往往需要处理大量细节，且已接近其能力极限。</p>
+<p>The danger of a distraction depends not on how long it is, but on how much it scrambles your brain. A programmer can leave the office and go and get a sandwich without losing the code in his head. But the wrong kind of interruption can wipe your brain in 30 seconds.分心的危害不在于持续时间长短，而在于它会在多大程度上扰乱你的思绪。程序员离开办公室去买个三明治，脑中的代码可能不会丢失；但不当的干扰，却能在 30 秒内让你脑中的代码 “清零”。</p>
+<p>Oddly enough, scheduled distractions may be worse than unscheduled ones. If you know you have a meeting in an hour, you don’t even start working on something hard.奇怪的是，计划内的分心可能比突发分心更糟糕。若你知道一小时后要开会，你甚至不会开始着手处理有难度的工作。</p>
+<p>Work in long stretches. Since there’s a fixed cost each time you start working on a program, it’s more efficient to work in a few long sessions than many short ones. There will of course come a point where you get stupid because you’re tired. This varies from person to person. I’ve heard of people hacking for 36 hours straight, but the most I’ve ever been able to manage is about 18, and I work best in chunks of no more than 12.长时间连贯工作。由于每次开始处理程序都需要付出 “固定成本”（即进入状态的时间），因此进行几次长时间工作，比多次短时间工作效率更高。当然，你会因疲劳而进入 “思维迟钝” 的状态，这因人而异。我听说有人曾连续编程 36 小时，但我自己最多只能坚持约 18 小时，且工作效率最高的时间段通常不超过 12 小时。</p>
+<p>The optimum is not the limit you can physically endure. There’s an advantage as well as a cost of breaking up a project. Sometimes when you return to a problem after a rest, you find your unconscious mind has left an answer waiting for you.最佳工作时长并非你身体能承受的极限。中断项目既有成本，也有好处：有时休息后重新面对问题，你会发现潜意识早已为你准备好了答案。</p>
+<p>Use succinct languages. More powerful programming languages make programs shorter. And programmers seem to think of programs at least partially in the language they’re using to write them. The more succinct the language, the shorter the program, and the easier it is to load and keep in your head.使用简洁的编程语言。功能更强大的编程语言能让程序更简短，而程序员对程序的思考，至少在一定程度上是用他们编写程序时所用的语言进行的。语言越简洁，程序就越短，也就越容易 “载入” 并记在脑中。</p>
+<p>You can magnify the effect of a powerful language by using a style called bottom-up programming, where you write programs in multiple layers, the lower ones acting as programming languages for those above. If you do this right, you only have to keep the topmost layer in your head.通过 “自底向上编程” 的方式，你可以放大强大编程语言的优势：这种编程方式会将程序分为多个层级编写，底层代码会成为上层代码的 “编程语言”。若能正确使用这种方法，你只需将最上层的代码记在脑中即可。</p>
+<p>Keep rewriting your program. Rewriting a program often yields a cleaner design. But it would have advantages even if it didn’t: you have to understand a program completely to rewrite it, so there is no better way to get one loaded into your head.反复重写程序。重写程序通常能带来更简洁的设计，但即便没有这个好处，重写本身也有价值：要重写程序，你必须完全理解它，因此，没有比这更好的将程序 “载入” 脑中的方法了。</p>
+<p>Write rereadable code. All programmers know it’s good to write readable code. But you yourself are the most important reader. Especially in the beginning; a prototype is a conversation with yourself. And when writing for yourself you have different priorities. If you’re writing for other people, you may not want to make code too dense. Some parts of a program may be easiest to read if you spread things out, like an introductory textbook. Whereas if you’re writing code to make it easy to reload into your head, it may be best to go for brevity.编写易重读的代码。所有程序员都知道，编写易读的代码很重要，但你自己才是最重要的读者。尤其是在项目初期：原型本质上是你与自己的 “对话”。为自己写代码时，你的优先级会有所不同：若为他人写代码，你可能不会让代码过于紧凑，某些部分像入门教材那样铺展开来，或许最易阅读；但若是为了方便自己日后将代码重新 “载入” 脑中，那么代码简洁凝练可能是最佳选择。</p>
+<p>Work in small groups. When you manipulate a program in your head, your vision tends to stop at the edge of the code you own. Other parts you don’t understand as well, and more importantly, can’t take liberties with. So the smaller the number of programmers, the more completely a project can mutate. If there’s just one programmer, as there often is at first, you can do all-encompassing redesigns.以小团队形式工作。当你在脑中调整程序时，你的 “视野” 往往局限在自己负责的代码范围内。对于其他部分，你不仅理解不深，更重要的是无法随意修改。因此，团队中的程序员越少，项目就越能进行彻底的调整。若团队中只有一名程序员（项目初期常是如此），你便能对项目进行全面的重新设计。</p>
+<p>Don’t have multiple people editing the same piece of code. You never understand other people’s code as well as your own. No matter how thoroughly you’ve read it, you’ve only read it, not written it. So if a piece of code is written by multiple authors, none of them understand it as well as a single author would.不要让多人编辑同一段代码。你对他人代码的理解，永远无法达到对自己代码的程度 —— 无论你读得多透彻，你也只是 “读” 过，而非 “写” 过。因此，若一段代码由多人编写，没人能像单人编写时那样完全理解它。</p>
+<p>And of course you can’t safely redesign something other people are working on. It’s not just that you’d have to ask permission. You don’t even let yourself think of such things. Redesigning code with several authors is like changing laws; redesigning code you alone control is like seeing the other interpretation of an ambiguous image.当然，你无法安全地重新设计他人正在处理的代码。这不仅是因为你需要获得许可，更因为你甚至不会让自己产生这样的想法。重新设计多人编写的代码，如同修改法律般复杂；而重新设计由你独自掌控的代码，则像看懂一幅歧义图像的另一种解读般轻松。</p>
+<p>If you want to put several people to work on a project, divide it into components and give each to one person.若你想让多人参与一个项目，应将项目拆分为多个组件，每个组件交给一名成员负责。</p>
+<p>Start small. A program gets easier to hold in your head as you become familiar with it. You can start to treat parts as black boxes once you feel confident you’ve fully explored them. But when you first start working on a project, you’re forced to see everything. If you start with too big a problem, you may never quite be able to encompass it. So if you need to write a big, complex program, the best way to begin may not be to write a spec for it, but to write a prototype that solves a subset of the problem. Whatever the advantages of planning, they’re often outweighed by the advantages of being able to keep a program in your head.从小项目起步。随着你对程序的熟悉，将其记在脑中会变得越来越容易 —— 当你确信已充分研究过某些部分后，便可将它们视为 “黑箱”（无需关注内部细节）。但项目初期，你必须全面了解所有内容。若一开始就面对过大的问题，你可能永远无法完全掌握它。因此，若你需要编写一个庞大、复杂的程序，最佳起点或许不是撰写需求规格说明书，而是先编写一个能解决部分问题的原型。无论规划有多少好处，其价值往往不及能将程序记在脑中的优势。</p>
+<p>It’s striking how often programmers manage to hit all eight points by accident. Someone has an idea for a new project, but because it’s not officially sanctioned, he has to do it in off hours—which turn out to be more productive because there are no distractions. Driven by his enthusiasm for the new project he works on it for many hours at a stretch. Because it’s initially just an experiment, instead of a “production” language he uses a mere “scripting” language—which is in fact far more powerful. He completely rewrites the program several times; that wouldn’t be justifiable for an official project, but this is a labor of love and he wants it to be perfect. And since no one is going to see it except him, he omits any comments except the note-to-self variety. He works in a small group perforce, because he either hasn’t told anyone else about the idea yet, or it seems so unpromising that no one else is allowed to work on it. Even if there is a group, they couldn’t have multiple people editing the same code, because it changes too fast for that to be possible. And the project starts small because the idea is small at first; he just has some cool hack he wants to try out.令人惊讶的是，程序员们常常会 “意外” 地满足上述所有八点要求。比如，某人有了一个新项目的想法，但由于未获得官方批准，他只能在业余时间开发 —— 而业余时间因无干扰，效率反而更高。出于对新项目的热情，他会连续工作数小时。由于项目初期只是一次实验，他没有使用 “生产级” 语言，而是用了一种 “脚本语言”—— 但这种语言实际上功能强大得多。他会将程序彻底重写多次：这在官方项目中可能不合理，但这是他热爱的事业，他希望做到完美。且由于除自己外无人会看到代码，他除了给自己留的备注外，不会写任何其他注释。他必然会以小团队形式工作：要么是还没告诉别人这个想法，要么是项目看起来前景不明，没人被允许参与。即便有团队，也不会出现多人编辑同一段代码的情况 —— 因为代码更新太快，根本无法实现。项目也会从小规模起步：最初的想法很简单，他只是想尝试一个有趣的小技巧。</p>
+<p>Even more striking are the number of officially sanctioned projects that manage to do all eight things wrong. In fact, if you look at the way software gets written in most organizations, it’s almost as if they were deliberately trying to do things wrong. In a sense, they are. One of the defining qualities of organizations since there have been such a thing is to treat individuals as interchangeable parts. This works well for more parallelizable tasks, like fighting wars. For most of history a well-drilled army of professional soldiers could be counted on to beat an army of individual warriors, no matter how valorous. But having ideas is not very parallelizable. And that’s what programs are: ideas.更令人惊讶的是，许多官方批准的项目，会 “成功” 地违背上述所有八点要求。事实上，若你观察大多数组织的软件开发方式，会发现它们几乎像是在故意做错事。从某种意义上说，确实如此。组织的核心特征之一，就是将个体视为可替换的 “零件”。这种模式对可高度并行的任务（如打仗）很有效：在历史上的大部分时期，一支训练有素的职业军队，无论面对多么英勇的散兵游勇，通常都能获胜。但产生想法的过程，并不具备高度并行性 —— 而程序，本质上就是一种想法。</p>
+<p>It’s not merely true that organizations dislike the idea of depending on individual genius, it’s a tautology. It’s part of the definition of an organization not to. Of our current concept of an organization, at least.组织不愿依赖个体天赋，这不仅是事实，更是一种必然 —— 这是组织定义的一部分，至少在我们当前对 “组织” 的认知中是如此。</p>
+<p>Maybe we could define a new kind of organization that combined the efforts of individuals without requiring them to be interchangeable. Arguably a market is such a form of organization, though it may be more accurate to describe a market as a degenerate case—as what you get by default when organization isn’t possible.或许我们可以定义一种新型组织：它能整合个体的努力，却无需让个体成为可替换的零件。按理说，市场就是这样一种组织形式，但更准确的说法可能是，市场是一种 “简化形式”—— 即当无法形成正式组织时，默认会出现的结果。</p>
+<p>Probably the best we’ll do is some kind of hack, like making the programming parts of an organization work differently from the rest. Perhaps the optimal solution is for big companies not even to try to develop ideas in house, but simply to buy them. But regardless of what the solution turns out to be, the first step is to realize there’s a problem. There is a contradiction in the very phrase “software company.” The two words are pulling in opposite directions. Any good programmer in a large organization is going to be at odds with it, because organizations are designed to prevent what programmers strive for.或许我们目前能做到的最佳方案，只是某种权宜之计，比如让组织中的编程部门采用与其他部门不同的运作方式。最优解甚至可能是：大公司根本不尝试在内部开发创意，而是直接外购。但无论最终解决方案是什么，第一步都是要意识到问题的存在。“软件公司” 这个词本身就存在矛盾 —— 两个词朝着完全相反的方向拉扯。大型组织中的任何一位优秀程序员，都会与组织产生矛盾，因为组织的设计初衷，恰恰是阻碍程序员所追求的目标。</p>
+<p>Good programmers manage to get a lot done anyway. But often it requires practically an act of rebellion against the organizations that employ them. Perhaps it will help if more people understand that the way programmers behave is driven by the demands of the work they do. It’s not because they’re irresponsible that they work in long binges during which they blow off all other obligations, plunge straight into programming instead of writing specs first, and rewrite code that already works. It’s not because they’re unfriendly that they prefer to work alone, or growl at people who pop their head in the door to say hello. This apparently random collection of annoying habits has a single explanation: the power of holding a program in one’s head.尽管如此，优秀的程序员还是能完成大量工作。但这往往需要他们对雇佣自己的组织，进行近乎 “反抗” 的行动。若更多人能理解，程序员的行为方式是由其工作需求所驱动的，情况或许会有所改善。他们长时间连续工作、推掉所有其他义务，直接投入编程而非先写规格说明书，甚至重写已经能运行的代码 —— 这并非因为他们不负责任；他们偏好独自工作，或对探进头来打招呼的人不耐烦地回应 —— 这也并非因为他们不友好。这些看似杂乱的 “令人困扰的习惯”，背后只有一个解释：在脑中牢记程序的重要性。</p>
+<p>Whether or not understanding this can help large organizations, it can certainly help their competitors. The weakest point in big companies is that they don’t let individual programmers do great work. So if you’re a little startup, this is the place to attack them. Take on the kind of problems that have to be solved in one big brain.无论理解这一点是否能帮助大型组织，它肯定能帮助这些组织的竞争对手。大公司最大的弱点，就是不让程序员个体做出出色的工作。因此，如果你是一家小型初创公司，这就是你攻击它们的突破口：去承接那些需要依靠单个人的深入思考才能解决的问题。</p>
+<p>Thanks to Sam Altman, David Greenspan, Aaron Iba, Jessica Livingston, Robert Morris, Peter Norvig, Lisa Randall, Emmett Shear, Sergei Tsarev, and Stephen Wolfram for reading drafts of this.感谢山姆・奥特曼、大卫・格林斯潘、亚伦・伊巴、杰西卡・利文斯顿、罗伯特・莫里斯、彼得・诺维格、莉萨・兰德尔、埃米特・希尔、谢尔盖・察列夫和史蒂芬・沃尔夫勒姆阅读本文初稿。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>在脑中构建程序</div>
+      <div>https://hokkaidornis.github.io/2025/09/25/holding-a-program-in-ones-head/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年9月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/09/25/how-not-to-die/" title="如何避免创业 “死亡”">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">如何避免创业 “死亡”</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/19/stuff/" title="物品">
+                        <span class="hidden-mobile">物品</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

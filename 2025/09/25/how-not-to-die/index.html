@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="How Not to Die如何避免创业 “死亡”原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;die.html August 2007 (This is a talk I gave at the last Y Combinator dinner of the summer. Usually we don’t have a speaker at the last dinner; it’">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何避免创业 “死亡”">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/09/25/how-not-to-die/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="How Not to Die如何避免创业 “死亡”原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;die.html August 2007 (This is a talk I gave at the last Y Combinator dinner of the summer. Usually we don’t have a speaker at the last dinner; it’">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-09-25T01:54:48.000Z">
+<meta property="article:modified_time" content="2025-09-25T02:00:58.851Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>如何避免创业 “死亡” - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="如何避免创业 “死亡”"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-25 09:54" pubdate>
+          2025年9月25日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          33 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">如何避免创业 “死亡”</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="How-Not-to-Die"><a href="#How-Not-to-Die" class="headerlink" title="How Not to Die"></a>How Not to Die</h1><h1 id="如何避免创业-“死亡”"><a href="#如何避免创业-“死亡”" class="headerlink" title="如何避免创业 “死亡”"></a>如何避免创业 “死亡”</h1><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/die.html">https://paulgraham.com/die.html</a></p>
+<p>August 2007</p>
+<p>(This is a talk I gave at the last Y Combinator dinner of the summer. Usually we don’t have a speaker at the last dinner; it’s more of a party. But it seemed worth spoiling the atmosphere if I could save some of the startups from preventable deaths. So at the last minute I cooked up this rather grim talk. I didn’t mean this as an essay; I wrote it down because I only had two hours before dinner and think fastest while writing.)（这是我在今年夏天 YC（Y Combinator，知名创业孵化器）最后一次聚餐上的演讲。通常，最后一次聚餐不会安排演讲，更像是一场派对。但如果能让一些创业公司避免本可预防的 “死亡”，就算破坏气氛也值得。所以我在最后一刻，临时拼凑了这场相当沉重的演讲。我本来没打算把它写成文章，之所以写下来，是因为距离晚餐只剩两个小时，而我在写作时思维最快。）</p>
+<p>A couple days ago I told a reporter that we expected about a third of the companies we funded to succeed. Actually I was being conservative. I’m hoping it might be as much as a half. Wouldn’t it be amazing if we could achieve a 50% success rate?几天前，我跟一位记者说，我们预计所投资的公司中，约有三分之一能成功。其实我当时已经很保守了。我希望成功率能达到一半。要是我们能实现 50% 的成功率，岂不是很了不起？</p>
+<p>Another way of saying that is that half of you are going to die. Phrased that way, it doesn’t sound good at all. In fact, it’s kind of weird when you think about it, because our definition of success is that the founders get rich. If half the startups we fund succeed, then half of you are going to get rich and the other half are going to get nothing.换个说法就是，你们中有一半会 “死亡”（指创业失败）。这么说的话，听起来就一点都不乐观了。其实仔细想想，这还挺诡异的 —— 因为我们对 “成功” 的定义，就是创始人能赚到钱。如果我们投资的创业公司中有一半能成功，那你们中就有一半人能赚到钱，另一半人则会一无所获。</p>
+<p>If you can just avoid dying, you get rich. That sounds like a joke, but it’s actually a pretty good description of what happens in a typical startup. It certainly describes what happened in Viaweb. We avoided dying till we got rich.只要能避免 “死亡”，你就能赚到钱。这话听着像玩笑，但它其实很贴切地描述了普通创业公司的处境。我们 Viaweb（作者参与创办的公司）的经历就是如此 —— 我们一直撑到赚到钱，才没走向 “死亡”。</p>
+<p>It was really close, too. When we were visiting Yahoo to talk about being acquired, we had to interrupt everything and borrow one of their conference rooms to talk down an investor who was about to back out of a new funding round we needed to stay alive. So even in the middle of getting rich we were fighting off the grim reaper.当时情况也确实很危急。有一次我们去雅虎（Yahoo）谈被收购的事，中途不得不暂停所有议程，借了他们一间会议室，紧急说服一位即将退出我们一轮新融资的投资者 —— 那轮融资对我们维持运营至关重要。所以即便在快要赚到钱的时候，我们仍在与 “死神”（指创业失败）抗争。</p>
+<p>You may have heard that quote about luck consisting of opportunity meeting preparation. You’ve now done the preparation. The work you’ve done so far has, in effect, put you in a position to get lucky: you can now get rich by not letting your company die. That’s more than most people have. So let’s talk about how not to die.你们可能听过一句话：“幸运是机会与准备的结合。” 现在，你们已经完成了 “准备” 这一步。到目前为止，你们所做的工作，实际上已经让你们有机会获得幸运 —— 只要不让公司 “死亡”，你们就能赚到钱。这已经比大多数人拥有的机会多了。所以，我们来聊聊如何避免 “死亡”。</p>
+<p>We’ve done this five times now, and we’ve seen a bunch of startups die. About 10 of them so far. We don’t know exactly what happens when they die, because they generally don’t die loudly and heroically. Mostly they crawl off somewhere and die.我们运营 YC 至今已经五期了，见证了不少创业公司 “死亡”，目前大概有 10 家。我们并不完全清楚它们 “死亡” 时的具体情况，因为它们通常不会 “死” 得轰轰烈烈、充满悲壮色彩，大多是悄无声息地淡出，然后走向 “死亡”。</p>
+<p>For us the main indication of impending doom is when we don’t hear from you. When we haven’t heard from, or about, a startup for a couple months, that’s a bad sign. If we send them an email asking what’s up, and they don’t reply, that’s a really bad sign. So far that is a 100% accurate predictor of death.对我们来说，创业公司 “末日将至” 的主要信号，就是我们收不到它们的消息。如果有两个月没收到某家创业公司的消息，也没听到任何关于它的动态，那就是个坏兆头；如果我们发邮件问情况，对方还不回复，那就是个非常糟糕的兆头了。到目前为止，这是一个 100% 准确的 “死亡” 预兆。</p>
+<p>Whereas if a startup regularly does new deals and releases and either sends us mail or shows up at YC events, they’re probably going to live.相反，如果一家创业公司能定期达成新合作、推出新产品（或功能），还会主动给我们发消息，或者参加 YC 的活动，那它很可能会存活下来。</p>
+<p>I realize this will sound naive, but maybe the linkage works in both directions. Maybe if you can arrange that we keep hearing from you, you won’t die.我知道这听起来可能有点天真，但或许这种关联是双向的：如果你们能确保我们持续收到你们的消息，或许你们就不会 “死亡”。</p>
+<p>That may not be so naive as it sounds. You’ve probably noticed that having dinners every Tuesday with us and the other founders causes you to get more done than you would otherwise, because every dinner is a mini Demo Day. Every dinner is a kind of a deadline. So the mere constraint of staying in regular contact with us will push you to make things happen, because otherwise you’ll be embarrassed to tell us that you haven’t done anything new since the last time we talked.其实这可能没听起来那么天真。你们或许已经发现，每周二和我们以及其他创始人一起聚餐，会让你们比独自做事时完成更多工作 —— 因为每一次聚餐都像一场 “小型演示日”（Demo Day，创业公司展示成果的活动），也像是一个隐形的截止日期。所以，仅仅是 “要与我们保持定期联系” 这一约束，就会促使你们采取行动、做出成果 —— 否则，你们会不好意思跟我们说 “自从上次聊完，我们什么新进展都没有”。</p>
+<p>If this works, it would be an amazing hack. It would be pretty cool if merely by staying in regular contact with us you could get rich. It sounds crazy, but there’s a good chance that would work.如果这招真的管用，那可真是个绝妙的方法。要是仅仅通过与我们保持定期联系，就能让你们赚到钱，那也太酷了。这听起来很疯狂，但这种方法很有可能奏效。</p>
+<p>A variant is to stay in touch with other YC-funded startups. There is now a whole neighborhood of them in San Francisco. If you move there, the peer pressure that made you work harder all summer will continue to operate.另一个办法是与其他由 YC 投资的创业公司保持联系。现在，这些公司在旧金山已经形成了一个 “聚居区”。如果你们搬到那里，整个夏天让你们更努力工作的 “同伴压力”，就会继续发挥作用。</p>
+<p>When startups die, the official cause of death is always either running out of money or a critical founder bailing. Often the two occur simultaneously. But I think the underlying cause is usually that they’ve become demoralized. You rarely hear of a startup that’s working around the clock doing deals and pumping out new features, and dies because they can’t pay their bills and their ISP unplugs their server.创业公司 “死亡” 时，“官方死因” 通常要么是资金耗尽，要么是核心创始人退出，而且这两种情况往往会同时发生。但我认为，根本原因通常是它们的士气已经低落了。你很少会听说，一家夜以继日谈合作、推新功能的创业公司，会因为付不起账单、被互联网服务提供商（ISP）断了服务器而 “死亡”。</p>
+<p>Startups rarely die in mid keystroke. So keep typing!创业公司很少会在 “敲代码的过程中突然死亡”（指在积极行动时突然失败）。所以，继续努力吧（“继续敲代码” 的引申义）！</p>
+<p>If so many startups get demoralized and fail when merely by hanging on they could get rich, you have to assume that running a startup can be demoralizing. That is certainly true. I’ve been there, and that’s why I’ve never done another startup. The low points in a startup are just unbelievably low. I bet even Google had moments where things seemed hopeless.既然有这么多创业公司，明明只要坚持下去就能赚到钱，却因为士气低落而失败，那你就该明白：运营创业公司确实可能让人士气低落。这一点千真万确 —— 我有过亲身经历，这也是我之后再也没创办过新公司的原因。创业过程中的低谷，真的低到难以想象。我敢说，即便是谷歌（Google），也有过事情看似毫无希望的时刻。</p>
+<p>Knowing that should help. If you know it’s going to feel terrible sometimes, then when it feels terrible you won’t think “ouch, this feels terrible, I give up.” It feels that way for everyone. And if you just hang on, things will probably get better. The metaphor people use to describe the way a startup feels is at least a roller coaster and not drowning. You don’t just sink and sink; there are ups after the downs.知道这一点应该会有帮助。如果你提前知道 “有时候会感觉很糟糕”，那么当糟糕的感觉来临时，你就不会想 “天啊，太难受了，我放弃了”。每个人都会有这种糟糕的感觉，只要坚持下去，情况很可能会好转。人们用来形容创业处境的比喻，至少是 “过山车”，而不是 “溺水”—— 你不会一直下沉，低谷之后总会有高峰。</p>
+<p>Another feeling that seems alarming but is in fact normal in a startup is the feeling that what you’re doing isn’t working. The reason you can expect to feel this is that what you do probably won’t work. Startups almost never get it right the first time. Much more commonly you launch something, and no one cares. Don’t assume when this happens that you’ve failed. That’s normal for startups. But don’t sit around doing nothing. Iterate.另一种在创业中看似令人担忧、但实际上很正常的感受，就是 “觉得自己正在做的事情行不通”。你之所以会有这种感受，是因为你做的事情很可能真的行不通 —— 创业公司几乎不可能一次就做对。更常见的情况是：你推出了某个产品（或功能），却没人在意。但不要以为这种情况出现就意味着失败 —— 对创业公司来说，这很正常。但也别无所事事地坐着，要去 “迭代”（调整、优化）。</p>
+<p>I like Paul Buchheit’s suggestion of trying to make something that at least someone really loves. As long as you’ve made something that a few users are ecstatic about, you’re on the right track. It will be good for your morale to have even a handful of users who really love you, and startups run on morale. But also it will tell you what to focus on. What is it about you that they love? Can you do more of that? Where can you find more people who love that sort of thing? As long as you have some core of users who love you, all you have to do is expand it. It may take a while, but as long as you keep plugging away, you’ll win in the end. Both Blogger and Delicious did that. Both took years to succeed. But both began with a core of fanatically devoted users, and all Evan and Joshua had to do was grow that core incrementally. Wufoo is on the same trajectory now.我很认同保罗・布赫海特（Paul Buchheit，Gmail 创始人之一）的一个建议：努力做出至少有人真心喜欢的东西。只要你做出的东西，能让几位用户狂热喜爱，那你就走在正确的道路上。哪怕只有一小撮用户真心喜欢你，对你们的士气也是极大的鼓舞 —— 而创业公司正是靠士气运转的。除此之外，这些用户还会告诉你该专注于什么：他们喜欢你的产品哪一点？你能不能在这方面做得更多？去哪里找更多喜欢这类事物的人？只要你有一群真心喜欢你的核心用户，接下来要做的就是扩大这个群体。这可能需要一些时间，但只要坚持不懈地努力，最终一定会成功。Blogger（博客平台）和 Delicious（书签网站）都是这么做的，它们都花了好几年才成功，但一开始都有一群狂热忠诚的核心用户。埃文（Evan Williams，Blogger 创始人）和约书亚（Joshua Schachter，Delicious 创始人）要做的，只是逐步扩大这个核心用户群体。现在，Wufoo（表单制作工具）也在沿着同样的轨迹发展。</p>
+<p>So when you release something and it seems like no one cares, look more closely. Are there zero users who really love you, or is there at least some little group that does? It’s quite possible there will be zero. In that case, tweak your product and try again. Every one of you is working on a space that contains at least one winning permutation somewhere in it. If you just keep trying, you’ll find it.所以，当你推出某个东西却没人在意时，不妨更仔细地观察：是真的没有一个用户真心喜欢你，还是有一小群人其实很喜欢？当然，完全没人喜欢的情况也有可能发生。如果是这样，就调整你的产品，再试一次。你们每个人所专注的领域中，至少都存在一种 “成功的可能性”（winning permutation，指能成功的产品模式或方向），只要不断尝试，就一定能找到它。</p>
+<p>Let me mention some things not to do. The number one thing not to do is other things. If you find yourself saying a sentence that ends with “but we’re going to keep working on the startup,” you are in big trouble. Bob’s going to grad school, but we’re going to keep working on the startup. We’re moving back to Minnesota, but we’re going to keep working on the startup. We’re taking on some consulting projects, but we’re going to keep working on the startup. You may as well just translate these to “we’re giving up on the startup, but we’re not willing to admit that to ourselves,” because that’s what it means most of the time. A startup is so hard that working on it can’t be preceded by “but.”我来提一些 “不要做的事”。首要的 “不要做”，就是不要去做创业之外的其他事情。如果你发现自己说的话以 “但我们还是会继续做这个创业项目” 结尾，那麻烦就大了。比如 “鲍勃要去读研究生了，但我们还是会继续做创业项目”“我们要搬回明尼苏达州了，但我们还是会继续做创业项目”“我们接了一些咨询项目，但我们还是会继续做创业项目”—— 这些话，你们不妨直接理解为 “我们其实已经放弃这个创业项目了，只是不愿意承认而已”，因为大多数时候，事实就是如此。创业太难了，“继续做创业项目” 这件事，前面绝对不能加 “但”。</p>
+<p>In particular, don’t go to graduate school, and don’t start other projects. Distraction is fatal to startups. Going to (or back to) school is a huge predictor of death because in addition to the distraction it gives you something to say you’re doing. If you’re only doing a startup, then if the startup fails, you fail. If you’re in grad school and your startup fails, you can say later “Oh yeah, we had this startup on the side when I was in grad school, but it didn’t go anywhere.”尤其是不要去读研究生，也不要启动其他项目 —— 分心对创业公司来说是致命的。去（或回）学校读书，是一个强烈的 “死亡” 预兆，因为它不仅会让你分心，还会给你一个 “合理的借口”：你可以说自己在做别的事。如果你只专注于创业，那么创业失败了，就是你个人的失败；但如果你在读研究生，创业失败后，你可以说 “哦，当时我在读研，顺便做了个创业项目，没做出什么名堂而已”。</p>
+<p>You can’t use euphemisms like “didn’t go anywhere” for something that’s your only occupation. People won’t let you.但如果创业是你唯一的事业，你就没法用 “没做出什么名堂” 这种委婉说法来搪塞 —— 别人是不会接受的。</p>
+<p>One of the most interesting things we’ve discovered from working on Y Combinator is that founders are more motivated by the fear of looking bad than by the hope of getting millions of dollars. So if you want to get millions of dollars, put yourself in a position where failure will be public and humiliating.我们从运营 YC 的过程中发现的最有趣的事情之一是：相比 “赚几百万美元” 的希望，创始人更受 “怕丢脸” 的心理驱动。所以，如果你想赚到几百万美元，就让自己处于一种 “失败会公开且丢脸” 的境地吧（这样你就会更有动力坚持下去）。</p>
+<p>When we first met the founders of Octopart, they seemed very smart, but not a great bet to succeed, because they didn’t seem especially committed. One of the two founders was still in grad school. It was the usual story: he’d drop out if it looked like the startup was taking off. Since then he has not only dropped out of grad school, but appeared full length in Newsweek with the word “Billionaire” printed across his chest. He just cannot fail now. Everyone he knows has seen that picture. Girls who dissed him in high school have seen it. His mom probably has it on the fridge. It would be unthinkably humiliating to fail now. At this point he is committed to fight to the death.我们第一次见到 Octopart（电子元件搜索平台）的创始人时，他们看起来非常聪明，但当时并不太可能成功，因为他们对创业的投入程度似乎并不高。两位创始人中有一位还在攻读研究生，当时的情况很常见：只有等创业项目看起来有起色了，他才会退学。从那以后，他不仅退了学，还登上了《新闻周刊》—— 照片里他是全身出镜，胸前印着 “亿万富翁”（Billionaire）的字样。现在的他，根本输不起了。他认识的每个人都见过那张照片，连高中时冷落过他的女生都看到了，他妈妈说不定还把照片贴在了冰箱上。现在要是失败，那丢脸程度简直难以想象。到了这个地步，他已经下定决心要拼到最后了。</p>
+<p>I wish every startup we funded could appear in a Newsweek article describing them as the next generation of billionaires, because then none of them would be able to give up. The success rate would be 90%. I’m not kidding.我真希望我们投资的每一家创业公司，都能登上《新闻周刊》，被描述成 “下一代亿万富翁”—— 那样的话，他们就没人会放弃了，成功率说不定能达到 90%。我可不是在开玩笑。</p>
+<p>When we first knew the Octoparts they were lighthearted, cheery guys. Now when we talk to them they seem grimly determined. The electronic parts distributors are trying to squash them to keep their monopoly pricing. (If it strikes you as odd that people still order electronic parts out of thick paper catalogs in 2007, there’s a reason for that. The distributors want to prevent the transparency that comes from having prices online.) I feel kind of bad that we’ve transformed these guys from lighthearted to grimly determined. But that comes with the territory. If a startup succeeds, you get millions of dollars, and you don’t get that kind of money just by asking for it. You have to assume it takes some amount of pain.我们刚认识 Octopart 团队时，他们还是一群轻松活泼、乐呵呵的人。现在再和他们交流，能明显感觉到他们神情严肃、意志坚定。电子元件分销商们正试图打压他们，以维持自己的垄断定价。（如果你觉得 2007 年还有人通过厚厚的纸质目录订购电子元件很奇怪，那是有原因的：分销商就是想避免价格放到网上后带来的透明度。）想到是我们把这群人从轻松活泼的状态，变成了如今严肃坚定的模样，我心里还挺不是滋味的。但这在创业领域是难免的。创业公司要是成功了，你能赚几百万美元，但这种钱不是靠嘴说说就能得到的。你得明白，这背后必然要承受一定的痛苦。</p>
+<p>And however tough things get for the Octoparts, I predict they’ll succeed. They may have to morph themselves into something totally different, but they won’t just crawl off and die. They’re smart; they’re working in a promising field; and they just cannot give up.而且不管 Octopart 未来会面临多大的困难，我敢预言他们一定会成功。他们或许得彻底转型成完全不同的模式，但绝不会悄无声息地走向失败。他们很聪明，所处的领域也很有前景，而且他们现在根本没有退路，不能放弃。</p>
+<p>All of you guys already have the first two. You’re all smart and working on promising ideas. Whether you end up among the living or the dead comes down to the third ingredient, not giving up.你们所有人都已经具备了前两个条件：你们都很聪明，而且在做的项目想法也很有前景。最终你们是能存活下来，还是会走向 “死亡”（指创业失败），就取决于第三个关键因素 —— 不放弃。</p>
+<p>So I’ll tell you now: bad shit is coming. It always is in a startup. The odds of getting from launch to liquidity without some kind of disaster happening are one in a thousand. So don’t get demoralized. When the disaster strikes, just say to yourself, ok, this was what Paul was talking about. What did he say to do? Oh, yeah. Don’t give up.所以我现在就告诉你们：麻烦事一定会来。创业过程中向来如此。一家创业公司从推出产品到实现变现（如上市、被收购等资金流通场景），期间不遇到任何麻烦的概率，千分之一都不到。所以别士气低落。当麻烦来临时，就对自己说：“好了，保罗（指作者）之前说的情况来了。他当时说该怎么做来着？哦对，别放弃。”</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>如何避免创业 “死亡”</div>
+      <div>https://hokkaidornis.github.io/2025/09/25/how-not-to-die/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年9月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/25/holding-a-program-in-ones-head/" title="在脑中构建程序">
+                        <span class="hidden-mobile">在脑中构建程序</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
