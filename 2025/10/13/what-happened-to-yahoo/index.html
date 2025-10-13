@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="What Happened to Yahoo雅虎究竟怎么了原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;yahoo.html August 2010 When I went to work for Yahoo after they bought our startup in 1998, it felt like the center of the world. It was suppo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="雅虎究竟怎么了">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/10/13/what-happened-to-yahoo/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="What Happened to Yahoo雅虎究竟怎么了原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;yahoo.html August 2010 When I went to work for Yahoo after they bought our startup in 1998, it felt like the center of the world. It was suppo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-13T04:23:38.000Z">
+<meta property="article:modified_time" content="2025-10-13T05:52:03.304Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>雅虎究竟怎么了 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="雅虎究竟怎么了"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-10-13 12:23" pubdate>
+          2025年10月13日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">雅虎究竟怎么了</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="What-Happened-to-Yahoo"><a href="#What-Happened-to-Yahoo" class="headerlink" title="What Happened to Yahoo"></a>What Happened to Yahoo</h1><h1 id="雅虎究竟怎么了"><a href="#雅虎究竟怎么了" class="headerlink" title="雅虎究竟怎么了"></a>雅虎究竟怎么了</h1><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/yahoo.html">https://paulgraham.com/yahoo.html</a></p>
+<p>August 2010</p>
+<p>When I went to work for Yahoo after they bought our startup in 1998, it felt like the center of the world. It was supposed to be the next big thing. It was supposed to be what Google turned out to be.1998 年，雅虎收购了我们的初创公司，之后我便加入雅虎工作。那时候的雅虎，感觉就像世界的中心。它本应成为下一个巨头，本应发展成如今谷歌的模样。</p>
+<p>What went wrong? The problems that hosed Yahoo go back a long time, practically to the beginning of the company. They were already very visible when I got there in 1998. Yahoo had two problems Google didn’t: easy money, and ambivalence about being a technology company.到底哪里出了问题？拖垮雅虎的问题由来已久，几乎从公司创立之初就存在了。1998 年我加入时，这些问题已经十分明显。雅虎面临着两个谷歌没有的难题：一是 “来钱太容易”，二是在 “是否要做一家科技公司” 这件事上态度摇摆不定。</p>
+<h2 id="Money"><a href="#Money" class="headerlink" title="Money"></a>Money</h2><h2 id="金钱问题"><a href="#金钱问题" class="headerlink" title="金钱问题"></a>金钱问题</h2><p>The first time I met Jerry Yang, we thought we were meeting for different reasons. He thought we were meeting so he could check us out in person before buying us. I thought we were meeting so we could show him our new technology, Revenue Loop. It was a way of sorting shopping search results. Merchants bid a percentage of sales for traffic, but the results were sorted not by the bid but by the bid times the average amount a user would buy. It was like the algorithm Google uses now to sort ads, but this was in the spring of 1998, before Google was founded.我第一次见到杨致远时，我们对会面目的的理解完全不同。他以为会面是为了在收购我们公司前，当面考察一下我们；而我则认为，会面是为了向他展示我们的新技术 ——“收益循环”（Revenue Loop）。这是一种用于排序购物搜索结果的技术：商家会按销售额的一定比例竞标以获取流量，但搜索结果的排序依据并非单纯的竞标金额，而是竞标金额乘以用户的平均购买金额。这种模式和谷歌现在用于广告排序的算法很像，但当时是 1998 年春天，谷歌都还没成立。</p>
+<p>Revenue Loop was the optimal sort for shopping search, in the sense that it sorted in order of how much money Yahoo would make from each link. But it wasn’t just optimal in that sense. Ranking search results by user behavior also makes search better. Users train the search: you can start out finding matches based on mere textual similarity, and as users buy more stuff the search results get better and better.从 “雅虎能从每个链接中赚取多少收益” 这个角度来看，“收益循环” 是购物搜索的最佳排序方式。但它的优势不止于此：根据用户行为对搜索结果进行排序，还能提升搜索体验。可以说，是用户在 “训练” 搜索功能 —— 一开始，搜索可能只是基于文本相似度来匹配结果，但随着用户购买行为的增加，搜索结果会变得越来越精准。</p>
+<p>Jerry didn’t seem to care. I was confused. I was showing him technology that extracted the maximum value from search traffic, and he didn’t care? I couldn’t tell whether I was explaining it badly, or he was just very poker faced.杨致远对此似乎毫不在意，这让我很困惑。我向他展示的是一种能从搜索流量中挖掘最大价值的技术，他怎么会不关心呢？我不确定是自己没解释清楚，还是他只是天生表情冷淡、不露声色。</p>
+<p>I didn’t realize the answer till later, after I went to work at Yahoo. It was neither of my guesses. The reason Yahoo didn’t care about a technique that extracted the full value of traffic was that advertisers were already overpaying for it. If Yahoo merely extracted the actual value, they’d have made less.直到后来我加入雅虎工作，才明白其中缘由 —— 我的两个猜测都不对。雅虎之所以不在乎这种能 “榨干” 流量全部价值的技术，是因为当时的广告商已经在为流量支付过高的费用了。如果雅虎只提取流量的实际价值，反而会赚得更少。</p>
+<p>Hard as it is to believe now, the big money then was in banner ads. Advertisers were willing to pay ridiculous amounts for banner ads. So Yahoo’s sales force had evolved to exploit this source of revenue. Led by a large and terrifyingly formidable man called Anil Singh, Yahoo’s sales guys would fly out to Procter &amp; Gamble and come back with million dollar orders for banner ad impressions.现在听起来可能难以置信，但当时的主要收入来源是横幅广告。广告商愿意为横幅广告支付高得离谱的费用，因此雅虎的销售团队也逐渐发展成专门挖掘这一收入来源的队伍。在安尼尔・辛格（Anil Singh）—— 一个身材高大、气场强大到令人敬畏的人的带领下，雅虎的销售人员会飞往宝洁公司，签下价值数百万美元的横幅广告曝光订单。</p>
+<p>The prices seemed cheap compared to print, which was what advertisers, for lack of any other reference, compared them to. But they were expensive compared to what they were worth. So these big, dumb companies were a dangerous source of revenue to depend on. But there was another source even more dangerous: other Internet startups.由于没有其他参照标准，广告商们会将横幅广告的价格与平面广告对比，这样一来，横幅广告的价格就显得很便宜。但如果对照其实际价值，这个价格就过高了。因此，依赖这些 “财大气粗却缺乏判断力” 的公司作为收入来源，本身就存在风险。而当时还有一个更危险的收入来源：其他互联网初创公司。</p>
+<p>By 1998, Yahoo was the beneficiary of a de facto Ponzi scheme. Investors were excited about the Internet. One reason they were excited was Yahoo’s revenue growth. So they invested in new Internet startups. The startups then used the money to buy ads on Yahoo to get traffic. Which caused yet more revenue growth for Yahoo, and further convinced investors the Internet was worth investing in. When I realized this one day, sitting in my cubicle, I jumped up like Archimedes in his bathtub, except instead of “Eureka!” I was shouting “Sell!”到 1998 年时，雅虎实际上已经成了一个 “庞氏骗局” 的受益者。当时的投资者对互联网行业充满热情，而雅虎的收入增长正是他们热情的原因之一。于是，他们会投资新的互联网初创公司；这些初创公司拿到投资后，又会用这笔钱在雅虎上购买广告以获取流量；这反过来又推动雅虎收入进一步增长，让投资者更加坚信互联网行业值得投资。有一天，我坐在自己的工位上意识到这一点时，像阿基米德在浴缸里发现浮力定律那样跳了起来 —— 只不过我喊的不是 “尤里卡（我发现了）！”，而是 “赶紧抛售（雅虎股票）！”</p>
+<p>Both the Internet startups and the Procter &amp; Gambles were doing brand advertising. They didn’t care about targeting. They just wanted lots of people to see their ads. So traffic became the thing to get at Yahoo. It didn’t matter what type. [1]无论是互联网初创公司，还是宝洁这样的大公司，当时做的都是品牌广告。它们不关心广告的精准定位，只希望有更多人看到自己的广告。因此，“流量” 成了雅虎追求的核心，至于流量的类型，则无关紧要。[1]</p>
+<p>It wasn’t just Yahoo. All the search engines were doing it. This was why they were trying to get people to start calling them “portals” instead of “search engines.” Despite the actual meaning of the word portal, what they meant by it was a site where users would find what they wanted on the site itself, instead of just passing through on their way to other destinations, as they did at a search engine.当时不只是雅虎这样做，所有搜索引擎都在追求流量。这也是它们为什么试图让人们称自己为 “门户网站”，而非 “搜索引擎” 的原因。尽管 “门户” 一词本身有其实际含义，但这些公司口中的 “门户”，指的是一个能让用户在网站内部找到所需内容的平台 —— 而不是像在搜索引擎上那样，用户只是把它当作前往其他网站的 “中转站”。</p>
+<p>I remember telling David Filo in late 1998 or early 1999 that Yahoo should buy Google, because I and most of the other programmers in the company were using it instead of Yahoo for search. He told me that it wasn’t worth worrying about. Search was only 6% of our traffic, and we were growing at 10% a month. It wasn’t worth doing better.我记得在 1998 年底或 1999 年初，我曾跟大卫・费罗（David Filo）说，雅虎应该收购谷歌 —— 因为我和公司里大多数程序员都在用谷歌搜索，而不是雅虎自己的搜索功能。但他告诉我，这件事不值得担心：搜索流量只占我们总流量的 6%，而且公司每月还在以 10% 的速度增长，没必要在搜索上做得更好。</p>
+<p>I didn’t say “But search traffic is worth more than other traffic!” I said “Oh, ok.” Because I didn’t realize either how much search traffic was worth. I’m not sure even Larry and Sergey did then. If they had, Google presumably wouldn’t have expended any effort on enterprise search.我没有反驳说 “但搜索流量比其他流量更有价值啊！”，只是说了句 “哦，好的”。因为当时我也没意识到搜索流量的价值有多大。我甚至不确定拉里・佩奇（Larry Page）和谢尔盖・布林（Sergey Brin）（谷歌创始人）当时是否清楚这一点。如果他们清楚，谷歌或许就不会在企业搜索业务上投入任何精力了。</p>
+<p>If circumstances had been different, the people running Yahoo might have realized sooner how important search was. But they had the most opaque obstacle in the world between them and the truth: money. As long as customers were writing big checks for banner ads, it was hard to take search seriously. Google didn’t have that to distract them.如果当时的情况有所不同，雅虎的管理层或许能更早意识到搜索业务的重要性。但在他们与 “真相” 之间，横亘着一个最难以穿透的障碍：金钱。只要客户还在为横幅广告开出巨额支票，他们就很难认真对待搜索业务。而谷歌则没有这样的 “干扰项”。</p>
+<h2 id="Hackers"><a href="#Hackers" class="headerlink" title="Hackers"></a>Hackers</h2><h2 id="技术人才问题"><a href="#技术人才问题" class="headerlink" title="技术人才问题"></a>技术人才问题</h2><p>But Yahoo also had another problem that made it hard to change directions. They’d been thrown off balance from the start by their ambivalence about being a technology company.但雅虎还有另一个让它难以转向的问题：从一开始，它在 “是否要做一家科技公司” 上的摇摆态度，就让它失去了发展的重心。</p>
+<p>One of the weirdest things about Yahoo when I went to work there was the way they insisted on calling themselves a “media company.” If you walked around their offices, it seemed like a software company. The cubicles were full of programmers writing code, product managers thinking about feature lists and ship dates, support people (yes, there were actually support people) telling users to restart their browsers, and so on, just like a software company. So why did they call themselves a media company?我刚加入雅虎时，最奇怪的一件事就是他们坚持称自己是 “媒体公司”。但如果你在他们的办公室里走一圈，会发现这里明明就是一家软件公司：工位上坐满了写代码的程序员，产品经理在琢磨功能清单和发布日期，客服人员（没错，当时雅虎确实有客服）告诉用户 “重启浏览器试试”—— 诸如此类的场景，和软件公司一模一样。那他们为什么还要称自己是媒体公司呢？</p>
+<p>One reason was the way they made money: by selling ads. In 1995 it was hard to imagine a technology company making money that way. Technology companies made money by selling their software to users. Media companies sold ads. So they must be a media company.原因之一在于他们的盈利模式：靠卖广告赚钱。在 1995 年，人们很难想象一家科技公司会通过这种方式盈利 —— 当时的科技公司都是靠向用户出售软件赚钱，而媒体公司才靠卖广告盈利。因此，雅虎认为自己 “必须是一家媒体公司”。</p>
+<p>Another big factor was the fear of Microsoft. If anyone at Yahoo considered the idea that they should be a technology company, the next thought would have been that Microsoft would crush them.另一个重要原因是对微软的恐惧。当时雅虎内部只要有人提出 “我们应该做一家科技公司”，接下来的念头必然是 “那微软会把我们打垮的”。</p>
+<p>It’s hard for anyone much younger than me to understand the fear Microsoft still inspired in 1995. Imagine a company with several times the power Google has now, but way meaner. It was perfectly reasonable to be afraid of them. Yahoo watched them crush the first hot Internet company, Netscape. It was reasonable to worry that if they tried to be the next Netscape, they’d suffer the same fate. How were they to know that Netscape would turn out to be Microsoft’s last victim?对于比我年轻很多的人来说，很难理解 1995 年时微软所引发的恐惧。你可以想象一下：一家公司拥有比现在谷歌强大好几倍的实力，而且行事比谷歌凶狠得多。当时人们对微软感到恐惧，是完全合乎情理的。雅虎亲眼目睹了微软击垮了当时最热门的互联网公司 —— 网景（Netscape）。因此，他们有理由担心：如果自己试图成为下一个网景，就会遭遇同样的命运。可他们怎么会知道，网景其实是微软最后一个 “受害者” 呢？</p>
+<p>It would have been a clever move to pretend to be a media company to throw Microsoft off their scent. But unfortunately Yahoo actually tried to be one, sort of. Project managers at Yahoo were called “producers,” for example, and the different parts of the company were called “properties.” But what Yahoo really needed to be was a technology company, and by trying to be something else, they ended up being something that was neither here nor there. That’s why Yahoo as a company has never had a sharply defined identity.如果雅虎只是 “假装” 自己是媒体公司，以此迷惑微软，那会是一步很聪明的棋。但不幸的是，雅虎竟然真的在某种程度上试图成为一家媒体公司。比如，雅虎的项目经理被称为 “制片人”（producers），公司的各个业务部门被称为 “资产”（properties）。可雅虎真正需要成为的是一家科技公司 —— 试图成为其他类型的公司，最终导致它变得 “不伦不类”。这也是为什么雅虎作为一家公司，始终没有一个清晰明确的定位。</p>
+<p>The worst consequence of trying to be a media company was that they didn’t take programming seriously enough. Microsoft (back in the day), Google, and Facebook have all had hacker-centric cultures. But Yahoo treated programming as a commodity. At Yahoo, user-facing software was controlled by product managers and designers. The job of programmers was just to take the work of the product managers and designers the final step, by translating it into code.试图成为媒体公司带来的最糟糕后果，是雅虎没有足够重视编程（技术）。无论是当年的微软，还是后来的谷歌、Facebook，都拥有以 “黑客（技术人才）” 为核心的文化。但雅虎却把编程视为一种 “普通商品”—— 在雅虎，面向用户的软件产品由产品经理和设计师主导，程序员的工作只是把产品经理和设计师的想法 “翻译” 成代码，完成最后一步流程而已。</p>
+<p>One obvious result of this practice was that when Yahoo built things, they often weren’t very good. But that wasn’t the worst problem. The worst problem was that they hired bad programmers.这种模式带来的一个明显后果是：雅虎开发的产品往往质量不高。但这还不是最严重的问题，最严重的是他们招到的程序员水平不行。</p>
+<p>Microsoft (back in the day), Google, and Facebook have all been obsessed with hiring the best programmers. Yahoo wasn’t. They preferred good programmers to bad ones, but they didn’t have the kind of single-minded, almost obnoxiously elitist focus on hiring the smartest people that the big winners have had. And when you consider how much competition there was for programmers when they were hiring, during the Bubble, it’s not surprising that the quality of their programmers was uneven.当年的微软、后来的谷歌和 Facebook，都执着于招聘最优秀的程序员。但雅虎不是这样：他们虽然也更愿意招优秀的程序员，却没有像那些行业赢家那样，抱着 “一门心思、近乎偏执的精英主义” 去寻找最聪明的人才。而且，在互联网泡沫时期，招聘程序员的竞争本就异常激烈 —— 在这样的背景下，雅虎程序员的水平参差不齐，也就不足为奇了。</p>
+<p>In technology, once you have bad programmers, you’re doomed. I can’t think of an instance where a company has sunk into technical mediocrity and recovered. Good programmers want to work with other good programmers. So once the quality of programmers at your company starts to drop, you enter a death spiral from which there is no recovery. [2]在科技行业，一旦公司里充斥着水平糟糕的程序员，就注定会走向失败。我想不出任何一家公司陷入技术平庸后还能东山再起的例子。优秀的程序员只愿意和其他优秀的程序员共事，所以一旦公司程序员的整体水平开始下滑，就会陷入无法挽回的 “死亡螺旋”。[2]</p>
+<p>At Yahoo this death spiral started early. If there was ever a time when Yahoo was a Google-style talent magnet, it was over by the time I got there in 1998.雅虎的这场 “死亡螺旋” 很早就开始了。如果说雅虎曾经有过像谷歌那样吸引顶尖人才的时期，那在 1998 年我加入时，这个时期早已结束。</p>
+<p>The company felt prematurely old. Most technology companies eventually get taken over by suits and middle managers. At Yahoo it felt as if they’d deliberately accelerated this process. They didn’t want to be a bunch of hackers. They wanted to be suits. A media company should be run by suits.当时的雅虎给人一种 “未老先衰” 的感觉。大多数科技公司最终会被西装革履的管理人员和中层经理掌控，但雅虎似乎是在刻意加速这个过程。他们不想做一群 “技术极客”，而想成为 “西装精英”—— 在他们看来，媒体公司就应该由这类人来运营。</p>
+<p>The first time I visited Google, they had about 500 people, the same number Yahoo had when I went to work there. But boy did things seem different. It was still very much a hacker-centric culture. I remember talking to some programmers in the cafeteria about the problem of gaming search results (now known as SEO), and they asked “what should we do?” Programmers at Yahoo wouldn’t have asked that. Theirs was not to reason why; theirs was to build what product managers spec’d. I remember coming away from Google thinking “Wow, it’s still a startup.”我第一次去谷歌时，他们大约有 500 名员工，和我加入雅虎时的员工数量差不多。但两者的氛围简直天差地别 —— 谷歌当时依然是极具 “技术极客核心” 的文化。我记得曾在食堂和一些程序员聊起 “操纵搜索结果”（也就是现在所说的 SEO）的问题，他们会主动问 “我们该怎么解决这个问题？”。而雅虎的程序员绝不会这样问，他们从不会去思考 “为什么要做”，只会按产品经理的需求文档去开发。离开谷歌时，我心里想的是：“哇，这地方还像个初创公司一样有活力。”</p>
+<p>There’s not much we can learn from Yahoo’s first fatal flaw. It’s probably too much to hope any company could avoid being damaged by depending on a bogus source of revenue. But startups can learn an important lesson from the second one. In the software business, you can’t afford not to have a hacker-centric culture.从雅虎的第一个致命缺陷（依赖虚假收入来源）中，我们能学到的东西不多 —— 毕竟期望任何公司都能避免因依赖虚假收入而受损，可能有些不切实际。但初创公司能从第二个缺陷（错误定位与轻视技术人才）中吸取重要教训：在软件行业，没有以技术极客为核心的文化，是绝对行不通的。</p>
+<p>Probably the most impressive commitment I’ve heard to having a hacker-centric culture came from Mark Zuckerberg, when he spoke at Startup School in 2007. He said that in the early days Facebook made a point of hiring programmers even for jobs that would not ordinarily consist of programming, like HR and marketing.在我听过的关于 “坚守技术极客核心文化” 的案例中，最令人印象深刻的当属马克・扎克伯格 ——2007 年他在 “创业学院”（Startup School）演讲时提到，Facebook 早期特意招聘程序员来做那些通常不需要编程技能的工作，比如人力资源和市场营销。</p>
+<p>So which companies need to have a hacker-centric culture? Which companies are “in the software business” in this respect? As Yahoo discovered, the area covered by this rule is bigger than most people realize. The answer is: any company that needs to have good software.那么，哪些公司需要以技术极客为核心的文化？从这个角度来说，哪些公司属于 “软件行业”？正如雅虎所经历的那样，这个规则涵盖的范围比大多数人想象的更广。答案是：任何需要优质软件的公司。</p>
+<p>Why would great programmers want to work for a company that didn’t have a hacker-centric culture, as long as there were others that did? I can imagine two reasons: if they were paid a huge amount, or if the domain was interesting and none of the companies in it were hacker-centric. Otherwise you can’t attract good programmers to work in a suit-centric culture. And without good programmers you won’t get good software, no matter how many people you put on a task, or how many procedures you establish to ensure “quality.”只要存在拥有技术极客文化的公司，优秀的程序员为什么要去一家没有这种文化的公司工作呢？我能想到的两个理由是：要么能拿到极高的薪水，要么所在领域非常有趣，且该领域内所有公司都没有技术极客文化。除此之外，你不可能吸引优秀的程序员到一个以 “西装精英” 为核心的公司工作。而没有优秀的程序员，无论你为一项任务投入多少人力，或制定多少流程来确保 “质量”，都无法开发出优质的软件。</p>
+<p>Hacker culture often seems kind of irresponsible. That’s why people proposing to destroy it use phrases like “adult supervision.” That was the phrase they used at Yahoo. But there are worse things than seeming irresponsible. Losing, for example.技术极客文化往往给人一种 “不负责任” 的感觉，这也是那些想要摧毁这种文化的人会用 “成年人监管” 这类说法的原因 —— 雅虎内部当时就是这么说的。但有些事情比 “看起来不负责任” 更糟糕，比如（在行业竞争中）彻底失败。</p>
+<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>[1] The closest we got to targeting when I was there was when we created <a target="_blank" rel="noopener" href="https://pets.yahoo.com/">pets.yahoo.com</a> in order to provoke a bidding war between 3 pet supply startups for the spot as top sponsor.[1] 我在雅虎期间，公司最接近 “精准定位” 的举措，是创建了<a target="_blank" rel="noopener" href="https://pets.yahoo.com/">pets.yahoo.com</a>（雅虎宠物频道）—— 目的是挑起三家宠物用品初创公司之间的竞标大战，争夺该频道的顶级赞助商席位。</p>
+<p>[2] In theory you could beat the death spiral by buying good programmers instead of hiring them. You can get programmers who would never have come to you as employees by buying their startups. But so far the only companies smart enough to do this are companies smart enough not to need to.[2] 理论上，你可以通过收购而非直接招聘来获得优秀程序员，从而打破 “死亡螺旋”—— 收购优秀程序员创办的初创公司，就能吸引到那些原本绝不会作为普通员工加入你的人。但到目前为止，只有足够聪明、本就不需要靠这种方式来获取人才的公司，才懂得这样做。</p>
+<p>Thanks to Trevor Blackwell, Jessica Livingston, and Geoff Ralston for reading drafts of this.感谢特雷弗・布莱克韦尔（Trevor Blackwell）、杰西卡・利文斯顿（Jessica Livingston）和杰夫・拉尔斯顿（Geoff Ralston）阅读本文初稿并提出建议。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>雅虎究竟怎么了</div>
+      <div>https://hokkaidornis.github.io/2025/10/13/what-happened-to-yahoo/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年10月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/30/the-future-of-web-startups/" title="网络初创公司的未来">
+                        <span class="hidden-mobile">网络初创公司的未来</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
