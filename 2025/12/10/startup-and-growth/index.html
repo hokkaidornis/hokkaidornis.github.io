@@ -1,0 +1,868 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Startup and Growth创业与增长原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;growth.html September 2012 A startup is a company designed to grow fast. Being newly founded does not in itself make a company a startup. Nor is it">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创业与增长">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/12/10/startup-and-growth/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Startup and Growth创业与增长原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;growth.html September 2012 A startup is a company designed to grow fast. Being newly founded does not in itself make a company a startup. Nor is it">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-10T08:27:42.000Z">
+<meta property="article:modified_time" content="2025-12-10T09:34:28.237Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>创业与增长 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="创业与增长"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-12-10 16:27" pubdate>
+          2025年12月10日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          70 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">创业与增长</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Startup-and-Growth"><a href="#Startup-and-Growth" class="headerlink" title="Startup and Growth"></a>Startup and Growth</h1><h1 id="创业与增长"><a href="#创业与增长" class="headerlink" title="创业与增长"></a>创业与增长</h1><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/growth.html">https://paulgraham.com/growth.html</a></p>
+<p>September 2012</p>
+<p>A startup is a company designed to grow fast. Being newly founded does not in itself make a company a startup. Nor is it necessary for a startup to work on technology, or take venture funding, or have some sort of “exit.” The only essential thing is growth. Everything else we associate with startups follows from growth.  </p>
+<p>初创企业是一家旨在快速增长的公司。新成立本身并不使一家公司成为初创企业。初创企业也未必需要从事技术、接受风险投资，或拥有某种“退出”策略。唯一关键的是增长。我们所联想到的其他一切初创企业特征，都源于增长。</p>
+<p>If you want to start one it’s important to understand that. Startups are so hard that you can’t be pointed off to the side and hope to succeed. You have to know that growth is what you’re after. The good news is, if you get growth, everything else tends to fall into place. Which means you can use growth like a compass to make almost every decision you face.  </p>
+<p>如果你想创办一家初创企业，理解这一点至关重要。初创企业极其艰难，你不能偏离方向还指望成功。你必须清楚，你追求的是增长。好消息是，一旦实现了增长，其他一切往往都会水到渠成。这意味着你可以把增长当作指南针，用它来指导你面对的几乎所有决策。</p>
+<h2 id="Redwoods"><a href="#Redwoods" class="headerlink" title="Redwoods"></a>Redwoods</h2><h2 id="红杉"><a href="#红杉" class="headerlink" title="红杉"></a>红杉</h2><p>Let’s start with a distinction that should be obvious but is often overlooked: not every newly founded company is a startup. Millions of companies are started every year in the US. Only a tiny fraction are startups. Most are service businesses — restaurants, barbershops, plumbers, and so on. These are not startups, except in a few unusual cases. A barbershop isn’t designed to grow fast. Whereas a search engine, for example, is.  </p>
+<p>让我们从一个本应显而易见却常被忽视的区别开始：并非每家新成立的公司都是初创企业。美国每年有数百万家公司成立，其中只有极小一部分是初创企业。大多数是服务型企业——如餐馆、理发店、水管工等。除少数特殊情况外，这些都不是初创企业。一家理发店并非为快速增长而设计，而搜索引擎（例如）则是。</p>
+<p>When I say startups are designed to grow fast, I mean it in two senses. Partly I mean designed in the sense of intended, because most startups fail. But I also mean startups are different by nature, in the same way a redwood seedling has a different destiny from a bean sprout.  </p>
+<p>当我说初创企业是为快速增长而设计时，我指的是两层含义。一方面是指“有意为之”的设计，因为大多数初创企业会失败；另一方面是指初创企业在本质上就与众不同，就像红杉树苗的命运与豆芽截然不同一样。</p>
+<p>That difference is why there’s a distinct word, “startup,” for companies designed to grow fast. If all companies were essentially similar, but some through luck or the efforts of their founders ended up growing very fast, we wouldn’t need a separate word. We could just talk about super-successful companies and less successful ones. But in fact startups do have a different sort of DNA from other businesses. Google is not just a barbershop whose founders were unusually lucky and hard-working. Google was different from the beginning.  </p>
+<p>正是这种差异，才使得我们为那些旨在快速增长的公司专门创造了一个词：“初创企业”。如果所有公司在本质上都相似，只是有些凭借运气或创始人的努力最终实现高速增长，那我们就不需要单独一个词了。我们只需谈论“超级成功”和“不太成功”的公司即可。但事实上，初创企业确实拥有与其他企业不同的“基因”。谷歌并不仅仅是一家创始人特别幸运且勤奋的理发店；从一开始，谷歌就与众不同。</p>
+<p>To grow rapidly, you need to make something you can sell to a big market. That’s the difference between Google and a barbershop. A barbershop doesn’t scale.  </p>
+<p>要实现快速增长，你必须创造出能卖给大市场的产品。这就是谷歌与理发店之间的区别：理发店无法规模化。</p>
+<p>For a company to grow really big, it must (a) make something lots of people want, and (b) reach and serve all those people. Barbershops are doing fine in the (a) department. Almost everyone needs their hair cut. The problem for a barbershop, as for any retail establishment, is (b). A barbershop serves customers in person, and few will travel far for a haircut. And even if they did, the barbershop couldn’t accomodate them. [1]  </p>
+<p>一家公司若想真正做大，必须满足两个条件：(a) 制造大量人想要的东西；(b) 能够触达并服务所有这些人。在(a)方面，理发店做得很好——几乎每个人都需要剪头发。但对理发店（以及任何零售店）来说，问题出在(b)上：理发店只能面对面服务顾客，很少有人愿意为剪头发长途跋涉；即使有人愿意，理发店也无法容纳他们。[1]</p>
+<p>Writing software is a great way to solve (b), but you can still end up constrained in (a). If you write software to teach Tibetan to Hungarian speakers, you’ll be able to reach most of the people who want it, but there won’t be many of them. If you make software to teach English to Chinese speakers, however, you’re in startup territory.  </p>
+<p>编写软件是解决(b)问题的好方法，但你仍可能受限于(a)。如果你开发一款教匈牙利人学藏语的软件，你能触达几乎所有对此感兴趣的人，但这样的人并不多。然而，如果你开发一款教中国人学英语的软件，你就进入了初创企业的领域。</p>
+<p>Most businesses are tightly constrained in (a) or (b). The distinctive feature of successful startups is that they’re not.  </p>
+<p>大多数企业都在(a)或(b)方面受到严格限制。而成功的初创企业的显著特征，就是它们不受这些限制。</p>
+<h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><h2 id="创意"><a href="#创意" class="headerlink" title="创意"></a>创意</h2><p>It might seem that it would always be better to start a startup than an ordinary business. If you’re going to start a company, why not start the type with the most potential? The catch is that this is a (fairly) efficient market. If you write software to teach Tibetan to Hungarians, you won’t have much competition. If you write software to teach English to Chinese speakers, you’ll face ferocious competition, precisely because that’s such a larger prize. [2]  </p>
+<p>看起来，创办一家初创企业似乎总比开一家普通企业更好。既然要开公司，为什么不选择潜力最大的那种呢？但问题在于，这是一个（相当）有效的市场。如果你开发教匈牙利人学藏语的软件，竞争会很少；但如果你开发教中国人学英语的软件，就会面临激烈竞争——恰恰因为这个市场的回报要大得多。[2]</p>
+<p>The constraints that limit ordinary companies also protect them. That’s the tradeoff. If you start a barbershop, you only have to compete with other local barbers. If you start a search engine you have to compete with the whole world.  </p>
+<p>限制普通企业的约束同时也保护了它们，这是一种权衡。如果你开一家理发店，你只需和本地其他理发师竞争；但如果你做搜索引擎，你就得和全世界竞争。</p>
+<p>The most important thing that the constraints on a normal business protect it from is not competition, however, but the difficulty of coming up with new ideas. If you open a bar in a particular neighborhood, as well as limiting your potential and protecting you from competitors, that geographic constraint also helps define your company. Bar + neighborhood is a sufficient idea for a small business. Similarly for companies constrained in (a). Your niche both protects and defines you.  </p>
+<p>然而，对普通企业而言，这些约束最重要的保护作用并非来自竞争，而是免于构思新创意的困难。如果你在某个特定社区开一家酒吧，地理限制不仅限定了你的潜力、保护你免受外部竞争，还帮助你定义了公司本身。“酒吧+社区”对一家小企业来说已经是一个足够清晰的创意。同样，对于在(a)方面受限的企业也是如此：你的细分市场既保护你，也定义你。</p>
+<p>Whereas if you want to start a startup, you’re probably going to have to think of something fairly novel. A startup has to make something it can deliver to a large market, and ideas of that type are so valuable that all the obvious ones are already taken.  </p>
+<p>而如果你想创办一家初创企业，你很可能需要想出某种相当新颖的点子。初创企业必须能制造出可交付给大市场的产品，而这类创意价值极高，所有显而易见的点子早已被人抢占。</p>
+<p>That space of ideas has been so thoroughly picked over that a startup generally has to work on something everyone else has overlooked. I was going to write that one has to make a conscious effort to find ideas everyone else has overlooked. But that’s not how most startups get started. Usually successful startups happen because the founders are sufficiently different from other people that ideas few others can see seem obvious to them. Perhaps later they step back and notice they’ve found an idea in everyone else’s blind spot, and from that point make a deliberate effort to stay there. [3] But at the moment when successful startups get started, much of the innovation is unconscious.  </p>
+<p>创意空间已被如此彻底地挖掘，以至于初创企业通常必须专注于别人忽略的东西。我原本想说，人们必须有意识地去寻找别人忽略的创意。但这并非大多数初创企业的起源方式。通常，成功的初创企业之所以出现，是因为其创始人与常人足够不同，以至于那些别人看不到的想法在他们看来显而易见。也许后来他们会退一步意识到，自己发现了一个处于他人盲区的创意，并从此刻意保持在这个盲区中。[3] 但在成功初创企业起步的那一刻，大部分创新其实是无意识的。</p>
+<p>What’s different about successful founders is that they can see different problems. It’s a particularly good combination both to be good at technology and to face problems that can be solved by it, because technology changes so rapidly that formerly bad ideas often become good without anyone noticing. Steve Wozniak’s problem was that he wanted his own computer. That was an unusual problem to have in 1975. But technological change was about to make it a much more common one. Because he not only wanted a computer but knew how to build them, Wozniak was able to make himself one. And the problem he solved for himself became one that Apple solved for millions of people in the coming years. But by the time it was obvious to ordinary people that this was a big market, Apple was already established.  </p>
+<p>成功创始人的不同之处在于，他们能看到不同的问题。既擅长技术，又面临可用技术解决的问题，这是一种特别有利的组合——因为技术变化如此迅速，曾经糟糕的想法常常在无人察觉的情况下变得可行。史蒂夫·沃兹尼亚克的问题是：他想要一台属于自己的电脑。这在1975年是个不寻常的问题。但技术变革即将让它变得极为普遍。由于沃兹尼亚克不仅想要电脑，还知道如何制造，他便为自己打造了一台。他为自己解决的问题，后来成了苹果公司在未来几年为数百万人解决的问题。但等到普通人意识到这是一个巨大市场时，苹果早已站稳脚跟。</p>
+<p>Google has similar origins. Larry Page and Sergey Brin wanted to search the web. But unlike most people they had the technical expertise both to notice that existing search engines were not as good as they could be, and to know how to improve them. Over the next few years their problem became everyone’s problem, as the web grew to a size where you didn’t have to be a picky search expert to notice the old algorithms weren’t good enough. But as happened with Apple, by the time everyone else realized how important search was, Google was entrenched.  </p>
+<p>谷歌的起源类似。拉里·佩奇和谢尔盖·布林想在网络上搜索信息。但与大多数人不同，他们具备足够的技术专长，既能察觉现有搜索引擎远未达到理想水平，也知道如何改进它们。在接下来的几年里，随着网络规模扩大到连非专业用户都能明显感受到旧算法不足的程度，他们的问题变成了所有人的问题。但正如苹果的情况一样，等到其他人意识到搜索有多重要时，谷歌早已根深蒂固。</p>
+<p>That’s one connection between startup ideas and technology. Rapid change in one area uncovers big, soluble problems in other areas. Sometimes the changes are advances, and what they change is solubility. That was the kind of change that yielded Apple; advances in chip technology finally let Steve Wozniak design a computer he could afford. But in Google’s case the most important change was the growth of the web. What changed there was not solubility but bigness.  </p>
+<p>这是初创企业创意与技术之间的一种联系：某一领域的快速变化，会揭示其他领域中重大且可解决的问题。有时这些变化是技术进步，改变的是“可解性”——这正是催生苹果的那种变化：芯片技术的进步终于让史蒂夫·沃兹尼亚克能够设计出自己买得起的电脑。但在谷歌的案例中，最重要的变化是网络本身的扩张。那里发生变化的不是“可解性”，而是“市场规模”。</p>
+<p>The other connection between startups and technology is that startups create new ways of doing things, and new ways of doing things are, in the broader sense of the word, new technology. When a startup both begins with an idea exposed by technological change and makes a product consisting of technology in the narrower sense (what used to be called “high technology”), it’s easy to conflate the two. But the two connections are distinct and in principle one could start a startup that was neither driven by technological change, nor whose product consisted of technology except in the broader sense. [4]  </p>
+<p>初创企业与技术的另一种联系在于：初创企业创造了做事的新方式，而这些新方式，在更广义上，本身就是新技术。当一家初创企业既始于技术变革所揭示的创意，又生产狭义上的技术产品（即过去所谓的“高科技”）时，人们很容易将两者混为一谈。但这两者实际上是不同的，原则上，一个人完全可以创办一家既非由技术变革驱动、其产品也不包含狭义技术（仅在广义上属于“新方法”）的初创企业。[4]</p>
+<h2 id="Rate"><a href="#Rate" class="headerlink" title="Rate"></a>Rate</h2><h2 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h2><p>How fast does a company have to grow to be considered a startup? There’s no precise answer to that. “Startup” is a pole, not a threshold. Starting one is at first no more than a declaration of one’s ambitions. You’re committing not just to starting a company, but to starting a fast growing one, and you’re thus committing to search for one of the rare ideas of that type. But at first you have no more than commitment. Starting a startup is like being an actor in that respect. “Actor” too is a pole rather than a threshold. At the beginning of his career, an actor is a waiter who goes to auditions. Getting work makes him a successful actor, but he doesn’t only become an actor when he’s successful.  </p>
+<p>一家公司需要多快的增长速度才能被称为初创企业？对此没有精确答案。“初创企业”是一个极点，而非一个门槛。创办之初，它不过是你雄心的一种宣告：你承诺的不只是开一家公司，而是开一家快速增长的公司，因此你也承诺去寻找那种稀有的创意。但最初，你拥有的只是这份承诺。在这方面，创办初创企业就像做一名演员。“演员”同样是一个极点，而非门槛。在职业生涯初期，演员不过是个去试镜的侍应生。获得工作让他成为成功的演员，但他并非只有在成功之后才成为演员。</p>
+<p>So the real question is not what growth rate makes a company a startup, but what growth rate successful startups tend to have. For founders that’s more than a theoretical question, because it’s equivalent to asking if they’re on the right path.</p>
+<p>因此，真正的问题不是什么增长率使一家公司成为初创企业，而是成功的初创企业通常具有什么样的增长率。对于创始人来说，这不仅仅是一个理论上的问题，因为这就相当于在问他们是否走在正确的道路上。</p>
+<p>The growth of a successful startup usually has three phases:<br>There’s an initial period of slow or no growth while the startup tries to figure out what it’s doing.<br>As the startup figures out how to make something lots of people want and how to reach those people, there’s a period of rapid growth.<br>Eventually a successful startup will grow into a big company. Growth will slow, partly due to internal limits and partly because the company is starting to bump up against the limits of the markets it serves. [5]<br>Together these three phases produce an S-curve. The phase whose growth defines the startup is the second one, the ascent. Its length and slope determine how big the company will be.</p>
+<p>成功的初创企业的增长通常分为三个阶段：<br>首先是尝试确定方向的初期，这段时间增长缓慢甚至没有增长。<br>随着初创企业找到如何制作大量人想要的东西并接触到这些人的方式，会经历一个快速增长的时期。<br>最终，成功的初创企业成长为大公司。增长速度减缓，部分是由于内部限制，部分是因为公司开始触及其所服务市场的极限。[5]<br>这三个阶段共同形成了S曲线。定义初创企业的是其增长的第二个阶段，即上升期。它的长度和斜率决定了公司的规模。</p>
+<p>The slope is the company’s growth rate. If there’s one number every founder should always know, it’s the company’s growth rate. That’s the measure of a startup. If you don’t know that number, you don’t even know if you’re doing well or badly.</p>
+<p>斜率就是公司的增长率。如果有一个数字是每位创始人都应该始终知道的话，那就是公司的增长率。这是衡量一家初创企业的标准。如果你不知道这个数字，你甚至不知道自己做得好还是不好。</p>
+<p>When I first meet founders and ask what their growth rate is, sometimes they tell me “we get about a hundred new customers a month.” That’s not a rate. What matters is not the absolute number of new customers, but the ratio of new customers to existing ones. If you’re really getting a constant number of new customers every month, you’re in trouble, because that means your growth rate is decreasing.</p>
+<p>当我初次见到创始人并询问他们的增长率时，有时他们会告诉我“我们每个月大约获得一百个新客户”。这不是增长率。重要的不是新客户的绝对数量，而是新客户与现有客户的比例。如果你每个月真的获得相同数量的新客户，那你就有麻烦了，因为这意味着你的增长率正在下降。</p>
+<p>During Y Combinator we measure growth rate per week, partly because there is so little time before Demo Day, and partly because startups early on need frequent feedback from their users to tweak what they’re doing. [6]<br>A good growth rate during YC is 5-7% a week. If you can hit 10% a week you’re doing exceptionally well. If you can only manage 1%, it’s a sign you haven’t yet figured out what you’re doing.</p>
+<p>在Y Combinator期间，我们每周测量增长率，部分原因是在演示日之前时间非常有限，另一部分原因是早期的初创企业需要频繁从用户那里获得反馈来调整他们的工作。[6] 在YC期间，良好的增长率是每周5-7%。如果你能达到10%，那就非常出色了。如果你只能达到1%，那说明你还没有搞清楚你在做什么。</p>
+<p>The best thing to measure the growth rate of is revenue. The next best, for startups that aren’t charging initially, is active users. That’s a reasonable proxy for revenue growth because whenever the startup does start trying to make money, their revenues will probably be a constant multiple of active users. [7]</p>
+<p>衡量增长率最好的指标是收入。其次，对于那些最初不收费的初创企业来说，活跃用户数是一个合理的替代品。这是因为一旦初创企业开始尝试赚钱，其收入很可能会是活跃用户的固定倍数。[7]</p>
+<h2 id="Compass"><a href="#Compass" class="headerlink" title="Compass"></a>Compass</h2><h2 id="指南针"><a href="#指南针" class="headerlink" title="指南针"></a>指南针</h2><p>We usually advise startups to pick a growth rate they think they can hit, and then just try to hit it every week. The key word here is “just.” If they decide to grow at 7% a week and they hit that number, they’re successful for that week. There’s nothing more they need to do. But if they don’t hit it, they’ve failed in the only thing that mattered, and should be correspondingly alarmed.</p>
+<p>我们通常建议初创企业选择一个他们认为可以达到的增长率，然后每周都努力实现它。“仅此而已”是这里的关键词。如果他们决定每周增长7%，并且达到了这个数字，那么这一周他们就是成功的。他们不需要再做其他事情。但如果他们没有达到目标，他们在唯一重要的事情上失败了，应该相应地感到警觉。</p>
+<p>Programmers will recognize what we’re doing here. We’re turning starting a startup into an optimization problem. And anyone who has tried optimizing code knows how wonderfully effective that sort of narrow focus can be. Optimizing code means taking an existing program and changing it to use less of something, usually time or memory. You don’t have to think about what the program should do, just make it faster. For most programmers this is very satisfying work. The narrow focus makes it a sort of puzzle, and you’re generally surprised how fast you can solve it.</p>
+<p>程序员会认识到我们在做什么。我们把创办初创企业变成了一种优化问题。任何尝试过优化代码的人都知道这种狭隘的关注点是多么有效。优化代码意味着修改现有的程序以减少某些资源的使用，通常是时间和内存。你不需要考虑程序应该做什么，只需让它更快。对大多数程序员来说，这是一项非常令人满意的工作。狭窄的关注点使其变成了一种谜题，而且你通常会对解决问题的速度感到惊讶。</p>
+<p>Focusing on hitting a growth rate reduces the otherwise bewilderingly multifarious problem of starting a startup to a single problem. You can use that target growth rate to make all your decisions for you; anything that gets you the growth you need is ipso facto right. Should you spend two days at a conference? Should you hire another programmer? Should you focus more on marketing? Should you spend time courting some big customer? Should you add x feature? Whatever gets you your target growth rate. [8]</p>
+<p>专注于达到增长率将创办初创企业这个原本复杂多变的问题简化为单一问题。你可以用那个目标增长率来做所有的决策；任何能让你达到所需增长的事情都是理所当然正确的。你应该花两天参加一个会议吗？你应该雇佣另一个程序员吗？你应该更多地关注营销吗？你应该花时间去追求某个大客户吗？你应该添加x功能吗？无论什么能让你达到目标增长率。[8]</p>
+<p>Judging yourself by weekly growth doesn’t mean you can look no more than a week ahead. Once you experience the pain of missing your target one week (it was the only thing that mattered, and you failed at it), you become interested in anything that could spare you such pain in the future. </p>
+<p>通过每周的增长来评判自己并不意味着你只能看未来一周。一旦你经历了错过一周目标的痛苦（那是唯一重要的事情，而你失败了），你会对任何能让你在未来免于这种痛苦的事情感兴趣。</p>
+<p>So you’ll be willing for example to hire another programmer, who won’t contribute to this week’s growth but perhaps in a month will have implemented some new feature that will get you more users. But only if (a) the distraction of hiring someone won’t make you miss your numbers in the short term, and (b) you’re sufficiently worried about whether you can keep hitting your numbers without hiring someone new.</p>
+<p>因此，你可能会愿意雇佣另一个程序员，这个人不会对本周的增长做出贡献，但可能一个月后会实现一些新功能，为你带来更多用户。但这只有在(a)招聘过程中的分心不会让你短期内错过数字，并且(b)你非常担心如果不雇佣新人是否能够继续达到增长目标的情况下才会发生。</p>
+<p>It’s not that you don’t think about the future, just that you think about it no more than necessary.</p>
+<p>并不是说你不考虑未来，只是你认为没有必要过多地思考它。</p>
+<p>In theory this sort of hill-climbing could get a startup into trouble. They could end up on a local maximum. But in practice that never happens. Having to hit a growth number every week forces founders to act, and acting versus not acting is the high bit of succeeding. Nine times out of ten, sitting around strategizing is just a form of procrastination. </p>
+<p>理论上，这种爬山法可能会让创业公司陷入困境。他们可能会达到一个局部最大值。但实际上这种情况从未发生过。每周必须达成增长数字迫使创始人采取行动，而行动与不行动是成功的关键。十有八九，坐下来制定策略只是一种拖延的形式。</p>
+<p>Whereas founders’ intuitions about which hill to climb are usually better than they realize. Plus the maxima in the space of startup ideas are not spiky and isolated. Most fairly good ideas are adjacent to even better ones.</p>
+<p>然而，创始人对于攀登哪座山峰的直觉通常比他们意识到的要好。此外，在创业想法的空间中，最高峰并非孤立无援。大多数相当不错的点子都紧邻着更好的点子。</p>
+<p>What this means is that at any given time, the great majority of startups will be working on something that’s never going to go anywhere, and yet glorifying their doomed efforts with the grandiose title of “startup.”</p>
+<p>这意味着在任何给定时间，绝大多数初创公司都在做一些永远不会成功的事情，却用”初创公司”这个宏大的头衔来美化他们注定失败的努力。</p>
+<p>This doesn’t bother me. It’s the same with other high-beta vocations, like being an actor or a novelist. I’ve long since gotten used to it. But it seems to bother a lot of people, particularly those who’ve started ordinary businesses. Many are annoyed that these so-called startups get all the attention, when hardly any of them will amount to anything.</p>
+<p>这并不困扰我。这与其他高风险职业如演员或小说家的情况相同。我早已习惯了这一点。但它似乎困扰着很多人，特别是那些创办了普通企业的人。许多人感到恼火的是，这些所谓的初创公司获得了所有关注，而其中几乎没有几家能成气候。</p>
+<p>If they stepped back and looked at the whole picture they might be less indignant. The mistake they’re making is that by basing their opinions on anecdotal evidence they’re implicitly judging by the median rather than the average. If you judge by the median startup, the whole concept of a startup seems like a fraud. You have to invent a bubble to explain why founders want to start them or investors want to fund them. </p>
+<p>如果他们退一步看全局，他们可能就不会那么愤慨。他们犯的错误是，基于轶事证据形成观点，这实际上是在用中位数而非平均值来判断。如果你用中位数初创公司来判断，整个初创公司的概念似乎就是一场骗局。你必须发明一个泡沫来解释为什么创始人想创办它们，或者投资者想资助它们。</p>
+<p>But it’s a mistake to use the median in a domain with so much variation. If you look at the average outcome rather than the median, you can understand why investors like them, and why, if they aren’t median people, it’s a rational choice for founders to start them.</p>
+<p>但在一个变化如此巨大的领域使用中位数是错误的。如果你看平均结果而非中位数，你就能理解为什么投资者喜欢它们，以及为什么对于那些不是”中位数人”的创始人来说，创办初创公司是一个理性选择。</p>
+<h2 id="Deals"><a href="#Deals" class="headerlink" title="Deals"></a>Deals</h2><h2 id="交易"><a href="#交易" class="headerlink" title="交易"></a>交易</h2><p>Why do investors like startups so much? Why are they so hot to invest in photo-sharing apps, rather than solid money-making businesses? Not only for the obvious reason.</p>
+<p>为什么投资者如此喜欢初创公司？为什么他们热衷于投资照片分享应用，而不是稳健的赚钱企业？不仅仅是因为显而易见的原因。</p>
+<p>The test of any investment is the ratio of return to risk. Startups pass that test because although they’re appallingly risky, the returns when they do succeed are so high. But that’s not the only reason investors like startups. An ordinary slower-growing business might have just as good a ratio of return to risk, if both were lower. So why are VCs interested only in high-growth companies? The reason is that they get paid by getting their capital back, ideally after the startup IPOs, or failing that when it’s acquired.</p>
+<p>任何投资的检验标准是回报与风险的比率。初创公司通过了这一检验，因为尽管它们的风险惊人地高，但成功时的回报也非常高。但这并不是投资者喜欢初创公司的唯一原因。一个普通的增长较慢的企业可能有同样好的回报风险比，如果两者都较低的话。那么为什么风投只对高增长公司感兴趣？原因是他们通过收回资本获得报酬，理想情况下是在初创公司IPO之后，或者如果IPO不成，则是在公司被收购时。</p>
+<p>The other way to get returns from an investment is in the form of dividends. Why isn’t there a parallel VC industry that invests in ordinary companies in return for a percentage of their profits? Because it’s too easy for people who control a private company to funnel its revenues to themselves (e.g. by buying overpriced components from a supplier they control) while making it look like the company is making little profit. Anyone who invested in private companies in return for dividends would have to pay close attention to their books.</p>
+<p>获得投资回报的另一种方式是股息形式。为什么没有一个平行的风投行业投资于普通公司，以换取其利润的一定比例？因为控制私营公司的人很容易将公司收入转入自己口袋（例如，从他们控制的供应商处购买高价零部件），同时让公司看起来利润微薄。任何投资于私营公司以获取股息的人都必须密切关注它们的账目。</p>
+<p>The reason VCs like to invest in startups is not simply the returns, but also because such investments are so easy to oversee. The founders can’t enrich themselves without also enriching the investors. [12]</p>
+<p>风投喜欢投资初创公司的原因不仅仅是回报，还因为这类投资非常容易监督。创始人不可能在不同时使投资者致富的情况下让自己致富。[12]</p>
+<p>Why do founders want to take the VCs’ money? Growth, again. The constraint between good ideas and growth operates in both directions. It’s not merely that you need a scalable idea to grow. If you have such an idea and don’t grow fast enough, competitors will. Growing too slowly is particularly dangerous in a business with network effects, which the best startups usually have to some degree.</p>
+<p>为什么创始人想要接受风投的钱？还是因为增长。好点子与增长之间的约束是双向的。不仅仅需要可扩展的想法才能增长。如果你有这样的想法却不足够快地增长，竞争对手就会。在具有网络效应的业务中（最好的初创公司通常在某种程度上都有），增长过慢尤其危险。</p>
+<p>Almost every company needs some amount of funding to get started. But startups often raise money even when they are or could be profitable. It might seem foolish to sell stock in a profitable company for less than you think it will later be worth, but it’s no more foolish than buying insurance. Fundamentally that’s how the most successful startups view fundraising. They could grow the company on its own revenues, but the extra money and help supplied by VCs will let them grow even faster. Raising money lets you choose your growth rate.</p>
+<p>几乎每家公司都需要一定资金启动。但初创公司经常在已经盈利或可能盈利的情况下仍筹集资金。出售一家盈利公司股票的价格低于你认为它未来价值，这似乎很愚蠢，但这并不比购买保险更愚蠢。从根本上说，最成功的初创公司就是这样看待融资的。它们可以依靠自身收入增长，但风投提供的额外资金和帮助将让它们增长得更快。筹集资金让你可以选择你的增长率。</p>
+<p>Money to grow faster is always at the command of the most successful startups, because the VCs need them more than they need the VCs. A profitable startup could if it wanted just grow on its own revenues. Growing slower might be slightly dangerous, but chances are it wouldn’t kill them. Whereas VCs need to invest in startups, and in particular the most successful startups, or they’ll be out of business. </p>
+<p>更快增长的资金总是由最成功的初创公司掌控，因为风投比初创公司更需要彼此。一家盈利的初创公司如果愿意，可以仅依靠自身收入增长。增长较慢可能有些危险，但很可能不会致命。而风投需要投资于初创公司，特别是最成功的初创公司，否则它们将倒闭。</p>
+<p>Which means that any sufficiently promising startup will be offered money on terms they’d be crazy to refuse. And yet because of the scale of the successes in the startup business, VCs can still make money from such investments. You’d have to be crazy to believe your company was going to become as valuable as a high growth rate can make it, but some do.</p>
+<p>这意味着任何足够有前景的初创公司都会获得他们疯了才会拒绝的条款。然而，由于初创业务成功的规模，风投仍然可以从这类投资中赚钱。你必须疯了才会相信你的公司会变得像高增长率可能带来的价值那样高，但有些人确实相信。</p>
+<p>Pretty much every successful startup will get acquisition offers too. Why? What is it about startups that makes other companies want to buy them? [13]</p>
+<p>几乎每家成功的初创公司也会收到收购要约。为什么？初创公司的什么特质让其他公司想购买它们？[13]</p>
+<p>Fundamentally the same thing that makes everyone else want the stock of successful startups: a rapidly growing company is valuable. It’s a good thing eBay bought Paypal, for example, because Paypal is now responsible for 43% of their sales and probably more of their growth.</p>
+<p>从根本上说，这与让其他人想要成功初创公司股票的原因相同：快速成长的公司是有价值的。例如，eBay收购PayPal是件好事，因为PayPal现在贡献了他们43%的销售额，可能还贡献了更多的增长。</p>
+<p>But acquirers have an additional reason to want startups. A rapidly growing company is not merely valuable, but dangerous. If it keeps expanding, it might expand into the acquirer’s own territory. Most product acquisitions have some component of fear. Even if an acquirer isn’t threatened by the startup itself, they might be alarmed at the thought of what a competitor could do with it. And because startups are in this sense doubly valuable to acquirers, acquirers will often pay more than an ordinary investor would. [14]</p>
+<p>但收购者有额外的理由想要初创公司。快速成长的公司不仅有价值，还有危险。如果它继续扩张，可能会进入收购者自己的地盘。大多数产品收购都包含某种程度的恐惧因素。即使收购者不受初创公司本身的威胁，他们也可能担心竞争对手会如何利用它。正因如此，初创公司在这种意义上对收购者具有双重价值，收购者通常会支付比普通投资者更高的价格。[14]</p>
+<h2 id="Understand"><a href="#Understand" class="headerlink" title="Understand"></a>Understand</h2><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>The combination of founders, investors, and acquirers forms a natural ecosystem. It works so well that those who don’t understand it are driven to invent conspiracy theories to explain how neatly things sometimes turn out. Just as our ancestors did to explain the apparently too neat workings of the natural world. But there is no secret cabal making it all work.</p>
+<p>创始人、投资者和收购者的结合形成了一个自然生态系统。它运作得如此有效，以至于那些不理解它的人被迫发明阴谋论来解释事情有时为何如此顺利。就像我们的祖先解释自然世界看似过于精确的运作一样。但并没有什么秘密集团在幕后操控这一切。</p>
+<p>If you start from the mistaken assumption that Instagram was worthless, you have to invent a secret boss to force Mark Zuckerberg to buy it. To anyone who knows Mark Zuckerberg, that is the reductio ad absurdum of the initial assumption. The reason he bought Instagram was that it was valuable and dangerous, and what made it so was growth.</p>
+<p>如果你从Instagram毫无价值的错误假设出发，你就必须发明一个秘密老板来强迫马克·扎克伯格购买它。对任何了解马克·扎克伯格的人来说，这是对初始假设的归谬。他购买Instagram的原因是它有价值且危险，而使其如此的是增长。</p>
+<p>If you want to understand startups, understand growth. Growth drives everything in this world. Growth is why startups usually work on technology — because ideas for fast growing companies are so rare that the best way to find new ones is to discover those recently made viable by change, and technology is the best source of rapid change. </p>
+<p>如果你想理解初创公司，就要理解增长。增长驱动着这个世界的一切。增长是为什么初创公司通常致力于技术——因为快速增长公司的想法非常罕见，找到新想法的最好方法是发现那些刚刚因变化而变得可行的想法，而技术是快速变化的最佳来源。</p>
+<p>Growth is why it’s a rational choice economically for so many founders to try starting a startup: growth makes the successful companies so valuable that the expected value is high even though the risk is too. Growth is why VCs want to invest in startups: not just because the returns are high but also because generating returns from capital gains is easier to manage than generating returns from dividends. </p>
+<p>增长是为什么对许多创始人来说，尝试创办初创公司在经济上是理性选择：增长使成功的公司如此有价值，以至于预期价值很高，即使风险也很高。增长是为什么风投想要投资初创公司：不仅仅是因为回报高，还因为通过资本利得产生回报比通过股息产生回报更容易管理。</p>
+<p>Growth explains why the most successful startups take VC money even if they don’t need to: it lets them choose their growth rate. And growth explains why successful startups almost invariably get acquisition offers. To acquirers a fast-growing company is not merely valuable but dangerous too.</p>
+<p>增长解释了为什么最成功的初创公司即使不需要也会接受风投资金：这让他们可以选择自己的增长率。增长也解释了为什么成功的初创公司几乎总是收到收购要约。对收购者来说，快速成长的公司不仅有价值，而且危险。</p>
+<p>It’s not just that if you want to succeed in some domain, you have to understand the forces driving it. Understanding growth is what starting a startup consists of. What you’re really doing (and to the dismay of some observers, all you’re really doing) when you start a startup is committing to solve a harder type of problem than ordinary businesses do. You’re committing to search for one of the rare ideas that generates rapid growth. </p>
+<p>要在一个领域取得成功，你必须理解驱动它的力量，这不仅仅如此。理解增长就是创办初创公司的全部内容。当你创办一家初创公司时，你真正在做的是（令一些观察者失望的是，你真正在做的全部是）致力于解决比普通企业更难的问题。你致力于寻找能产生快速增长的稀有想法之一。</p>
+<p>Because these ideas are so valuable, finding one is hard. The startup is the embodiment of your discoveries so far. Starting a startup is thus very much like deciding to be a research scientist: you’re not committing to solve any specific problem; you don’t know for sure which problems are soluble; but you’re committing to try to discover something no one knew before. A startup founder is in effect an economic research scientist. Most don’t discover anything that remarkable, but some discover relativity.</p>
+<p>因为这些想法如此有价值，找到它们很困难。初创公司是你迄今为止发现的体现。因此，创办一家初创公司很像决定成为一名研究科学家：你不是承诺解决任何特定问题；你不确定哪些问题可以解决；但你承诺尝试发现一些没人知道的东西。初创公司创始人实际上是一位经济研究科学家。大多数人没有发现任何非凡的东西，但有些人发现了相对论。</p>
+<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>[1] Strictly speaking it’s not lots of customers you need but a big market, meaning a high product of number of customers times how much they’ll pay. But it’s dangerous to have too few customers even if they pay a lot, or the power that individual customers have over you could turn you into a de facto consulting firm. So whatever market you’re in, you’ll usually do best to err on the side of making the broadest type of product for it.</p>
+<p>[1] 严格来说，你需要的不是大量客户，而是大市场，意味着客户数量乘以他们愿意支付的金额的高乘积。但即使客户支付很多，拥有太少客户也是危险的，因为单个客户对你的影响力可能使你实际上变成一家咨询公司。因此，无论你在哪个市场，你通常最好倾向于为其制造最广泛的那类产品。</p>
+<p>[2] One year at Startup School David Heinemeier Hansson encouraged programmers who wanted to start businesses to use a restaurant as a model. What he meant, I believe, is that it’s fine to start software companies constrained in (a) in the same way a restaurant is constrained in (b). I agree. Most people should not try to start startups.</p>
+<p>[2] 有一年在创业学校，David Heinemeier Hansson鼓励想创业的程序员以餐厅为模型。我相信他的意思是，像餐厅在(b)方面受限一样，在(a)方面受限地开始软件公司是可以的。我同意。大多数人不应该尝试创办初创公司。</p>
+<p>[3] That sort of stepping back is one of the things we focus on at Y Combinator. It’s common for founders to have discovered something intuitively without understanding all its implications. That’s probably true of the biggest discoveries in any field.</p>
+<p>[3] 这种退一步思考是在Y Combinator我们关注的事情之一。创始人常常凭直觉发现了一些东西，却不理解其所有含义。这可能适用于任何领域最重大的发现。</p>
+<p>[4] I got it wrong in “How to Make Wealth” when I said that a startup was a small company that takes on a hard technical problem. That is the most common recipe but not the only one.</p>
+<p>[4] 我在《如何创造财富》中说初创公司是解决艰难技术问题的小公司，这是错误的。那是最常见的配方，但不是唯一的方式。</p>
+<p>[5] In principle companies aren’t limited by the size of the markets they serve, because they could just expand into new markets. But there seem to be limits on the ability of big companies to do that. Which means the slowdown that comes from bumping up against the limits of one’s markets is ultimately just another way in which internal limits are expressed.<br>It may be that some of these limits could be overcome by changing the shape of the organization — specifically by sharding it.</p>
+<p>[5] 原则上，公司不受其所服务市场规模的限制，因为它们可以扩展到新市场。但大公司似乎存在这样做的能力限制。这意味着因撞上市场极限而产生的增长放缓，最终只是内部限制的另一种表现形式。<br>也许其中一些限制可以通过改变组织形态——特别是通过”分片”——来克服。</p>
+<p>[6] This is, obviously, only for startups that have already launched or can launch during YC. A startup building a new database will probably not do that. On the other hand, launching something small and then using growth rate as evolutionary pressure is such a valuable technique that any company that could start this way probably should.</p>
+<p>[6] 显然，这仅适用于已经发布或可以在YC期间发布的初创公司。构建新数据库的初创公司可能不会这样做。另一方面，先发布小产品，然后将增长率作为进化压力，是一种如此有价值的技术，任何能够以这种方式开始的公司可能都应该这样做。</p>
+<p>[7] If the startup is taking the Facebook&#x2F;Twitter route and building something they hope will be very popular but from which they don’t yet have a definite plan to make money, the growth rate has to be higher, even though it’s a proxy for revenue growth, because such companies need huge numbers of users to succeed at all.<br>Beware too of the edge case where something spreads rapidly but the churn is high as well, so that you have good net growth till you run through all the potential users, at which point it suddenly stops.</p>
+<p>[7] 如果初创公司走Facebook&#x2F;Twitter路线，构建他们希望非常受欢迎但尚未有明确盈利计划的产品，增长率必须更高，即使它只是收入增长的代理，因为这类公司需要大量用户才能成功。<br>也要警惕边缘情况，即某物传播迅速但流失率也很高，因此在你用尽所有潜在用户之前，你有良好的净增长，但此时它会突然停止。</p>
+<p>[8] Within YC when we say it’s ipso facto right to do whatever gets you growth, it’s implicit that this excludes trickery like buying users for more than their lifetime value, counting users as active when they’re really not, bleeding out invites at a regularly increasing rate to manufacture a perfect growth curve, etc. Even if you were able to fool investors with such tricks, you’d ultimately be hurting yourself, because you’re throwing off your own compass.</p>
+<p>[8] 在YC内部，当我们说做任何能带来增长的事情本身是正确的，这隐含地排除了欺骗手段，如以超过用户终身价值的价格购买用户，将非活跃用户计为活跃用户，以规律增长的速率释放邀请以制造完美的增长曲线等。即使你能用这些技巧欺骗投资者，最终也会伤害自己，因为你正在扰乱自己的指南针。</p>
+<p>[9] Which is why it’s such a dangerous mistake to believe that successful startups are simply the embodiment of some brilliant initial idea. What you’re looking for initially is not so much a great idea as an idea that could evolve into a great one. The danger is that promising ideas are not merely blurry versions of great ones. They’re often different in kind, because the early adopters you evolve the idea upon have different needs from the rest of the market. For example, the idea that evolves into Facebook isn’t merely a subset of Facebook; the idea that evolves into Facebook is a site for Harvard undergrads.</p>
+<p>[9] 这就是为什么相信成功初创公司只是某些绝妙初始想法的体现是如此危险的错误。你最初寻找的与其说是伟大的想法，不如说是一个可能演变成伟大想法的想法。危险在于，有希望的想法不仅仅是伟大想法的模糊版本。它们在本质上常常不同，因为你发展想法的早期采用者与市场其余部分有不同的需求。例如，演变成Facebook的想法不仅仅是Facebook的一个子集；演变成Facebook的想法是哈佛本科生的网站。</p>
+<p>[10] What if a company grew at 1.7x a year for a really long time? Could it not grow just as big as any successful startup? In principle yes, of course. If our hypothetical company making $1000 a month grew at 1% a week for 19 years, it would grow as big as a company growing at 5% a week for 4 years. But while such trajectories may be common in, say, real estate development, you don’t see them much in the technology business. In technology, companies that grow slowly tend not to grow as big.</p>
+<p>[10] 如果一家公司以每年1.7倍的速度增长很长时间呢？它难道不能变得像任何成功的初创公司一样大吗？原则上，当然是可以的。如果我们假设的每月收入1000美元的公司以每周1%的速度增长19年，它将与以每周5%的速度增长4年的公司一样大。但虽然这种轨迹可能在房地产开发等领域很常见，但在技术业务中却不常见。在技术领域，增长缓慢的公司往往不会变得很大。</p>
+<p>[11] Any expected value calculation varies from person to person depending on their utility function for money. I.e. the first million is worth more to most people than subsequent millions. How much more depends on the person. For founders who are younger or more ambitious the utility function is flatter. Which is probably part of the reason the founders of the most successful startups of all tend to be on the young side.</p>
+<p>[11] 任何预期价值计算因人而异，取决于他们对金钱的效用函数。即，对大多数人来说，第一个百万比随后的百万更有价值。多出多少取决于个人。对更年轻或更有抱负的创始人来说，效用函数更平坦。这可能部分解释了为什么最成功初创公司的创始人往往比较年轻。</p>
+<p>[12] More precisely, this is the case in the biggest winners, which is where all the returns come from. A startup founder could pull the same trick of enriching himself at the company’s expense by selling them overpriced components. But it wouldn’t be worth it for the founders of Google to do that. Only founders of failing startups would even be tempted, but those are writeoffs from the VCs’ point of view anyway.</p>
+<p>[12] 更准确地说，这适用于最大的赢家，也就是所有回报的来源。初创公司创始人也可以通过向公司出售高价零部件来以公司为代价致富。但对Google的创始人来说，这样做不值得。只有失败初创公司的创始人才会受到诱惑，但从风投的角度来看，这些本来就是可以注销的。</p>
+<p>[13] Acquisitions fall into two categories: those where the acquirer wants the business, and those where the acquirer just wants the employees. The latter type is sometimes called an HR acquisition. Though nominally acquisitions and sometimes on a scale that has a significant effect on the expected value calculation for potential founders, HR acquisitions are viewed by acquirers as more akin to hiring bonuses.</p>
+<p>[13] 收购分为两类：收购者想要业务的收购，和收购者只想要员工的收购。后者有时被称为人力资源收购。虽然名义上是收购，有时规模对潜在创始人的预期价值计算有重大影响，但收购者将人力资源收购视为更类似于招聘奖金。</p>
+<p>[14] I once explained this to some founders who had recently arrived from Russia. They found it novel that if you threatened a company they’d pay a premium for you. “In Russia they just kill you,” they said, and they were only partly joking. Economically, the fact that established companies can’t simply eliminate new competitors may be one of the most valuable aspects of the rule of law. And so to the extent we see incumbents suppressing competitors via regulations or patent suits, we should worry, not because it’s a departure from the rule of law per se but from what the rule of law is aiming at.<br>Thanks to Sam Altman, Marc Andreessen, Paul Buchheit, Patrick Collison, Jessica Livingston, Geoff Ralston, and Harj Taggar for reading drafts of this.</p>
+<p>[14] 我曾向一些刚从俄罗斯来的创始人解释这一点。他们觉得新奇的是，如果你威胁一家公司，他们会溢价购买你。”在俄罗斯，他们只会杀了你，”他们说，而且他们只是部分开玩笑。从经济角度看，现有公司不能简单地消灭新竞争者这一事实，可能是法治最有价值的方面之一。因此，当我们看到在位者通过法规或专利诉讼压制竞争者时，我们应该担忧，不是因为它背离了法治本身，而是因为它背离了法治所追求的目标。<br>感谢Sam Altman、Marc Andreessen、Paul Buchheit、Patrick Collison、Jessica Livingston、Geoff Ralston和Harj Taggar阅读本文草稿。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>创业与增长</div>
+      <div>https://hokkaidornis.github.io/2025/12/10/startup-and-growth/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年12月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/12/10/the-hardware-renaissance/" title="硬件复兴">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">硬件复兴</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/12/10/black-swan-farming/" title="投资与黑天鹅养殖">
+                        <span class="hidden-mobile">投资与黑天鹅养殖</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
