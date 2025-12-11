@@ -1,0 +1,839 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jordan Zou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Do Things that Don’t Scale做那些无法规模化的事情原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;ds.html July 2013   One of the most common types of advice we give at Y Combinator is to do things that don’t scale. A lot of would-be">
+<meta property="og:type" content="article">
+<meta property="og:title" content="做那些无法规模化的事情">
+<meta property="og:url" content="https://hokkaidornis.github.io/2025/12/11/do-things-that-dont-scale/index.html">
+<meta property="og:site_name" content="Hokkaidornis">
+<meta property="og:description" content="Do Things that Don’t Scale做那些无法规模化的事情原文链接: https:&#x2F;&#x2F;paulgraham.com&#x2F;ds.html July 2013   One of the most common types of advice we give at Y Combinator is to do things that don’t scale. A lot of would-be">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-11T02:00:24.000Z">
+<meta property="article:modified_time" content="2025-12-11T05:53:15.073Z">
+<meta property="article:author" content="Jordan Zou">
+<meta property="article:tag" content="PAUL GRAHAM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>做那些无法规模化的事情 - Hokkaidornis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hokkaidornis.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","app_key":"iD8UWkcGdixFXroZ6woVTZyD","server_url":"https://sgbnjjgv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>北海企鹅</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="做那些无法规模化的事情"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-12-11 10:00" pubdate>
+          2025年12月11日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          66 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">做那些无法规模化的事情</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Do-Things-that-Don’t-Scale"><a href="#Do-Things-that-Don’t-Scale" class="headerlink" title="Do Things that Don’t Scale"></a>Do Things that Don’t Scale</h1><h1 id="做那些无法规模化的事情"><a href="#做那些无法规模化的事情" class="headerlink" title="做那些无法规模化的事情"></a>做那些无法规模化的事情</h1><p>原文链接: <a target="_blank" rel="noopener" href="https://paulgraham.com/ds.html">https://paulgraham.com/ds.html</a></p>
+<p>July 2013  </p>
+<p>One of the most common types of advice we give at Y Combinator is to do things that don’t scale. A lot of would-be founders believe that startups either take off or don’t. You build something, make it available, and if you’ve made a better mousetrap, people beat a path to your door as promised. Or they don’t, in which case the market must not exist. [1]</p>
+<p>我们在 Y Combinator 最常给出的建议之一，就是去做那些无法规模化的事情。许多有志于创业的人认为，初创公司要么一飞冲天，要么彻底失败。你只要做出产品、上线发布，如果你打造了一个更好的捕鼠器，人们自然会蜂拥而至；如果没人来，那就说明市场根本不存在。[1]</p>
+<p>Actually startups take off because the founders make them take off. There may be a handful that just grew by themselves, but usually it takes some sort of push to get them going. A good metaphor would be the cranks that car engines had before they got electric starters. Once the engine was going, it would keep going, but there was a separate and laborious process to get it going.</p>
+<p>实际上，初创公司之所以能起飞，是因为创始人主动推动它们起飞。或许有极少数公司是自发成长起来的，但通常都需要某种推动力才能启动。一个恰当的比喻是汽车在配备电动启动器之前所用的手摇曲柄：一旦引擎发动起来，它就能持续运转，但要让它启动却需要一个独立且费力的过程。</p>
+<h2 id="Recruit"><a href="#Recruit" class="headerlink" title="Recruit"></a>Recruit</h2><h2 id="招募用户"><a href="#招募用户" class="headerlink" title="招募用户"></a>招募用户</h2><p>The most common unscalable thing founders have to do at the start is to recruit users manually. Nearly all startups have to. You can’t wait for users to come to you. You have to go out and get them.</p>
+<p>创始人在起步阶段最常做的无法规模化的事情，就是手动招募用户。几乎所有的初创公司都必须这么做。你不能坐等用户找上门，而必须主动走出去争取他们。</p>
+<p>Stripe is one of the most successful startups we’ve funded, and the problem they solved was an urgent one. If anyone could have sat back and waited for users, it was Stripe. But in fact they’re famous within YC for aggressive early user acquisition.</p>
+<p>Stripe 是我们投资过的最成功的初创公司之一，他们解决的问题非常紧迫。如果说有哪家公司可以坐等用户上门，那应该就是 Stripe。但实际上，他们在 YC 内部以激进的早期用户获取策略而闻名。</p>
+<p>Startups building things for other startups have a big pool of potential users in the other companies we’ve funded, and none took better advantage of it than Stripe. At YC we use the term “Collison installation” for the technique they invented. More diffident founders ask “Will you try our beta?” and if the answer is yes, they say “Great, we’ll send you a link.” But the Collison brothers weren’t going to wait. When anyone agreed to try Stripe they’d say “Right then, give me your laptop” and set them up on the spot.</p>
+<p>为其他初创公司开发产品的公司，在 YC 投资的其他企业中拥有庞大的潜在用户池，而 Stripe 对此利用得最为充分。在 YC，我们把他们发明的方法称为“Collison 安装法”。比较腼腆的创始人会问：“你愿意试试我们的测试版吗？”如果对方回答“愿意”，他们就会说：“太好了，我们会发你一个链接。”但 Collison 兄弟可不会干等。每当有人同意试用 Stripe，他们会立刻说：“那好，把你的笔记本给我”，当场帮对方完成设置。</p>
+<p>There are two reasons founders resist going out and recruiting users individually. One is a combination of shyness and laziness. They’d rather sit at home writing code than go out and talk to a bunch of strangers and probably be rejected by most of them. But for a startup to succeed, at least one founder (usually the CEO) will have to spend a lot of time on sales and marketing. [2]</p>
+<p>创始人不愿亲自外出逐个招募用户，主要有两个原因。其一是害羞和懒惰的结合：他们宁愿待在家里写代码，也不愿出门跟一群陌生人交谈，并很可能遭到大多数人的拒绝。但要想让初创公司成功，至少得有一位创始人（通常是 CEO）投入大量时间在销售和营销上。[2]</p>
+<p>The other reason founders ignore this path is that the absolute numbers seem so small at first. This can’t be how the big, famous startups got started, they think. The mistake they make is to underestimate the power of compound growth. We encourage every startup to measure their progress by weekly growth rate. If you have 100 users, you need to get 10 more next week to grow 10% a week. And while 110 may not seem much better than 100, if you keep growing at 10% a week you’ll be surprised how big the numbers get. After a year you’ll have 14,000 users, and after 2 years you’ll have 2 million.</p>
+<p>另一个原因是，创始人觉得一开始的绝对用户数量实在太小了。“那些著名的大公司肯定不是这样起步的”，他们心想。他们的错误在于低估了复利增长的力量。我们鼓励每家初创公司用每周增长率来衡量进展。如果你现在有 100 个用户，下周就需要新增 10 个，才能实现每周 10% 的增长。虽然 110 看起来跟 100 差别不大，但如果你能持续保持每周 10% 的增速，最终的用户数量会让你大吃一惊：一年后你会拥有 14,000 名用户，两年后将达到 200 万。</p>
+<p>You’ll be doing different things when you’re acquiring users a thousand at a time, and growth has to slow down eventually. But if the market exists you can usually start by recruiting users manually and then gradually switch to less manual methods. [3]</p>
+<p>当你一次能获取上千名用户时，你做的事情自然会不同，而且增长最终也一定会放缓。但如果市场确实存在，你通常可以先从手动招募用户开始，再逐步转向更少依赖人力的方法。[3]</p>
+<p>Airbnb is a classic example of this technique. Marketplaces are so hard to get rolling that you should expect to take heroic measures at first. In Airbnb’s case, these consisted of going door to door in New York, recruiting new users and helping existing ones improve their listings. When I remember the Airbnbs during YC, I picture them with rolly bags, because when they showed up for tuesday dinners they’d always just flown back from somewhere.</p>
+<p>Airbnb 就是这种策略的经典案例。交易平台极难启动，因此你一开始就必须做好采取超常规手段的准备。对 Airbnb 而言，这意味着挨家挨户地在纽约招募新用户，并帮助现有用户优化房源信息。当我回忆起 Airbnb 团队在 YC 期间的样子，脑海中浮现的是他们拖着行李箱的画面——因为他们每次参加周二晚餐时，总是刚从某个地方飞回来。</p>
+<h2 id="Fragile"><a href="#Fragile" class="headerlink" title="Fragile"></a>Fragile</h2><h2 id="脆弱期"><a href="#脆弱期" class="headerlink" title="脆弱期"></a>脆弱期</h2><p>Airbnb now seems like an unstoppable juggernaut, but early on it was so fragile that about 30 days of going out and engaging in person with users made the difference between success and failure.</p>
+<p>如今的 Airbnb 看似势不可挡，但在早期却极其脆弱——正是大约 30 天里创始人亲自外出与用户面对面互动，才决定了公司最终是成功还是失败。</p>
+<p>That initial fragility was not a unique feature of Airbnb. Almost all startups are fragile initially. And that’s one of the biggest things inexperienced founders and investors (and reporters and know-it-alls on forums) get wrong about them. They unconsciously judge larval startups by the standards of established ones. They’re like someone looking at a newborn baby and concluding “there’s no way this tiny creature could ever accomplish anything.”</p>
+<p>这种初期的脆弱性并非 Airbnb 所独有。几乎所有初创公司在起步阶段都很脆弱。而不成熟的创始人、投资人（以及记者和论坛上的自以为是者）最容易犯的一个大错，就是不自觉地用成熟公司的标准去评判尚在萌芽阶段的初创公司。这就好比有人看着一个新生儿，断言“这个小东西将来绝不可能有什么成就”。</p>
+<p>It’s harmless if reporters and know-it-alls dismiss your startup. They always get things wrong. It’s even ok if investors dismiss your startup; they’ll change their minds when they see growth. The big danger is that you’ll dismiss your startup yourself. I’ve seen it happen. I often have to encourage founders who don’t see the full potential of what they’re building. Even Bill Gates made that mistake. He returned to Harvard for the fall semester after starting Microsoft. He didn’t stay long, but he wouldn’t have returned at all if he’d realized Microsoft was going to be even a fraction of the size it turned out to be. [4]</p>
+<p>如果记者或自作聪明的人看不起你的初创公司，那其实无伤大雅——他们总是判断错误。即使投资人一时看轻你的公司也没关系，一旦看到增长，他们就会改变主意。真正的危险在于你自己看轻了自己的公司。我见过这样的情况。我经常需要鼓励那些看不到自己所建项目全部潜力的创始人。就连比尔·盖茨也曾犯过这个错误：他在创办微软之后，还回哈佛读了秋季学期。他没待多久就退学了，但如果他当时意识到微软最终会发展到哪怕只是实际规模的一小部分，他根本就不会回去。[4]</p>
+<p>The question to ask about an early stage startup is not “is this company taking over the world?” but “how big could this company get if the founders did the right things?” And the right things often seem both laborious and inconsequential at the time. Microsoft can’t have seemed very impressive when it was just a couple guys in Albuquerque writing Basic interpreters for a market of a few thousand hobbyists (as they were then called), but in retrospect that was the optimal path to dominating microcomputer software. And I know Brian Chesky and Joe Gebbia didn’t feel like they were en route to the big time as they were taking “professional” photos of their first hosts’ apartments. They were just trying to survive. But in retrospect that too was the optimal path to dominating a big market.</p>
+<p>评价一家早期初创公司时，不该问“这家公司是否正在征服世界？”，而应问“如果创始人做了正确的事，这家公司能发展到多大？”而所谓“正确的事”在当时往往既费力又看似微不足道。当微软还只是阿尔伯克基的两个小伙子为几千名业余爱好者（当时这么称呼）编写 Basic 解释器时，看起来肯定没什么了不起；但回过头看，这恰恰是称霸微型计算机软件市场的最佳路径。我也知道，当 Brian Chesky 和 Joe Gebbia 为首批房东的公寓拍摄“专业”照片时，他们并不觉得自己正走在通往辉煌的路上——他们只是在努力求生。但事后看来，那同样是称霸一个巨大市场的最优路径。</p>
+<p>How do you find users to recruit manually? If you build something to solve your own problems, then you only have to find your peers, which is usually straightforward. Otherwise you’ll have to make a more deliberate effort to locate the most promising vein of users. The usual way to do that is to get some initial set of users by doing a comparatively untargeted launch, and then to observe which kind seem most enthusiastic, and seek out more like them. For example, Ben Silbermann noticed that a lot of the earliest Pinterest users were interested in design, so he went to a conference of design bloggers to recruit users, and that worked well. [5]</p>
+<p>那么，如何找到需要手动招募的用户呢？如果你开发的产品是为了解决自己的问题，那你只需要找到和你一样的人，这通常很简单。否则，你就得更有意识地去寻找最有潜力的用户群体。常见的做法是先通过一次相对宽泛、不够精准的发布获取一批初始用户，然后观察哪些用户表现得最热情，并主动去寻找更多类似的人。例如，Ben Silbermann 注意到 Pinterest 最早的一批用户很多都对设计感兴趣，于是他专门去参加设计博主大会招募用户，效果非常好。[5]</p>
+<h2 id="Delight"><a href="#Delight" class="headerlink" title="Delight"></a>Delight</h2><h2 id="让用户惊喜"><a href="#让用户惊喜" class="headerlink" title="让用户惊喜"></a>让用户惊喜</h2><p>You should take extraordinary measures not just to acquire users, but also to make them happy. For as long as they could (which turned out to be surprisingly long), Wufoo sent each new user a hand-written thank you note. Your first users should feel that signing up with you was one of the best choices they ever made. And you in turn should be racking your brains to think of new ways to delight them.</p>
+<p>你不仅要采取非凡手段获取用户，还要竭尽全力让他们感到开心。Wufoo 在相当长的一段时间里（比预想的要久得多），给每一位新用户手写感谢信。你的第一批用户应该觉得，选择注册你的产品是他们做过最正确的决定之一。而你也应该绞尽脑汁，不断想出新的方式让他们感到惊喜。</p>
+<p>Why do we have to teach startups this? Why is it counterintuitive for founders? Three reasons, I think.</p>
+<p>为什么我们需要教初创公司这样做？为什么这对创始人来说显得违反直觉？我认为有三个原因。</p>
+<p>One is that a lot of startup founders are trained as engineers, and customer service is not part of the training of engineers. You’re supposed to build things that are robust and elegant, not be slavishly attentive to individual users like some kind of salesperson. Ironically, part of the reason engineering is traditionally averse to handholding is that its traditions date from a time when engineers were less powerful — when they were only in charge of their narrow domain of building things, rather than running the whole show. You can be ornery when you’re Scotty, but not when you’re Kirk.</p>
+<p>首先，很多初创公司创始人接受的是工程师训练，而客户服务并不在工程师的培训内容之中。工程师被教导要打造坚固而优雅的产品，而不是像销售人员那样对每个用户唯命是从。具有讽刺意味的是，工程传统之所以历来排斥“手把手服务”，恰恰是因为这种传统形成于工程师权力较小的时代——那时他们只负责自己狭窄的建造领域，而非掌控全局。当你只是“斯科蒂”（Scotty，《星际迷航》中的工程师）时，你可以脾气古怪；但当你成了“柯克船长”（Kirk，舰长）时，就不行了。</p>
+<p>Another reason founders don’t focus enough on individual customers is that they worry it won’t scale. But when founders of larval startups worry about this, I point out that in their current state they have nothing to lose. Maybe if they go out of their way to make existing users super happy, they’ll one day have too many to do so much for. That would be a great problem to have. See if you can make it happen. And incidentally, when it does, you’ll find that delighting customers scales better than you expected. Partly because you can usually find ways to make anything scale more than you would have predicted, and partly because delighting customers will by then have permeated your culture.</p>
+<p>另一个原因是，创始人担心对个别用户的过度关注无法规模化。但当处于萌芽阶段的初创公司创始人为此担忧时，我会指出：以他们目前的状态，根本没什么可失去的。也许有一天，当你竭尽全力让现有用户超级满意后，用户数量会多到让你无法继续如此细致地服务每一个人——那将是一个美妙的烦恼。不妨试试能否促成这种情况。顺便说一句，真到了那一天，你会发现“让用户惊喜”这件事比你预想的更具可扩展性。一方面是因为你通常总能找到办法让任何事情比预期更可扩展，另一方面是因为到那时，“让用户惊喜”早已融入你的企业文化之中。</p>
+<p>I have never once seen a startup lured down a blind alley by trying too hard to make their initial users happy.</p>
+<p>我从未见过哪家初创公司因为过于努力地取悦早期用户而误入歧途。</p>
+<p>But perhaps the biggest thing preventing founders from realizing how attentive they could be to their users is that they’ve never experienced such attention themselves. Their standards for customer service have been set by the companies they’ve been customers of, which are mostly big ones. Tim Cook doesn’t send you a hand-written note after you buy a laptop. He can’t. But you can. That’s one advantage of being small: you can provide a level of service no big company can. [6]</p>
+<p>但或许阻碍创始人意识到自己可以对用户多么用心的最大原因，是他们自己从未体验过这种程度的关注。他们对客户服务的标准，来自于自己作为客户所接触过的公司——而这些公司大多是大型企业。蒂姆·库克（Tim Cook）在你买了一台笔记本电脑后，并不会给你手写一张感谢卡。他做不到。但你可以。这正是小公司的优势之一：你能提供大公司根本无法企及的服务水准。[6]</p>
+<p>Once you realize that existing conventions are not the upper bound on user experience, it’s interesting in a very pleasant way to think about how far you could go to delight your users.</p>
+<p>一旦你意识到现有的惯例并非用户体验的上限，你就会愉快地发现：原来你可以为取悦用户走得如此之远。</p>
+<h2 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a>Experience</h2><h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><p>I was trying to think of a phrase to convey how extreme your attention to users should be, and I realized Steve Jobs had already done it: insanely great. Steve wasn’t just using “insanely” as a synonym for “very.” He meant it more literally — that one should focus on quality of execution to a degree that in everyday life would be considered pathological.</p>
+<p>我一直在想用什么词来形容你对用户关注的程度应该有多极致，后来意识到史蒂夫·乔布斯早已说过了：“疯狂地卓越”（insanely great）。史蒂夫使用“疯狂地”并不仅仅是为了强调“非常”，而是更字面意义上的——你应该把执行质量做到日常生活中会被视为病态的程度。</p>
+<p>All the most successful startups we’ve funded have, and that probably doesn’t surprise would-be founders. What novice founders don’t get is what insanely great translates to in a larval startup. When Steve Jobs started using that phrase, Apple was already an established company. He meant the Mac (and its documentation and even packaging — such is the nature of obsession) should be insanely well designed and manufactured. That’s not hard for engineers to grasp. It’s just a more extreme version of designing a robust and elegant product.</p>
+<p>我们投资过的所有最成功的初创公司都做到了这一点，这大概不会让有志创业的人感到意外。但新手创始人不理解的是，“疯狂地卓越”在一家尚处萌芽阶段的初创公司中究竟意味着什么。当史蒂夫·乔布斯开始使用这个短语时，苹果已经是一家成熟公司了。他的意思是 Mac（包括其文档甚至包装——痴迷者就是如此）必须被设计和制造得“疯狂地好”。这对工程师来说并不难理解，无非是把打造坚固优雅产品的理念推向更极致。</p>
+<p>What founders have a hard time grasping (and Steve himself might have had a hard time grasping) is what insanely great morphs into as you roll the time slider back to the first couple months of a startup’s life. It’s not the product that should be insanely great, but the experience of being your user. The product is just one component of that. For a big company it’s necessarily the dominant one. But you can and should give users an insanely great experience with an early, incomplete, buggy product, if you make up the difference with attentiveness.</p>
+<p>创始人难以理解（甚至史蒂夫本人可能也难以想象）的是，当你把时间轴倒回一家初创公司诞生的最初几个月，“疯狂地卓越”会变成什么样子。那时，真正需要“疯狂地卓越”的不是产品本身，而是成为你用户的整体体验。产品只是其中一部分。对大公司而言，产品必然是主导因素；但你完全可以用一个早期、不完整、甚至充满 bug 的产品，通过极致的关注与服务，为用户提供“疯狂地卓越”的体验。</p>
+<p>Can, perhaps, but should? Yes. Over-engaging with early users is not just a permissible technique for getting growth rolling. For most successful startups it’s a necessary part of the feedback loop that makes the product good. Making a better mousetrap is not an atomic operation. Even if you start the way most successful startups have, by building something you yourself need, the first thing you build is never quite right. And except in domains with big penalties for making mistakes, it’s often better not to aim for perfection initially. In software, especially, it usually works best to get something in front of users as soon as it has a quantum of utility, and then see what they do with it. Perfectionism is often an excuse for procrastination, and in any case your initial model of users is always inaccurate, even if you’re one of them. [7]</p>
+<p>也许你能做到，但真的应该这么做吗？答案是肯定的。过度投入早期用户，不只是推动增长的一种可接受手段；对大多数成功初创公司而言，这是产品变得优秀的反馈循环中必不可少的一环。“打造更好的捕鼠器”并不是一个一蹴而就的操作。即使你像大多数成功初创公司那样，从解决自己的需求出发，你做出的第一个版本也几乎从来不会完全正确。除非是在犯错代价极高的领域，否则一开始就追求完美往往并非上策。尤其是在软件领域，通常最好的做法是：只要产品具备一点点实用价值，就尽快放到用户面前，然后观察他们会怎么使用它。完美主义常常只是拖延的借口；而且无论你是否本身就是目标用户，你对用户的初始认知总是不准确的。[7]</p>
+<p>The feedback you get from engaging directly with your earliest users will be the best you ever get. When you’re so big you have to resort to focus groups, you’ll wish you could go over to your users’ homes and offices and watch them use your stuff like you did when there were only a handful of them.</p>
+<p>你从直接与最早期用户互动中获得的反馈，将是你一生中能得到的最好反馈。等你公司做大到不得不依赖焦点小组时，你会无比怀念当初只有寥寥几位用户时，能亲自去他们家里或办公室，看着他们使用你产品的情景。</p>
+<h2 id="Fire"><a href="#Fire" class="headerlink" title="Fire"></a>Fire</h2><h2 id="聚焦火种"><a href="#聚焦火种" class="headerlink" title="聚焦火种"></a>聚焦火种</h2><p>Sometimes the right unscalable trick is to focus on a deliberately narrow market. It’s like keeping a fire contained at first to get it really hot before adding more logs.</p>
+<p>有时候，正确的不可扩展策略是刻意聚焦于一个非常狭窄的市场。这就像是先控制火势范围，让火焰烧得足够旺，再添加更多木柴。</p>
+<p>That’s what Facebook did. At first it was just for Harvard students. In that form it only had a potential market of a few thousand people, but because they felt it was really for them, a critical mass of them signed up. After Facebook stopped being for Harvard students, it remained for students at specific colleges for quite a while. When I interviewed Mark Zuckerberg at Startup School, he said that while it was a lot of work creating course lists for each school, doing that made students feel the site was their natural home.</p>
+<p>Facebook 就是这么做的。一开始，它只面向哈佛学生。按这种模式，潜在市场只有几千人，但正因为用户觉得这个平台“真的是为他们而生的”，大量用户迅速注册，形成了关键规模。即便后来 Facebook 不再仅限于哈佛学生，它仍然在相当长一段时间内只对特定高校的学生开放。我在创业学校（Startup School）采访马克·扎克伯格时，他说，虽然为每所学校手动创建课程列表非常耗时，但这样做让学生们觉得这个网站就是他们的天然归属。</p>
+<p>Any startup that could be described as a marketplace usually has to start in a subset of the market, but this can work for other startups as well. It’s always worth asking if there’s a subset of the market in which you can get a critical mass of users quickly. [8]</p>
+<p>任何可被描述为“交易平台”的初创公司，通常都必须从市场的某个子集起步，但这一策略对其他类型的初创公司同样有效。你始终应该自问：是否存在一个细分市场，能让你快速获得临界规模的用户？[8]</p>
+<p>Most startups that use the contained fire strategy do it unconsciously. They build something for themselves and their friends, who happen to be the early adopters, and only realize later that they could offer it to a broader market. The strategy works just as well if you do it unconsciously. The biggest danger of not being consciously aware of this pattern is for those who naively discard part of it. E.g. if you don’t build something for yourself and your friends, or even if you do, but you come from the corporate world and your friends are not early adopters, you’ll no longer have a perfect initial market handed to you on a platter.</p>
+<p>大多数采用“聚焦火种”策略的初创公司其实都是无意识地这么做的：他们为自己和朋友开发产品，而这些朋友恰好就是早期采用者；直到后来，他们才意识到可以把产品推向更广阔的市场。即使无意识地采用这一策略，效果也同样好。但如果你没有意识到这种模式，最大的风险在于可能会天真地抛弃其中的关键部分。例如，如果你没有为自己和朋友打造产品，或者即使做了，但你来自企业界，而你的朋友并非早期采用者，那么你就不再拥有一个现成的理想初始市场。</p>
+<p>Among companies, the best early adopters are usually other startups. They’re more open to new things both by nature and because, having just been started, they haven’t made all their choices yet. Plus when they succeed they grow fast, and you with them. It was one of many unforeseen advantages of the YC model (and specifically of making YC big) that B2B startups now have an instant market of hundreds of other startups ready at hand.</p>
+<p>在各类组织中，最好的早期采用者通常是其他初创公司。它们天性更开放，而且因为刚刚成立，尚未做出所有技术或工具选择。此外，一旦它们成功，就会快速增长，你也随之成长。这也是 YC 模式（尤其是 YC 规模扩大后）带来的诸多意外优势之一：如今 B2B 初创公司立刻就能接触到数百家其他初创公司组成的现成市场。</p>
+<h2 id="Meraki"><a href="#Meraki" class="headerlink" title="Meraki"></a>Meraki</h2><h2 id="Meraki-式启动"><a href="#Meraki-式启动" class="headerlink" title="Meraki 式启动"></a>Meraki 式启动</h2><p>For hardware startups there’s a variant of doing things that don’t scale that we call “pulling a Meraki.” Although we didn’t fund Meraki, the founders were Robert Morris’s grad students, so we know their history. They got started by doing something that really doesn’t scale: assembling their routers themselves.</p>
+<p>对于硬件初创公司，有一种特殊的“做不可扩展之事”的方式，我们称之为“Pulling a Meraki”（效仿 Meraki）。虽然我们并未投资 Meraki，但其创始人是罗伯特·莫里斯（Robert Morris）的研究生，因此我们了解他们的故事。他们起步时做了一件真正无法规模化的事：亲手组装路由器。</p>
+<p>Hardware startups face an obstacle that software startups don’t. The minimum order for a factory production run is usually several hundred thousand dollars. Which can put you in a catch-22: without a product you can’t generate the growth you need to raise the money to manufacture your product. Back when hardware startups had to rely on investors for money, you had to be pretty convincing to overcome this. The arrival of crowdfunding (or more precisely, preorders) has helped a lot. But even so I’d advise startups to pull a Meraki initially if they can. That’s what Pebble did. The Pebbles assembled the first several hundred watches themselves. If they hadn’t gone through that phase, they probably wouldn’t have sold $10 million worth of watches when they did go on Kickstarter.</p>
+<p>硬件初创公司面临软件公司没有的障碍：工厂量产的最低起订量通常高达数十万美元。这会让你陷入两难境地：没有产品，就无法获得所需的增长来融资生产产品。在过去，硬件初创公司只能依赖投资人资金，你必须极具说服力才能突破这一困境。众筹（更准确地说，是预售）的出现大大缓解了这个问题。但即便如此，我仍建议硬件初创公司如果可能，初期应“Pull a Meraki”。Pebble 就是这么做的：团队亲手组装了最初的几百块智能手表。如果没有经历这个阶段，他们后来在 Kickstarter 上很可能无法卖出价值 1000 万美元的手表。</p>
+<p>Like paying excessive attention to early customers, fabricating things yourself turns out to be valuable for hardware startups. You can tweak the design faster when you’re the factory, and you learn things you’d never have known otherwise. Eric Migicovsky of Pebble said one of the things he learned was “how valuable it was to source good screws.” Who knew?</p>
+<p>就像过度关注早期客户一样，自己动手制造产品对硬件初创公司也极具价值。当你自己就是工厂时，可以更快地调整设计，还能学到许多原本永远无法知晓的经验。Pebble 的埃里克·米吉科夫斯基（Eric Migicovsky）曾说，他学到的一件事是：“找到高质量的螺丝有多重要。”谁能想到呢？</p>
+<h2 id="Consult"><a href="#Consult" class="headerlink" title="Consult"></a>Consult</h2><h2 id="以咨询方式切入"><a href="#以咨询方式切入" class="headerlink" title="以咨询方式切入"></a>以咨询方式切入</h2><p>Sometimes we advise founders of B2B startups to take over-engagement to an extreme, and to pick a single user and act as if they were consultants building something just for that one user. The initial user serves as the form for your mold; keep tweaking till you fit their needs perfectly, and you’ll usually find you’ve made something other users want too. Even if there aren’t many of them, there are probably adjacent territories that have more. As long as you can find just one user who really needs something and can act on that need, you’ve got a toehold in making something people want, and that’s as much as any startup needs initially. [9]</p>
+<p>有时我们会建议 B2B 初创公司的创始人将“过度投入”推向极致：挑选一位用户，假装自己是只为这位用户定制开发的咨询顾问。这位初始用户就是你模具的原型；不断调整，直到完美契合其需求，你通常会发现，你做出的东西其他用户也需要。即使这类用户数量不多，其相邻领域也可能存在更大市场。只要你能找到一位真正有需求、且有能力采取行动的用户，你就已经踏上了打造人们想要的产品之路——而这正是任何初创公司在起步阶段所需要的全部。[9]</p>
+<p>Consulting is the canonical example of work that doesn’t scale. But (like other ways of bestowing one’s favors liberally) it’s safe to do it so long as you’re not being paid to. That’s where companies cross the line. So long as you’re a product company that’s merely being extra attentive to a customer, they’re very grateful even if you don’t solve all their problems. But when they start paying you specifically for that attentiveness — when they start paying you by the hour — they expect you to do everything.</p>
+<p>咨询服务是“不可扩展工作”的典型代表。但（和其他慷慨付出的方式一样），只要你不是为此收费，这么做就是安全的。问题就出在收费那一刻。只要你还是一家产品公司，只是对某位客户格外用心，即使没能解决他们所有问题，客户也会非常感激。但一旦他们开始为这种关注度付费——比如按小时计费——他们就会期待你包办一切。</p>
+<p>Another consulting-like technique for recruiting initially lukewarm users is to use your software yourselves on their behalf. We did that at Viaweb. When we approached merchants asking if they wanted to use our software to make online stores, some said no, but they’d let us make one for them. Since we would do anything to get users, we did. We felt pretty lame at the time. Instead of organizing big strategic e-commerce partnerships, we were trying to sell luggage and pens and men’s shirts. But in retrospect it was exactly the right thing to do, because it taught us how it would feel to merchants to use our software. Sometimes the feedback loop was near instantaneous: in the middle of building some merchant’s site I’d find I needed a feature we didn’t have, so I’d spend a couple hours implementing it and then resume building the site.</p>
+<p>另一种类似咨询的策略，是替那些最初兴趣不大的用户亲自使用你们自己的软件。我们在 Viaweb 就这么做过。当我们向商家推销我们的在线建站软件时，有些人拒绝了，但表示愿意让我们帮他们建一个。既然我们愿意做任何事来获取用户，我们就照做了。当时感觉挺狼狈的——我们本该去谈大型电商战略合作，结果却在卖行李箱、钢笔和男式衬衫。但回过头看，这恰恰是最正确的做法：它让我们亲身体验了商家使用我们软件的真实感受。有时反馈几乎是即时的：我在帮某个商家建站过程中，突然发现缺少某个功能，于是花几个小时把它实现出来，再继续建站。</p>
+<h2 id="Manual"><a href="#Manual" class="headerlink" title="Manual"></a>Manual</h2><h2 id="人工介入"><a href="#人工介入" class="headerlink" title="人工介入"></a>人工介入</h2><p>There’s a more extreme variant where you don’t just use your software, but are your software. When you only have a small number of users, you can sometimes get away with doing by hand things that you plan to automate later. This lets you launch faster, and when you do finally automate yourself out of the loop, you’ll know exactly what to build because you’ll have muscle memory from doing it yourself.</p>
+<p>还有一种更极端的做法：你不仅使用自己的软件，你自己就是软件本身。当用户数量很少时，你可以暂时用人工方式完成那些你计划日后自动化的任务。这样能让你更快上线；而当你最终把自己从流程中“自动化”出去时，你会清楚知道该构建什么——因为你已经通过亲手操作形成了“肌肉记忆”。</p>
+<p>When manual components look to the user like software, this technique starts to have aspects of a practical joke. For example, the way Stripe delivered “instant” merchant accounts to its first users was that the founders manually signed them up for traditional merchant accounts behind the scenes.</p>
+<p>当人工操作在用户看来就像软件自动运行一样时，这种做法甚至带点恶作剧的意味。例如，Stripe 早期向用户承诺“即时开通商户账户”，实际上创始人是在幕后手动为每位用户注册传统商户账户。</p>
+<p>Some startups could be entirely manual at first. If you can find someone with a problem that needs solving and you can solve it manually, go ahead and do that for as long as you can, and then gradually automate the bottlenecks. It would be a little frightening to be solving users’ problems in a way that wasn’t yet automatic, but less frightening than the far more common case of having something automatic that doesn’t yet solve anyone’s problems.</p>
+<p>有些初创公司一开始完全可以完全靠人工运作。如果你能找到一个有真实问题的人，并能手动解决它，那就大胆去做——能坚持多久就做多久，然后逐步将瓶颈环节自动化。用尚未自动化的手段解决用户问题，或许会让人有点不安；但比起更常见的那种情况——拥有一个全自动却没人需要的系统——这要安全得多。</p>
+<h2 id="Big"><a href="#Big" class="headerlink" title="Big"></a>Big</h2><h2 id="避免“盛大发布”"><a href="#避免“盛大发布”" class="headerlink" title="避免“盛大发布”"></a>避免“盛大发布”</h2><p>I should mention one sort of initial tactic that usually doesn’t work: the Big Launch. I occasionally meet founders who seem to believe startups are projectiles rather than powered aircraft, and that they’ll make it big if and only if they’re launched with sufficient initial velocity. They want to launch simultaneously in 8 different publications, with embargoes. And on a Tuesday, of course, since they read somewhere that’s the optimum day to launch something.</p>
+<p>我得提一种通常无效的初期策略：“盛大发布”（Big Launch）。我偶尔会遇到一些创始人，他们似乎认为初创公司像炮弹而非动力飞机——只有以足够大的初速度发射出去，才能成功。他们希望同时在 8 家媒体发布新闻稿，还要设禁发期；当然还得选在周二，因为他们读到过“周二是最佳发布日”。</p>
+<p>It’s easy to see how little launches matter. Think of some successful startups. How many of their launches do you remember? All you need from a launch is some initial core of users. How well you’re doing a few months later will depend more on how happy you made those users than how many there were of them. [10]</p>
+<p>其实很容易看出发布本身没那么重要。想想那些成功的初创公司——你还记得其中几家的发布会？一次发布真正需要的，只是一小批核心用户。几个月后你的表现，更多取决于你让这些用户有多满意，而不是当初有多少人。</p>
+<p>So why do founders think launches matter? A combination of solipsism and laziness. They think what they’re building is so great that everyone who hears about it will immediately sign up. Plus it would be so much less work if you could get users merely by broadcasting your existence, rather than recruiting them one at a time. But even if what you’re building really is great, getting users will always be a gradual process — partly because great things are usually also novel, but mainly because users have other things to think about.</p>
+<p>那为什么创始人会觉得发布很重要？这是自我中心与懒惰的结合：他们以为自己做的东西太棒了，只要有人听说就会立刻注册；而且如果只需广而告之就能获客，总比一个个拉用户省力得多。但即使你做的东西真的很好，获客也永远是个渐进过程——一方面因为真正优秀的东西往往也是新颖的，但更主要的是，用户脑子里还有别的事要考虑。</p>
+<p>Partnerships too usually don’t work. They don’t work for startups in general, but they especially don’t work as a way to get growth started. It’s a common mistake among inexperienced founders to believe that a partnership with a big company will be their big break. Six months later they’re all saying the same thing: that was way more work than we expected, and we ended up getting practically nothing out of it. [11]</p>
+<p>合作关系通常也不奏效。对初创公司整体而言如此，尤其不能指望靠它启动增长。新手创始人常犯的一个错误，就是以为和大公司合作会是自己的“重大突破”。六个月后，他们几乎都在说同样的话：“这比我们预想的麻烦多了，最后几乎一无所获。”[11]</p>
+<p>It’s not enough just to do something extraordinary initially. You have to make an extraordinary effort initially. Any strategy that omits the effort — whether it’s expecting a big launch to get you users, or a big partner — is ipso facto suspect.</p>
+<p>光有一个非凡的起点还不够，你必须付出非凡的努力。任何省略了“努力”这一要素的策略——无论是指望靠盛大发布吸引用户，还是依赖大公司合作——本质上都值得怀疑。</p>
+<h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><h2 id="把创业构想看作向量"><a href="#把创业构想看作向量" class="headerlink" title="把创业构想看作向量"></a>把创业构想看作向量</h2><p>The need to do something unscalably laborious to get started is so nearly universal that it might be a good idea to stop thinking of startup ideas as scalars. Instead we should try thinking of them as pairs of what you’re going to build, plus the unscalable thing(s) you’re going to do initially to get the company going.</p>
+<p>几乎每家初创公司起步时都需要做一些无法规模化、极其费力的事，因此我们或许不该再把创业想法看作单一标量（scalar），而应视为一个向量（vector）：一部分是你打算构建的产品，另一部分是你初期必须做的不可扩展之事，用来推动公司起步。</p>
+<p>It could be interesting to start viewing startup ideas this way, because now that there are two components you can try to be imaginative about the second as well as the first. But in most cases the second component will be what it usually is — recruit users manually and give them an overwhelmingly good experience — and the main benefit of treating startups as vectors will be to remind founders they need to work hard in two dimensions. [12]</p>
+<p>用这种方式思考创业想法会很有趣，因为现在你有两个维度可以发挥创造力，而不只是产品本身。不过在大多数情况下，第二个维度仍是老样子：手动招募用户，并给予他们超乎寻常的体验。把创业看作向量的主要好处，在于提醒创始人：你必须在两个维度上同时努力。[12]</p>
+<p>In the best case, both components of the vector contribute to your company’s DNA: the unscalable things you have to do to get started are not merely a necessary evil, but change the company permanently for the better. If you have to be aggressive about user acquisition when you’re small, you’ll probably still be aggressive when you’re big. If you have to manufacture your own hardware, or use your software on users’s behalf, you’ll learn things you couldn’t have learned otherwise. And most importantly, if you have to work hard to delight users when you only have a handful of them, you’ll keep doing it when you have a lot.</p>
+<p>在理想情况下，这个向量的两个分量都会融入公司的基因：那些起步阶段不得不做的不可扩展之事，不仅是必要的代价，更能永久性地让公司变得更好。如果你在规模小时就必须积极获取用户，那么规模变大后你很可能依然保持这种主动性；如果你必须亲手制造硬件，或替用户操作自己的软件，你将学到其他方式无法获得的经验。而最重要的是：如果你曾为寥寥几位用户竭尽全力创造惊喜体验，那么即使用户成千上万，你也会继续这么做。</p>
+<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>[1] Actually Emerson never mentioned mousetraps specifically. He wrote “If a man has good corn or wood, or boards, or pigs, to sell, or can make better chairs or knives, crucibles or church organs, than anybody else, you will find a broad hard-beaten road to his house, though it be in the woods.”<br>[1] 事实上，爱默生从未特别提到过捕鼠器。他写道：“如果一个人有优质的玉米、木材、木板或猪可卖，或者能做出比别人更好的椅子、刀具、坩埚或教堂管风琴，那么即使他的家在深林之中，你也会发现一条宽阔而被踩得坚实的道路通向他家。”</p>
+<p>[2] Thanks to Sam Altman for suggesting I make this explicit. And no, you can’t avoid doing sales by hiring someone to do it for you. You have to do sales yourself initially. Later you can hire a real salesperson to replace you.<br>[2] 感谢萨姆·阿尔特曼建议我明确指出这一点。而且，不，你不能通过雇人替你做销售来逃避销售工作。一开始你必须亲自做销售。之后，你才可以聘请一位真正的销售人员来接替你。</p>
+<p>[3] The reason this works is that as you get bigger, your size helps you grow. Patrick Collison wrote “At some point, there was a very noticeable change in how Stripe felt. It tipped from being this boulder we had to push to being a train car that in fact had its own momentum.”<br>[3] 这之所以有效，是因为随着你规模的扩大，你的体量本身会助推你进一步增长。帕特里克·科里森写道：“在某个时刻，Stripe 的感觉发生了非常明显的变化——它从一块我们必须费力推动的巨石，变成了一节实际上自带动量的火车车厢。”</p>
+<p>[4] One of the more subtle ways in which YC can help founders is by calibrating their ambitions, because we know exactly how a lot of successful startups looked when they were just getting started.<br>[4] YC 帮助创始人的一个较为微妙的方式，是帮他们校准雄心，因为我们非常清楚许多成功初创公司在刚起步时是什么样子。</p>
+<p>[5] If you’re building something for which you can’t easily get a small set of users to observe — e.g. enterprise software — and in a domain where you have no connections, you’ll have to rely on cold calls and introductions. But should you even be working on such an idea?<br>[5] 如果你正在开发某种产品，却很难轻松找到一小批用户进行观察（例如企业级软件），而且你又身处一个毫无人脉的领域，你就只能依赖陌生电话和他人引荐。但你真的应该从事这样的项目吗？</p>
+<p>[6] Garry Tan pointed out an interesting trap founders fall into in the beginning. They want so much to seem big that they imitate even the flaws of big companies, like indifference to individual users. This seems to them more “professional.” Actually it’s better to embrace the fact that you’re small and use whatever advantages that brings.<br>[6] 加里·谭指出了创始人初期常陷入的一个有趣陷阱：他们太想显得“大”，以至于连大公司的缺点也一并模仿，比如对个别用户的漠不关心。在他们看来，这显得更“专业”。但实际上，最好坦然接受自己规模小的事实，并充分利用由此带来的各种优势。</p>
+<p>[7] Your user model almost couldn’t be perfectly accurate, because users’ needs often change in response to what you build for them. Build them a microcomputer, and suddenly they need to run spreadsheets on it, because the arrival of your new microcomputer causes someone to invent the spreadsheet.<br>[7] 你的用户模型几乎不可能完全准确，因为用户的需求往往会随着你为他们构建的产品而改变。你为他们造出一台微型计算机，他们突然就需要在上面运行电子表格——因为你的新型微型计算机的出现，促使某个人发明了电子表格。</p>
+<p>[8] If you have to choose between the subset that will sign up quickest and those that will pay the most, it’s usually best to pick the former, because those are probably the early adopters. They’ll have a better influence on your product, and they won’t make you expend as much effort on sales. And though they have less money, you don’t need that much to maintain your target growth rate early on.<br>[8] 如果你必须在“最快注册的一群人”和“愿意支付最多费用的一群人”之间做选择，通常最好选前者，因为他们很可能就是早期采用者。他们会对你的产品产生更积极的影响，也不会让你在销售上耗费太多精力。尽管他们钱少一些，但在早期，你并不需要那么多资金来维持目标增长率。</p>
+<p>[9] Yes, I can imagine cases where you could end up making something that was really only useful for one user. But those are usually obvious, even to inexperienced founders. So if it’s not obvious you’d be making something for a market of one, don’t worry about that danger.<br>[9] 是的，我能想象一些情况，最终你做出的东西可能真的只对一个用户有用。但这类情况通常很明显，即使是没有经验的创始人也能察觉。因此，如果你的情况显然不属于“只为单一用户打造产品”，就不用担忧这种风险。</p>
+<p>[10] There may even be an inverse correlation between launch magnitude and success. The only launches I remember are famous flops like the Segway and Google Wave. Wave is a particularly alarming example, because I think it was actually a great idea that was killed partly by its overdone launch.<br>[10] 甚至可能存在发布声势与成功之间的负相关关系。我唯一记得的发布案例，都是像赛格威（Segway）和 Google Wave 这样的著名失败案例。Wave 尤其令人警醒，因为我认为它其实是个很棒的创意，却部分毁于过度炒作的发布。</p>
+<p>[11] Google grew big on the back of Yahoo, but that wasn’t a partnership. Yahoo was their customer.<br>[11] 谷歌是在雅虎的基础上壮大起来的，但那并不是一种合作关系——雅虎只是他们的客户。</p>
+<p>[12] It will also remind founders that an idea where the second component is empty — an idea where there is nothing you can do to get going, e.g. because you have no way to find users to recruit manually — is probably a bad idea, at least for those founders.<br>[12] 这也会提醒创始人：如果一个想法的第二部分是空的——即你根本无法采取任何行动启动项目，比如因为你找不到办法手动招募用户——那么这很可能是个糟糕的想法，至少对这些创始人而言如此。</p>
+<p>Thanks to Sam Altman, Paul Buchheit, Patrick Collison, Kevin Hale, Steven Levy, Jessica Livingston, Geoff Ralston, and Garry Tan for reading drafts of this.<br>感谢萨姆·阿尔特曼、保罗·布赫海特、帕特里克·科里森、凯文·黑尔、史蒂文·利维、杰西卡·利文斯顿、杰夫·拉尔斯顿和加里·谭审阅本文草稿。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AF%91/" class="category-chain-item">文章翻译</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/PAUL-GRAHAM/" class="print-no-link">#PAUL GRAHAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>做那些无法规模化的事情</div>
+      <div>https://hokkaidornis.github.io/2025/12/11/do-things-that-dont-scale/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jordan Zou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年12月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/12/11/how-to-convince-investors/" title="如何说服投资人">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">如何说服投资人</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/12/11/startup-investing-trends/" title="创业投资趋势">
+                        <span class="hidden-mobile">创业投资趋势</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"sGbnjJgvnzWDjQzMDVNcUPGF-gzGzoHsz","appKey":"iD8UWkcGdixFXroZ6woVTZyD","path":"window.location.pathname","placeholder":"say something","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hokkaidornis.github.io/" target="_blank" rel="nofollow noopener"><span>Hokkaidornis</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         次
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
